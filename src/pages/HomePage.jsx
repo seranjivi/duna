@@ -5,7 +5,6 @@ import {
   ArrowUpRight,
   BarChart3,
   Building2,
-  ChevronDown,
   Clock3,
   Cpu,
   Factory,
@@ -13,7 +12,6 @@ import {
   HeartPulse,
   Landmark,
   Mail,
-  Menu,
   Network,
   Phone,
   Search,
@@ -45,7 +43,7 @@ const insights = [
     title: "Banking Digital Transformation: Leading the Fintech Innovation Revolution",
     readType: "6 min read",
     image:
-      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80",
   },
   {
     category: "Industries",
@@ -188,30 +186,6 @@ const industryCards = [
   },
 ];
 
-const trustStrip = [
-  { title: "AI-led", desc: "Enterprise transformation" },
-  { title: "Data-first", desc: "Decision intelligence" },
-  { title: "Ops-focused", desc: "Measurable ROI" },
-  { title: "Global", desc: "24/7 support model" },
-];
-
-const navItems = ["Approach", "Solutions", "Industries", "Results", "About Us"];
-
-function LogoMark() {
-  return (
-    <div className="flex items-center gap-3">
-      <div className="relative h-10 w-10 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-700 shadow-lg shadow-blue-900/30 ring-1 ring-white/25">
-        <div className="absolute inset-1 rounded-full border border-white/30" />
-        <div className="absolute inset-0 grid place-items-center text-white font-black text-lg">D</div>
-      </div>
-      <div>
-        <div className="text-white font-semibold tracking-wide leading-tight">DUANAMIZE</div>
-        <div className="text-[11px] text-blue-100/80 tracking-[0.18em]">GLOBAL SERVICES</div>
-      </div>
-    </div>
-  );
-}
-
 function SectionHeader({ eyebrow, title, desc }) {
   return (
     <div className="mb-8 md:mb-10">
@@ -227,37 +201,16 @@ function SectionHeader({ eyebrow, title, desc }) {
   );
 }
 
-function MegaMenuPreview() {
-  const groups = [
-    {
-      title: "Services",
-      items: ["AI Strategy", "Automation", "Data Engineering", "System Integration", "Process Excellence"],
-    },
-    {
-      title: "Industries",
-      items: ["Manufacturing", "Financial Services", "Healthcare", "Energy & Utilities", "Retail"],
-    },
-    {
-      title: "Proof & Insights",
-      items: ["Case Studies", "Client Stories", "Articles", "Technology Stack", "Methodology"],
-    },
-  ];
-
+function LogoMark() {
   return (
-    <div className="pointer-events-none absolute left-1/2 top-full z-30 mt-3 hidden w-[920px] -translate-x-1/2 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100 xl:block">
-      <div className="rounded-2xl border border-white/10 bg-slate-950/95 p-5 shadow-2xl shadow-black/35 backdrop-blur-xl">
-        <div className="grid grid-cols-3 gap-4">
-          {groups.map((g) => (
-            <div key={g.title} className="rounded-xl border border-white/10 bg-white/5 p-4">
-              <div className="text-xs uppercase tracking-[0.16em] text-cyan-200/90">{g.title}</div>
-              <ul className="mt-3 space-y-2 text-sm text-blue-50/90">
-                {g.items.map((item) => (
-                  <li key={item} className="hover:text-white">{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+    <div className="flex items-center gap-3">
+      <div className="relative h-10 w-10 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-700 shadow-lg shadow-blue-900/30 ring-1 ring-white/25">
+        <div className="absolute inset-1 rounded-full border border-white/30" />
+        <div className="absolute inset-0 grid place-items-center text-white font-black text-lg">D</div>
+      </div>
+      <div>
+        <div className="text-white font-semibold tracking-wide leading-tight">DUANAMIZE</div>
+        <div className="text-[11px] text-blue-100/80 tracking-[0.18em]">GLOBAL SERVICES</div>
       </div>
     </div>
   );
@@ -315,11 +268,11 @@ function HeroSculpture() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-6 right-6 rounded-xl border border-white/10 bg-slate-950/35 p-4 backdrop-blur">
+      <div className="absolute bottom-20 left-6 right-6 rounded-xl border border-white/10 bg-slate-950/35 p-4 backdrop-blur">
         <div className="flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-cyan-200/90">
           <Network className="h-3.5 w-3.5" /> Connected delivery model
         </div>
-        <div className="mt-2 grid grid-cols-4 items-center gap-2 text-[11px] text-blue-100/80">
+        <div className="mt-1 grid grid-cols-4 items-center gap-2 text-[11px] text-blue-100/80">
           {["Assess", "Design", "Implement", "Scale"].map((step, i) => (
             <div key={step} className="flex items-center gap-2">
               <span className="grid h-5 w-5 place-items-center rounded-full border border-white/15 bg-white/10 text-white">
@@ -353,36 +306,6 @@ export default function DuanamizeHomepage() {
         <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0)_35%,rgba(255,255,255,0.05)_60%,rgba(255,255,255,0)_100%)]" />
         <div className="absolute -left-16 top-12 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl" />
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
-
-        <header className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-5 md:px-8">
-          <LogoMark />
-
-          <nav className="hidden lg:flex items-center gap-5 text-sm text-blue-50/90">
-            <a className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 font-medium text-white" href="#">
-              Home
-            </a>
-            {navItems.map((item) => (
-              <a key={item} href="#" className="hover:text-white transition-colors inline-flex items-center gap-1">
-                {item}
-              </a>
-            ))}
-            <div className="group relative inline-flex items-center gap-1 cursor-default text-blue-50/90">
-              <span className="inline-flex items-center gap-1 hover:text-white">
-                Explore <ChevronDown className="h-3.5 w-3.5" />
-              </span>
-              <MegaMenuPreview />
-            </div>
-          </nav>
-
-          <div className="flex items-center gap-2">
-            <button className="hidden md:inline-flex items-center rounded-full border border-white/25 bg-transparent px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition">
-              Work with us
-            </button>
-            <button className="inline-flex lg:hidden h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white">
-              <Menu className="h-5 w-5" />
-            </button>
-          </div>
-        </header>
 
         <section className="relative z-10 mx-auto grid w-full max-w-7xl gap-8 px-4 pb-14 pt-4 md:px-8 md:pb-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div>
@@ -421,31 +344,6 @@ export default function DuanamizeHomepage() {
               transformation that delivers measurable ROI.
             </motion.p>
 
-            {/* Integrated hero search */}
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.16 }}
-              className="mt-6 rounded-2xl border border-white/15 bg-white/10 p-2 backdrop-blur-xl shadow-xl shadow-blue-950/30"
-            >
-              <div className="flex flex-col gap-2 md:flex-row md:items-center">
-                <div className="flex min-w-0 flex-1 items-center gap-3 rounded-xl bg-white px-3 py-3">
-                  <Search className="h-4 w-4 text-slate-500" />
-                  <div className="flex-1 min-w-0">
-                    <div className="text-[10px] uppercase tracking-[0.16em] text-slate-500">What can we help you find?</div>
-                    <input
-                      readOnly
-                      value="Industries, solutions, case studies, methodology..."
-                      className="w-full truncate bg-transparent text-sm text-slate-700 outline-none"
-                    />
-                  </div>
-                </div>
-                <button className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0A2463] px-4 py-3 text-sm font-semibold text-white hover:bg-[#0b2d7e]">
-                  Search <ArrowRight className="h-4 w-4" />
-                </button>
-              </div>
-            </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -477,38 +375,20 @@ export default function DuanamizeHomepage() {
         </section>
       </div>
 
-      {/* Trust strip (glossy) */}
-      <section className="border-y border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 py-5 sm:grid-cols-2 lg:grid-cols-4 md:px-8">
-          {trustStrip.map((x, idx) => (
-            <div
-              key={x.title}
-              className="group relative overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-b from-white to-slate-50 px-4 py-4 shadow-sm"
-            >
-              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
-              <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-blue-100/60 blur-xl group-hover:bg-cyan-100/80 transition" />
-              <div className="relative text-base font-semibold text-slate-900">{x.title}</div>
-              <div className="relative mt-0.5 text-sm text-slate-600">{x.desc}</div>
-              <div className="relative mt-3 h-1.5 rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-[#0A2463] to-teal-400"
-                  style={{ width: `${70 + idx * 7}%` }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* What we do */}
-      <section className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
-        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+      <section className="mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-10">
+        <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <SectionHeader
-              eyebrow="What Duanamize Delivers"
-              title="Consulting, engineering, and transformation in one operating model"
-              desc="A homepage structure tailored for a modern consulting brand: clear positioning, industry depth, methodology, and proof of execution — presented in a premium corporate style."
+              eyebrow=""
+              title="Ready to Accelerate Your Digital Journey?"
+              desc="Partner with experts to unlock faster, smarter transformation through proven methodologies and advanced technology—delivering measurable results from day one."
+              
             />
+             <button className="inline-flex items-center gap-2 rounded-xl bg-[#0A2463] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b2d7e] transition">
+              Get Started Today <ArrowRight className="h-4 w-4" />
+            </button>
+           
           </div>
 
           {/* polished visual instead of text-only feel */}
@@ -523,20 +403,6 @@ export default function DuanamizeHomepage() {
                 <div className="mt-2 text-sm text-blue-100/80">
                   A visual frame to communicate how Duanamize connects consulting and execution.
                 </div>
-              </div>
-
-              {/* 3D-ish node network */}
-              <div className="absolute inset-0">
-                <div className="absolute left-[15%] top-[55%] h-10 w-10 rounded-full border border-white/20 bg-white/10 backdrop-blur" />
-                <div className="absolute left-[43%] top-[38%] h-12 w-12 rounded-2xl border border-cyan-200/30 bg-cyan-300/10 backdrop-blur" />
-                <div className="absolute right-[14%] top-[52%] h-10 w-10 rounded-full border border-white/20 bg-white/10 backdrop-blur" />
-                <div className="absolute left-[24%] bottom-[18%] h-8 w-8 rounded-lg border border-white/20 bg-white/10 backdrop-blur" />
-                <div className="absolute right-[24%] bottom-[16%] h-8 w-8 rounded-lg border border-cyan-200/25 bg-cyan-300/10 backdrop-blur" />
-                <svg className="absolute inset-0 h-full w-full opacity-70" viewBox="0 0 600 300" fill="none">
-                  <path d="M90 190 C160 150, 200 135, 260 130" stroke="rgba(255,255,255,0.22)" strokeWidth="2" />
-                  <path d="M300 125 C365 130, 405 150, 500 180" stroke="rgba(45,212,191,0.35)" strokeWidth="2" />
-                  <path d="M150 220 C250 215, 310 220, 450 230" stroke="rgba(255,255,255,0.16)" strokeWidth="1.5" />
-                </svg>
               </div>
             </div>
           </div>
@@ -581,9 +447,11 @@ export default function DuanamizeHomepage() {
             );
           })}
         </div>
+      </section>
 
-        {/* Industries */}
-        <div className="mt-14">
+      {/* Industries */}
+      <section className="mt-14">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <SectionHeader
             eyebrow="Industry Coverage"
             title="Industry-first execution, not generic consulting"
@@ -610,29 +478,31 @@ export default function DuanamizeHomepage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/10 to-transparent" />
                     <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur">
-                      <Icon className="h-4 w-4" /> {c.title.split(" ")[0]}
+                      <Icon className="h-3.5 w-3.5" />
+                      {c.title.split(' ')[0]}
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 style={serif} className="text-2xl font-semibold text-slate-900 leading-tight">
+                    <h3 style={serif} className="text-2xl leading-none font-semibold text-slate-900">
                       {c.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{c.desc}</p>
-                    <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463] group-hover:gap-3 transition-all">
-                      Explore <ArrowUpRight className="h-4 w-4" />
-                    </div>
+                    <button className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0A2463] group-hover:gap-2 transition-all">
+                      Learn more <ArrowRight className="h-4 w-4" />
+                    </button>
                   </div>
                 </motion.div>
               );
             })}
           </div>
         </div>
+      </section>
 
-        {/* Process */}
-        <div className="mt-14">
+      {/* Process */}
+      <section className="border-y border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
           <SectionHeader
-            eyebrow="How We Work"
-            title="A four-phase delivery model that executive sponsors understand"
+            eyebrow="A four-phase delivery model that executive sponsors understand"
             desc="This section replaces generic promises with a clear operating rhythm: assess, design, implement, and scale — with measurable KPIs."
           />
 
@@ -678,7 +548,6 @@ export default function DuanamizeHomepage() {
           </div>
         </div>
       </section>
-
       {/* Insights grid */}
       <section className="border-y border-slate-200 bg-slate-100/70">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
@@ -780,130 +649,6 @@ export default function DuanamizeHomepage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-slate-950 text-slate-200">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-[1.1fr_0.7fr_0.7fr_0.9fr_1fr] md:px-8">
-          <div>
-            <LogoMark />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
-              Leading technology and management consulting firm specializing in AI, Blockchain, Industry 4.0, and process
-              optimization for global enterprises.
-            </p>
-            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-300/15 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-200">
-              <Globe className="h-3.5 w-3.5" /> 24/7 Global Support
-            </div>
-            <div className="mt-5 flex gap-2">
-              {[
-                ["LinkedIn", "in"],
-                ["X", "X"],
-                ["YouTube", "yt"],
-                ["Instagram", "ig"],
-              ].map(([label, s]) => (
-                <div
-                  key={label}
-                  title={label}
-                  className="grid h-9 w-9 place-items-center rounded-full border border-slate-800 bg-slate-900 text-xs font-semibold text-slate-300"
-                >
-                  {s}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white">Quick Links</h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-400">
-              {["Home", "Approach", "Solutions", "Industries", "Case Studies"].map((x) => (
-                <li key={x}>
-                  <a href="#" className="hover:text-white">
-                    {x}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white">Company</h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-400">
-              {["About Us", "Careers", "Client Stories", "Partner Inquiries", "FAQ"].map((x) => (
-                <li key={x}>
-                  <a href="#" className="hover:text-white">
-                    {x}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white">Privacy & Compliance</h4>
-            <ul className="mt-3 space-y-2 text-sm">
-              {["Privacy Policy", "Terms & Conditions", "Disclaimer", "Contact Us"].map((x) => (
-                <li key={x}>
-                  <a
-                    href="#"
-                    className="inline-flex w-full items-center justify-between rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2 text-slate-300 hover:border-slate-700 hover:text-white"
-                  >
-                    <span>{x}</span>
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white">Contact</h4>
-            <ul className="mt-3 space-y-3 text-sm text-slate-400">
-              <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 text-slate-300" />
-                <span>+1 (555) 012-3456</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 text-slate-300" />
-                <span>hello@duanamize.com</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Landmark className="mt-0.5 h-4 w-4 text-slate-300" />
-                <span>Global delivery • Onsite + Remote</span>
-              </li>
-            </ul>
-
-            <div className="mt-5 rounded-xl border border-slate-800 bg-slate-900/60 p-4">
-              <div className="text-[10px] uppercase tracking-[0.18em] text-slate-300">Newsletter</div>
-              <p className="mt-1 text-sm text-slate-400">Monthly insights. No spam.</p>
-              <div className="mt-3 flex items-center gap-2">
-                <div className="flex flex-1 items-center gap-2 rounded-lg border border-slate-800 bg-slate-950 px-3 py-2">
-                  <Mail className="h-4 w-4 text-slate-400" />
-                  <input
-                    placeholder="work@email.com"
-                    className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-600 outline-none"
-                  />
-                </div>
-                <button className="inline-flex items-center justify-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-slate-950 hover:bg-slate-100">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-slate-800/80">
-          <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-5 text-xs text-slate-500 md:flex-row md:items-center md:justify-between md:px-8">
-            <div>© {new Date().getFullYear()} Duanamize Global Services. All rights reserved.</div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1">
-                <ShieldCheck className="h-3.5 w-3.5" /> SOC2-aligned practices
-              </span>
-              <span className="inline-flex items-center gap-1">
-                <Clock3 className="h-3.5 w-3.5" /> SLA-driven support
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
