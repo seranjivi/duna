@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duanamize - Tab Navigation Demo</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion@10/dist/framer-motion.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Include the three page components -->
+    <script type="text/babel" src="./duanamize_homepage_previewable_fixed_footer (2).jsx"></script>
+    <script type="text/babel" src="./duanamize_approach_page (3) (1).jsx"></script>
+    <script type="text/babel" src="./duanamize_lss_ai_revolution_2025_page (1).jsx"></script>
+    
+    <!-- Include the tab navigation app -->
+    <script type="text/babel" src="./tab_navigation_app.jsx"></script>
+    
+    <script type="text/babel">
+        const { createRoot } = React;
+        const container = document.getElementById('root');
+        const root = createRoot(container);
+        root.render(React.createElement(TabNavigationApp));
+    </script>
+</body>
+</html>
