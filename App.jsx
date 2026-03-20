@@ -10,6 +10,8 @@ import OurProcessSub2Page from './src/pages/OurProcessSub2.jsx';
 import LSSAIPage from './src/pages/lss.jsx';
 import LSSSub1Page from './src/pages/lsssub1.jsx';
 import LSSSub2Page from './src/pages/lsssub2.jsx';
+import SolutionsProcessIntelligencePage from './src/pages/Solutions-Process Intelligence.jsx';
+import SolutionsAgenticAutomationPage from './src/pages/Solutions-Agentic Automation.jsx';
 import SolutionsPage from './src/pages/SolutionsPage.jsx';
 import IndustriesPage from './src/pages/IndustriesPage.jsx';
 import ResultsPage from './src/pages/ResultsPage.jsx';
@@ -33,6 +35,8 @@ root.render(
         <Route path="lss-ai-revolution" element={<LSSAIPage />} />
         <Route path="lsssub1" element={<LSSSub1Page />} />
         <Route path="lsssub2" element={<LSSSub2Page />} />
+        <Route path="solutions-process-intelligence" element={<SolutionsProcessIntelligencePage />} />
+        <Route path="solutions-agentic-automation" element={<SolutionsAgenticAutomationPage />} />
         <Route path="solutions" element={<SolutionsPage />} />
         <Route path="industries" element={<IndustriesPage />} />
         <Route path="results" element={<ResultsPage />} />

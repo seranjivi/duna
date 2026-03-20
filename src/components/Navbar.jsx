@@ -6,7 +6,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'Approach', path: '/approach', hasDropdown: true },
-  { name: 'Solutions', path: '/solutions' },
+  { name: 'Solutions', path: '/solutions', hasDropdown: true },
   { name: 'Industries', path: '/industries' },
   { name: 'Results', path: '/results' },
   { name: 'About Us', path: '/about' },
@@ -18,6 +18,16 @@ const approachDropdownItems = [
   { name: 'Technology Stack', path: '/approach#technology' },
   { name: 'Outcomes Framework', path: '/approach#outcomes' },
   { name: 'AI Assessment & Implementation Framework', path: '/approach#assessment' },
+];
+
+const solutionsDropdownItems = [
+  { name: 'Process Intelligence', path: '/solutions-process-intelligence' },
+  { name: 'Operational Excellence', path: '/solutions#operational-excellence' },
+  { name: 'Digital Transformation', path: '/solutions#digital-transformation' },
+  { name: 'Robotic Automation', path: '/solutions#robotic-automation' },
+  { name: 'Agentic Automation', path: '/solutions-agentic-automation' },
+  { name: 'Capability Building', path: '/solutions#capability-building' },
+  { name: 'Continuous Optimization', path: '/solutions#continuous-optimization' },
 ];
 
 function LogoMark() {
@@ -38,21 +48,24 @@ function LogoMark() {
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isApproachDropdownOpen, setIsApproachDropdownOpen] = useState(false);
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Close dropdown when route changes
+  // Close dropdowns when route changes
   useEffect(() => {
     setIsApproachDropdownOpen(false);
+    setIsSolutionsDropdownOpen(false);
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsApproachDropdownOpen(false);
+        setIsSolutionsDropdownOpen(false);
       }
     };
 
@@ -67,14 +80,28 @@ export default function Navbar() {
     navigate('/approach');
   };
 
+  const handleSolutionsClick = (e) => {
+    e.preventDefault();
+    navigate('/solutions');
+  };
+
   const handleApproachChevronClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setIsApproachDropdownOpen(!isApproachDropdownOpen);
+    setIsSolutionsDropdownOpen(false);
+  };
+
+  const handleSolutionsChevronClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
+    setIsApproachDropdownOpen(false);
   };
 
   const handleDropdownItemClick = (path) => {
     setIsApproachDropdownOpen(false);
+    setIsSolutionsDropdownOpen(false);
     navigate(path);
   };
 
@@ -99,28 +126,35 @@ export default function Navbar() {
           <nav className="relative z-30 hidden lg:flex items-center gap-6 text-sm text-blue-50/90">
             {navItems.map((item) => {
               if (item.hasDropdown) {
+                const isApproach = item.name === 'Approach';
+                const isSolutions = item.name === 'Solutions';
+                const isDropdownOpen = isApproach ? isApproachDropdownOpen : isSolutionsDropdownOpen;
+                const dropdownItems = isApproach ? approachDropdownItems : solutionsDropdownItems;
+                const handleClick = isApproach ? handleApproachClick : handleSolutionsClick;
+                const handleChevronClick = isApproach ? handleApproachChevronClick : handleSolutionsChevronClick;
+
                 return (
-                  <div key={item.name} className="group relative inline-flex items-center gap-1 cursor-default text-blue-50/90" ref={dropdownRef}>
+                  <div key={item.name} className={`group relative inline-flex items-center cursor-default text-blue-50/90 ${isActiveRoute(item.path) ? "rounded-full border border-white/20 bg-white/10 text-white" : ""}`} ref={dropdownRef}>
                     <Link
                       to={item.path}
-                      onClick={handleApproachClick}
-                      className={`inline-flex items-center gap-1 px-3 py-1.5 transition-colors ${
+                      onClick={handleClick}
+                      className={`inline-flex items-center px-3 py-1.5 transition-colors ${
                         isActiveRoute(item.path)
-                          ? "rounded-full border border-white/20 bg-white/10 text-white"
+                          ? "text-white"
                           : "hover:text-white"
                       }`}
                     >
                       {item.name}
                     </Link>
                     <button
-                      onClick={handleApproachChevronClick}
-                      className="inline-flex items-center justify-center p-1 hover:text-white transition-colors"
-                      aria-label="Toggle Approach dropdown"
+                      onClick={handleChevronClick}
+                      className="inline-flex items-center justify-center p-0.5 hover:text-white transition-colors"
+                      aria-label={`Toggle ${item.name} dropdown`}
                     >
-                      <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isApproachDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`h-3 w-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
                     <AnimatePresence>
-                      {isApproachDropdownOpen && (
+                      {isDropdownOpen && (
                         <motion.div
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
@@ -128,7 +162,7 @@ export default function Navbar() {
                           className="absolute left-1/2 top-full z-[60] mt-3 min-w-[250px] -translate-x-1/2 rounded-2xl border border-white/10 bg-slate-950/95 p-4 shadow-2xl shadow-black/35 backdrop-blur-xl"
                         >
                           <div className="space-y-1">
-                            {approachDropdownItems.map((dropdownItem) => (
+                            {dropdownItems.map((dropdownItem) => (
                               <Link
                                 key={dropdownItem.name}
                                 to={dropdownItem.path}
@@ -191,6 +225,11 @@ export default function Navbar() {
               <div className="py-2">
                 {navItems.map((item) => {
                   if (item.hasDropdown) {
+                    const isApproach = item.name === 'Approach';
+                    const isSolutions = item.name === 'Solutions';
+                    const dropdownItems = isApproach ? approachDropdownItems : solutionsDropdownItems;
+                    const handleClick = isApproach ? handleApproachClick : handleSolutionsClick;
+
                     return (
                       <div key={item.name} className="relative">
                         <div className="flex items-center">
@@ -207,11 +246,11 @@ export default function Navbar() {
                             }`}
                           >
                             <span className="font-medium">{item.name}</span>
-                            <ChevronDown className={`h-4 w-4 transition-transform ${isApproachDropdownOpen ? 'rotate-180' : ''}`} />
+                            <ChevronDown className={`h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
                           </Link>
                         </div>
                         <AnimatePresence>
-                          {isApproachDropdownOpen && (
+                          {isDropdownOpen && (
                             <motion.div
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: 'auto' }}
@@ -220,7 +259,7 @@ export default function Navbar() {
                               className="bg-white/5 border-t border-white/10"
                             >
                               <div className="py-2">
-                                {approachDropdownItems.map((dropdownItem) => (
+                                {dropdownItems.map((dropdownItem) => (
                                   <Link
                                     key={dropdownItem.name}
                                     to={dropdownItem.path}
@@ -228,6 +267,7 @@ export default function Navbar() {
                                       navigate(dropdownItem.path);
                                       setIsMobileMenuOpen(false);
                                       setIsApproachDropdownOpen(false);
+                                      setIsSolutionsDropdownOpen(false);
                                     }}
                                     className="block w-full text-left px-8 py-2 text-sm text-blue-50/80 hover:bg-white/10 hover:text-white"
                                   >
