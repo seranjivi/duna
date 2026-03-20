@@ -381,13 +381,14 @@ export default function DuanamizeHomepage() {
           <div>
             <SectionHeader
               eyebrow=""
-              title="Ready to Accelerate Your Digital Journey?"
-              desc="Partner with experts to unlock faster, smarter transformation through proven methodologies and advanced technology—delivering measurable results from day one."
+              title="Consulting, Engineering, and Digital Transformation — One Unified Operating Model"
+              desc="We combine strategy, technology, and execution in a seamless approach.
+Simplifying complexity, accelerating growth, and delivering measurable results."
               
             />
-             <button className="inline-flex items-center gap-2 rounded-xl bg-[#0A2463] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b2d7e] transition">
+             {/* <button className="inline-flex items-center gap-2 rounded-xl bg-[#0A2463] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b2d7e] transition">
               Get Started Today <ArrowRight className="h-4 w-4" />
-            </button>
+            </button> */}
            
           </div>
 
@@ -630,11 +631,10 @@ export default function DuanamizeHomepage() {
                   Ready to Accelerate Your Digital Journey?
                 </div>
                 <h3 style={serif} className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
-                  A corporate homepage that positions Duanamize like a premium consulting brand
+                  Ready to Accelerate Your Digital Journey?
                 </h3>
                 <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-blue-100/85">
-                  This concept is designed to feel more modern, enterprise-grade, and conversion-oriented while preserving your
-                  current information architecture.
+                  Partner with experts to unlock faster, smarter transformation through proven methodologies and advanced technology—delivering measurable results from day one.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
