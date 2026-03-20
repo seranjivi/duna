@@ -626,10 +626,10 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
           <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-10">
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
+                {/* <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
                   <Sparkles className="h-3.5 w-3.5 text-cyan-300" />
                   Ready to Accelerate Your Digital Journey?
-                </div>
+                </div> */}
                 <h3 style={serif} className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
                   Ready to Accelerate Your Digital Journey?
                 </h3>
