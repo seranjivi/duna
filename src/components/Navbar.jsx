@@ -1,36 +1,162 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import React, { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Approach', path: '/approach', hasDropdown: true },
-  { name: 'Solutions', path: '/solutions', hasDropdown: true },
-  { name: 'Industries', path: '/industries' },
-  { name: 'Results', path: '/results' },
-  { name: 'About Us', path: '/about' },
+const menuData = [
+  {
+    key: "home",
+    label: "HOME",
+    path: "/",
+  },
+  {
+    key: "approach",
+    label: "APPROACH",
+    path: "/approach",
+    children: [
+      {
+        label: "LSS+AI Methodology",
+        path: "/lss",
+        items: [
+          { name: "LSS+AI vs Traditional Lean Six Sigma", path: "/lsssub1" },
+          { name: "AI-Enhanced Lean Six Sigma in 2025", path: "/lsssub2" },
+        ],
+      },
+      {
+        label: "Our Process",
+        items: [
+          { name: "Change Management for Process Improvement", path: "/our-process" },
+          { name: "4-Phase Process Improvement Framework", path: "/approach#framework" },
+        ],
+      },
+      {
+        label: "Technology Stack",
+        items: [
+          { name: "Process Improvement Technology Integration", path: "/approach#technology" },
+          { name: "Enterprise AI-Powered Technology Stack", path: "/approach#enterprise" },
+        ],
+      },
+      {
+        label: "Outcomes Framework",
+        items: [
+          { name: "Operational Excellence Performance Measurement", path: "/approach#outcomes" },
+          { name: "Process Improvement ROI Framework", path: "/approach#roi" },
+        ],
+      },
+    ],
+  },
+  {
+    key: "solutions",
+    label: "SOLUTIONS",
+    path: "/solutions",
+    children: [
+      {
+        label: "Process Intelligence",
+        items: [{ name: "AI Readiness Assessment", path: "/solutions-process-intelligence" }],
+      },
+      {
+        label: "Agentic Automation",
+        items: [{ name: "AI Implementation Best Practices", path: "/solutions-agentic-automation" }],
+      },
+      {
+        label: "Capability Building",
+        items: [{ name: "AI Readiness Assessment", path: "/solutions#capability" }],
+      },
+    ],
+  },
+  {
+    key: "industries",
+    label: "Industries",
+    path: "/industries",
+    children: [
+      {
+        label: "Healthcare",
+        items: [
+          { name: "EHR Optimization", path: "/industries#healthcare-ehr" },
+          { name: "AI-Powered Healthcare Automation", path: "/industries#healthcare-ai" },
+        ],
+      },
+      {
+        label: "Financial Services",
+        items: [
+          { name: "Banking Digital Transformation", path: "/industries#banking" },
+          { name: "Financial Compliance Automation", path: "/industries#compliance" },
+        ],
+      },
+      {
+        label: "Manufacturing",
+        items: [
+          { name: "Smart Manufacturing Transformation", path: "/industries#manufacturing" },
+          { name: "Lean Manufacturing Excellence", path: "/industries#lean" },
+        ],
+      },
+      {
+        label: "Technology",
+        items: [
+          { name: "DevOps Automation & CI/CD Optimization", path: "/industries#devops" },
+          { name: "Cloud Migration & Infrastructure Automation", path: "/industries#cloud" },
+        ],
+      },
+      {
+        label: "Additional Industries",
+        items: [
+          { name: "Energy & Utilities Automation", path: "/industries#energy" },
+          { name: "Retail Digital Transformation", path: "/industries#retail" },
+        ],
+      },
+      {
+        label: "Training services",
+        items: [
+          { name: "Healthcare Training Services", path: "/industries#healthcare-training" },
+          { name: "Leadership Training Services", path: "/industries#leadership" },
+        ],
+      },
+    ],
+  },
+  {
+    key: "results",
+    label: "RESULTS",
+    path: "/results",
+    children: [
+      { label: "Case Studies", items: [{ name: "Case Studies", path: "/results#case-studies" }] },
+      { label: "Impact Metrics", items: [{ name: "Impact Metrics", path: "/results#metrics" }] },
+      { label: "Client Stories", items: [{ name: "Client Stories", path: "/results#stories" }] },
+      { label: "Transformation Journeys", items: [{ name: "Transformation Journeys", path: "/results#journeys" }] },
+    ],
+  },
+  {
+    key: "about",
+    label: "About Us",
+    path: "/about",
+  },
+  {
+    key: "more",
+    label: "More",
+    children: [
+      { label: "Partner Inquiries", items: [{ name: "Partner Inquiries", path: "/partners" }] },
+      { label: "Careers", items: [{ name: "Careers", path: "/careers" }] },
+      { label: "FAQ", items: [{ name: "FAQ", path: "/faq" }] },
+    ],
+  },
+  {
+    key: "contact",
+    label: "Contact US",
+    path: "/contact",
+  },
 ];
 
-const approachDropdownItems = [
-  { name: 'LSS+AI Methodology', path: '/lss-ai-revolution' },
-  { name: 'Our Process', path: '/our-process' },
-  { name: 'Technology Stack', path: '/approach#technology' },
-  { name: 'Outcomes Framework', path: '/approach#outcomes' },
-  { name: 'AI Assessment & Implementation Framework', path: '/approach#assessment' },
-];
+const fade = {
+  initial: { opacity: 0, y: 8 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 8 },
+  transition: { duration: 0.18, ease: "easeOut" },
+};
 
-const solutionsDropdownItems = [
-  { name: 'Process Intelligence', path: '/solutions-process-intelligence' },
-  { name: 'Operational Excellence', path: '/solutions#operational-excellence' },
-  { name: 'Digital Transformation', path: '/solutions#digital-transformation' },
-  { name: 'Robotic Automation', path: '/solutions#robotic-automation' },
-  { name: 'Agentic Automation', path: '/solutions-agentic-automation' },
-  { name: 'Capability Building', path: '/solutions#capability-building' },
-  { name: 'Continuous Optimization', path: '/solutions#continuous-optimization' },
-];
+function cn(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
-function LogoMark() {
+function Logo() {
   return (
     <div className="flex items-center gap-3">
       <div className="relative h-10 w-10 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-700 shadow-lg shadow-blue-900/30 ring-1 ring-white/25">
@@ -45,266 +171,292 @@ function LogoMark() {
   );
 }
 
-export default function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isApproachDropdownOpen, setIsApproachDropdownOpen] = useState(false);
-  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
-  const location = useLocation();
+function MobileGroup({ section }) {
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Close dropdowns when route changes
-  useEffect(() => {
-    setIsApproachDropdownOpen(false);
-    setIsSolutionsDropdownOpen(false);
-    setIsMobileMenuOpen(false);
-  }, [location.pathname]);
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsApproachDropdownOpen(false);
-        setIsSolutionsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  const handleApproachClick = (e) => {
-    e.preventDefault();
-    navigate('/approach');
-  };
-
-  const handleSolutionsClick = (e) => {
-    e.preventDefault();
-    navigate('/solutions');
-  };
-
-  const handleApproachChevronClick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsApproachDropdownOpen(!isApproachDropdownOpen);
-    setIsSolutionsDropdownOpen(false);
-  };
-
-  const handleSolutionsChevronClick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
-    setIsApproachDropdownOpen(false);
-  };
-
-  const handleDropdownItemClick = (path) => {
-    setIsApproachDropdownOpen(false);
-    setIsSolutionsDropdownOpen(false);
-    navigate(path);
-  };
-
-  const isActiveRoute = (path) => {
-    if (path === '/') {
-      return location.pathname === '/';
-    }
-    return location.pathname.startsWith(path);
-  };
+  if (!section.children) {
+    return (
+      <Link
+        to={section.path || "#"}
+        onClick={() => {
+          // Close mobile menu after navigation
+          const mobileMenu = document.querySelector('[aria-label="Close menu"]')?.closest('button');
+          if (mobileMenu) mobileMenu.click();
+        }}
+        className="flex items-center justify-between rounded-2xl border border-white/20 bg-white/10 px-4 py-4 text-sm font-medium text-white backdrop-blur-sm"
+      >
+        {section.label}
+        <ChevronRight className="h-4 w-4 text-blue-100/60" />
+      </Link>
+    );
+  }
 
   return (
-    <header className="sticky top-0 z-40 bg-[#071857] backdrop-blur-lg border-b border-white/10">
-      <div className="mx-auto max-w-7xl px-4 py-5 md:px-8">
-        <div className="flex items-center justify-between w-full">
-          <div className="flex-1 flex justify-start">
-            <Link to="/" className="flex items-center">
-              <LogoMark />
-            </Link>
-          </div>
-          
-          {/* Desktop Navigation - Perfectly Centered */}
-          <nav className="relative z-30 hidden lg:flex items-center gap-6 text-sm text-blue-50/90">
-            {navItems.map((item) => {
-              if (item.hasDropdown) {
-                const isApproach = item.name === 'Approach';
-                const isSolutions = item.name === 'Solutions';
-                const isDropdownOpen = isApproach ? isApproachDropdownOpen : isSolutionsDropdownOpen;
-                const dropdownItems = isApproach ? approachDropdownItems : solutionsDropdownItems;
-                const handleClick = isApproach ? handleApproachClick : handleSolutionsClick;
-                const handleChevronClick = isApproach ? handleApproachChevronClick : handleSolutionsChevronClick;
+    <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between px-4 py-4 text-left"
+      >
+        <span className="text-sm font-medium text-white">{section.label}</span>
+        <ChevronDown className={cn("h-4 w-4 text-blue-100/60 transition", open && "rotate-180")} />
+      </button>
 
-                return (
-                  <div key={item.name} className={`group relative inline-flex items-center cursor-default text-blue-50/90 ${isActiveRoute(item.path) ? "rounded-full border border-white/20 bg-white/10 text-white" : ""}`} ref={dropdownRef}>
-                    <Link
-                      to={item.path}
-                      onClick={handleClick}
-                      className={`inline-flex items-center px-3 py-1.5 transition-colors ${
-                        isActiveRoute(item.path)
-                          ? "text-white"
-                          : "hover:text-white"
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                    <button
-                      onClick={handleChevronClick}
-                      className="inline-flex items-center justify-center p-0.5 hover:text-white transition-colors"
-                      aria-label={`Toggle ${item.name} dropdown`}
-                    >
-                      <ChevronDown className={`h-3 w-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
-                    </button>
-                    <AnimatePresence>
-                      {isDropdownOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="absolute left-1/2 top-full z-[60] mt-3 min-w-[250px] -translate-x-1/2 rounded-2xl border border-white/10 bg-slate-950/95 p-4 shadow-2xl shadow-black/35 backdrop-blur-xl"
-                        >
-                          <div className="space-y-1">
-                            {dropdownItems.map((dropdownItem) => (
-                              <Link
-                                key={dropdownItem.name}
-                                to={dropdownItem.path}
-                                onClick={() => handleDropdownItemClick(dropdownItem.path)}
-                                className="block w-full text-left px-3 py-2 text-sm text-blue-50/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                              >
-                                {dropdownItem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              }
-
-              return (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`transition-colors inline-flex items-center gap-1 px-3 py-1.5 ${
-                    isActiveRoute(item.path)
-                      ? "rounded-full border border-white/20 bg-white/10 text-white"
-                      : "hover:text-white"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
-          </nav>
-
-          <div className="flex-1 flex justify-end items-center gap-4">
-            {/* Desktop Contact Button */}
-            <button className="hidden lg:inline-flex items-center rounded-full border border-white/25 bg-transparent px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition">
-              Contact Us
-            </button>
-            
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden flex items-center gap-2 px-3 py-2 rounded-lg border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-colors"
-            >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              <span className="text-sm font-medium">Menu</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="lg:hidden mt-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden"
-            >
-              <div className="py-2">
-                {navItems.map((item) => {
-                  if (item.hasDropdown) {
-                    const isApproach = item.name === 'Approach';
-                    const isSolutions = item.name === 'Solutions';
-                    const dropdownItems = isApproach ? approachDropdownItems : solutionsDropdownItems;
-                    const handleClick = isApproach ? handleApproachClick : handleSolutionsClick;
-
-                    return (
-                      <div key={item.name} className="relative">
-                        <div className="flex items-center">
-                          <Link
-                            to={item.path}
-                            onClick={() => {
-                              navigate(item.path);
-                              setIsMobileMenuOpen(false);
-                            }}
-                            className={`flex-1 flex items-center justify-between px-4 py-3 text-left transition-colors ${
-                              isActiveRoute(item.path)
-                                ? 'bg-white/20 text-white'
-                                : 'text-blue-50/90 hover:bg-white/10 hover:text-white'
-                            }`}
-                          >
-                            <span className="font-medium">{item.name}</span>
-                            <ChevronDown className={`h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
-                          </Link>
-                        </div>
-                        <AnimatePresence>
-                          {isDropdownOpen && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.2 }}
-                              className="bg-white/5 border-t border-white/10"
-                            >
-                              <div className="py-2">
-                                {dropdownItems.map((dropdownItem) => (
-                                  <Link
-                                    key={dropdownItem.name}
-                                    to={dropdownItem.path}
-                                    onClick={() => {
-                                      navigate(dropdownItem.path);
-                                      setIsMobileMenuOpen(false);
-                                      setIsApproachDropdownOpen(false);
-                                      setIsSolutionsDropdownOpen(false);
-                                    }}
-                                    className="block w-full text-left px-8 py-2 text-sm text-blue-50/80 hover:bg-white/10 hover:text-white"
-                                  >
-                                    {dropdownItem.name}
-                                  </Link>
-                                ))}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    );
-                  }
-
-                  return (
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.18 }}
+            className="border-t border-white/10"
+          >
+            <div className="space-y-4 px-4 py-4">
+              {section.children.map((child) => (
+                <div key={child.label} className="space-y-2 rounded-xl bg-white/5 p-3">
+                  <div className="text-sm font-medium text-blue-100/90">{child.label}</div>
+                  {child.items.map((item) => (
                     <Link
                       key={item.name}
                       to={item.path}
                       onClick={() => {
-                        navigate(item.path);
-                        setIsMobileMenuOpen(false);
+                        // Close mobile menu after navigation
+                        const mobileMenu = document.querySelector('[aria-label="Close menu"]')?.closest('button');
+                        if (mobileMenu) mobileMenu.click();
                       }}
-                      className={`block px-4 py-3 transition-colors ${
-                        isActiveRoute(item.path)
-                          ? 'bg-white/20 text-white'
-                          : 'text-blue-50/90 hover:bg-white/10 hover:text-white'
-                      }`}
+                      className="flex items-center justify-between rounded-lg bg-white/10 px-3 py-2.5 text-sm text-blue-50/90 hover:bg-white/20 hover:text-white transition"
                     >
-                      {item.name}
+                      <span className="pr-3">{item.name}</span>
+                      <ChevronRight className="h-4 w-4 shrink-0 text-blue-100/60" />
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+export default function DuanamizeButterflyNavigation() {
+  const firstOpen = menuData.find((item) => item.children)?.key || "approach";
+  const [activeMain, setActiveMain] = useState(firstOpen);
+  const [previewMain, setPreviewMain] = useState(firstOpen);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const currentMain = useMemo(
+    () => menuData.find((item) => item.key === previewMain) || menuData.find((item) => item.key === activeMain),
+    [previewMain, activeMain]
+  );
+
+  const [activeSub, setActiveSub] = useState(currentMain?.children?.[0]?.label || "");
+
+  useEffect(() => {
+    if (currentMain?.children?.length) {
+      const valid = currentMain.children.some((item) => item.label === activeSub);
+      if (!valid) setActiveSub(currentMain.children[0].label);
+    }
+  }, [currentMain, activeSub]);
+
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        setMobileOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  const selectedSub = currentMain?.children?.find((item) => item.label === activeSub);
+
+  return (
+    <div className="bg-[#071857] text-slate-900">
+      <section className="sticky top-0 z-40 bg-[#071857] backdrop-blur-lg border-b border-white/10">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+          <header className="flex h-20 items-center justify-between gap-6">
+            <Link to="/" className="flex items-center">
+              <Logo />
+            </Link>
+
+            <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation">
+              {menuData.map((item) => {
+                const hasChildren = Boolean(item.children?.length);
+                const active = (previewMain || activeMain) === item.key;
+
+                if (!hasChildren) {
+                  return (
+                    <Link
+                      key={item.key}
+                      to={item.path || "#"}
+                      className="rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] text-blue-50/90 transition hover:text-white"
+                    >
+                      {item.label}
                     </Link>
                   );
-                })}
+                }
+
+                return (
+                  <button
+                    key={item.key}
+                    type="button"
+                    aria-expanded={menuOpen && active}
+                    onMouseEnter={() => {
+                      setPreviewMain(item.key);
+                      setMenuOpen(true);
+                    }}
+                    onFocus={() => {
+                      setPreviewMain(item.key);
+                      setMenuOpen(true);
+                    }}
+                    onClick={() => {
+                      setActiveMain(item.key);
+                      setPreviewMain(item.key);
+                      setMenuOpen(true);
+                    }}
+                    className={cn(
+                      "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] transition",
+                      active ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
+                    )}
+                  >
+                    {item.label}
+                    <ChevronDown className={cn("h-4 w-4 transition", active && menuOpen && "rotate-180")} />
+                  </button>
+                );
+              })}
+            </nav>
+
+            <div className="flex items-center gap-3">
+              <Link
+                to="/contact"
+                className="hidden rounded-full border border-white/25 bg-transparent px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition md:inline-flex"
+              >
+                Contact Us
+              </Link>
+              <button
+                type="button"
+                onClick={() => setMobileOpen(true)}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-colors xl:hidden"
+                aria-label="Open menu"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+            </div>
+          </header>
+        </div>
+      </section>
+
+      <section className="relative">
+        <div className="mx-auto max-w-7xl">
+          <AnimatePresence>
+            {menuOpen && currentMain?.children?.length && (
+              <motion.div
+                key={currentMain.key}
+                {...fade}
+                onMouseEnter={() => setMenuOpen(true)}
+                onMouseLeave={() => setMenuOpen(false)}
+                className="relative z-20 hidden xl:block"
+              >
+                <div className="overflow-hidden rounded-3xl border border-white/10 bg-blue-950/90 p-4 shadow-2xl shadow-blue-900/35 backdrop-blur-xl">
+                  <div className="grid grid-cols-[320px_1fr]">
+                    <div className="border-r border-white/10 p-5">
+                      <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-100/80">
+                        {currentMain.label}
+                      </div>
+                      <div className="space-y-2">
+                        {currentMain.children.map((child) => {
+                          const active = child.label === activeSub;
+                          return (
+                            <Link
+                              key={child.label}
+                              to={child.path || "#"}
+                              onMouseEnter={() => setActiveSub(child.label)}
+                              onFocus={() => setActiveSub(child.label)}
+                              onClick={() => setActiveSub(child.label)}
+                              className={cn(
+                                "flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm transition",
+                                active ? "bg-white/10 text-white" : "text-blue-50/90 hover:bg-white/10 hover:text-white"
+                              )}
+                            >
+                              <span className="pr-4 font-medium">{child.label}</span>
+                              <ChevronRight className="h-4 w-4 shrink-0" />
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="p-5">
+                      <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-100/80">
+                        {selectedSub?.label}
+                      </div>
+                      <div className="grid gap-2 sm:grid-cols-2">
+                        {selectedSub?.items?.map((item) => (
+                          <Link
+                            key={item.name}
+                            to={item.path}
+                            className="flex items-center justify-between rounded-2xl border border-white/10 px-4 py-4 text-sm text-blue-50/90 transition hover:border-white/20 hover:bg-white/10 hover:text-white"
+                          >
+                            <span className="pr-4 leading-6">{item.name}</span>
+                            <ChevronRight className="h-4 w-4 shrink-0 text-blue-100/60" />
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </section>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-blue-900/20 p-3 xl:hidden"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 12 }}
+              transition={{ duration: 0.18 }}
+              className="mx-auto h-[calc(100vh-24px)] max-w-2xl overflow-hidden rounded-[28px] bg-[#071857] shadow-[0_25px_60px_rgba(15,23,42,0.14)] border border-white/10 backdrop-blur-lg"
+            >
+              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                <Logo />
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  className="grid h-11 w-11 place-items-center rounded-xl border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-colors"
+                  aria-label="Close menu"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              <div className="h-[calc(100%-76px)] overflow-y-auto px-4 py-4">
+                <div className="mb-4 rounded-2xl bg-white/5 px-4 py-3 text-sm leading-6 text-blue-100/80 backdrop-blur-sm">
+                  Tablet and mobile version uses a simple accordion pattern to keep all three levels clear and easy to scan.
+                </div>
+                <div className="space-y-3">
+                  {menuData.map((section) => (
+                    <MobileGroup key={section.key} section={section} />
+                  ))}
+                </div>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </header>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
