@@ -14,7 +14,7 @@ const navItems = [
 
 const approachDropdownItems = [
   { name: 'LSS+AI Methodology', path: '/lss-ai-revolution' },
-  { name: 'Our Process', path: '/approach#process' },
+  { name: 'Our Process', path: '/our-process' },
   { name: 'Technology Stack', path: '/approach#technology' },
   { name: 'Outcomes Framework', path: '/approach#outcomes' },
   { name: 'AI Assessment & Implementation Framework', path: '/approach#assessment' },

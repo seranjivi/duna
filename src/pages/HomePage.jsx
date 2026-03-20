@@ -454,8 +454,8 @@ export default function DuanamizeHomepage() {
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <SectionHeader
             eyebrow="Industry Coverage"
-            title="Industry-first execution, not generic consulting"
-            desc="Designed to quickly show enterprise buyers that you understand their workflows, compliance context, and operational constraints."
+            title="Built for Your Industry, Not Generic Solutions"
+            desc="We understand the unique workflows, compliance requirements, and operational challenges of every sector—delivering practical, scalable solutions designed for real-world execution."
           />
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -503,7 +503,7 @@ export default function DuanamizeHomepage() {
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
           <SectionHeader
             eyebrow="A four-phase delivery model that executive sponsors understand"
-            desc="This section replaces generic promises with a clear operating rhythm: assess, design, implement, and scale — with measurable KPIs."
+            desc="This approach replaces generic promises with a structured delivery model—assess, design, implement, and scale-driven by clear milestones and measurable KPIs."
           />
 
           <div className="grid gap-4 md:grid-cols-2">
@@ -553,8 +553,8 @@ export default function DuanamizeHomepage() {
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
           <SectionHeader
             eyebrow="Insights & Articles"
-            title="Modernized content grid for your existing posts"
-            desc="Re-using your current categories and article titles, upgraded with editorial imagery, read-time labels, and stronger content hierarchy."
+            title="Modern Content Hub for Your Insights"
+            desc="Leverage your existing categories and articles with an enhanced layout featuring rich visuals, reading time indicators, and a more structured content experience."
           />
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
