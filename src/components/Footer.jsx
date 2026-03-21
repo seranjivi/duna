@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Globe, Linkedin, Twitter, Building2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Linkedin, Twitter, Building2, Facebook, Instagram, Youtube } from 'lucide-react';
 
 function LogoMark() {
   return (
@@ -96,6 +96,22 @@ export default function Footer() {
               <Link to="/cookies" className="text-blue-100/80 hover:text-white transition-colors">
                 Cookie Policy
               </Link>
+              
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-3">
+                <a href="https://www.facebook.com/duanamize" className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-colors">
+                  <Facebook className="h-4 w-4" />
+                </a>
+                <a href="https://www.instagram.com/duanamize" className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-colors">
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a href="https://www.youtube.com/duanamize" className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-colors">
+                  <Youtube className="h-4 w-4" />
+                </a>
+                <a href="https://www.linkedin.com/company/duanamize" className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-colors">
+                  <Linkedin className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

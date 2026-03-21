@@ -363,10 +363,10 @@ export default function DuanamizeButterflyNavigation() {
                 onMouseLeave={() => setMenuOpen(false)}
                 className="relative z-20 hidden xl:block"
               >
-                <div className="overflow-hidden rounded-3xl border border-white/10 bg-blue-950/90 p-4 shadow-2xl shadow-blue-900/35 backdrop-blur-xl">
+                <div className="overflow-hidden rounded-3xl border-4 border-white bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-6 shadow-2xl shadow-black/40 backdrop-blur-xl">
                   <div className="grid grid-cols-[320px_1fr]">
-                    <div className="border-r border-white/10 p-5">
-                      <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-100/80">
+                    <div className="border-r-2 border-white/30 p-5">
+                      <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300">
                         {currentMain.label}
                       </div>
                       <div className="space-y-2">
@@ -380,8 +380,8 @@ export default function DuanamizeButterflyNavigation() {
                               onFocus={() => setActiveSub(child.label)}
                               onClick={() => setActiveSub(child.label)}
                               className={cn(
-                                "flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm transition",
-                                active ? "bg-white/10 text-white" : "text-blue-50/90 hover:bg-white/10 hover:text-white"
+                                "flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm transition-all duration-200",
+                                active ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-100 border border-cyan-400/30" : "text-blue-100/80 hover:bg-gradient-to-r hover:from-white/10 hover:to-white/5 hover:text-white"
                               )}
                             >
                               <span className="pr-4 font-medium">{child.label}</span>
@@ -393,7 +393,7 @@ export default function DuanamizeButterflyNavigation() {
                     </div>
 
                     <div className="p-5">
-                      <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-100/80">
+                      <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300">
                         {selectedSub?.label}
                       </div>
                       <div className="grid gap-2 sm:grid-cols-2">
@@ -401,10 +401,10 @@ export default function DuanamizeButterflyNavigation() {
                           <Link
                             key={item.name}
                             to={item.path}
-                            className="flex items-center justify-between rounded-2xl border border-white/10 px-4 py-4 text-sm text-blue-50/90 transition hover:border-white/20 hover:bg-white/10 hover:text-white"
+                            className="flex items-center justify-between rounded-2xl border border-white/20 px-4 py-3 text-sm text-blue-100/90 transition-all duration-200 hover:border-cyan-400/40 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 hover:text-white"
                           >
                             <span className="pr-4 leading-6">{item.name}</span>
-                            <ChevronRight className="h-4 w-4 shrink-0 text-blue-100/60" />
+                            <ChevronRight className="h-4 w-4 shrink-0 text-cyan-300" />
                           </Link>
                         ))}
                       </div>

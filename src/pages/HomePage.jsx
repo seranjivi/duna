@@ -127,7 +127,7 @@ const serviceCards = [
   },
   {
     title: "Industries",
-    desc: "Manufacturing, BFSI, healthcare, energy, retail, and shared enterprise capabilities.",
+    desc: "Manufacturing, BFSI, healthcare, energy, retail, and shared enterprise capabilities.Click learn more should navigate to the dedicate page. ",
     image:
       "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
     icon: Globe,
@@ -163,36 +163,13 @@ const industryCards = [
       "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
     icon: HeartPulse,
   },
-  {
-    title: "Energy & Utilities",
-    desc: "Operational visibility, asset management, and resilient grid workflows.",
-    image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
-    icon: Zap,
-  },
-  {
-    title: "Retail & E-commerce",
-    desc: "Customer journey transformation and intelligent digital operations.",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
-    icon: ShoppingBag,
-  },
-  {
-    title: "Enterprise Shared Services",
-    desc: "PMO, finance, HR, and service desk workflow modernization at scale.",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
-    icon: Building2,
-  },
+ 
 ];
 
 function SectionHeader({ eyebrow, title, desc }) {
   return (
     <div className="mb-8 md:mb-10">
-      <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-blue-700 shadow-sm">
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      
       <h2 style={serif} className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight text-slate-950 leading-tight">
         {title}
       </h2>
@@ -250,27 +227,24 @@ function HeroSculpture() {
       />
 
       <div className="absolute inset-x-6 top-6 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur">
-        <div className="flex items-center justify-between text-xs text-blue-100/80">
-          <span>Enterprise Transformation Command View</span>
-          <span className="rounded-full border border-white/10 px-2 py-0.5">Live</span>
-        </div>
-        <div className="mt-3 grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 gap-2">
           {[
-            ["Programs", "18"],
-            ["Automation", "64"],
-            ["ROI Index", "+27%"],
-          ].map(([k, v]) => (
-            <div key={k} className="rounded-lg border border-white/10 bg-slate-950/30 px-2 py-2">
-              <div className="text-[10px] uppercase tracking-[0.14em] text-blue-200/70">{k}</div>
-              <div className="mt-1 text-sm font-semibold text-white">{v}</div>
+            { label: "Focus Areas", value: "AI • Process • Data" },
+            { label: "Delivery Model", value: "Consult + Build + Scale" },
+            { label: "Operating Style", value: "Executive / Outcome-led" },
+            { label: "Coverage", value: "24/7 Global Support" },
+          ].map((s) => (
+            <div key={s.label} className="rounded-lg border border-white/10 bg-slate-950/30 px-3 py-2">
+              <div className="text-[10px] uppercase tracking-[0.14em] text-blue-200/70">{s.label}</div>
+              <div className="mt-1 text-xs font-medium text-white leading-tight">{s.value}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="absolute bottom-20 left-6 right-6 rounded-xl border border-white/10 bg-slate-950/35 p-4 backdrop-blur">
+      <div className="absolute bottom-8 left-6 right-6 rounded-xl border border-white/10 bg-slate-950/35 p-4 backdrop-blur">
         <div className="flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-cyan-200/90">
-          <Network className="h-3.5 w-3.5" /> Connected delivery model
+          Connected delivery model
         </div>
         <div className="mt-1 grid grid-cols-4 items-center gap-2 text-[11px] text-blue-100/80">
           {["Assess", "Design", "Implement", "Scale"].map((step, i) => (
@@ -343,25 +317,6 @@ export default function DuanamizeHomepage() {
               Partner with Duanamize for intelligent automation, data-driven insights, and sustainable operational
               transformation that delivers measurable ROI.
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2"
-            >
-              {[
-                { label: "Focus Areas", value: "AI • Process • Data" },
-                { label: "Delivery Model", value: "Consult + Build + Scale" },
-                { label: "Operating Style", value: "Executive / Outcome-led" },
-                { label: "Coverage", value: "24/7 Global Support" },
-              ].map((s) => (
-                <div key={s.label} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur">
-                  <div className="text-[10px] uppercase tracking-[0.16em] text-blue-200/80">{s.label}</div>
-                  <div className="mt-1 text-sm font-medium text-white">{s.value}</div>
-                </div>
-              ))}
-            </motion.div>
           </div>
 
           <motion.div
@@ -599,23 +554,7 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
             ))}
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-2">
-            {[1, 2, 3].map((n) => (
-              <button
-                key={n}
-                className={`h-10 w-10 rounded-full border text-sm font-semibold ${
-                  n === 1
-                    ? "border-[#0A2463] bg-[#0A2463] text-white"
-                    : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
-                }`}
-              >
-                {n}
-              </button>
-            ))}
-            <button className="h-10 rounded-full border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-700 hover:bg-slate-50">
-              Next
-            </button>
-          </div>
+         
         </div>
       </section>
 
@@ -640,9 +579,6 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
                 <button className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50">
                   Get Started Today <ArrowRight className="h-4 w-4" />
-                </button>
-                <button className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white hover:bg-white/15">
-                  Inquire <ArrowUpRight className="h-4 w-4" />
                 </button>
               </div>
             </div>
