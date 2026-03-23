@@ -33,7 +33,7 @@ root.render(
         <Route path="our-process" element={<OurProcessPage />} />
         <Route path="our-process/change-management" element={<OurProcessSub1Page />} />
         <Route path="our-process/implementation-framework" element={<OurProcessSub2Page />} />
-        <Route path="lss-ai-revolution" element={<LSSAIPage />} />
+        <Route path="lss" element={<LSSAIPage />} />
         <Route path="lsssub1" element={<LSSSub1Page />} />
         <Route path="lsssub2" element={<LSSSub2Page />} />
         <Route path="solutions-process-intelligence" element={<SolutionsProcessIntelligencePage />} />
