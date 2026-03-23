@@ -14,8 +14,9 @@ import SolutionsProcessIntelligencePage from './src/pages/Solutions-Process Inte
 import SolutionsAgenticAutomationPage from './src/pages/Solutions-Agentic Automation.jsx';
 import SolutionsPage from './src/pages/SolutionsPage.jsx';
 import IndustriesPage from './src/pages/IndustriesPage.jsx';
-import ResultsPage from './src/pages/ResultsPage.jsx';
+import ResultsPage from './src/pages/results.jsx';
 import AboutPage from './src/pages/AboutPage.jsx';
+import ContactPage from './src/pages/contact.jsx';
 
 // Import Tailwind CSS
 import './src/styles.css';
@@ -41,6 +42,7 @@ root.render(
         <Route path="industries" element={<IndustriesPage />} />
         <Route path="results" element={<ResultsPage />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path="contact" element={<ContactPage />} />
       </Route>
     </Routes>
   </BrowserRouter>

@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-white">Contact Us</h4>
+          <Link to="/contact" className="text-sm font-semibold text-white hover:text-blue-200 transition-colors">CONTACT US</Link>
           <ul className="mt-3 space-y-3 text-sm text-slate-400">
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 text-slate-300" />

@@ -66,7 +66,7 @@ const menuData = [
   },
   {
     key: "industries",
-    label: "Industries",
+    label: "INDUSTRIES",
     path: "/industries",
     children: [
       {
@@ -126,23 +126,23 @@ const menuData = [
   },
   {
     key: "about",
-    label: "About Us",
+    label: "ABOUT AS",
     path: "/about",
   },
   {
     key: "more",
-    label: "More",
+    label: "MORE",
     children: [
       { label: "Partner Inquiries", items: [{ name: "Partner Inquiries", path: "/partners" }] },
       { label: "Careers", items: [{ name: "Careers", path: "/careers" }] },
       { label: "FAQ", items: [{ name: "FAQ", path: "/faq" }] },
     ],
   },
-  {
-    key: "contact",
-    label: "Contact US",
-    path: "/contact",
-  },
+  // {
+  //   key: "contact",
+  //   label: "Contact US",
+  //   path: "/contact",
+  // },
 ];
 
 const fade = {
