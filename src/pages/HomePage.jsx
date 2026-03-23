@@ -127,7 +127,7 @@ const serviceCards = [
   },
   {
     title: "Industries",
-    desc: "Manufacturing, BFSI, healthcare, energy, retail, and shared enterprise capabilities.Click learn more should navigate to the dedicate page. ",
+    desc: "Manufacturing, BFSI, healthcare, energy, retail, and shared enterprise capabilities.Click learn more.",
     image:
       "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
     icon: Globe,
@@ -166,12 +166,12 @@ const industryCards = [
  
 ];
 
-function SectionHeader({ eyebrow, title, desc }) {
+function SectionHeader({ eyebrow, title, desc, bold }) {
   return (
     <div className="mb-8 md:mb-10">
       
       <h2 style={serif} className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight text-slate-950 leading-tight">
-        {title}
+        {bold ? bold : title}
       </h2>
       <p className="mt-3 max-w-3xl text-sm md:text-lg text-slate-600 leading-relaxed">{desc}</p>
     </div>
@@ -458,7 +458,7 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
       <section className="border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
           <SectionHeader
-            eyebrow="A four-phase delivery model that executive sponsors understand"
+            bold={<p className="font-bold">A four-phase delivery model that executive sponsors understand</p>}
             desc="This approach replaces generic promises with a structured delivery model—assess, design, implement, and scale-driven by clear milestones and measurable KPIs."
           />
 
