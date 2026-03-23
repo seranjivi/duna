@@ -486,9 +486,9 @@ export default function DuanamizeOurProcessLandingPage() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 {childPages.map((item) => (
-                  <a
+                  <Link
                     key={item.title}
-                    href={item.href}
+                    to={item.href}
                     className="group rounded-[28px] border border-white/10 bg-white/10 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.14]"
                   >
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100/80">
@@ -498,10 +498,10 @@ export default function DuanamizeOurProcessLandingPage() {
                       {item.title}
                     </div>
                     <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white">
-                      Visit page
+                      View Page
                       <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

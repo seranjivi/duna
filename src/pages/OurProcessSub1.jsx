@@ -175,10 +175,12 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false, align = "left" }) {
   return (
     <div className={`mb-8 md:mb-10 ${align === "center" ? "text-center" : ""}`}>
-      <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${light ? "text-white" : "text-slate-950"}`}
@@ -211,10 +213,10 @@ function Hero() {
               <span className="text-white">Change Management Guide</span>
             </div>
 
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
+            {/* <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
               <HeartHandshake className="h-3.5 w-3.5 text-cyan-300" />
               Human-centered transformation
-            </div>
+            </div> */}
 
             <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
               Mastering Change Management in Process Improvement
@@ -289,7 +291,7 @@ function ResistanceSection() {
       <div className="absolute left-0 top-0 hidden h-full w-28 bg-[linear-gradient(180deg,rgba(10,36,99,0.04),rgba(10,36,99,0))] lg:block" />
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Understanding the human side"
+          // eyebrow="Understanding the human side"
           title="Why people resist process change even when the logic is sound"
           description="Change management starts by recognizing that resistance is not irrational. It usually reflects uncertainty, perceived loss, or pressure created by the transition itself."
         />
@@ -341,7 +343,7 @@ function StakeholderSection() {
     <section className="bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Stakeholder engagement and buy-in"
+          // eyebrow="Stakeholder engagement and buy-in"
           title="Adoption accelerates when every layer knows its role"
           description="Successful change does not depend on one announcement or one workshop. It depends on coordinated engagement across leadership, managers, and frontline teams."
         />
@@ -386,9 +388,9 @@ function EnablementSection() {
         <div className="grid gap-8 xl:grid-cols-[1.05fr_0.95fr] xl:items-start">
           <div>
             <SectionHeader
-              eyebrow="Communication and capability development"
-              title="Change becomes practical when teams know what to expect and how to succeed"
-              description="Multi-channel communication, role-based training, realistic practice environments, and post-launch support create confidence that carries adoption beyond go-live."
+              // eyebrow="Communication and capability development"
+              title="Enabling Adoption Through Communication & Capability Building"
+              description="Change becomes effective when teams clearly understand what is expected and feel equipped to succeed. A structured approach—combining multi-channel communication, role-based training, hands-on practice environments, and continuous post-launch support—builds confidence, drives engagement, and ensures adoption is sustained well beyond go-live."
             />
 
             <div className="grid gap-5 md:grid-cols-2">
@@ -426,10 +428,10 @@ function EnablementSection() {
               />
             </div>
             <div className="absolute bottom-0 right-0 w-[88%] rounded-[30px] border border-slate-200 bg-[#071857] p-6 text-white shadow-xl md:p-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
+              {/* <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
                 <Layers3 className="h-3.5 w-3.5" />
                 Reinforcement matters
-              </div>
+              </div> */}
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-4xl">
                 Training is not the finish line
               </h3>
@@ -463,7 +465,7 @@ function JourneySection() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
           light
-          eyebrow="Implementation journey"
+          // eyebrow="Implementation journey"
           title="A simple four-step change management path for process improvement"
           description="This guide can be applied as a practical operating sequence before, during, and after rollout so adoption is built deliberately rather than left to chance."
         />
@@ -475,7 +477,7 @@ function JourneySection() {
               <h3 style={serif} className="mt-3 text-3xl font-semibold leading-tight text-white">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-blue-100/82">{item.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-white">{item.text}</p>
             </div>
           ))}
         </div>
@@ -489,10 +491,9 @@ function MeasureSection() {
     <section id="measure" className="border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Measuring success"
+          // eyebrow="Measuring success"
           title="Track behavior change and business results together"
           description="Behavioral indicators reveal whether adoption is building. Business indicators confirm whether the change is producing durable value. Both matter."
-          align="center"
         />
 
         <div className="grid gap-6 xl:grid-cols-2">
@@ -502,12 +503,14 @@ function MeasureSection() {
             return (
               <div key={card.title} className={`overflow-hidden rounded-[30px] border shadow-sm ${dark ? "border-slate-900 bg-slate-950" : "border-slate-200 bg-slate-50"}`}>
                 <div className={`p-6 md:p-7 ${dark ? "border-b border-white/10" : "border-b border-slate-200 bg-white"}`}>
-                  <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl border ${dark ? "border-white/10 bg-white/5 text-cyan-300" : "border-blue-200 bg-blue-50 text-[#0A2463]"}`}>
-                    <Icon className="h-5 w-5" />
+                  <div className="flex items-center gap-4">
+                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl border ${dark ? "border-white/10 bg-white/5 text-cyan-300" : "border-blue-200 bg-blue-50 text-[#0A2463]"}`}>
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 style={serif} className={`text-3xl font-semibold leading-tight ${dark ? "text-white" : "text-slate-950"}`}>
+                      {card.title}
+                    </h3>
                   </div>
-                  <h3 style={serif} className={`mt-4 text-3xl font-semibold leading-tight ${dark ? "text-white" : "text-slate-950"}`}>
-                    {card.title}
-                  </h3>
                 </div>
                 <div className="p-6 md:p-7">
                   <div className="grid gap-3">
@@ -527,10 +530,10 @@ function MeasureSection() {
         <div className="mt-8 rounded-[30px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
+              {/* <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
                 <Target className="h-3.5 w-3.5" />
                 Final takeaway
-              </div>
+              </div> */}
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                 Effective change management turns improvement into organizational capability
               </h3>
@@ -552,7 +555,7 @@ function MeasureSection() {
                   The Complete Guide to Process Improvement Implementation: A Proven 4-Phase Framework
                 </div>
                 <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
-                  Continue to next page <ArrowRight className="h-4 w-4" />
+                  View Page <ArrowRight className="h-4 w-4" />
                 </div>
               </a>
             </div>
