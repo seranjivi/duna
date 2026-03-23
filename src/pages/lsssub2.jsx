@@ -203,10 +203,12 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false }) {
   return (
     <div className="mb-8 md:mb-10">
-      <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${light ? "text-white" : "text-slate-950"}`}
@@ -235,17 +237,17 @@ function Hero() {
             <span>•</span>
             <span>LSS+AI Methodology</span>
             <span>•</span>
-            <span className="text-white">How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 2025</span>
+            {/* <span className="text-white">How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 20254444</span> */}
           </div>
 
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
+          {/* <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
             <BrainCircuit className="h-3.5 w-3.5 text-cyan-300" />
             2025 Perspective
-          </div>
+          </div> */}
 
           <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
             How AI-Enhanced Lean Six Sigma
-            <span className="mt-2 block text-cyan-200">is revolutionizing process improvement</span>
+            <span className="mt-2 block text-cyan-200">is revolutionizing<br />process improvement in 2025</span>
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/90 md:text-lg">
@@ -316,9 +318,9 @@ function EvolutionSection() {
     <section className="border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="The evolution beyond traditional Lean Six Sigma"
-          title="From structured improvement to intelligent improvement"
-          description="Traditional Lean Six Sigma has served organizations well for decades. What is changing is not the need for discipline—it is the need for more speed, more analytical depth, and more predictive capability in increasingly complex operating environments."
+          // eyebrow="The evolution beyond traditional Lean Six Sigma"
+          title="Evolving from Structured to Intelligent Improvement"
+          description="Lean Six Sigma has consistently driven performance through structured methods. Today’s landscape demands more—faster insights, deeper analysis, and predictive capabilities to manage growing complexity."
         />
 
         <div className="grid gap-5 xl:grid-cols-3">
@@ -343,9 +345,9 @@ function CoreComponentsSection() {
     <section className="bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Core components of LSS+AI integration"
-          title="Three capabilities that change how improvement teams operate"
-          description="The strength of LSS+AI lies in how it embeds intelligence directly into the Lean Six Sigma lifecycle—automating what is slow, revealing what is hidden, and predicting what comes next."
+          // eyebrow="Core components of LSS+AI integration"
+          title="Core Components of LSS + AI Integration"
+          description="Three capabilities that transform how improvement teams operate—embedding intelligence into the Lean Six Sigma lifecycle to automate effort, uncover hidden insights, and anticipate what comes next."
         />
 
         <div className="grid gap-6 xl:grid-cols-3">
@@ -386,9 +388,9 @@ function ComparisonSection() {
     <section className="border-y border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="What changes in practice"
-          title="Traditional LSS and LSS+AI compared in an executive-friendly view"
-          description="This is where the difference becomes clear. LSS+AI does not abandon Lean Six Sigma fundamentals. It changes the speed, scale, and intelligence with which they are applied."
+          // eyebrow="What changes in practice"
+          title="Traditional vs. AI-Enhanced Lean Six Sigma: A Clear Comparison"
+          description="The difference is evident—LSS + AI builds on Lean Six Sigma fundamentals while transforming the speed, scale, and intelligence of how improvements are delivered."
         />
 
         <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-sm">
@@ -425,7 +427,7 @@ function ResultsVisualSection() {
     <section className="bg-slate-100/70">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Results at a glance"
+          // eyebrow="Results at a glance"
           title="A visual view of where AI creates measurable lift"
           description="The chart below is a directional visualization to make the message more consumable for executive readers. It highlights where LSS+AI typically outperforms traditional Lean Six Sigma in modern data-rich environments."
         />
@@ -433,11 +435,11 @@ function ResultsVisualSection() {
         <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
           <div className="grid gap-0 xl:grid-cols-[320px_1fr]">
             <div className="border-b border-slate-200 bg-[#071857] p-6 text-white xl:border-b-0 xl:border-r">
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/80">Performance lens</div>
-              <h3 style={serif} className="mt-4 text-4xl font-semibold leading-tight text-white">
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/80 text-center">Performance lens</div>
+              <h3 style={serif} className="mt-4 text-4xl font-semibold leading-tight text-white text-center">
                 Traditional vs LSS+AI
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-blue-100/85">
+              <p className="mt-4 text-sm leading-relaxed text-blue-100/85 text-center">
                 Relative scoring across areas leaders care about most: speed, analytical depth, proactive control, and sustainability.
               </p>
             </div>
@@ -490,9 +492,9 @@ function CaseStudiesSection() {
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Real-world implementation success"
-          title="Examples that make the shift tangible"
-          description="LSS+AI produces practical business results when it is applied with clear use cases, strong data, and disciplined rollout."
+          // eyebrow="Real-world implementation success"
+          title="Real-World Implementation Success: Bringing the Shift to Life"
+          description="LSS + AI delivers tangible business outcomes when applied to clear use cases, supported by strong data, and executed with disciplined implementation."
         />
 
         <div className="grid gap-6 xl:grid-cols-3">
@@ -531,9 +533,9 @@ function FrameworkSection() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
           light
-          eyebrow="Implementation framework for success"
-          title="A practical path to adopting LSS+AI"
-          description="Successful adoption depends on more than technology. It requires sound data, strong change management, skill building, and phased implementation with measurable outcomes."
+          // eyebrow="Implementation framework for success"
+          title="A Practical Approach to Adopting LSS + AI"
+          description="Successful adoption goes beyond technology—requiring strong data, effective change management, capability building, and a phased rollout with measurable results."
         />
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -548,7 +550,7 @@ function FrameworkSection() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+        {/* <div className="mt-8 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-xl md:p-7">
             <div className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200/85">Change management reminder</div>
             <h3 style={serif} className="mt-3 text-3xl font-semibold leading-tight text-white md:text-4xl">
@@ -570,7 +572,7 @@ function FrameworkSection() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -583,10 +585,10 @@ function ClosingSection() {
         <div className="rounded-[30px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
           <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
+              {/* <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
                 <TrendingUp className="h-3.5 w-3.5" />
                 Final takeaway
-              </div>
+              </div> */}
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                 The future of process improvement belongs to hybrid intelligence
               </h3>
@@ -601,14 +603,14 @@ function ClosingSection() {
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                   LSS+AI vs Traditional Lean Six Sigma: The Ultimate Comparison for Modern Organizations
                 </div>
+                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                  View page <ArrowRight className="h-4 w-4" />
+                </div>
               </a>
               <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                   How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 2025
-                </div>
-                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
-                  In this section <ArrowRight className="h-4 w-4" />
                 </div>
               </a>
             </div>
