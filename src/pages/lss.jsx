@@ -49,7 +49,7 @@ const methodologyPillars = [
 const featureCards = [
   {
     title: "LSS+AI vs Traditional Lean Six Sigma",
-    label: "Comparison page",
+    // label: "Comparison page",
     description:
       "A concise side-by-side view of why modern organizations are moving from manual, reactive improvement to hybrid intelligence.",
     href: "/lsssub1",
@@ -58,7 +58,7 @@ const featureCards = [
   },
   {
     title: "How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 2025",
-    label: "Thought leadership page",
+    // label: "Thought leadership page",
     description:
       "A modern executive narrative on how AI is changing speed, accuracy, and the future of operational excellence.",
     href: "/lsssub2",
@@ -108,10 +108,10 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false }) {
   return (
     <div className="mb-8 md:mb-10">
-      <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
+      {/* <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
         <Sparkles className="h-3.5 w-3.5" />
         {eyebrow}
-      </div>
+      </div> */}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${light ? "text-white" : "text-slate-950"}`}
@@ -141,10 +141,10 @@ function Hero() {
             <span className="text-white">LSS+AI Methodology</span>
           </div>
 
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
+          {/* <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
             <BrainCircuit className="h-3.5 w-3.5 text-cyan-300" />
             Signature methodology
-          </div>
+          </div> */}
 
           <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
             LSS+AI Methodology
@@ -216,7 +216,7 @@ function PillarsSection() {
     <section className="border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Methodology foundation"
+          // eyebrow="Methodology foundation"
           title="A short view of the model"
           description="LSS+AI is not a replacement for Lean Six Sigma. It is an evolution that strengthens improvement programs with automation, intelligence, and predictive capability."
         />
@@ -249,7 +249,7 @@ function FlowSection() {
         <div>
           <SectionHeader
             eyebrow="How it is applied"
-            title="A practical improvement flow"
+            title="How it is applied"
             description="The methodology keeps the discipline of structured improvement while using AI to shorten the path from issue discovery to measurable impact."
           />
 
@@ -308,8 +308,8 @@ function FeaturePages() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
           eyebrow="Explore this methodology"
-          title="Two focused pages under this section"
-          description="This overview page stays intentionally short. The detailed thinking lives in the focused pages below."
+          title="Explore This Methodology"
+          description="This overview keeps things intentionally brief, with detailed insights covered in the focused pages below. Dive deeper to understand the approach, intelligence, and business impact behind the model."
         />
 
         <div className="grid gap-6 xl:grid-cols-2">
@@ -318,9 +318,9 @@ function FeaturePages() {
               <div className="relative h-64 overflow-hidden">
                 <img src={item.image} alt={item.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                <div className="absolute left-4 top-4 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                {/* <div className="absolute left-4 top-4 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur"> */}
                   {item.label}
-                </div>
+                {/* </div> */}
               </div>
 
               <div className="p-6">
