@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   BarChart3,
@@ -191,10 +192,10 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false }) {
   return (
     <div className="mb-8 md:mb-10">
-      <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
+      {/* <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
         <Sparkles className="h-3.5 w-3.5" />
         {eyebrow}
-      </div>
+      </div> */}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${light ? "text-white" : "text-slate-950"}`}
@@ -226,10 +227,10 @@ function Hero() {
             <span className="text-white">Comparison</span>
           </div>
 
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
+          {/* <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
             <BrainCircuit className="h-3.5 w-3.5 text-cyan-300" />
             LSS+AI Methodology
-          </div>
+          </div> */}
 
           <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
             LSS+AI vs Traditional Lean Six Sigma
@@ -417,7 +418,7 @@ function PerformanceTable() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
           eyebrow="Comparative analysis"
-          title="Key performance indicators that matter to leadership"
+          title="Comparative analysis"
           description="The most meaningful difference is not cosmetic. It is operational. LSS+AI changes how quickly teams can diagnose issues, how deeply they can analyze complexity, and how sustainably they can hold gains over time."
         />
 
@@ -494,8 +495,8 @@ function IndustryApplications() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
           eyebrow="Industry-specific applications"
-          title="Where the difference becomes most visible"
-          description="LSS+AI becomes especially powerful where processes are high-volume, highly variable, or dependent on many moving parts that traditional analysis alone cannot easily absorb."
+          title="Industry-Specific Applications: Where the Impact Is Most Noticeable"
+          description="LSS + AI creates the most value in high-volume, dynamic, and complex process environments—where traditional analysis alone is not sufficient."
         />
 
         <div className="grid gap-6 xl:grid-cols-3">
@@ -543,7 +544,7 @@ function ImplementationStrategy() {
               <h3 style={serif} className="mt-3 text-3xl font-semibold leading-tight text-white">
                 {step.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-blue-100/82">{step.description}</p>
+              <p className="mt-3 text-sm leading-relaxed text-white">{step.description}</p>
             </div>
           ))}
         </div>
@@ -590,10 +591,10 @@ function RelatedNavigation() {
         <div className="rounded-[30px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
           <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
+              {/* <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
                 <Building2 className="h-3.5 w-3.5" />
                 Related content
-              </div>
+              </div> */}
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                 Continue exploring the LSS+AI Methodology section
               </h3>
@@ -608,7 +609,7 @@ function RelatedNavigation() {
                   LSS+AI vs Traditional Lean Six Sigma: The Ultimate Comparison for Modern Organizations
                 </div>
               </a>
-              <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+              <Link to="/lsssub2" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                   How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 2025
@@ -616,7 +617,7 @@ function RelatedNavigation() {
                 <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
                   View page <ArrowRight className="h-4 w-4" />
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

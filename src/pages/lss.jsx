@@ -331,7 +331,7 @@ function FeaturePages() {
                   to={item.href}
                   className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]"
                 >
-                  View page <ArrowRight className="h-4 w-4" />
+                  Learn more <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </article>
