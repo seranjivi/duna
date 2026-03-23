@@ -148,34 +148,12 @@ function SectionTitle({ eyebrow, title, description, light = false }) {
   );
 }
 
-function Header() {
-  return (
-    <header className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
-      <div className="flex items-center gap-3">
-        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 via-sky-500 to-indigo-600 text-lg font-bold text-white shadow-lg shadow-sky-200">
-          D
-        </div>
-        <div>
-          <div className="text-sm font-semibold tracking-[0.18em] text-[#12304A]">DUANAMIZE</div>
-          <div className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Approach</div>
-        </div>
-      </div>
-
-      <button className="rounded-full border border-sky-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A4D8C] shadow-sm transition hover:bg-sky-50">
-        Contact Us
-      </button>
-    </header>
-  );
-}
-
 function Hero({ showHeader = true }) {
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f7fbff_0%,#eef6fd_55%,#ffffff_100%)]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.14),transparent_32%)]" />
       <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-cyan-200/30 blur-3xl" />
       <div className="absolute right-0 top-10 h-80 w-80 rounded-full bg-sky-200/30 blur-3xl" />
-
-      {showHeader && <Header />}
 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pb-16 pt-2 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-20">
         <div className="pt-4 lg:pt-10">

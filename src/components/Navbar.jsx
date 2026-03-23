@@ -24,9 +24,10 @@ const menuData = [
       },
       {
         label: "Our Process",
+        path: "/our-process",
         items: [
-          { name: "Change Management for Process Improvement", path: "/our-process" },
-          { name: "4-Phase Process Improvement Framework", path: "/approach#framework" },
+          { name: "Change Management for Process Improvement", path: "/our-process/change-management" },
+          { name: "4-Phase Process Improvement Framework", path: "/our-process/implementation-framework" },
         ],
       },
       {
@@ -303,20 +304,19 @@ export default function DuanamizeButterflyNavigation() {
                 }
 
                 return (
-                  <button
+                  <Link
                     key={item.key}
-                    type="button"
-                    aria-expanded={menuOpen && active}
+                    to={item.path || "#"}
+                    onClick={() => {
+                      setActiveMain(item.key);
+                      setPreviewMain(item.key);
+                      setMenuOpen(true);
+                    }}
                     onMouseEnter={() => {
                       setPreviewMain(item.key);
                       setMenuOpen(true);
                     }}
                     onFocus={() => {
-                      setPreviewMain(item.key);
-                      setMenuOpen(true);
-                    }}
-                    onClick={() => {
-                      setActiveMain(item.key);
                       setPreviewMain(item.key);
                       setMenuOpen(true);
                     }}
@@ -327,7 +327,7 @@ export default function DuanamizeButterflyNavigation() {
                   >
                     {item.label}
                     <ChevronDown className={cn("h-4 w-4 transition", active && menuOpen && "rotate-180")} />
-                  </button>
+                  </Link>
                 );
               })}
             </nav>
