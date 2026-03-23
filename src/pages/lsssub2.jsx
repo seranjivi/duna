@@ -434,12 +434,12 @@ function ResultsVisualSection() {
 
         <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
           <div className="grid gap-0 xl:grid-cols-[320px_1fr]">
-            <div className="border-b border-slate-200 bg-[#071857] p-6 text-white xl:border-b-0 xl:border-r">
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/80 text-center">Performance lens</div>
-              <h3 style={serif} className="mt-4 text-4xl font-semibold leading-tight text-white text-center">
+            <div className="border-b border-slate-200 bg-[#071857] p-6 text-white xl:border-b-0 xl:border-r flex flex-col items-center justify-center">
+              <div className="w-full text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/80 text-left">Performance lens</div>
+              <h3 style={serif} className="mt-4 text-4xl font-semibold leading-tight text-white text-left w-full">
                 Traditional vs LSS+AI
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-blue-100/85 text-center">
+              <p className="mt-4 text-sm leading-relaxed text-blue-100/85 text-left w-full">
                 Relative scoring across areas leaders care about most: speed, analytical depth, proactive control, and sustainability.
               </p>
             </div>

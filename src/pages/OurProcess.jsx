@@ -128,16 +128,18 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false, center = false }) {
   return (
     <div className={`mb-8 md:mb-10 ${center ? "text-center" : ""}`}>
-      <div
-        className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
-          light
-            ? "border-white/20 bg-white/10 text-blue-100"
-            : "border-blue-200 bg-white text-[#0A2463]"
-        }`}
-      >
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div
+          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
+            light
+              ? "border-white/20 bg-white/10 text-blue-100"
+              : "border-blue-200 bg-white text-[#0A2463]"
+          }`}
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${
@@ -147,7 +149,7 @@ function SectionHeader({ eyebrow, title, description, light = false, center = fa
         {title}
       </h2>
       <p
-        className={`mt-3 max-w-3xl text-sm leading-relaxed md:text-lg ${
+        className={`mt-3 text-sm leading-relaxed md:text-lg whitespace-normal break-words ${
           center ? "mx-auto" : ""
         } ${light ? "text-blue-100/85" : "text-slate-600"}`}
       >
@@ -273,7 +275,7 @@ function ChildCard({ item, index }) {
             to={item.href}
             className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0A2463] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0b2d7e]"
           >
-            Open page <ArrowRight className="h-4 w-4" />
+            Learn More <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
 
@@ -314,10 +316,10 @@ export default function DuanamizeOurProcessLandingPage() {
                 <span className="text-white">Our Process</span>
               </div>
 
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
+              {/* <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
                 <Compass className="h-3.5 w-3.5 text-cyan-300" />
                 Gateway to implementation thinking
-              </div>
+              </div> */}
 
               <h1
                 style={serif}
@@ -367,10 +369,9 @@ export default function DuanamizeOurProcessLandingPage() {
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
           <SectionHeader
-            eyebrow="Overview"
+            // eyebrow="Overview"
             title="Two focused paths, one connected transformation model"
             description="The purpose of this landing page is not to repeat the full article content. It is to help visitors understand the two complementary dimensions of process improvement work: the human adoption path and the structured execution path."
-            center
           />
 
           <div id="pages" className="grid gap-6 xl:grid-cols-2">
@@ -384,7 +385,7 @@ export default function DuanamizeOurProcessLandingPage() {
       <section id="ecosystem" className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
           <SectionHeader
-            eyebrow="Process ecosystem"
+            // eyebrow="Process ecosystem"
             title="A summary visual that connects people, execution, and value realization"
             description="Rather than presenting another dense article block, this section visualizes how the broader process ecosystem works together. Change management creates adoption, structured implementation creates momentum, and governance ensures the gains are sustained."
           />
@@ -392,10 +393,10 @@ export default function DuanamizeOurProcessLandingPage() {
           <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-white shadow-sm">
             <div className="grid gap-0 xl:grid-cols-[0.78fr_1.22fr]">
               <div className="border-b border-slate-200 bg-[#071857] p-6 text-white xl:border-b-0 xl:border-r md:p-8">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
+                {/* <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
                   <Layers3 className="h-3.5 w-3.5" />
                   Summary view
-                </div>
+                </div> */}
                 <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
                   Process improvement succeeds when the system is designed as a whole
                 </h3>
@@ -471,14 +472,14 @@ export default function DuanamizeOurProcessLandingPage() {
           <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-[linear-gradient(135deg,#071857_0%,#0c2b70_48%,#0d4f87_100%)] shadow-xl shadow-blue-950/10">
             <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
+                {/* <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
                   <GitBranch className="h-3.5 w-3.5" />
                   Next step navigation
-                </div>
+                </div> */}
                 <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
                   Enter the part of the journey that matters most to your audience
                 </h2>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-blue-100/84 md:text-lg">
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white md:text-lg">
                   Use this landing page as the bridge between strategic overview and deeper content. Visitors who need adoption strategy can move into change management, while those evaluating delivery structure can move into the 4-phase implementation framework.
                 </p>
               </div>
