@@ -180,13 +180,10 @@ export default function AIHealthcareAutomationPage() {
                 <span>Solutions</span><span>•</span>
                 <span className="text-white">AI Healthcare Automation</span>
               </div>
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Sparkles className="h-3.5 w-3.5" /> Revolutionizing Patient Care
-              </div>
               <h1 style={serif} className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 AI-Powered Healthcare Automation — from clinical decision to patient outcome.
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/82 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">
                 Healthcare organizations face mounting pressure to reduce costs while maintaining high-quality
                 care. Duanamize's AI-powered automation integrates machine learning, NLP, and predictive analytics
                 to transform every layer of clinical and administrative operations.
@@ -203,7 +200,7 @@ export default function AIHealthcareAutomationPage() {
                 {evolutionStats.map((s) => (
                   <div key={s.value} className="rounded-[22px] border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
                     <div className="text-2xl font-bold text-white">{s.value}</div>
-                    <p className="mt-2 text-xs leading-relaxed text-indigo-100/76">{s.label}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-white">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -232,7 +229,7 @@ export default function AIHealthcareAutomationPage() {
                   <div className="mt-5 rounded-[22px] border border-white/10 bg-slate-950/35 p-4">
                     <div className="flex items-start gap-3">
                       <Bot className="mt-0.5 h-4 w-4 shrink-0 text-violet-300" />
-                      <p className="text-sm leading-relaxed text-indigo-100/82">
+                      <p className="text-sm leading-relaxed text-white">
                         Built for health system CIOs, clinical informatics officers, operations executives, and
                         digital transformation leaders seeking measurable, evidence-based automation outcomes.
                       </p>
@@ -250,7 +247,6 @@ export default function AIHealthcareAutomationPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <SectionBadge text="The evolution of AI in healthcare" />
               <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
                 From theoretical concept to direct patient impact.
               </h2>
@@ -304,18 +300,17 @@ export default function AIHealthcareAutomationPage() {
       {/* ── WORKFLOW AUTOMATION ── */}
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <SectionBadge text="Clinical workflow automation" />
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Automating the workflows that slow down clinical care.
             </h2>
-            <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+            <p className="mt-3 whitespace-normal text-sm leading-relaxed text-slate-600 md:text-lg">
               By automating routine tasks and optimizing care coordination, healthcare organizations enable
               clinicians to focus on high-value patient interactions that technology cannot replace.
             </p>
           </div>
 
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
+          <div className="mb-8 flex flex-wrap justify-start gap-2">
             {workflowAreas.map((area, i) => {
               const Icon = area.icon;
               return (
@@ -339,7 +334,7 @@ export default function AIHealthcareAutomationPage() {
             if (i !== activeWorkflow) return null;
             const Icon = area.icon;
             return (
-              <div key={area.label} className="mx-auto max-w-3xl rounded-[34px] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
+              <div key={area.label} className="text-left rounded-[34px] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
                 <div className="flex items-center gap-4">
                   <div className="inline-flex h-14 w-14 items-center justify-center rounded-[22px] bg-[#1a0a4a] text-white">
                     <Icon className="h-7 w-7" />
@@ -368,7 +363,6 @@ export default function AIHealthcareAutomationPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <SectionBadge text="Healthcare AI solutions" />
               <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
                 AI-powered diagnostic tools transforming patient outcomes.
               </h2>
@@ -416,9 +410,9 @@ export default function AIHealthcareAutomationPage() {
                   <h3 style={serif} className="text-3xl font-semibold leading-tight text-white">
                     From pixels to prognosis — AI sees what the human eye may miss.
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-indigo-100/82">
+                  <p className="mt-3 text-sm leading-relaxed text-white">
                     Deep learning models trained on millions of clinical images deliver diagnostic assistance
-                    that augments — not replaces — the clinician's expertise.
+                    that augments not replaces clinician's expertise.
                   </p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     {["Radiology AI", "Pathology AI", "Cardiology AI", "Ophthalmology AI"].map((item) => (
@@ -438,8 +432,7 @@ export default function AIHealthcareAutomationPage() {
       {/* ── IMPACT CARDS ── */}
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <SectionBadge text="Transformational impact" />
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Why healthcare organizations choose AI automation now.
             </h2>
@@ -467,13 +460,10 @@ export default function AIHealthcareAutomationPage() {
           <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#130838] via-[#1a0a4a] to-[#2d1060] p-8 shadow-2xl md:p-10">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-indigo-100">
-                  <Sparkles className="h-3.5 w-3.5" /> Begin your AI automation journey
-                </div>
                 <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
                   Ready to automate the routine and elevate the clinical?
                 </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-indigo-100/82 md:text-lg">
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-lg">
                   Duanamize partners with healthcare leaders to design, implement, and scale AI-powered automation
                   that delivers measurable improvements in patient outcomes, clinical efficiency, and revenue integrity.
                 </p>

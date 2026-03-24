@@ -207,16 +207,18 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false, align = "left" }) {
   return (
     <div className={`mb-8 md:mb-10 ${align === "center" ? "text-center" : ""}`}>
-      <div
-        className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
-          light
-            ? "border-white/20 bg-white/10 text-blue-100"
-            : "border-blue-200 bg-white text-[#0A2463]"
-        }`}
-      >
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div
+          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
+            light
+              ? "border-white/20 bg-white/10 text-blue-100"
+              : "border-blue-200 bg-white text-[#0A2463]"
+          }`}
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${
@@ -375,7 +377,6 @@ function StrategySection() {
         <div className="grid gap-8 xl:grid-cols-[0.94fr_1.06fr] xl:items-start">
           <div>
             <SectionHeader
-              eyebrow="Strategic planning for AI implementation"
               title="Start where value, architecture, and investment logic meet"
               description="Random experimentation rarely creates durable business value. High-performing organizations begin with strategic clarity, realistic resourcing, and a clear view of where AI will strengthen enterprise differentiation."
             />
@@ -425,11 +426,10 @@ function PilotSection() {
     <section className="border-y border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Pilot project strategy and execution"
-          title="Pilots should build momentum, not just prototypes"
-          description="A strong pilot balances business impact, feasibility, stakeholder support, and disciplined measurement. It is where the organization learns how AI will actually work in its environment."
-          align="center"
-        />
+           title="Pilots should build momentum, not just prototypes"
+           description="A strong pilot balances business impact, feasibility, stakeholder support, and disciplined measurement. It is where the organization learns how AI will actually work in its environment."
+           align="left"
+         />
 
         <div className="grid gap-6 xl:grid-cols-[1fr_0.92fr] xl:items-start">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-7">
@@ -451,7 +451,7 @@ function PilotSection() {
                   <div className="grid grid-cols-[48px_1fr] gap-4">
                     <div className="relative">
                       <div className="absolute inset-y-1 left-1/2 w-px -translate-x-1/2 bg-slate-200" />
-                      <div className="absolute bottom-0 left-0 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500 [-writing-mode:vertical-rl] rotate-180">
+                      <div className="absolute bottom-0 left-0 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                         Business impact
                       </div>
                     </div>
@@ -530,10 +530,10 @@ function ScaleSection() {
         <div className="grid gap-8 xl:grid-cols-[0.98fr_1.02fr] xl:items-start">
           <div>
             <SectionHeader
-              eyebrow="Scaling AI across the enterprise"
-              title="What works in one pilot must become repeatable across the business"
-              description="Enterprise scale requires phased rollout, standards, a center of excellence, and disciplined capability building. Without these, successful pilots remain isolated wins."
-            />
+               title="What works in one pilot must become repeatable across business"
+               description="Enterprise scale requires phased rollout, standards, a center of excellence, and disciplined capability building. Without these, successful pilots remain isolated wins."
+               align="left"
+             />
 
             <div className="space-y-4">
               {scaleSteps.map((item, index) => {
@@ -677,9 +677,9 @@ function MonitoringSection() {
 
           <div>
             <SectionHeader
-              eyebrow="Optimization essentials"
               title="Continuous improvement keeps AI relevant, accurate, and valuable"
               description="Enterprise AI is not static. Business conditions change, data changes, and user expectations evolve. Strong optimization disciplines keep the solution aligned to reality."
+              align="left"
             />
 
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-1">
@@ -715,10 +715,9 @@ function GovernanceSection() {
       <div className="absolute inset-x-0 top-0 h-56 bg-[linear-gradient(180deg,rgba(10,36,99,0.05)_0%,rgba(255,255,255,0)_100%)]" />
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Risk management and governance"
           title="Enterprise trust is built through control, resilience, and accountability"
           description="Governance is what allows AI to move safely from innovation agenda to operating backbone. It protects performance, privacy, compliance, continuity, and decision quality."
-          align="center"
+          align="left"
         />
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -775,9 +774,6 @@ function CTASection() {
         <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-white shadow-sm">
           <div className="grid gap-8 px-6 py-8 md:px-8 md:py-10 xl:grid-cols-[1.06fr_0.94fr] xl:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
-                <Sparkles className="h-3.5 w-3.5" /> Next step with Duanamize
-              </div>
               <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
                 Turn AI ambition into a scalable implementation roadmap
               </h2>

@@ -179,16 +179,18 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false, center = false }) {
   return (
     <div className={`mb-8 md:mb-10 ${center ? "text-center" : ""}`}>
-      <div
-        className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
-          light
-            ? "border-white/20 bg-white/10 text-blue-100"
-            : "border-blue-200 bg-white text-[#0A2463]"
-        }`}
-      >
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div
+          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
+            light
+              ? "border-white/20 bg-white/10 text-blue-100"
+              : "border-blue-200 bg-white text-[#0A2463]"
+          }`}
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={{ ...serif }}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${
@@ -198,7 +200,7 @@ function SectionHeader({ eyebrow, title, description, light = false, center = fa
         {title}
       </h2>
       <p
-        className={`mt-3 max-w-3xl text-sm leading-relaxed md:text-lg ${
+        className={`mt-3 whitespace-normal text-sm leading-relaxed md:text-lg ${
           center ? "mx-auto" : ""
         } ${light ? "text-blue-100/85" : "text-slate-600"}`}
       >
@@ -337,7 +339,7 @@ export default function DuanamizeAboutUsPage() {
       <section id="story" className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
           <SectionHeader
-            eyebrow="Our story"
+            // eyebrow="Our story"
             title="Founded on innovation, built for breakthrough transformation"
             description="Duanamize was established in 2022 to revolutionize operational excellence by combining proven Lean Six Sigma principles with cutting-edge artificial intelligence, addressing the complexity and speed of modern business."
           />
@@ -394,10 +396,9 @@ export default function DuanamizeAboutUsPage() {
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
           <SectionHeader
-            eyebrow="Mission, vision, and purpose"
+            // eyebrow="Mission, vision, and purpose"
             title="The principles shaping how we build transformation"
             description="Our mission, vision, and purpose form the strategic center of Duanamize. They guide how we serve clients, how we think about change, and how we design long-term value."
-            center
           />
 
           <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-white shadow-sm">
@@ -465,10 +466,8 @@ export default function DuanamizeAboutUsPage() {
       <section className="border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
           <SectionHeader
-            eyebrow="Our culture and values"
             title="The standards that shape every client engagement"
             description="Our values guide every decision as we transform organizations worldwide, driving innovation and building lasting relationships based on trust and exceptional results."
-            center
           />
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -493,7 +492,6 @@ export default function DuanamizeAboutUsPage() {
       <section id="leadership" className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
           <SectionHeader
-            eyebrow="Leadership team"
             title="Experienced leaders with deep domain and transformation expertise"
             description="Our leadership and advisory team combines global delivery experience, operational excellence depth, and people-centered transformation insight to guide client success."
           />
@@ -624,10 +622,8 @@ export default function DuanamizeAboutUsPage() {
       <section className="border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
           <SectionHeader
-            eyebrow="What makes us different"
             title="A transformation partner built for measurable business impact"
             description="We combine proven Lean Six Sigma expertise with cutting-edge artificial intelligence to deliver breakthrough results that traditional consulting alone cannot match."
-            center
           />
 
           <div className="grid gap-5 md:grid-cols-2">
@@ -659,10 +655,6 @@ export default function DuanamizeAboutUsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.16),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
         <div className="mx-auto max-w-7xl px-4 py-16 text-center md:px-8 md:py-20">
           <div className="mx-auto max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-              <Sparkles className="h-3.5 w-3.5 text-cyan-300" />
-              Ready to accelerate your digital journey?
-            </div>
             <h2 style={{ ...serif }} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
               Join industry leaders achieving breakthrough performance through LSS+AI
             </h2>

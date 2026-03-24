@@ -128,7 +128,7 @@ const menuData = [
   },
   {
     key: "about",
-    label: "ABOUT AS",
+    label: "ABOUT US",
     path: "/about",
   },
   {
@@ -243,13 +243,41 @@ function MobileGroup({ section }) {
 }
 
 export default function DuanamizeButterflyNavigation() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Set initial active item based on current location
+  const getInitialActiveItem = () => {
+    const currentPath = location.pathname;
+    
+    // Special handling for home page
+    if (currentPath === '/' || currentPath === '') {
+      return 'home';
+    }
+    
+    const activeMenuItem = menuData.find(item => {
+      if (item.path === currentPath) return true;
+      if (item.children) {
+        return item.children.some(child => {
+          if (child.path === currentPath) return true;
+          if (child.items) {
+            return child.items.some(subItem => subItem.path === currentPath);
+          }
+          return false;
+        });
+      }
+      return false;
+    });
+    
+    return activeMenuItem?.key || menuData.find((item) => item.children)?.key || "approach";
+  };
+  
+  const initialActive = getInitialActiveItem();
   const firstOpen = menuData.find((item) => item.children)?.key || "approach";
-  const [activeMain, setActiveMain] = useState(firstOpen);
-  const [previewMain, setPreviewMain] = useState(firstOpen);
+  const [activeMain, setActiveMain] = useState(initialActive);
+  const [previewMain, setPreviewMain] = useState(initialActive);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const currentMain = useMemo(
     () => menuData.find((item) => item.key === previewMain) || menuData.find((item) => item.key === activeMain),
@@ -276,6 +304,30 @@ export default function DuanamizeButterflyNavigation() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
+  // Set active menu item based on current location
+  useEffect(() => {
+    const currentPath = location.pathname;
+    
+    const activeMenuItem = menuData.find(item => {
+      if (item.path === currentPath) return true;
+      if (item.children) {
+        return item.children.some(child => {
+          if (child.path === currentPath) return true;
+          if (child.items) {
+            return child.items.some(subItem => subItem.path === currentPath);
+          }
+          return false;
+        });
+      }
+      return false;
+    });
+    
+    if (activeMenuItem) {
+      setActiveMain(activeMenuItem.key);
+      setPreviewMain(activeMenuItem.key);
+    }
+  }, [location.pathname]);
+
   const selectedSub = currentMain?.children?.find((item) => item.label === activeSub);
 
   return (
@@ -290,7 +342,7 @@ export default function DuanamizeButterflyNavigation() {
             <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation">
               {menuData.map((item) => {
                 const hasChildren = Boolean(item.children?.length);
-                const active = (previewMain || activeMain) === item.key;
+                const active = !hasChildren ? activeMain === item.key : (previewMain || activeMain) === item.key;
 
                 if (!hasChildren) {
                   return (

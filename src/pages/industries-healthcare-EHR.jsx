@@ -255,13 +255,10 @@ export default function EHROptimizationPage() {
                 <span>Solutions</span><span>•</span>
                 <span className="text-white">EHR Optimization</span>
               </div>
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Sparkles className="h-3.5 w-3.5" /> Maximizing Clinical Productivity
-              </div>
               <h1 style={serif} className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 EHR Optimization — unlock the full value of your electronic health records.
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/82 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">
                 Despite widespread EHR adoption, many healthcare providers struggle to realize the full potential
                 of their systems. Duanamize's optimization strategies address both technical and workflow dimensions
                 to dramatically improve clinical efficiency and care delivery.
@@ -325,7 +322,6 @@ export default function EHROptimizationPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <SectionBadge text="Understanding EHR challenges" />
               <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
                 Three challenge categories that block clinical efficiency.
               </h2>
@@ -362,17 +358,16 @@ export default function EHROptimizationPage() {
       {/* ── EFFICIENCY STRATEGIES ── */}
       <section id="efficiency" className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <SectionBadge text="EHR system efficiency" />
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Best practices for dramatic efficiency improvement.
             </h2>
-            <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+            <p className="mt-3 whitespace-normal text-sm leading-relaxed text-slate-600 md:text-lg">
               Strategic optimization approaches that address both technical and workflow aspects of EHR implementation.
             </p>
           </div>
 
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
+          <div className="mb-8 flex flex-wrap justify-start gap-2">
             {efficiencyTabs.map((tab, i) => {
               const Icon = tab.icon;
               return (
@@ -396,7 +391,7 @@ export default function EHROptimizationPage() {
             if (i !== activeTab) return null;
             const Icon = tab.icon;
             return (
-              <div key={tab.label} className="mx-auto max-w-3xl rounded-[34px] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
+              <div key={tab.label} className="text-left rounded-[34px] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
                 <div className="flex items-center gap-4">
                   <div className="inline-flex h-14 w-14 items-center justify-center rounded-[22px] bg-[#0A2463] text-white">
                     <Icon className="h-7 w-7" />
@@ -456,7 +451,6 @@ export default function EHROptimizationPage() {
             </div>
 
             <div>
-              <SectionBadge text="Integrated technology solutions" />
               <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
                 Clinical decision support and interoperability at scale.
               </h2>
@@ -496,7 +490,6 @@ export default function EHROptimizationPage() {
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-10">
-            <SectionBadge text="Clinical workflow improvement" />
             <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               A systematic three-phase approach to workflow transformation.
             </h2>
@@ -547,12 +540,11 @@ export default function EHROptimizationPage() {
       {/* ── ROI ── */}
       <section id="roi" className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <SectionBadge text="EHR ROI optimization" />
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Maximizing the financial and operational return on your EHR investment.
             </h2>
-            <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+            <p className="mt-3 whitespace-normal text-sm leading-relaxed text-slate-600 md:text-lg">
               Strategic improvements and efficiency gains across revenue, cost, and quality dimensions.
             </p>
           </div>
@@ -561,7 +553,7 @@ export default function EHROptimizationPage() {
               const Icon = area.icon;
               return (
                 <div key={area.title} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-xl transition">
-                  <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${area.accent} text-white shadow-lg`}>
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${area.accent} text-white shadow-lg shrink-0`}>
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-slate-950">{area.title}</h3>
@@ -586,13 +578,11 @@ export default function EHROptimizationPage() {
           <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-100">
-                  <Sparkles className="h-3.5 w-3.5" /> Start your EHR optimization journey
-                </div>
+                
                 <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
                   Transform your EHR from a burden into a clinical performance engine.
                 </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-blue-100/82 md:text-lg">
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-lg">
                   Duanamize's EHR optimization framework addresses usability, workflow, data quality, and ROI in a
                   structured, clinician-centred engagement model.
                 </p>

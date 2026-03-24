@@ -322,17 +322,19 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false, center = false }) {
   return (
     <div className={`mb-8 md:mb-10 ${center ? "text-center" : ""}`}>
-      <div
-        className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
-          light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"
-        }`}
-      >
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div
+          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
+            light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"
+          }`}
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={serif}
-        className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${
+        className={`${eyebrow ? "mt-4" : "mt-1"} text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${
           light ? "text-white" : "text-slate-950"
         }`}
       >
@@ -726,7 +728,6 @@ export default function DuanamizeTransformationJourneysPage() {
       <section id="journeys" className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <SectionHeader
-            eyebrow="Journey architecture"
             title="Three ways to understand the transformation path"
             description="The page is intentionally structured around three complementary lenses. Together they show how Duanamize frames long-horizon programs, tracks maturity progression, and aligns AI and automation adoption to business reality."
           />
@@ -744,7 +745,6 @@ export default function DuanamizeTransformationJourneysPage() {
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <SectionHeader
-                eyebrow="Maturity model"
                 title="A visible climb from baseline state to leading performance"
                 description="Instead of treating transformation as a one-time intervention, Duanamize frames it as capability growth. This stepped model makes the journey feel cumulative, strategic, and measurable over time."
               />
@@ -818,7 +818,6 @@ export default function DuanamizeTransformationJourneysPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <SectionHeader
-            eyebrow="Delivery methodology"
             title="A 4-phase rail built for clarity, momentum, and internal ownership"
             description="The methodology section is visualized as a horizontal delivery rail so visitors can quickly understand sequence, timing, deliverables, and the outcome of each phase without reading dense text blocks."
           />
@@ -867,7 +866,6 @@ export default function DuanamizeTransformationJourneysPage() {
       <section id="signature-journeys" className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <SectionHeader
-            eyebrow="Success stories and lessons learned"
             title="Signature transformation journeys that make the framework tangible"
             description="These proof-point cards translate the framework into concrete transformation narratives across healthcare, financial services, and manufacturing. Each card opens a modal for richer context and value framing."
           />
@@ -885,7 +883,7 @@ export default function DuanamizeTransformationJourneysPage() {
           <div className="grid gap-8 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
             <div>
               <SectionHeader
-                eyebrow="Why this page reads differently"
+                // eyebrow="Why this page reads differently"
                 title="Designed as a transformation map, not another templated results page"
                 description="The page avoids generic stock-layout repetition by using a roadmap-led hero, stepped maturity visualization, program cards, and on-demand modal detail. It stays inside the Duanamize brand system while giving Results a new identity."
               />
@@ -941,7 +939,7 @@ export default function DuanamizeTransformationJourneysPage() {
                 <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
                   Ready to shape your own transformation journey with clearer phases, stronger capability growth, and measurable ROI?
                 </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-blue-100/82 md:text-lg">
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-lg">
                   Duanamize combines Lean Six Sigma rigor, AI-powered operational intelligence, and enterprise delivery discipline to move organizations from assessment to sustained performance.
                 </p>
               </div>
