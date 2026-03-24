@@ -49,9 +49,14 @@ export default function SolutionsPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#071857] to-[#0A2463] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(45,212,191,0.15),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.18),transparent_35%)]" />
-        <div className="relative mx-auto max-w-7xl px-4 py-20 md:px-8 lg:py-32">
+        <div className="relative mx-auto max-w-7xl px-4 pt-5 pb-20 md:px-8 lg:pt-12 lg:pb-32">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100">
+            <div className="flex items-center gap-2 text-sm text-blue-100/70">
+              <a href="/" className="hover:text-white transition-colors">Home</a>
+              <span>/</span>
+              <span className="text-white">Solutions</span>
+            </div>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-cyan-200/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100">
               Solutions
             </div>
             <h1 style={serif} className="mt-6 text-4xl font-semibold leading-tight md:text-6xl">
@@ -67,11 +72,11 @@ export default function SolutionsPage() {
 
       {/* Solutions Grid */}
       <section className="mx-auto max-w-7xl px-4 py-20 md:px-8">
-        <div className="text-center mb-16">
+        <div className="mb-16">
           <h2 style={serif} className="text-3xl font-semibold text-[#12304A] md:text-5xl">
             Our Solution Portfolio
           </h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-slate-600 whitespace-normal">
             From strategy to implementation, we offer end-to-end solutions that drive operational excellence and business growth.
           </p>
         </div>
@@ -85,10 +90,12 @@ export default function SolutionsPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="relative">
-                <div className="text-4xl mb-4">{solution.icon}</div>
-                <h3 style={serif} className="text-2xl font-semibold text-[#12304A] mb-4">
-                  {solution.title}
-                </h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="text-4xl">{solution.icon}</div>
+                  <h3 style={serif} className="text-2xl font-semibold text-[#12304A]">
+                    {solution.title}
+                  </h3>
+                </div>
                 <p className="text-slate-600 mb-6 leading-relaxed">
                   {solution.description}
                 </p>
@@ -101,10 +108,6 @@ export default function SolutionsPage() {
                     </div>
                   ))}
                 </div>
-
-                <button className="mt-6 inline-flex items-center gap-2 text-cyan-600 font-semibold hover:gap-3 transition-all">
-                  Learn more →
-                </button>
               </div>
             </div>
           ))}
@@ -122,12 +125,9 @@ export default function SolutionsPage() {
               Let's discuss how our solutions can drive measurable results for your organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 rounded-full bg-cyan-500 text-white font-semibold hover:bg-cyan-600 transition-colors shadow-lg">
-                Get Started
-              </button>
-              <button className="px-8 py-3 rounded-full border border-white/20 bg-transparent text-white font-semibold hover:bg-white/10 transition-colors">
-                Schedule a Consultation
-              </button>
+              <a href="/about" className="px-8 py-3 rounded-full bg-cyan-500 text-white font-semibold hover:bg-cyan-600 transition-colors shadow-lg text-center">
+                Get Started Today
+              </a>
             </div>
           </div>
         </div>

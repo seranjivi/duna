@@ -17,6 +17,7 @@ const approachSections = [
       "Explore how AI strengthens Lean Six Sigma with faster insight, stronger diagnosis, and more predictive improvement.",
     image:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
+    path: "/lss",
     links: [
       "LSS+AI vs Traditional Lean Six Sigma",
       "How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 2025",
@@ -29,6 +30,7 @@ const approachSections = [
       "A practical implementation path covering change management, rollout planning, and execution structure.",
     image:
       "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80",
+    path: "/our-process",
     links: [
       "Mastering Change Management in Process Improvement",
       "The Complete Guide to Process Improvement Implementation",
@@ -41,6 +43,7 @@ const approachSections = [
       "See how system integration, enterprise platforms, and AI-enabled tooling support process improvement at scale.",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+    path: "/solutions",
     links: [
       "System Integration Best Practices for Process Improvement Technology Success",
       "Building Your Enterprise Technology Stack for AI-Powered Process Improvement",
@@ -53,22 +56,13 @@ const approachSections = [
       "Connect transformation work to measurable value through performance measurement and ROI realization.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
+    path: "/results",
     links: [
       "Performance Measurement Best Practices for Operational Excellence Programs",
       "ROI Measurement Framework for Process Improvement",
     ],
     status: "2 pages available",
-  },
-  {
-    title: "AI Assessment & Implementation Framework",
-    description:
-      "A dedicated framework page can be introduced here as the content library expands.",
-    image:
-      "https://images.unsplash.com/photo-1488229297570-58520851e868?auto=format&fit=crop&w=1400&q=80",
-    links: ["Content to be introduced"],
-    status: "No content yet",
-    comingSoon: true,
-  },
+  }
 ];
 
 const featuredInsights = [
@@ -155,7 +149,7 @@ function Hero({ showHeader = true }) {
       <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-cyan-200/30 blur-3xl" />
       <div className="absolute right-0 top-10 h-80 w-80 rounded-full bg-sky-200/30 blur-3xl" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pb-16 pt-2 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-20">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pb-32 pt-2 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-36">
         <div className="pt-4 lg:pt-10">
           <Badge>Approach</Badge>
           <div className="mt-5 text-sm text-slate-500">Home / Approach</div>
@@ -163,30 +157,11 @@ function Hero({ showHeader = true }) {
             A clearer view of how Duanamize approaches transformation
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-            This page brings together the core building blocks of the Duanamize approach — methodology, implementation process, technology enablement, and measurable outcomes — in one simpler and more visual structure.
+            This page brings together the core building blocks of the Duanamize approach methodology, implementation process, technology enablement, and measurable outcomes in one simpler and more visual structure.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <button className="rounded-full bg-[#0A4D8C] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-[#083c6b]">
-              Explore the sections
-            </button>
-            <button className="rounded-full border border-sky-200 bg-white px-6 py-3 text-sm font-semibold text-[#0A4D8C] shadow-sm transition hover:bg-sky-50">
-              View featured pages
-            </button>
-          </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {[
-              ["5", "approach areas"],
-              ["8", "content pages available"],
-              ["1", "coming soon framework"],
-            ].map(([value, label]) => (
-              <div key={label} className="rounded-[24px] border border-white/70 bg-white/80 p-5 shadow-sm backdrop-blur">
-                <div className="text-3xl font-semibold text-[#0A4D8C]">{value}</div>
-                <div className="mt-1 text-sm text-slate-600">{label}</div>
-              </div>
-            ))}
-          </div>
+         
         </div>
 
         <div className="relative lg:pt-4">
@@ -202,8 +177,8 @@ function Hero({ showHeader = true }) {
             </div>
           </div>
 
-          <div className="absolute -bottom-5 left-6 right-6 rounded-[28px] border border-white/80 bg-white/90 p-5 shadow-[0_20px_50px_rgba(14,93,164,0.14)] backdrop-blur">
-            <div className="grid gap-4 sm:grid-cols-3">
+          <div className="absolute -bottom-24 left-2 right-2 rounded-[28px] border border-white/80 bg-white/90 p-5 shadow-[0_20px_50px_rgba(14,93,164,0.14)] backdrop-blur">
+            <div className="grid gap-4 grid-cols-3">
               {[
                 ["Methodology", "LSS + AI"],
                 ["Execution", "4 core tracks"],
@@ -241,8 +216,8 @@ function ExploreSection() {
               className={`overflow-hidden rounded-[32px] border ${item.comingSoon ? "border-dashed border-sky-200 bg-sky-50/60" : "border-slate-200 bg-white"} shadow-sm`}
             >
             <div className="grid gap-0 md:grid-cols-[0.94fr_1.06fr]">
-              <div className="relative min-h-[260px] overflow-hidden">
-                <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
+              <div className="relative h-full min-h-[260px] overflow-hidden">
+                <img src={item.image} alt={item.title} className="h-full w-full object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#12304A]/70 via-[#12304A]/10 to-transparent" />
                 <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-white backdrop-blur">
                   {item.status}
@@ -264,13 +239,10 @@ function ExploreSection() {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <button className={`rounded-full px-5 py-2.5 text-sm font-semibold ${item.comingSoon ? "border border-sky-200 bg-white text-[#0A4D8C]" : "bg-[#0A4D8C] text-white"}`}>
-                    {item.comingSoon ? "Reserved for future content" : "Open section"}
-                  </button>
                   {!item.comingSoon && (
-                    <button className="rounded-full border border-sky-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A4D8C]">
-                      View pages
-                    </button>
+                    <a href={item.path || "#"} className="rounded-full border border-sky-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A4D8C] hover:bg-sky-50 transition-colors">
+                      View page
+                    </a>
                   )}
                 </div>
               </div>
@@ -290,7 +262,7 @@ function FlowSection() {
         <SectionTitle
           eyebrow="How it all connects"
           title="A simpler way to explain the full approach"
-          description="Instead of presenting the Approach section as isolated pages, this view shows the logic across the whole journey — from methodology through to measurable business outcomes."
+          description="Instead of presenting the Approach section as isolated pages, this view shows the logic across the whole journey from methodology through to measurable business outcomes."
         />
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -330,7 +302,7 @@ function FeaturedInsightsSection() {
             <div className="p-5">
               <h3 className="text-lg font-semibold leading-7 text-[#12304A]">{item.title}</h3>
               <button className="mt-5 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-[#0A4D8C] transition hover:bg-sky-100">
-                Read page
+                View Page
               </button>
             </div>
           </article>
@@ -340,42 +312,7 @@ function FeaturedInsightsSection() {
   );
 }
 
-function CTASection() {
-  return (
-    <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-      <div className="overflow-hidden rounded-[36px] bg-[linear-gradient(135deg,#0A4D8C_0%,#1261a7_45%,#37b7d7_100%)] p-8 shadow-[0_24px_70px_rgba(14,93,164,0.22)] md:p-10">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-100/90">Next step</div>
-            <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
-              Ready to connect methodology, execution, technology, and value?
-            </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-sky-100/90 md:text-base">
-              This streamlined Approach page provides a cleaner foundation for the detailed subpages underneath it while staying aligned with the premium visual language already established.
-            </p>
-          </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-[24px] border border-white/20 bg-white/10 p-5 text-white backdrop-blur">
-              <div className="text-xs uppercase tracking-[0.18em] text-sky-100/75">Primary use</div>
-              <div className="mt-2 text-lg font-semibold">Approach landing page</div>
-            </div>
-            <div className="rounded-[24px] border border-white/20 bg-white/10 p-5 text-white backdrop-blur">
-              <div className="text-xs uppercase tracking-[0.18em] text-sky-100/75">Visual direction</div>
-              <div className="mt-2 text-lg font-semibold">Light, premium, image-led</div>
-            </div>
-            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A4D8C] transition hover:bg-sky-50">
-              Discuss the page direction
-            </button>
-            <button className="rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-              View related content
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function ApproachPage({ showHeader = true }) {
   return (
@@ -384,7 +321,6 @@ export default function ApproachPage({ showHeader = true }) {
       <ExploreSection />
       <FlowSection />
       <FeaturedInsightsSection />
-      <CTASection />
     </div>
   );
 }
