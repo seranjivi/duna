@@ -53,7 +53,7 @@ const menuData = [
     children: [
       {
         label: "Process Intelligence",
-        items: [{ name: "AI Readiness Assessment", path: "/solutions-process-intelligence" }],
+        items: [{ name: "AI Readiness", path: "/solutions-process-intelligence" }],
       },
       {
         label: "Agentic Automation",
@@ -61,7 +61,7 @@ const menuData = [
       },
       {
         label: "Capability Building",
-        items: [{ name: "AI Readiness Assessment", path: "/solutions-capability" }],
+        items: [{ name: "AI Capability Development", path: "/solutions-capability" }],
       },
     ],
   },
@@ -72,44 +72,45 @@ const menuData = [
     children: [
       {
         label: "Healthcare",
+        path: "/industries-healthcare",
         items: [
-          { name: "EHR Optimization", path: "/industries#healthcare-ehr" },
-          { name: "AI-Powered Healthcare Automation", path: "/industries#healthcare-ai" },
+          { name: "EHR Optimization", path: "/industries-healthcare-ehr" },
+          { name: "AI-Powered Healthcare Automation", path: "/industries-healthcare-ai" },
         ],
       },
       {
         label: "Financial Services",
         items: [
-          { name: "Banking Digital Transformation", path: "/industries#banking" },
-          { name: "Financial Compliance Automation", path: "/industries#compliance" },
+          { name: "Banking Digital Transformation", path: "/industries-banking" },
+          { name: "Financial Compliance Automation", path: "/industries-compliance" },
         ],
       },
       {
         label: "Manufacturing",
         items: [
-          { name: "Smart Manufacturing Transformation", path: "/industries#manufacturing" },
-          { name: "Lean Manufacturing Excellence", path: "/industries#lean" },
+          { name: "Smart Manufacturing Transformation", path: "/industries-manufacturing" },
+          { name: "Lean Manufacturing Excellence", path: "/industries-lean" },
         ],
       },
       {
         label: "Technology",
         items: [
-          { name: "DevOps Automation & CI/CD Optimization", path: "/industries#devops" },
-          { name: "Cloud Migration & Infrastructure Automation", path: "/industries#cloud" },
+          { name: "DevOps Automation & CI/CD Optimization", path: "/industries-devops" },
+          { name: "Cloud Migration & Infrastructure Automation", path: "/industries-cloud" },
         ],
       },
       {
         label: "Additional Industries",
         items: [
-          { name: "Energy & Utilities Automation", path: "/industries#energy" },
-          { name: "Retail Digital Transformation", path: "/industries#retail" },
+          { name: "Energy & Utilities Automation", path: "/industries-energy" },
+          { name: "Retail Digital Transformation", path: "/industries-retail" },
         ],
       },
       {
         label: "Training services",
         items: [
-          { name: "Healthcare Training Services", path: "/industries#healthcare-training" },
-          { name: "Leadership Training Services", path: "/industries#leadership" },
+          { name: "Healthcare Training Services", path: "/industries-healthcare-training" },
+          { name: "Leadership Training Services", path: "/industries-leadership" },
         ],
       },
     ],
