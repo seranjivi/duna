@@ -215,17 +215,19 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false, align = "left" }) {
   return (
     <div className={`mb-8 md:mb-10 ${align === "center" ? "text-center" : ""}`}>
-      <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${light ? "text-white" : "text-slate-950"}`}
       >
         {title}
       </h2>
-      <p className={`mt-3 ${align === "center" ? "mx-auto" : ""} max-w-3xl text-sm leading-relaxed md:text-lg ${light ? "text-blue-100/85" : "text-slate-600"}`}>
+      <p className={`mt-3 ${align === "center" ? "mx-auto" : ""} text-sm leading-relaxed md:text-lg whitespace-normal ${light ? "text-blue-100/85" : "text-slate-600"}`}>
         {description}
       </p>
     </div>
@@ -251,10 +253,10 @@ function Hero() {
               <span className="text-white">4-Phase Framework</span>
             </div>
 
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
+            {/* <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
               <Network className="h-3.5 w-3.5 text-cyan-300" />
               Structured implementation system
-            </div>
+            </div> */}
 
             <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
               The Complete Guide to Process Improvement Implementation
@@ -348,18 +350,18 @@ function BlueprintSection() {
       <div className="absolute inset-x-0 top-0 h-28 bg-[linear-gradient(180deg,rgba(10,36,99,0.05),rgba(10,36,99,0))]" />
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Framework architecture"
-          title="A roadmap that feels engineered, not improvised"
-          description="This framework is built to move from evidence to execution without losing control. Each phase has a defined purpose, output, and handoff, which is what makes the implementation repeatable and scalable."
+          // eyebrow="Framework architecture"
+          title="Structured Framework Architecture"
+          description="Turning structured insight into reliable outcomes This framework ensures a seamless progression from insight to execution. Each phase is clearly defined with specific objectives, deliverables, and transition points enabling controlled implementation that is both repeatable and scalable across initiatives."
         />
 
         <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-slate-50 shadow-sm">
           <div className="grid gap-0 xl:grid-cols-[0.82fr_1.18fr]">
             <div className="border-b border-slate-200 bg-[#071857] p-6 text-white xl:border-b-0 xl:border-r md:p-8">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
+              {/* <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
                 <Cpu className="h-3.5 w-3.5" />
                 Control logic
-              </div>
+              </div> */}
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-4xl">
                 Every phase feeds the next with a clearer operating signal
               </h3>
@@ -415,7 +417,7 @@ function DiscoveryDesignSection() {
                         <Icon className="h-5 w-5" />
                       </div>
                     </div>
-                    <p className={`mt-4 text-sm leading-relaxed md:text-base ${dark ? "text-blue-100/82" : "text-slate-600"}`}>{block.text}</p>
+                    <p className={`mt-4 text-sm leading-relaxed md:text-base ${dark ? "text-white" : "text-slate-600"}`}>{block.text}</p>
                   </div>
                   <div className="p-6 md:p-7">
                     <div className="grid gap-3">
@@ -488,10 +490,9 @@ function RoadmapSection() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
           light
-          eyebrow="4-phase roadmap"
+          // eyebrow="4-phase roadmap"
           title="A milestone-driven implementation sequence"
           description="The handoff between phases is where many programs fail. This roadmap makes those transitions explicit so the organization always knows what has been established, what is being activated, and what must be monitored next."
-          align="center"
         />
 
         <div className="relative mt-10">
@@ -515,7 +516,7 @@ function RoadmapSection() {
                         </div>
                       </div>
 
-                      <p className="mt-4 text-sm leading-relaxed text-blue-100/84 md:text-base">{item.summary}</p>
+                      <p className="mt-4 text-sm leading-relaxed text-white md:text-base">{item.summary}</p>
 
                       <div className="mt-5 grid gap-3">
                         {item.bullets.map((point) => (
@@ -550,7 +551,7 @@ function ImplementationSection() {
         <div className="grid gap-8 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
           <div>
             <SectionHeader
-              eyebrow="Phase 3 in focus"
+              // eyebrow="Phase 3 in focus"
               title="Implementation succeeds when deployment and adoption move together"
               description="Technical rollout alone is not enough. Modern implementation requires phased delivery, pilot control, business continuity, training, and real-time performance visibility throughout the rollout window."
             />
@@ -587,10 +588,10 @@ function ImplementationSection() {
               />
             </div>
             <div className="absolute bottom-0 right-0 w-[88%] rounded-[32px] border border-slate-200 bg-[#071857] p-6 text-white shadow-xl md:p-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
+              {/* <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
                 <Workflow className="h-3.5 w-3.5" />
                 Deployment governance
-              </div>
+              </div> */}
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-4xl">
                 Controlled rollout is what turns a design into a reliable operating model
               </h3>
@@ -619,17 +620,17 @@ function OptimizationSection() {
     <section id="signals" className="bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Phase 4 in focus"
+          // eyebrow="Phase 4 in focus"
           title="Optimization is where the value becomes durable"
           description="The framework does not end at go-live. Optimization keeps improvement visible, measurable, and extensible through balanced monitoring across financial, operational, customer, and workforce dimensions."
         />
 
         <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr] xl:items-start">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
+            {/* <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
               <Gauge className="h-3.5 w-3.5" />
               Monitoring design
-            </div>
+            </div> */}
             <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
               Real-time visibility is the control system for sustained improvement
             </h3>
@@ -687,10 +688,10 @@ function ClosingSection() {
         <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
+              {/* <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
                 <Target className="h-3.5 w-3.5" />
                 Final perspective
-              </div>
+              </div> */}
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                 A proven framework gives process improvement the structure required for enterprise-grade execution
               </h3>
@@ -705,15 +706,18 @@ function ClosingSection() {
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                   Mastering Change Management in Process Improvement
                 </div>
+                 <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                  View Page <ArrowRight className="h-4 w-4" />
+                </div>
               </a>
               <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                   The Complete Guide to Process Improvement Implementation
                 </div>
-                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                {/* <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
                   4-phase framework view <ArrowRight className="h-4 w-4" />
-                </div>
+                </div> */}
               </a>
             </div>
           </div>
