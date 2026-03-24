@@ -140,16 +140,18 @@ const serviceTags = [
 function SectionHeader({ eyebrow, title, description, light = false, center = false }) {
   return (
     <div className={`mb-8 md:mb-10 ${center ? "text-center" : ""}`}>
-      <div
-        className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
-          light
-            ? "border-white/20 bg-white/10 text-blue-100"
-            : "border-blue-200 bg-white text-[#0A2463]"
-        }`}
-      >
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div
+          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
+            light
+              ? "border-white/20 bg-white/10 text-blue-100"
+              : "border-blue-200 bg-white text-[#0A2463]"
+          }`}
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${
@@ -159,7 +161,7 @@ function SectionHeader({ eyebrow, title, description, light = false, center = fa
         {title}
       </h2>
       <p
-        className={`mt-3 max-w-3xl text-sm leading-relaxed md:text-lg ${center ? "mx-auto" : ""} ${
+        className={`mt-3 whitespace-normal text-sm leading-relaxed md:text-lg ${center ? "mx-auto" : ""} ${
           light ? "text-blue-100/85" : "text-slate-600"
         }`}
       >
@@ -192,18 +194,14 @@ export default function AIReadinessPage() {
                 <span className="text-white">AI Readiness Assessment</span>
               </div>
 
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Sparkles className="h-3.5 w-3.5" /> Complete Framework for Implementation Success
-              </div>
-
               <h1 style={serif} className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 AI Readiness Assessment — before you build, know if you are ready.
               </h1>
 
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/82 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">
                 Organizations rushing into AI without proper readiness assessment face failure rates exceeding 60%.
                 Duanamize's structured framework evaluates your maturity across data, technology, culture, and
-                governance — before a single model is trained.
+                governance before a single model is trained.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -220,7 +218,7 @@ export default function AIReadinessPage() {
                 {stats.map((s) => (
                   <div key={s.value} className="rounded-[22px] border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
                     <div className="text-2xl font-bold text-white">{s.value}</div>
-                    <p className="mt-2 text-xs leading-relaxed text-blue-100/76">{s.label}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-white">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -250,7 +248,7 @@ export default function AIReadinessPage() {
                   <div className="mt-5 rounded-[22px] border border-white/10 bg-slate-950/35 p-4">
                     <div className="flex items-start gap-3">
                       <Globe2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" />
-                      <p className="text-sm leading-relaxed text-blue-100/82">
+                      <p className="text-sm leading-relaxed text-white">
                         Designed for enterprise transformation leaders, operations heads, and technology decision-makers
                         preparing for their AI journey.
                       </p>
@@ -269,7 +267,6 @@ export default function AIReadinessPage() {
           <div className="grid gap-10 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
             <div>
               <SectionHeader
-                eyebrow="Why AI projects fail"
                 title="60% of AI implementations fail without structured assessment."
                 description="Understanding the root causes of failure is the first step to avoiding them. These three failure patterns account for the overwhelming majority of unsuccessful AI deployments."
               />
@@ -301,14 +298,13 @@ export default function AIReadinessPage() {
       <section id="framework" className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <SectionHeader
-            eyebrow="Organizational maturity assessment"
             title="Four dimensions that determine your AI readiness."
             description="Comprehensive organizational assessment evaluates readiness across data infrastructure, technical capabilities, cultural readiness, and leadership commitment."
-            center
+            left
           />
 
           {/* Tab navigation */}
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
+          <div className="mb-8 flex flex-wrap justify-start gap-2">
             {maturityDimensions.map((dim, i) => (
               <button
                 key={dim.title}
@@ -329,7 +325,7 @@ export default function AIReadinessPage() {
             const Icon = dim.icon;
             if (i !== activeTab) return null;
             return (
-              <div key={dim.title} className="mx-auto max-w-3xl rounded-[34px] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
+              <div key={dim.title} className="text-left rounded-[34px] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
                 <div className="flex items-center gap-4">
                   <div className="inline-flex h-14 w-14 items-center justify-center rounded-[22px] bg-[#0A2463] text-white">
                     <Icon className="h-7 w-7" />
@@ -359,7 +355,6 @@ export default function AIReadinessPage() {
           <div className="grid gap-10 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
             <div>
               <SectionHeader
-                eyebrow="Implementation roadmap"
                 title="A phased approach that reduces risk while building capability."
                 description="Pilot projects demonstrate AI value while developing the skills and confidence necessary for scaled enterprise deployment."
               />
@@ -409,7 +404,7 @@ export default function AIReadinessPage() {
                   <h3 style={serif} className="text-3xl font-semibold leading-tight text-white">
                     AI governance is not optional — it is foundational.
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-blue-100/82">
+                  <p className="mt-3 text-sm leading-relaxed text-white">
                     Ethical AI frameworks, bias mitigation, and regulatory compliance must be built in from day one —
                     not bolted on after deployment.
                   </p>
@@ -435,7 +430,6 @@ export default function AIReadinessPage() {
 
             <div>
               <SectionHeader
-                eyebrow="Why governance matters"
                 title="Ethical AI principles built into every layer of your implementation."
                 description="Industry-specific regulations in healthcare, financial services, and other regulated sectors impose requirements that must be addressed at the architecture stage — not after go-live."
               />
@@ -485,13 +479,10 @@ export default function AIReadinessPage() {
           <div className="overflow-hidden rounded-[36px] border border-[#0A2463]/10 bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-100">
-                  <Sparkles className="h-3.5 w-3.5" /> Start your AI readiness journey
-                </div>
                 <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
                   Know your readiness before you invest. Avoid the 60% failure trap.
                 </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-blue-100/82 md:text-lg">
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-lg">
                   Organizations following Duanamize's comprehensive AI readiness assessment achieve 90% implementation
                   success rates. Let's evaluate your starting point together.
                 </p>
