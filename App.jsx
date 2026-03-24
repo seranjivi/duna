@@ -12,6 +12,7 @@ import LSSSub1Page from './src/pages/lsssub1.jsx';
 import LSSSub2Page from './src/pages/lsssub2.jsx';
 import SolutionsProcessIntelligencePage from './src/pages/Solutions-Process Intelligence.jsx';
 import SolutionsAgenticAutomationPage from './src/pages/Solutions-Agentic Automation.jsx';
+import SolutionsCapabilityPage from './src/pages/Solution-Capabilities.jsx';
 import SolutionsPage from './src/pages/SolutionsPage.jsx';
 import IndustriesPage from './src/pages/IndustriesPage.jsx';
 import ResultsPage from './src/pages/results.jsx';
@@ -38,6 +39,7 @@ root.render(
         <Route path="lsssub2" element={<LSSSub2Page />} />
         <Route path="solutions-process-intelligence" element={<SolutionsProcessIntelligencePage />} />
         <Route path="solutions-agentic-automation" element={<SolutionsAgenticAutomationPage />} />
+        <Route path="solutions-capability" element={<SolutionsCapabilityPage />} />
         <Route path="solutions" element={<SolutionsPage />} />
         <Route path="industries" element={<IndustriesPage />} />
         <Route path="results" element={<ResultsPage />} />

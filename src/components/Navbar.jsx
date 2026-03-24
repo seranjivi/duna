@@ -61,7 +61,7 @@ const menuData = [
       },
       {
         label: "Capability Building",
-        items: [{ name: "AI Readiness Assessment", path: "/solutions#capability" }],
+        items: [{ name: "AI Readiness Assessment", path: "/solutions-capability" }],
       },
     ],
   },
