@@ -80,9 +80,10 @@ const menuData = [
       },
       {
         label: "Financial Services",
+        path: "/industries-financial",
         items: [
-          { name: "Banking Digital Transformation", path: "/industries-banking" },
-          { name: "Financial Compliance Automation", path: "/industries-compliance" },
+          { name: "Banking Digital Transformation", path: "/industries-financial-banking" },
+          { name: "Financial Compliance Automation", path: "/industries-financial-compliance" },
         ],
       },
       {
