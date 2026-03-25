@@ -38,16 +38,22 @@ const featuredPages = [
     badge: "Smart Manufacturing",
     badgeColor: "border-cyan-400/30 bg-cyan-400/12 text-cyan-300",
     title: "Smart Manufacturing Revolution: Industry 4.0 Digital Transformation",
+    titleColor: "text-black",
     desc: "Cyber-physical systems, Industrial IoT, AI-driven quality control, digital twins, and smart factory architectures transforming production excellence.",
+    descColor: "text-slate-600",
     tag: "Industry 4.0",
+    link: "/manufacturing/smart-manufacturing",
   },
   {
     img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80",
     badge: "Lean & Six Sigma",
+    titleColor: "text-black",
     badgeColor: "border-indigo-400/30 bg-indigo-400/12 text-indigo-300",
     title: "Lean Manufacturing & Six Sigma: Production Excellence Through Continuous Improvement",
     desc: "Waste elimination, DMAIC methodology, statistical process control, and quality management systems for sustainable competitive advantage.",
+    descColor: "text-slate-600",
     tag: "Operational Excellence",
+    link: "/manufacturing/lean-six-sigma",
   },
 ];
 
@@ -58,7 +64,7 @@ export default function ManufacturingMainPage() {
       {/* grid overlay */}
       <div className="pointer-events-none fixed inset-0 opacity-[0.025]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
 
-      {/* ── HERO ── */}
+      {/* HERO */}
       <section className="relative overflow-hidden bg-[#071857]">
         <div className="absolute inset-0 opacity-90 bg-[radial-gradient(circle_at_14%_18%,rgba(45,212,191,0.18),transparent_30%),radial-gradient(circle_at_84%_18%,rgba(59,130,246,0.18),transparent_28%),radial-gradient(circle_at_52%_82%,rgba(255,255,255,0.06),transparent_40%)]" />
         <div className="absolute -left-16 top-12 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl" />
@@ -71,32 +77,21 @@ export default function ManufacturingMainPage() {
               <div className="flex items-center gap-2 text-sm text-blue-100/70">
                 <span>Industries</span><span>•</span><span className="text-white">Manufacturing</span>
               </div>
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Sparkles className="h-3.5 w-3.5" /> Manufacturing Transformation
-              </div>
               <h1 style={serif} className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 The future of manufacturing is{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">intelligent, lean, and connected.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A5F3FC] to-[#A5F3FC]">intelligent, lean, and connected.</span>
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white-100/82 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">
                 Duanamize helps manufacturers harness Industry 4.0 technologies, lean principles, and AI-driven
                 automation to build production systems that are faster, smarter, and more competitive — while
                 delivering measurable improvements in quality, efficiency, and cost.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#solutions" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Explore solutions <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Talk to an expert
-                </a>
-              </div>
               {/* Stats */}
               <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {stats.map((s) => (
                   <div key={s.value} className="rounded-[22px] border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
                     <div className="text-2xl font-bold text-white">{s.value}</div>
-                    <p className="mt-2 text-xs leading-relaxed text-blue-100/76">{s.label}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-white">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -133,22 +128,19 @@ export default function ManufacturingMainPage() {
 
       {/* ── WHAT IS MANUFACTURING TRANSFORMATION ── */}
       <section className="relative">
-        <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
+        <div className="absolute inset-0" style={{ background: "rgba(255,255,255,1)" }} />
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> What we do
-              </div>
               <h2 style={serif} className="text-3xl font-semibold leading-tight md:text-5xl">
                 Manufacturing transformation that goes beyond technology deployment.
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-blue-200/60 md:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-black md:text-base">
                 Modern manufacturing excellence requires more than installing machines or software. It demands a
                 holistic transformation of processes, people, and technology — aligned to production goals,
                 quality standards, and competitive requirements.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-blue-200/60 md:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
                 Duanamize brings together Industry 4.0 digital capabilities and proven operational excellence
                 methodologies — lean manufacturing, Six Sigma, and advanced automation — into a unified
                 transformation approach that delivers sustainable, measurable results across the entire
@@ -167,7 +159,7 @@ export default function ManufacturingMainPage() {
                       <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 text-white shrink-0">
                         <Icon className="h-4 w-4" />
                       </div>
-                      <p className="text-sm font-medium text-blue-100/80">{item.text}</p>
+                      <p className="text-sm font-medium text-black">{item.text}</p>
                     </div>
                   );
                 })}
@@ -208,17 +200,14 @@ export default function ManufacturingMainPage() {
         </div>
       </section>
 
-      {/* ── SOLUTIONS GRID ── */}
-      <section id="solutions" className="relative">
+      {/* SOLUTIONS GRID */}
+      <section id="solutions" className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300">
-              <Sparkles className="h-3.5 w-3.5" /> Our manufacturing solutions
-            </div>
-            <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">
+          <div className="mb-10 text-left">
+            <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               End-to-end manufacturing transformation services.
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-blue-200/60 md:text-lg">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>
               From smart factory design to lean process optimisation — every solution is built around production
               outcomes, quality targets, and operational efficiency.
             </p>
@@ -227,13 +216,17 @@ export default function ManufacturingMainPage() {
             {solutions.map((sol) => {
               const Icon = sol.icon;
               return (
-                <div key={sol.title} className="group rounded-[22px] border border-white/8 p-6 transition hover:-translate-y-1 hover:border-cyan-400/25 hover:shadow-xl" style={{ background: "rgba(255,255,255,0.03)" }}>
-                  <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${sol.color} text-white shadow-lg`}>
-                    <Icon className="h-6 w-6" />
+                <div key={sol.title} className="group rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60">
+                  <div className="flex items-center justify-center gap-4">
+                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${sol.color} text-white shadow-lg flex-shrink-0`}>
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-semibold text-slate-950">{sol.title}</h3>
+                    </div>
                   </div>
-                  <h3 className="mt-4 text-base font-semibold text-white">{sol.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-blue-200/55">{sol.desc}</p>
-                  <a href={sol.link} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cyan-400 transition group-hover:gap-2">
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600">{sol.desc}</p>
+                  <a href={sol.link} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0a1628] transition group-hover:gap-2">
                     Learn more <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
@@ -243,43 +236,40 @@ export default function ManufacturingMainPage() {
         </div>
       </section>
 
-      {/* ── WHY DUANAMIZE ── */}
-      <section className="relative">
+      {/* WHY DUANAMIZE */}
+      <section className="bg-slate-50">
         <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> What sets us apart
-              </div>
-              <h2 style={serif} className="text-3xl font-semibold leading-tight md:text-4xl mb-8">
+              <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-4xl mb-8">
                 Built for production leaders who demand measurable, sustainable results.
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {whyUs.map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.title} className="rounded-[20px] border border-white/8 p-5 transition hover:border-cyan-400/25" style={{ background: "rgba(255,255,255,0.03)" }}>
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg">
+                    <div key={item.title} className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm hover:-translate-y-1 hover:shadow-lg transition">
+                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0A2463] text-cyan-400">
                         <Icon className="h-5 w-5" />
                       </div>
-                      <div className="mt-3 text-base font-semibold text-white">{item.title}</div>
-                      <p className="mt-1 text-sm leading-relaxed text-blue-200/55">{item.text}</p>
+                      <div className="mt-3 text-base font-semibold text-slate-950">{item.title}</div>
+                      <p className="mt-1 text-sm leading-relaxed text-slate-600">{item.text}</p>
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-[24px] border border-white/8 shadow-2xl">
+            <div className="relative overflow-hidden rounded-[34px] bg-slate-950 shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1400&q=80"
                 alt="Manufacturing excellence"
-                className="h-full min-h-[460px] w-full object-cover opacity-35"
+                className="h-full min-h-[460px] w-full object-cover"
               />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(10,22,40,0.97) 0%,rgba(13,31,60,0.85) 50%,rgba(15,37,80,0.93) 100%)" }} />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0A2463]/95 via-[#071857]/85 to-[#030B1A]/95" />
               <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-300/85">
+                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-100/85">
                   <Gauge className="h-3.5 w-3.5" /> Why Duanamize Manufacturing
                 </div>
                 <div>
@@ -293,8 +283,8 @@ export default function ManufacturingMainPage() {
                   </p>
                   <div className="mt-5 grid grid-cols-2 gap-3">
                     {["LSS+AI Methodology", "Shop-Floor Proven", "Cross-Industry Expertise", "Capability Building"].map((item) => (
-                      <div key={item} className="flex items-center gap-2 rounded-xl border border-white/8 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
-                        <ShieldCheck className="h-3.5 w-3.5 text-cyan-400 shrink-0" />{item}
+                      <div key={item} className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/10 px-3 py-2 text-sm font-semibold text-white">
+                        <ShieldCheck className="h-3.5 w-3.5 text-cyan-300 shrink-0" />{item}
                       </div>
                     ))}
                   </div>
@@ -308,14 +298,13 @@ export default function ManufacturingMainPage() {
       {/* ── FEATURED DEEP-DIVE PAGES ── */}
       <section className="relative">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300">
-              <Sparkles className="h-3.5 w-3.5" /> Explore in depth
-            </div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-4xl">
               Go deeper into our manufacturing solutions.
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-blue-200/55">
+            <p className="mt-3 max-w-2xl text-sm leadhere refer the image like this same design implemnet here but content will based on this page you need to add@BankingDigitalTransformationPage.jsx#L273-306  for design use this
+
+ing-relaxed text-slate-600" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>
               Two complementary pillars — smart digital transformation and lean operational excellence — working
               together to build manufacturing organisations that lead rather than follow.
             </p>
@@ -335,9 +324,9 @@ export default function ManufacturingMainPage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 style={serif} className="text-xl font-semibold text-white leading-snug">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-blue-200/55">{card.desc}</p>
-                  <a href="#" className="mt-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-4 py-2 text-sm font-semibold text-cyan-300 transition group-hover:bg-cyan-400/15 group-hover:gap-3">
+                  <h3 style={serif} className={`text-xl font-semibold leading-snug ${card.titleColor || 'text-white'}`}>{card.title}</h3>
+                  <p className={`mt-3 text-sm leading-relaxed ${card.descColor}`}>{card.desc}</p>
+                  <a href={card.link} className="mt-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-4 py-2 text-sm font-semibold text-cyan-300 transition group-hover:bg-cyan-400/15 group-hover:gap-3">
                     Read more <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
@@ -347,31 +336,35 @@ export default function ManufacturingMainPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section id="contact" className="relative pb-16 md:pb-20">
-        <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
-        <div className="relative mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[24px] border border-cyan-400/12 p-8 md:p-10" style={{ background: "linear-gradient(135deg,rgba(13,32,64,0.9) 0%,rgba(15,37,80,0.9) 50%,rgba(10,30,69,0.9) 100%)", boxShadow: "0 0 60px rgba(56,189,248,0.05),0 25px 50px rgba(0,0,0,0.4)" }}>
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      {/* Continue Exploring */}
+      <section className="bg-slate-50 pt-0 pb-16 md:pb-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
+            <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-300">
-                  <Sparkles className="h-3.5 w-3.5" /> Start the conversation
-                </div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">
-                  Ready to transform how your manufacturing operation competes?
+                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
+                  Continue exploring manufacturing solutions
                 </h2>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-blue-200/60 md:text-lg">
-                  Whether you are modernising a production facility, deploying smart factory technology, or building
-                  lean capabilities from the ground up — Duanamize is your manufacturing transformation partner.
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+                  This manufacturing transformation page is part of our comprehensive industrial solutions offering under the Industries section.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Get started <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                  Email us
-                </a>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Manufacturing Excellence: Smart Factory & Lean Transformation
+                  </h3>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Banking Digital Transformation: From Legacy to Leadership
+                  </h3>
+                  <a href="/industries-banking-digital-transformation" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
