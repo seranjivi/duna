@@ -108,34 +108,21 @@ export default function HealthcareMainPage() {
 
             {/* Left — text */}
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Sparkles className="h-3.5 w-3.5" /> Healthcare Technology Transformation
-              </div>
 
-              <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
+              <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-[#A5F3FC] md:text-6xl">
                 Smarter healthcare starts with smarter technology.
               </h1>
 
-              <p className="mt-5 text-base leading-relaxed text-blue-100/82 md:text-lg max-w-xl">
+              <p className="mt-5 text-base leading-relaxed text-white md:text-lg max-w-xl">
                 Duanamize helps healthcare organizations optimize EHR systems, deploy AI-powered automation,
                 and transform clinical workflows — so clinicians spend more time with patients, not screens.
               </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#solutions" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Explore solutions <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Talk to an expert
-                </a>
-              </div>
-
               {/* Stats row */}
               <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {stats.map((s) => (
                   <div key={s.value} className="rounded-[20px] border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
                     <div className="text-2xl font-bold text-white">{s.value}</div>
-                    <p className="mt-1 text-[11px] leading-relaxed text-blue-100/72">{s.label}</p>
+                    <p className="mt-1 text-[11px] leading-relaxed text-white">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -181,14 +168,11 @@ export default function HealthcareMainPage() {
       {/* ── SOLUTIONS GRID ── */}
       <section id="solutions" className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-blue-900">
-              <Sparkles className="h-3.5 w-3.5" /> Our healthcare solutions
-            </div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
-              End-to-end healthcare technology services.
+              Healthcare Solutions That Deliver Outcomes
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-lg">
+            <p className="mt-3 whitespace-normal text-sm leading-relaxed text-slate-600 md:text-lg">
               From EHR optimization to AI-powered automation — every solution is built around clinical outcomes
               and operational excellence.
             </p>
@@ -198,15 +182,21 @@ export default function HealthcareMainPage() {
             {solutions.map((sol) => {
               const Icon = sol.icon;
               return (
-                <div key={sol.title} className="group rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60">
-                  <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${sol.color} text-white shadow-lg`}>
-                    <Icon className="h-6 w-6" />
+                <div key={sol.title} className="group rounded-[28px] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60">
+                  <div className="p-6 pb-0">
+                    <div className="flex items-center gap-3">
+                      <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${sol.color} text-white shadow-lg`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-slate-950">{sol.title}</h3>
+                    </div>
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-slate-950">{sol.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{sol.desc}</p>
-                  <a href={sol.link} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0A2463] transition group-hover:gap-2">
-                    Learn more <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <div className="px-6 pb-6">
+                    <p className="mt-4 text-sm leading-relaxed text-slate-600">{sol.desc}</p>
+                    {/* <a href={sol.link} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0A2463] transition group-hover:gap-2">
+                      Learn more <ArrowRight className="h-4 w-4" />
+                    </a> */}
+                  </div>
                 </div>
               );
             })}
@@ -216,7 +206,7 @@ export default function HealthcareMainPage() {
 
       {/* ── WHY DUANAMIZE ── */}
       <section className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-12">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
 
             {/* Image panel */}
@@ -253,10 +243,7 @@ export default function HealthcareMainPage() {
 
             {/* Cards */}
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-blue-900 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> What sets us apart
-              </div>
-              <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-4xl mb-8">
+              <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                 Built for healthcare leaders who demand measurable results.
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -264,11 +251,13 @@ export default function HealthcareMainPage() {
                   const Icon = item.icon;
                   return (
                     <div key={item.title} className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm hover:-translate-y-1 hover:shadow-lg transition">
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0A2463] text-white">
-                        <Icon className="h-5 w-5" />
+                      <div className="flex items-center gap-3">
+                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0A2463] text-white">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div className="text-base font-semibold text-slate-950">{item.title}</div>
                       </div>
-                      <div className="mt-3 text-base font-semibold text-slate-950">{item.title}</div>
-                      <p className="mt-1 text-sm leading-relaxed text-slate-600">{item.text}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.text}</p>
                     </div>
                   );
                 })}
@@ -281,10 +270,7 @@ export default function HealthcareMainPage() {
       {/* ── FEATURED LINKS ── */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-3 py-1 text-xs font-semibold text-teal-900">
-              <Sparkles className="h-3.5 w-3.5" /> Explore in depth
-            </div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold text-slate-950 md:text-4xl">
               Go deeper into our healthcare solutions.
             </h2>
@@ -299,20 +285,20 @@ export default function HealthcareMainPage() {
               />
               <div className="absolute inset-0 h-52 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
               <div className="absolute left-5 bottom-16 right-5">
-                <span className="rounded-full bg-cyan-500/20 border border-cyan-300/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-cyan-100">
+                {/* <span className="rounded-full bg-cyan-500/20 border border-cyan-300/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-cyan-100">
                   EHR Optimization
-                </span>
+                </span> */}
               </div>
               <div className="p-6">
                 <h3 style={serif} className="text-xl font-semibold text-slate-950">
-                  Maximizing Electronic Health Records Efficiency
+                  EHR Optimization
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   Template optimization, workflow automation, clinical decision support, and ROI enhancement
                   strategies for your EHR investment.
                 </p>
-                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#04403a] transition group-hover:gap-2">
-                  Read more <ArrowRight className="h-4 w-4" />
+                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-slate-900 transition group-hover:gap-2">
+                  Learn more <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -326,9 +312,9 @@ export default function HealthcareMainPage() {
               />
               <div className="absolute inset-0 h-52 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
               <div className="absolute left-5 bottom-16 right-5">
-                <span className="rounded-full bg-indigo-500/20 border border-indigo-300/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-indigo-100">
+                {/* <span className="rounded-full bg-indigo-500/20 border border-indigo-300/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-indigo-100">
                   AI Automation
-                </span>
+                </span> */}
               </div>
               <div className="p-6">
                 <h3 style={serif} className="text-xl font-semibold text-slate-950">
@@ -338,8 +324,8 @@ export default function HealthcareMainPage() {
                   Machine learning, NLP, and predictive analytics transforming clinical workflows, diagnostics,
                   and administrative operations across the care continuum.
                 </p>
-                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#04403a] transition group-hover:gap-2">
-                  Read more <ArrowRight className="h-4 w-4" />
+                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-slate-900 transition group-hover:gap-2">
+                  Learn more <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -353,23 +339,17 @@ export default function HealthcareMainPage() {
           <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-100">
-                  <Sparkles className="h-3.5 w-3.5" /> Start conversation
-                </div>
                 <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
                   Ready to transform how your health system uses technology?
                 </h2>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-blue-100/82 md:text-lg">
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white md:text-lg">
                   Whether you are optimizing an existing EHR, exploring AI automation, or building a full
                   digital transformation roadmap — Duanamize is the right partner to start with.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
                 <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Get started <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email us
+                  Get started today <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>

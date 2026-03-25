@@ -61,21 +61,17 @@ export default function FinancialMainPage() {
 
             {/* Text */}
             <div>
-              <h1 style={serif} className="text-4xl font-semibold leading-tight text-white md:text-6xl">
+              <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/70">
+                <a href="/industries" className="text-white hover:text-blue-200 transition-colors">Industries</a><span className="text-white">•</span>
+                <span className="text-white">Finance Services</span>
+              </div>
+              <h1 style={serif} className="mt-6 text-4xl font-semibold leading-tight text-[#A5F3FC] md:text-6xl">
                 The future of finance runs on smarter technology.
               </h1>
               <p className="mt-5 text-base leading-relaxed text-white md:text-lg max-w-xl">
                 Duanamize helps banks and financial institutions navigate digital transformation, automate compliance,
                 and deploy AI-powered fintech solutions — so they can lead the market, not just survive it.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#solutions" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Explore solutions <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Talk to an expert
-                </a>
-              </div>
 
               {/* Stats */}
               <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -133,12 +129,11 @@ export default function FinancialMainPage() {
               const Icon = sol.icon;
               return (
                 <div key={sol.title} className="group rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60">
-                  <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${sol.color} text-white shadow-lg`}><Icon className="h-6 w-6" /></div>
-                  <h3 className="mt-4 text-lg font-semibold text-slate-950">{sol.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{sol.desc}</p>
-                  <a href={sol.link} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0a1628] transition group-hover:gap-2">
-                    Learn more <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <div className="flex items-center gap-3">
+                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${sol.color} text-white shadow-lg`}><Icon className="h-6 w-6" /></div>
+                    <h3 className="text-lg font-semibold text-slate-950">{sol.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{sol.desc}</p>
                 </div>
               );
             })}
@@ -151,8 +146,8 @@ export default function FinancialMainPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="relative overflow-hidden rounded-[34px] bg-slate-950 shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1400&q=80" alt="Financial leadership" className="h-full min-h-[460px] w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#071857]/88 via-[#071857]/60 to-[#071857]/90" />
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=80" alt="Financial technology background" className="h-full min-h-[460px] w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0A2463]/95 via-[#071857]/85 to-[#030B1A]/95" />
               <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
                 <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-100/85">
                   <Landmark className="h-3.5 w-3.5" /> Why Duanamize Financial
@@ -272,14 +267,14 @@ export default function FinancialMainPage() {
               </div>
               <div className="p-6">
                 <h3 style={serif} className="text-xl font-semibold text-slate-950">
-                  Banking Digital Transformation: Leading the Fintech Innovation Revolution
+                  Banking Digital Transformation
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   Customer expectations, competitive pressures, and regulatory evolution are converging. Explore how
                   Duanamize helps banks lead the fintech revolution.
                 </p>
-                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0a1628] transition group-hover:gap-2">
-                  Read more <ArrowRight className="h-4 w-4" />
+                <a href="/industries-financial-banking" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0a1628] transition group-hover:gap-2">
+                  Learn more <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -295,14 +290,14 @@ export default function FinancialMainPage() {
               </div>
               <div className="p-6">
                 <h3 style={serif} className="text-xl font-semibold text-slate-950">
-                  Financial Compliance Automation: AI-Powered Risk Management
+                  Financial Compliance Automation
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   AML automation, regulatory reporting, and real-time transaction monitoring — turning compliance from
                   a burden into a competitive advantage.
                 </p>
-                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0a1628] transition group-hover:gap-2">
-                  Read more <ArrowRight className="h-4 w-4" />
+                <a href="/industries-financial-compliance" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0a1628] transition group-hover:gap-2">
+                  Learn more <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -326,10 +321,7 @@ export default function FinancialMainPage() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
                 <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Get started <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email us
+                  Get Started Today <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>

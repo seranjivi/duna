@@ -177,25 +177,19 @@ export default function AIHealthcareAutomationPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
               <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/70">
-                <span>Solutions</span><span>•</span>
-                <span className="text-white">AI Healthcare Automation</span>
+                <a href="/industries" className="text-white hover:text-blue-200 transition-colors">Industries</a><span className="text-white">•</span>
+                <a href="/industries-healthcare" className="text-white hover:text-blue-200 transition-colors">Healthcare</a><span className="text-white">•</span>
+                <span className="text-white">AI-Powered Healthcare</span>
               </div>
               <h1 style={serif} className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-                AI-Powered Healthcare Automation — from clinical decision to patient outcome.
+                AI-Powered Healthcare <span className="text-[#A5F3FC]">Automation from clinical decision to patient outcome.</span> 
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">
                 Healthcare organizations face mounting pressure to reduce costs while maintaining high-quality
                 care. Duanamize's AI-powered automation integrates machine learning, NLP, and predictive analytics
                 to transform every layer of clinical and administrative operations.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#applications" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Explore AI applications <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#diagnostics" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  View diagnostic tools
-                </a>
-              </div>
+            
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 {evolutionStats.map((s) => (
                   <div key={s.value} className="rounded-[22px] border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
@@ -277,10 +271,12 @@ export default function AIHealthcareAutomationPage() {
                 const Icon = app.icon;
                 return (
                   <div key={app.category} className={`rounded-[28px] border ${app.border} ${app.bg} p-5 transition hover:-translate-y-1 hover:shadow-lg`}>
-                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${app.color} text-white shadow-lg`}>
-                      <Icon className="h-6 w-6" />
+                    <div className="flex items-center gap-3">
+                      <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${app.color} text-white shadow-lg`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-base font-semibold text-slate-950">{app.category}</h3>
                     </div>
-                    <h3 className="mt-4 text-base font-semibold text-slate-950">{app.category}</h3>
                     <ul className="mt-3 space-y-2">
                       {app.items.map((item) => (
                         <li key={item} className="flex items-start gap-2 text-sm leading-relaxed text-slate-600">
@@ -442,11 +438,13 @@ export default function AIHealthcareAutomationPage() {
               const Icon = card.icon;
               return (
                 <div key={card.title} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-xl transition">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1a0a4a] text-white">
-                    <Icon className="h-6 w-6" />
+                  <div className="flex items-center gap-3">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1a0a4a] text-white">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-base font-semibold text-slate-950">{card.title}</h3>
                   </div>
-                  <h3 className="mt-4 text-base font-semibold text-slate-950">{card.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{card.text}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{card.text}</p>
                 </div>
               );
             })}
