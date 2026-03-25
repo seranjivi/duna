@@ -88,9 +88,10 @@ const menuData = [
       },
       {
         label: "Manufacturing",
+        path: "/industries-manufacturing",
         items: [
-          { name: "Smart Manufacturing Transformation", path: "/industries-manufacturing" },
-          { name: "Lean Manufacturing Excellence", path: "/industries-lean" },
+          { name: "Smart Manufacturing Transformation", path: "/industries-manufacturing-smart" },
+          { name: "Lean Manufacturing Excellence", path: "/industries-manufacturing-lean" },
         ],
       },
       {

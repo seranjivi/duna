@@ -21,6 +21,9 @@ import IndustriesHealthcarePage from './src/pages/industries-healthcare.jsx';
 import FinancialMainPage from './src/pages/FinancialMainPage.jsx';
 import FinancialComplianceAutomationPage from './src/pages/FinancialComplianceAutomationPage.jsx';
 import BankingDigitalTransformationPage from './src/pages/BankingDigitalTransformationPage.jsx';
+import ManufacturingMainPage from './src/pages/Manufacturingmain.jsx';
+import SmartManufacturingPage from './src/pages/smartmanufacturing.jsx';
+import LearnManufacturingPage from './src/pages/learnmanufacturing.jsx';
 import ResultsPage from './src/pages/results.jsx';
 import AboutPage from './src/pages/AboutPage.jsx';
 import ContactPage from './src/pages/contact.jsx';
@@ -54,6 +57,9 @@ root.render(
         <Route path="industries-financial" element={<FinancialMainPage />} />
         <Route path="industries-financial-banking" element={<BankingDigitalTransformationPage />} />
         <Route path="industries-financial-compliance" element={<FinancialComplianceAutomationPage />} />
+        <Route path="industries-manufacturing" element={<ManufacturingMainPage />} />
+        <Route path="industries-manufacturing-smart" element={<SmartManufacturingPage />} />
+        <Route path="industries-manufacturing-lean" element={<LearnManufacturingPage />} />
         <Route path="results" element={<ResultsPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="contact" element={<ContactPage />} />
