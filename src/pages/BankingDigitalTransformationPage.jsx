@@ -84,23 +84,16 @@ export default function BankingDigitalTransformationPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <div className="flex items-center gap-2 text-sm text-blue-100/60 mb-5">
-                <span>Solutions</span><span>•</span><span className="text-white">Banking Digital Transformation</span>
+                <a href="/industries" className="text-white hover:text-blue-200 transition-colors">Industries</a><span>•</span><a href="/industries-financial" className="text-white hover:text-blue-200 transition-colors">Finance Services</a><span>•</span><span className="text-white">Banking Digital Transformation</span>
               </div>
               <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight text-white md:text-6xl">
-                Banking digital transformation — from legacy to leadership.
+                <span>Banking digital transformation      </span>
+                <span className="text-[#A5F3FC]"> from legacy to leadership</span>
               </h1>
               <p className="mt-5 text-base leading-relaxed text-white md:text-lg max-w-xl">
                 Digital transformation has evolved from a competitive advantage to an existential necessity. Duanamize
                 helps financial institutions reimagine operations, enhance customer experiences, and drive sustainable growth.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#innovation" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Explore innovations <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#trends" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  View tech trends
-                </a>
-              </div>
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 {stats.map((s) => (
                   <div key={s.value} className="rounded-[22px] border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
@@ -277,32 +270,41 @@ export default function BankingDigitalTransformationPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Continue Exploring */}
       <section className="bg-slate-50 pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
+            <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Lead your financial institution into the digital era.
+                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
+                  Continue exploring financial solutions
                 </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-lg">
-                  Duanamize partners with banks and financial institutions to design, implement, and scale digital
-                  transformation strategies that deliver measurable competitive advantage.
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+                  This banking transformation page is part of our comprehensive financial services offering under the Industries section.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Start transformation <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
-                </a>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Banking Digital Transformation: From Legacy to Leadership
+                  </h3>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Financial Compliance Automation: AI-Powered Risk Management
+                  </h3>
+                  <a href="/industries-financial-compliance" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+   
     </div>
   );
 }
