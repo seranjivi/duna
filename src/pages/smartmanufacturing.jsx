@@ -184,33 +184,22 @@ export default function SmartManufacturingPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <div className="flex items-center gap-2 text-sm text-blue-100/70">
-                <span>Industries</span><span>•</span><span>Manufacturing</span><span>•</span><span className="text-white">Smart Manufacturing</span>
-              </div>
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Sparkles className="h-3.5 w-3.5" /> Industry 4.0 Digital Transformation
+                <a href="/industries" className="hover:text-white transition-colors">Industries</a><span>•</span><a href="/manufacturing" className="hover:text-white transition-colors">Manufacturing</a><span>•</span><span className="text-white">Smart Manufacturing</span>
               </div>
               <h1 style={serif} className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-                Smart manufacturing revolution —{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">production excellence through digital intelligence.</span>
+                Smart manufacturing revolution{" "}
+                <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(to right, #A5F3FC, #A5F3FC)" }}>production excellence through digital intelligence.</span>
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/82 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">
                 Smart manufacturing converges traditional production processes with advanced digital technologies —
                 creating intelligent, connected, and adaptive systems. Duanamize helps manufacturers harness Industry 4.0
                 to optimise efficiency, quality, and sustainability across the entire value chain.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#core-tech" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Explore technologies <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#smart-factory" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                  Smart factory solutions
-                </a>
-              </div>
               <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {stats.map((s) => (
                   <div key={s.value} className="rounded-[22px] border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
                     <div className="text-2xl font-bold text-white">{s.value}</div>
-                    <p className="mt-2 text-xs leading-relaxed text-blue-100/76">{s.label}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-white">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -240,20 +229,18 @@ export default function SmartManufacturingPage() {
       </section>
 
       {/* CORE TECHNOLOGIES */}
-      <section id="core-tech" className="relative">
-        <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
+      <section id="core-tech" className="relative bg-white">
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Core Industry 4.0 technologies</div>
-            <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">Three pillars of smart manufacturing.</h2>
-            <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-blue-200/60 md:text-lg">Industry 4.0 encompasses the fourth industrial revolution — characterised by the integration of cyber-physical systems, IoT, AI, and advanced analytics into manufacturing operations.</p>
+          <div className="mb-10 text-left">
+            <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">Three pillars of smart manufacturing.</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>Industry 4.0 encompasses the fourth industrial revolution — characterised by the integration of cyber-physical systems, IoT, AI, and advanced analytics into manufacturing operations.</p>
           </div>
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
+          <div className="mb-8 flex flex-wrap justify-start gap-2">
             {coreTechTabs.map((tab, i) => {
               const Icon = tab.icon;
               return (
                 <button key={tab.label} onClick={() => setActiveTab(i)}
-                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${activeTab === i ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20" : "border border-white/12 bg-white/4 text-blue-200/70 hover:text-white hover:border-cyan-400/25"}`}>
+                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${activeTab === i ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20" : "border border-slate-200 bg-white text-slate-600 hover:text-slate-950 hover:border-cyan-400/25"}`}>
                   <Icon className="h-4 w-4" />{tab.label}
                 </button>
               );
@@ -263,19 +250,19 @@ export default function SmartManufacturingPage() {
             if (i !== activeTab) return null;
             const Icon = tab.icon;
             return (
-              <div key={tab.label} className="mx-auto max-w-3xl rounded-[24px] border border-white/8 p-8" style={{ background: "rgba(255,255,255,0.03)" }}>
+              <div key={tab.label} className="max-w-3xl rounded-[24px] border border-slate-200 bg-white p-8 shadow-sm">
                 <div className="flex items-center gap-4">
                   <div className="inline-flex h-14 w-14 items-center justify-center rounded-[18px] bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><Icon className="h-7 w-7" /></div>
                   <div>
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-300/50">Technology {String(i + 1).padStart(2, "0")}</div>
-                    <h3 style={serif} className="text-2xl font-semibold text-white">{tab.title}</h3>
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">Technology {String(i + 1).padStart(2, "0")}</div>
+                    <h3 style={serif} className="text-2xl font-semibold text-slate-950">{tab.title}</h3>
                   </div>
                 </div>
                 <div className="mt-6 grid gap-3">
                   {tab.items.map((item) => (
-                    <div key={item} className="flex items-start gap-3 rounded-xl border border-white/8 bg-white/3 px-4 py-3">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
-                      <div className="text-sm leading-relaxed text-blue-100/75">{item}</div>
+                    <div key={item} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-500" />
+                      <div className="text-sm leading-relaxed text-slate-600">{item}</div>
                     </div>
                   ))}
                 </div>
@@ -286,28 +273,27 @@ export default function SmartManufacturingPage() {
       </section>
 
       {/* TRANSFORMATION FRAMEWORK */}
-      <section className="relative">
+      <section className="relative bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4"><Sparkles className="h-3.5 w-3.5" /> Transformation framework</div>
-              <h2 style={serif} className="text-3xl font-semibold leading-tight md:text-5xl">Manufacturing digital transformation strategy.</h2>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-blue-200/60 md:text-lg">A comprehensive approach addressing technology, processes, people, and organisational culture to create competitive advantage through digital excellence.</p>
+              <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">Manufacturing digital transformation strategy.</h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 md:text-lg">A comprehensive approach addressing technology, processes, people, and organisational culture to create competitive advantage through digital excellence.</p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {transformationFramework.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.step} className="rounded-[22px] border border-white/8 p-5 transition hover:-translate-y-1 hover:border-cyan-400/20" style={{ background: "rgba(255,255,255,0.03)" }}>
+                  <div key={item.step} className="rounded-[22px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-cyan-400/25">
                     <div className="flex items-center justify-between mb-4">
                       <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><Icon className="h-5 w-5" /></div>
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-300/45">Phase {item.step}</span>
+                      <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Phase {item.step}</span>
                     </div>
-                    <h3 className="text-base font-semibold text-white mb-3">{item.title}</h3>
+                    <h3 className="text-base font-semibold text-slate-950 mb-3">{item.title}</h3>
                     <ul className="space-y-2">
                       {item.items.map((i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs leading-relaxed text-blue-200/55">
-                          <CheckCircle2 className="mt-0.5 h-3 w-3 shrink-0 text-cyan-400/70" />{i}
+                        <li key={i} className="flex items-start gap-2 text-xs leading-relaxed text-slate-600">
+                          <CheckCircle2 className="mt-0.5 h-3 w-3 shrink-0 text-cyan-500" />{i}
                         </li>
                       ))}
                     </ul>
@@ -320,25 +306,25 @@ export default function SmartManufacturingPage() {
       </section>
 
       {/* SMART FACTORY */}
-      <section id="smart-factory" className="relative">
-        <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
+      <section id="smart-factory" className="relative bg-white">
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Smart factory solutions architecture</div>
-            <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Interconnected systems for intelligent manufacturing.</h2>
-            <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-blue-200/60 md:text-lg">Smart factory solutions integrate multiple technologies to create connected, intelligent manufacturing environments that optimise performance across all operations.</p>
+          <div className="mb-10 text-left">
+            <h2 style={serif} className="mt-4 text-3xl font-semibold text-slate-950 md:text-5xl">Interconnected systems for intelligent manufacturing.</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>Smart factory solutions integrate multiple technologies to create connected, intelligent manufacturing environments that optimise performance across all operations.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {smartFactoryComponents.map((comp) => {
               const Icon = comp.icon;
               return (
-                <div key={comp.title} className="rounded-[22px] border border-white/8 p-6 transition hover:-translate-y-1 hover:border-cyan-400/20" style={{ background: "rgba(255,255,255,0.03)" }}>
-                  <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${comp.color} text-white shadow-lg`}><Icon className="h-6 w-6" /></div>
-                  <h3 className="mt-4 text-base font-semibold text-white">{comp.title}</h3>
-                  <ul className="mt-3 space-y-2">
+                <div key={comp.title} className="rounded-[22px] border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-cyan-400/25 bg-white shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${comp.color} text-white shadow-lg`}><Icon className="h-6 w-6" /></div>
+                    <h3 className="text-base font-semibold text-slate-950">{comp.title}</h3>
+                  </div>
+                  <ul className="mt-4 space-y-2">
                     {comp.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm leading-relaxed text-blue-200/55">
-                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-400/70" />{item}
+                      <li key={item} className="flex items-start gap-2 text-sm leading-relaxed text-slate-600">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-500" />{item}
                       </li>
                     ))}
                   </ul>
@@ -374,21 +360,20 @@ export default function SmartManufacturingPage() {
               </div>
             </div>
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4"><Sparkles className="h-3.5 w-3.5" /> Industrial IoT areas</div>
               <h2 style={serif} className="text-3xl font-semibold leading-tight md:text-4xl mb-6">Three IIoT implementation areas that transform the shop floor.</h2>
               <div className="grid gap-4">
                 {iotAreas.map((area) => {
                   const Icon = area.icon;
                   return (
-                    <div key={area.title} className="rounded-[20px] border border-white/8 p-5 transition hover:border-cyan-400/25" style={{ background: "rgba(255,255,255,0.03)" }}>
+                    <div key={area.title} className="rounded-[20px] border border-slate-200 p-5 transition hover:border-cyan-400/25 bg-white shadow-sm">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><Icon className="h-5 w-5" /></div>
-                        <h3 className="text-base font-semibold text-white">{area.title}</h3>
+                        <h3 className="text-base font-semibold text-slate-950">{area.title}</h3>
                       </div>
                       <div className="grid gap-1.5">
                         {area.items.map((item) => (
-                          <div key={item} className="flex items-start gap-2 text-sm text-blue-200/55">
-                            <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-400/70" />{item}
+                          <div key={item} className="flex items-start gap-2 text-sm text-slate-600">
+                            <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-500" />{item}
                           </div>
                         ))}
                       </div>
@@ -402,26 +387,24 @@ export default function SmartManufacturingPage() {
       </section>
 
       {/* AUTOMATION + DIGITAL MFG */}
-      <section className="relative">
-        <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
+      <section className="relative bg-white">
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Manufacturing automation & digital excellence</div>
-            <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Automation and digital manufacturing optimisation.</h2>
+            <h2 style={serif} className="mt-4 text-3xl font-semibold text-slate-950 md:text-5xl">Automation and digital manufacturing optimisation.</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 mb-8">
             {automationTech.map((tech) => {
               const Icon = tech.icon;
               return (
-                <div key={tech.title} className="rounded-[22px] border border-white/8 p-6" style={{ background: "rgba(255,255,255,0.03)" }}>
+                <div key={tech.title} className="rounded-[22px] border border-slate-200 p-6 bg-white shadow-sm">
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${tech.color} text-white shadow-lg`}><Icon className="h-6 w-6" /></div>
-                    <h3 className="text-lg font-semibold text-white">{tech.title}</h3>
+                    <h3 className="text-lg font-semibold text-slate-950">{tech.title}</h3>
                   </div>
                   <ul className="space-y-2">
                     {tech.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-blue-200/55">
-                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-400/70" />{item}
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-500" />{item}
                       </li>
                     ))}
                   </ul>
@@ -433,15 +416,15 @@ export default function SmartManufacturingPage() {
             {digitalMfg.map((d) => {
               const Icon = d.icon;
               return (
-                <div key={d.title} className="rounded-[22px] border border-cyan-400/15 p-6" style={{ background: "rgba(56,189,248,0.04)" }}>
+                <div key={d.title} className="rounded-[22px] border border-slate-200 p-6 bg-white shadow-sm">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-teal-400 to-cyan-500 text-white shadow-lg"><Icon className="h-6 w-6" /></div>
-                    <h3 className="text-lg font-semibold text-white">{d.title}</h3>
+                    <h3 className="text-lg font-semibold text-slate-950">{d.title}</h3>
                   </div>
                   <ul className="space-y-2">
                     {d.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-blue-200/55">
-                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-400/70" />{item}
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-500" />{item}
                       </li>
                     ))}
                   </ul>
@@ -452,26 +435,41 @@ export default function SmartManufacturingPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative pb-16 md:pb-20">
+      {/* Continue Exploring */}
+      <section className="bg-slate-50 pt-5 pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[24px] border border-cyan-400/12 p-8 md:p-10" style={{ background: "linear-gradient(135deg,rgba(13,32,64,0.9) 0%,rgba(15,37,80,0.9) 50%,rgba(10,30,69,0.9) 100%)", boxShadow: "0 0 60px rgba(56,189,248,0.05),0 25px 50px rgba(0,0,0,0.4)" }}>
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
+            <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Start your smart manufacturing journey</div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">Build the intelligent, connected factory of tomorrow — today.</h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-blue-200/60 md:text-lg">Duanamize's Industry 4.0 transformation framework helps manufacturers deploy smart factory technologies that deliver measurable improvements in OEE, quality, and operational efficiency.</p>
+                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
+                  Continue exploring smart manufacturing solutions
+                </h2>
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+                  This smart manufacturing page is part of our comprehensive Industry 4.0 solutions offering under the Manufacturing section.
+                </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Request assessment <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Email Duanamize</a>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Smart Manufacturing Revolution: Industry 4.0 Digital Transformation
+                  </h3>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Manufacturing Excellence: Smart Factory & Lean Transformation
+                  </h3>
+                  <a href="/manufacturing" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+   
 
     </div>
   );
