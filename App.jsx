@@ -24,7 +24,23 @@ import BankingDigitalTransformationPage from './src/pages/BankingDigitalTransfor
 import ManufacturingMainPage from './src/pages/Manufacturingmain.jsx';
 import SmartManufacturingPage from './src/pages/smartmanufacturing.jsx';
 import LearnManufacturingPage from './src/pages/learnmanufacturing.jsx';
-import ResultsPage from './src/pages/results.jsx';
+import TechnologyPage from './src/pages/technology.jsx';
+import DevOpsAutomationPage from './src/pages/devopsautomation.jsx';
+import CloudMigrationPage from './src/pages/cloudmigration.jsx';
+import AdditionalIndustriesPage from './src/pages/AdditionalIndustriesPage.jsx';
+import EnergyUtilitiesPage from './src/pages/energyutilities.jsx';
+import RetailDigitalTransformationPage from './src/pages/retaildigitaltransformation.jsx';
+import TrainingServicesPage from './src/pages/TrainingServicesPage.jsx';
+import HealthcareTrainingPage from './src/pages/HealthcareTrainingPage.jsx';
+import CaseStudiesPage from './src/pages/CaseStudiesPage.jsx';
+import ImpactMetricsPage from './src/pages/ImpactMetricsPage.jsx';
+import ClientStoriesPage from './src/pages/ClientStoriesPage.jsx';
+import TransformationJourneysPage from './src/pages/TransformationJourneysPage.jsx';
+import MorePage from './src/pages/MorePage.jsx';
+import PartnerPage from './src/pages/PartnerPage.jsx';
+import CareersPage from './src/pages/CareersPage.jsx';
+import FAQPage from './src/pages/FAQPage.jsx';
+import ResultsPage from './src/pages/ResultsPage.jsx';
 import AboutPage from './src/pages/AboutPage.jsx';
 import ContactPage from './src/pages/contact.jsx';
 
@@ -60,6 +76,22 @@ root.render(
         <Route path="industries-manufacturing" element={<ManufacturingMainPage />} />
         <Route path="industries-manufacturing-smart" element={<SmartManufacturingPage />} />
         <Route path="industries-manufacturing-lean" element={<LearnManufacturingPage />} />
+        <Route path="technology" element={<TechnologyPage />} />
+        <Route path="industries-devops" element={<DevOpsAutomationPage />} />
+        <Route path="industries-cloud" element={<CloudMigrationPage />} />
+        <Route path="additional-industries" element={<AdditionalIndustriesPage />} />
+        <Route path="industries-energy" element={<EnergyUtilitiesPage />} />
+        <Route path="industries-retail" element={<RetailDigitalTransformationPage />} />
+        <Route path="training" element={<TrainingServicesPage />} />
+        <Route path="industries-healthcare-training" element={<HealthcareTrainingPage />} />
+        <Route path="case-studies" element={<CaseStudiesPage />} />
+        <Route path="impact-metrics" element={<ImpactMetricsPage />} />
+        <Route path="client-stories" element={<ClientStoriesPage />} />
+        <Route path="transformation-journeys" element={<TransformationJourneysPage />} />
+        <Route path="more" element={<MorePage />} />
+        <Route path="partners" element={<PartnerPage />} />
+        <Route path="careers" element={<CareersPage />} />
+        <Route path="faq" element={<FAQPage />} />
         <Route path="results" element={<ResultsPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="contact" element={<ContactPage />} />

@@ -96,6 +96,7 @@ const menuData = [
       },
       {
         label: "Technology",
+        path: "/technology",
         items: [
           { name: "DevOps Automation & CI/CD Optimization", path: "/industries-devops" },
           { name: "Cloud Migration & Infrastructure Automation", path: "/industries-cloud" },
@@ -103,6 +104,7 @@ const menuData = [
       },
       {
         label: "Additional Industries",
+        path: "/additional-industries",
         items: [
           { name: "Energy & Utilities Automation", path: "/industries-energy" },
           { name: "Retail Digital Transformation", path: "/industries-retail" },
@@ -110,9 +112,9 @@ const menuData = [
       },
       {
         label: "Training services",
+        path: "/training",
         items: [
           { name: "Healthcare Training Services", path: "/industries-healthcare-training" },
-          { name: "Leadership Training Services", path: "/industries-leadership" },
         ],
       },
     ],
@@ -122,10 +124,10 @@ const menuData = [
     label: "RESULTS",
     path: "/results",
     children: [
-      { label: "Case Studies", items: [{ name: "Case Studies", path: "/results#case-studies" }] },
-      { label: "Impact Metrics", items: [{ name: "Impact Metrics", path: "/results#metrics" }] },
-      { label: "Client Stories", items: [{ name: "Client Stories", path: "/results#stories" }] },
-      { label: "Transformation Journeys", items: [{ name: "Transformation Journeys", path: "/results#journeys" }] },
+      { label: "Case Studies", items: [{ name: "Case Studies", path: "/case-studies" }] },
+      { label: "Impact Metrics", items: [{ name: "Impact Metrics", path: "/impact-metrics" }] },
+      { label: "Client Stories", items: [{ name: "Client Stories", path: "/client-stories" }] },
+      { label: "Transformation Journeys", items: [{ name: "Transformation Journeys", path: "/transformation-journeys" }] },
     ],
   },
   {
@@ -136,6 +138,7 @@ const menuData = [
   {
     key: "more",
     label: "MORE",
+    path: "/more",
     children: [
       { label: "Partner Inquiries", items: [{ name: "Partner Inquiries", path: "/partners" }] },
       { label: "Careers", items: [{ name: "Careers", path: "/careers" }] },
