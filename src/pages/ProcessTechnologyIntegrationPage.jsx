@@ -288,11 +288,13 @@ export default function ProcessTechnologyIntegrationPage() {
                 const Icon = ch.icon;
                 return (
                   <div key={ch.category} className={`rounded-[28px] border ${ch.border} ${ch.bg} p-5 transition hover:-translate-y-1 hover:shadow-lg`}>
-                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${ch.color} text-white shadow-lg`}>
-                      <Icon className="h-6 w-6" />
+                    <div className="flex items-center gap-3">
+                      <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${ch.color} text-white shadow-lg`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-base font-semibold text-slate-950">{ch.category}</h3>
                     </div>
-                    <h3 className="mt-4 text-base font-semibold text-slate-950">{ch.category}</h3>
-                    <ul className="mt-3 space-y-2">
+                    <ul className="mt-4 space-y-2">
                       {ch.items.map((item) => (
                         <li key={item} className="flex items-start gap-2 text-sm leading-relaxed text-slate-600">
                           <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
@@ -315,9 +317,8 @@ export default function ProcessTechnologyIntegrationPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Four integration capabilities that unify your enterprise technology.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-              From API architecture through data governance to security and performance — our integration
-              practice covers every layer needed to support modern process improvement at scale.
+            <p className="mt-3 max-w-none text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
+              From API architecture through data governance to security and performance — our integration practice covers every layer needed to support modern process improvement at scale.
             </p>
           </div>
           <div className="mb-8 flex flex-wrap gap-2">
@@ -372,9 +373,8 @@ export default function ProcessTechnologyIntegrationPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               A three-phase path from fragmented systems to unified architecture.
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Our integration methodology is designed to minimise disruption to running operations
-              while progressively building the connectivity that process improvement depends on.
+            <p className="mt-3 max-w-none text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
+              Our integration methodology is designed to minimise disruption to running operations while progressively building the connectivity that process improvement depends on.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">

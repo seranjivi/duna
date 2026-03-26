@@ -87,6 +87,7 @@ const techServices = [
       "Master data management and data quality frameworks",
       "Security, compliance, and audit trail implementation",
     ],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
   },
   {
     href: "/tech-ai-stack",
@@ -105,6 +106,7 @@ const techServices = [
       "RPA and workflow orchestration platform implementation",
       "Real-time analytics and predictive intelligence infrastructure",
     ],
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80",
   },
 ];
 
@@ -276,30 +278,10 @@ export default function TechnologyStackPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Two specialisations. One complete technology foundation.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
               Integration architecture and AI-powered technology infrastructure, working in concert
               to enable the full potential of modern process improvement.
             </p>
-          </div>
-
-          {/* Screenshot-style link row */}
-          <div className="mb-10 flex flex-col gap-3 sm:flex-row">
-            {techServices.map((svc) => {
-              const Icon = svc.icon;
-              return (
-                <a
-                  key={svc.label}
-                  href={svc.href}
-                  className="group flex items-center justify-between gap-4 rounded-2xl border border-[#1a3a8f]/30 bg-[#0A2463]/80 px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#0d2e7a] hover:border-cyan-400/40 sm:flex-1"
-                >
-                  <div className="flex items-center gap-3">
-                    <Icon className="h-4 w-4 text-cyan-300 shrink-0" />
-                    <span>{svc.label}</span>
-                  </div>
-                  <ChevronRight className="h-4 w-4 text-cyan-300 transition group-hover:translate-x-1" />
-                </a>
-              );
-            })}
           </div>
 
           {/* Detail cards */}
@@ -319,8 +301,15 @@ export default function TechnologyStackPage() {
                       </div>
                     </div>
                     <p className="text-sm font-semibold text-slate-900 leading-snug mb-2">{svc.heading}</p>
-                    <p className="text-sm leading-relaxed text-slate-600">{svc.body}</p>
-                    <ul className="mt-5 space-y-2">
+                    <p className="text-sm leading-relaxed text-slate-600 mb-5">{svc.body}</p>
+                    <div className="mb-5 rounded-2xl overflow-hidden border border-white/60">
+                      <img
+                        src={svc.image}
+                        alt={svc.label}
+                        className="h-48 w-full object-cover"
+                      />
+                    </div>
+                    <ul className="space-y-2">
                       {svc.bullets.map((b) => (
                         <li key={b} className="flex items-start gap-2 rounded-xl border border-white/80 bg-white/60 px-4 py-2.5 text-sm text-slate-700">
                           <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#0A2463]" />
@@ -329,9 +318,7 @@ export default function TechnologyStackPage() {
                       ))}
                     </ul>
                   </div>
-                  <a href={svc.href} className="mt-7 inline-flex items-center gap-2 self-start rounded-full bg-[#0A2463] px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0d2e7a]">
-                    Explore {svc.label} <ArrowRight className="h-4 w-4" />
-                  </a>
+              
                 </div>
               );
             })}
@@ -346,7 +333,7 @@ export default function TechnologyStackPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Three architectural layers that underpin enterprise improvement at scale.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
               Data, integration, and intelligence — each layer must be designed and governed carefully
               to deliver the performance and reliability enterprise improvement demands.
             </p>

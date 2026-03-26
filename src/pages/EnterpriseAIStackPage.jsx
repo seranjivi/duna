@@ -319,9 +319,8 @@ export default function EnterpriseAIStackPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Four integrated stack components for enterprise AI improvement.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Process mining, AI/ML, automation, and analytics — each component amplifies the others
-              when designed as an integrated architecture rather than standalone tools.
+            <p className="mt-3 max-w-none text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
+              Process mining, AI/ML, automation, and analytics — each component amplifies the others when designed as an integrated architecture rather than standalone tools.
             </p>
           </div>
           <div className="mb-8 flex flex-wrap gap-2">
