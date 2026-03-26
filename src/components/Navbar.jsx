@@ -147,6 +147,16 @@ const menuData = [
       { label: "FAQ", items: [{ name: "FAQ", path: "/faq" }] },
     ],
   },
+  {
+    key: "catalog",
+    label: "Catalog",
+    path: "/catalog",
+    children: [
+      { label: "Database Skills", items: [{ name: "Database Skills", path: "/databaseskills" }] },
+      { label: "Automation & AI", items: [{ name: "Automation & AI", path: "/automation" }] },
+      { label: "Engagement & Profile", items: [{ name: "Engagement & Profile", path: "/engagement" }] },
+    ],
+  },
   // {
   //   key: "contact",
   //   label: "Contact US",

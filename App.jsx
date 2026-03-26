@@ -49,6 +49,9 @@ import EnterpriseAIStackPage from './src/pages/EnterpriseAIStackPage.jsx';
 import OutcomesFrameworkPage from './src/pages/OutcomesFrameworkPage.jsx';
 import PerformanceMeasurementPage from './src/pages/PerformanceMeasurementPage.jsx';
 import ROIFrameworkPage from './src/pages/ROIFrameworkPage.jsx';
+import DatabasePage from './src/pages/DatabasePage.jsx';
+import AutomationAIPage from './src/pages/AutomationAIPage.jsx';
+import EngagementPage from './src/pages/EngagementPage.jsx';
 
 // Import Tailwind CSS
 import './src/styles.css';
@@ -104,6 +107,10 @@ root.render(
         <Route path="outcomes-framework" element={<OutcomesFrameworkPage />} />
         <Route path="performance-measurement" element={<PerformanceMeasurementPage />} />
         <Route path="outcomes-roi-framework" element={<ROIFrameworkPage />} />
+        <Route path="catalog" element={<DatabasePage />} />
+        <Route path="databaseskills" element={<DatabasePage />} />
+        <Route path="automation" element={<AutomationAIPage />} />
+        <Route path="engagement" element={<EngagementPage />} />
         <Route path="results" element={<ResultsPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="contact" element={<ContactPage />} />
