@@ -467,19 +467,16 @@ export default function PerformanceMeasurementPage() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                <a href="/outcomes-roi-framework" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
+                <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
                   <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Process Improvement ROI Framework
-                  </div>
-                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
-                    View Page <ArrowRight className="h-4 w-4" />
+                    Operational Excellence Performance Measurement
                   </div>
                 </a>
-                <a href="/enterprise-ai-stack" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                <a href="/outcomes-roi-framework" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
                   <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
                   <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Enterprise AI Stack
+                    Process Improvement ROI Framework
                   </div>
                   <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
                     View Page <ArrowRight className="h-4 w-4" />

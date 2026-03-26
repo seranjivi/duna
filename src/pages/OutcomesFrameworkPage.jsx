@@ -85,7 +85,6 @@ const outcomeServices = [
       "Hierarchical KPI design from enterprise to frontline",
       "Real-time dashboards and threshold-based alerting",
       "Predictive analytics and trend forecasting",
-      "Industry benchmarking and gap analysis",
     ],
   },
   {
@@ -103,7 +102,6 @@ const outcomeServices = [
       "Cost-benefit analysis and NPV calculation",
       "Operational efficiency and quality metrics",
       "Customer and employee impact assessment",
-      "Continuous value optimisation and tracking",
     ],
   },
 ];
@@ -282,26 +280,7 @@ export default function OutcomesFrameworkPage() {
             </p>
           </div>
 
-          {/* Screenshot-style link row */}
-          <div className="mb-10 flex flex-col gap-3 sm:flex-row">
-            {outcomeServices.map((svc) => {
-              const Icon = svc.icon;
-              return (
-                <a
-                  key={svc.label}
-                  href={svc.href}
-                  className="group flex items-center justify-between gap-4 rounded-2xl border border-[#1a3a8f]/30 bg-[#0A2463]/80 px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#0d2e7a] hover:border-cyan-400/40 sm:flex-1"
-                >
-                  <div className="flex items-center gap-3">
-                    <Icon className="h-4 w-4 text-cyan-300 shrink-0" />
-                    <span>{svc.label}</span>
-                  </div>
-                  <ChevronRight className="h-4 w-4 text-cyan-300 transition group-hover:translate-x-1" />
-                </a>
-              );
-            })}
-          </div>
-
+          
           {/* Detail cards */}
           <div className="grid gap-6 md:grid-cols-2">
             {outcomeServices.map((svc) => {
@@ -318,6 +297,15 @@ export default function OutcomesFrameworkPage() {
                         <h3 style={serif} className="text-xl font-semibold text-slate-950 leading-tight">{svc.label}</h3>
                       </div>
                     </div>
+                    <div className="mb-5 overflow-hidden rounded-2xl border border-slate-200">
+                      <img
+                        src={svc.label === "Operational Excellence Performance Measurement" 
+                          ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                          : "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"}
+                        alt={svc.label}
+                        className="h-48 w-full object-cover"
+                      />
+                    </div>
                     <p className="text-sm font-semibold text-slate-900 leading-snug mb-2">{svc.heading}</p>
                     <p className="text-sm leading-relaxed text-slate-600">{svc.body}</p>
                     <ul className="mt-5 space-y-2">
@@ -329,9 +317,6 @@ export default function OutcomesFrameworkPage() {
                       ))}
                     </ul>
                   </div>
-                  <a href={svc.href} className="mt-7 inline-flex items-center gap-2 self-start rounded-full bg-[#0A2463] px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0d2e7a]">
-                    Explore {svc.label} <ArrowRight className="h-4 w-4" />
-                  </a>
                 </div>
               );
             })}

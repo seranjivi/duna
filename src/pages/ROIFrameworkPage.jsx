@@ -317,9 +317,8 @@ export default function ROIFrameworkPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Four framework components. Complete ROI coverage.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Our ROI framework addresses financial quantification, operational metrics, KPI design,
-              and continuous value tracking — ensuring no value source goes unmeasured.
+            <p className="mt-3 max-w-none text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
+              Our ROI framework addresses financial quantification, operational metrics, KPI design, and continuous value tracking — ensuring no value source goes unmeasured.
             </p>
           </div>
 
@@ -380,9 +379,8 @@ export default function ROIFrameworkPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Three phases from baseline to ongoing value realisation.
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Our ROI implementation methodology is structured to build credibility with finance,
-              capture value comprehensively, and sustain improvement momentum.
+            <p className="mt-3 max-w-none text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
+              Our ROI implementation methodology is structured to build credibility with finance, capture value comprehensively, and sustain improvement momentum.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
@@ -471,7 +469,7 @@ export default function ROIFrameworkPage() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                <a href="/outcomes-framework" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                <a href="/performance-measurement" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
                   <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
                   <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Performance Measurement
