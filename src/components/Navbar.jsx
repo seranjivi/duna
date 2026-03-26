@@ -132,10 +132,15 @@ const menuData = [
       { label: "Transformation Journeys", items: [{ name: "Transformation Journeys", path: "/transformation-journeys" }] },
     ],
   },
-  {
-    key: "about",
-    label: "ABOUT US",
-    path: "/about",
+   {
+    key: "catalog",
+    label: "CATALOG",
+    path: "/catalog",
+    children: [
+      { label: "Database Skills", items: [{ name: "Database Skills", path: "/databaseskills" }] },
+      { label: "Automation & AI", items: [{ name: "Automation & AI", path: "/automation" }] },
+      { label: "Engagement & Profile", items: [{ name: "Engagement & Profile", path: "/engagement" }] },
+    ],
   },
   {
     key: "more",
@@ -148,14 +153,9 @@ const menuData = [
     ],
   },
   {
-    key: "catalog",
-    label: "Catalog",
-    path: "/catalog",
-    children: [
-      { label: "Database Skills", items: [{ name: "Database Skills", path: "/databaseskills" }] },
-      { label: "Automation & AI", items: [{ name: "Automation & AI", path: "/automation" }] },
-      { label: "Engagement & Profile", items: [{ name: "Engagement & Profile", path: "/engagement" }] },
-    ],
+    key: "about",
+    label: "ABOUT US",
+    path: "/about",
   },
   // {
   //   key: "contact",
@@ -356,17 +356,20 @@ export default function DuanamizeButterflyNavigation() {
               <Logo />
             </Link>
 
-            <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation">
+            <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation" onMouseLeave={() => setPreviewMain(activeMain)}>
               {menuData.map((item) => {
                 const hasChildren = Boolean(item.children?.length);
-                const active = !hasChildren ? activeMain === item.key : (previewMain || activeMain) === item.key;
+                const active = !hasChildren ? activeMain === item.key : activeMain === item.key;
 
                 if (!hasChildren) {
                   return (
                     <Link
                       key={item.key}
                       to={item.path || "#"}
-                      className="rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] text-blue-50/90 transition hover:text-white"
+                      className={cn(
+                        "rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] transition hover:text-white whitespace-nowrap",
+                        active ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
+                      )}
                     >
                       {item.label}
                     </Link>
@@ -391,7 +394,7 @@ export default function DuanamizeButterflyNavigation() {
                       setMenuOpen(true);
                     }}
                     className={cn(
-                      "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] transition",
+                      "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] transition whitespace-nowrap",
                       active ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
                     )}
                   >
@@ -405,9 +408,9 @@ export default function DuanamizeButterflyNavigation() {
             <div className="flex items-center gap-3">
               <Link
                 to="/contact"
-                className="hidden rounded-full border border-white/25 bg-transparent px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition md:inline-flex"
+                className="hidden rounded-full border border-white/25 bg-transparent px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition md:inline-flex whitespace-nowrap"
               >
-                Contact Us
+                CONTACT US
               </Link>
               <button
                 type="button"

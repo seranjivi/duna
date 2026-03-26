@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -45,15 +46,7 @@ const insights = [
     image:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80",
   },
-  {
-    category: "Industries",
-    sub: "Healthcare",
-    date: "Jul 18, 2025",
-    title: "EHR Optimization: Maximizing Clinical Productivity and Efficiency",
-    readType: "Case Study",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=80",
-  },
+
   {
     category: "Industries",
     sub: "Healthcare",
@@ -72,15 +65,7 @@ const insights = [
     image:
       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=80",
   },
-  {
-    category: "Industries",
-    sub: "Retail",
-    date: "Jul 18, 2025",
-    title: "Retail Digital Transformation Through Experience-Led E-commerce Innovation",
-    readType: "6 min read",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80",
-  },
+
   {
     category: "Industries",
     sub: "Financial Compliance",
@@ -89,15 +74,6 @@ const insights = [
     readType: "7 min read",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    category: "Approach",
-    sub: "Technology Stack",
-    date: "Jul 17, 2025",
-    title: "System Integration Best Practices for Process Improvement Success",
-    readType: "Guide",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
   },
   {
     category: "Approach",
@@ -117,6 +93,7 @@ const serviceCards = [
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
     icon: BarChart3,
+    path: "/approach",
   },
   {
     title: "Solutions",
@@ -124,13 +101,15 @@ const serviceCards = [
     image:
       "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80",
     icon: Cpu,
+    path: "/solutions",
   },
   {
     title: "Industries",
-    desc: "Manufacturing, BFSI, healthcare, energy, retail, and shared enterprise capabilities.Click learn more.",
+    desc: "Manufacturing, BFSI, healthcare, energy, retail, and shared enterprise capabilities across industries.",
     image:
       "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
     icon: Globe,
+    path: "/industries",
   },
   {
     title: "Results",
@@ -138,6 +117,7 @@ const serviceCards = [
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
     icon: ShieldCheck,
+    path: "/results",
   },
 ];
 
@@ -148,6 +128,7 @@ const industryCards = [
     image:
       "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=80",
     icon: Factory,
+    path: "/industries-manufacturing",
   },
   {
     title: "Financial Services",
@@ -155,6 +136,7 @@ const industryCards = [
     image:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
     icon: Landmark,
+    path: "/industries-financial",
   },
   {
     title: "Healthcare",
@@ -162,6 +144,7 @@ const industryCards = [
     image:
       "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
     icon: HeartPulse,
+    path: "/industries-healthcare",
   },
  
 ];
@@ -173,7 +156,7 @@ function SectionHeader({ eyebrow, title, desc, bold }) {
       <h2 style={serif} className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight text-slate-950 leading-tight">
         {bold ? bold : title}
       </h2>
-      <p className="mt-3 max-w-3xl text-sm md:text-lg text-slate-600 leading-relaxed">{desc}</p>
+      <p className="mt-3 w-full text-sm md:text-lg text-slate-600 leading-relaxed break-words">{desc}</p>
     </div>
   );
 }
@@ -395,9 +378,9 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
                     {item.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
-                  <button className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0A2463] group-hover:gap-2 transition-all">
+                  <Link to={item.path} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0A2463] group-hover:gap-2 transition-all" onClick={() => window.scrollTo(0, 0)}>
                     Learn more <ArrowRight className="h-4 w-4" />
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             );
@@ -443,9 +426,9 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
                       {c.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{c.desc}</p>
-                    <button className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0A2463] group-hover:gap-2 transition-all">
+                    <Link to={c.path} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0A2463] group-hover:gap-2 transition-all" onClick={() => window.scrollTo(0, 0)}>
                       Learn more <ArrowRight className="h-4 w-4" />
-                    </button>
+                    </Link>
                   </div>
                 </motion.div>
               );
@@ -546,9 +529,36 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
                   <h3 className="mt-2 min-h-[64px] text-base font-semibold leading-snug tracking-tight text-slate-900">
                     {post.title}
                   </h3>
-                  <button className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition">
-                    Read More <ArrowRight className="h-4 w-4" />
-                  </button>
+                  {post.category === "Industries" && post.sub === "Manufacturing" && (
+                    <Link to="/industries-manufacturing-smart" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
+                      Read More <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
+                  {post.category === "Industries" && post.sub === "Financial Services" && (
+                    <Link to="/industries-financial-banking" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
+                      Read More <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
+                  {post.category === "Industries" && post.sub === "Healthcare" && (
+                    <Link to="/industries-healthcare-ai" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
+                      Read More <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
+                  {post.category === "Industries" && post.sub === "Energy & Utilities" && (
+                    <Link to="/industries-energy" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
+                      Read More <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
+                  {post.category === "Industries" && post.sub === "Financial Compliance" && (
+                    <Link to="/industries-financial-compliance" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
+                      Read More <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
+                  {post.category === "Approach" && post.sub === "Technology Stack" && (
+                    <Link to="/technology-stack" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
+                      Read More <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
                 </div>
               </motion.article>
             ))}
@@ -577,9 +587,9 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
-                <button className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50">
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50" onClick={() => window.scrollTo(0, 0)}>
                   Get Started Today <ArrowRight className="h-4 w-4" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
