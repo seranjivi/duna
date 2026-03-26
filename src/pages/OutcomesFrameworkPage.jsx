@@ -71,7 +71,7 @@ const pillars = [
 
 const outcomeServices = [
   {
-    href: "/outcomes-performance-measurement",
+    href: "/performance-measurement",
     icon: Gauge,
     accent: "from-cyan-400 to-sky-500",
     bg: "bg-cyan-50",
@@ -154,7 +154,7 @@ export default function OutcomesFrameworkPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
           <div className="flex flex-wrap items-center gap-2 text-sm">
-            <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
+            <a href="/approach" className="text-white hover:text-blue-200 transition-colors">Approach</a>
             <span className="text-white/40">•</span>
             <span className="text-white">Outcomes Framework</span>
           </div>
@@ -316,6 +316,14 @@ export default function OutcomesFrameworkPage() {
                         </li>
                       ))}
                     </ul>
+                    <div className="mt-6">
+                      <a 
+                        href={svc.href}
+                        className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50"
+                      >
+                        Learn More <ArrowRight className="h-4 w-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               );
@@ -363,31 +371,6 @@ export default function OutcomesFrameworkPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-slate-50 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Stop estimating improvement value. Start proving it.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-base">
-                  Duanamize's Outcomes Framework installs the measurement infrastructure that keeps
-                  operational excellence programmes funded, focused, and continuously improving.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request a framework review <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

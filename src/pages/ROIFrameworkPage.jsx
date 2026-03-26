@@ -207,7 +207,7 @@ export default function ROIFrameworkPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
           <div className="flex flex-wrap items-center gap-2 text-sm">
-            <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
+            <a href="/approach" className="text-white hover:text-blue-200 transition-colors">Approach</a>
             <span className="text-white/40">•</span>
             <a href="/outcomes-framework" className="text-white hover:text-blue-200 transition-colors">Outcomes Framework</a>
             <span className="text-white/40">•</span>

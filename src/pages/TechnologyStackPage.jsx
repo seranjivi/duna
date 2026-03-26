@@ -323,7 +323,7 @@ export default function TechnologyStackPage() {
                       href={svc.href}
                       className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50"
                     >
-                      Read More <ArrowRight className="h-4 w-4" />
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </a>
                   </div>
                 </div>
