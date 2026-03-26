@@ -342,6 +342,7 @@ export default function DuanamizeButterflyNavigation() {
     if (activeMenuItem) {
       setActiveMain(activeMenuItem.key);
       setPreviewMain(activeMenuItem.key);
+      // Don't automatically open menu, just set active state
     }
   }, [location.pathname]);
 
@@ -377,30 +378,31 @@ export default function DuanamizeButterflyNavigation() {
                 }
 
                 return (
-                  <Link
-                    key={item.key}
-                    to={item.path || "#"}
-                    onClick={() => {
-                      setActiveMain(item.key);
-                      setPreviewMain(item.key);
-                      setMenuOpen(true);
-                    }}
-                    onMouseEnter={() => {
-                      setPreviewMain(item.key);
-                      setMenuOpen(true);
-                    }}
-                    onFocus={() => {
-                      setPreviewMain(item.key);
-                      setMenuOpen(true);
-                    }}
-                    className={cn(
-                      "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] transition whitespace-nowrap",
-                      active ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
-                    )}
-                  >
-                    {item.label}
-                    <ChevronDown className={cn("h-4 w-4 transition", active && menuOpen && "rotate-180")} />
-                  </Link>
+                  <div key={item.key} className="relative">
+                    <Link
+                      to={item.path || "#"}
+                      onClick={() => {
+                        setActiveMain(item.key);
+                        setPreviewMain(item.key);
+                        // Don't open menu on click, just navigate
+                      }}
+                      onMouseEnter={() => {
+                        setPreviewMain(item.key);
+                        setMenuOpen(true);
+                      }}
+                      onFocus={() => {
+                        setPreviewMain(item.key);
+                        setMenuOpen(true);
+                      }}
+                      className={cn(
+                        "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] transition whitespace-nowrap",
+                        active ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
+                      )}
+                    >
+                      {item.label}
+                      <ChevronDown className={cn("h-4 w-4 transition", active && menuOpen && "rotate-180")} />
+                    </Link>
+                  </div>
                 );
               })}
             </nav>

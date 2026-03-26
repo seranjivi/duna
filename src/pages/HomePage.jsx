@@ -109,7 +109,7 @@ const serviceCards = [
     image:
       "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=80",
     icon: Globe,
-    path: "/industries",
+    path: "/industries-manufacturing",
   },
   {
     title: "Results",
