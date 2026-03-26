@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Building2,
@@ -27,6 +28,12 @@ import {
 const serif = {
   fontFamily:
     '"Playfair Display", Georgia, Cambria, "Times New Roman", serif',
+};
+
+const textWrapStyles = {
+  wordBreak: 'word-break',
+  whiteSpace: 'white-space-normal',
+  overflowWrap: 'break-word',
 };
 
 const heroStats = [
@@ -187,7 +194,7 @@ function SectionHeader({ eyebrow, title, description, light = false, align = "le
       >
         {title}
       </h2>
-      <p className={`mt-3 ${align === "center" ? "mx-auto" : ""} max-w-3xl text-sm leading-relaxed md:text-lg ${light ? "text-blue-100/85" : "text-slate-600"}`}>
+      <p className={`mt-3 ${align === "center" ? "mx-auto" : ""} text-sm leading-relaxed md:text-lg ${light ? "text-blue-100/85" : "text-slate-600"}`} style={textWrapStyles}>
         {description}
       </p>
     </div>
@@ -227,14 +234,6 @@ function Hero() {
               Strong process design alone does not guarantee transformation success. Sustainable improvement happens when people understand the change, trust the intent, and feel equipped to succeed in the new way of working.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a href="#journey" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                Explore the framework <ArrowRight className="h-4 w-4" />
-              </a>
-              <a href="#measure" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                View success measures
-              </a>
-            </div>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {heroStats.map((item) => (
@@ -261,7 +260,7 @@ function Hero() {
               <h3 style={serif} className="mt-3 text-2xl font-semibold leading-tight text-white">
                 Technical change without human adoption
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-blue-100/82">
+              <p className="mt-3 text-sm leading-relaxed text-white">
                 Resistance, uncertainty, and mixed signals can slow or even reverse otherwise strong improvement programs.
               </p>
             </div>
@@ -549,7 +548,7 @@ function MeasureSection() {
                   Mastering Change Management in Process Improvement
                 </div>
               </a>
-              <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+              <Link to="/our-process/implementation-framework" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                   The Complete Guide to Process Improvement Implementation: A Proven 4-Phase Framework
@@ -557,7 +556,7 @@ function MeasureSection() {
                 <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
                   View Page <ArrowRight className="h-4 w-4" />
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import HomePage from './src/pages/HomePage.jsx';
 import ApproachPage from './src/pages/duanamize_approach_page.jsx';
 import OurProcessPage from './src/pages/OurProcess.jsx';
 import OurProcessSub1Page from './src/pages/OurProcessSub1.jsx';
-import OurProcessSub2Page from './src/pages/OurProcessSub2.jsx';
+import ProcessImprovementImplementationFrameworkPage from './src/pages/OurProcessSub2.jsx';
 import LSSAIPage from './src/pages/lss.jsx';
 import LSSSub1Page from './src/pages/lsssub1.jsx';
 import LSSSub2Page from './src/pages/lsssub2.jsx';
@@ -67,7 +67,7 @@ root.render(
         <Route path="approach" element={<ApproachPage showHeader={false} />} />
         <Route path="our-process" element={<OurProcessPage />} />
         <Route path="our-process/change-management" element={<OurProcessSub1Page />} />
-        <Route path="our-process/implementation-framework" element={<OurProcessSub2Page />} />
+        <Route path="our-process/implementation-framework" element={<ProcessImprovementImplementationFrameworkPage />} />
         <Route path="lss" element={<LSSAIPage />} />
         <Route path="lsssub1" element={<LSSSub1Page />} />
         <Route path="lsssub2" element={<LSSSub2Page />} />

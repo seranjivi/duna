@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Activity,
   ArrowRight,
@@ -28,6 +29,12 @@ import {
 const serif = {
   fontFamily:
     '"Playfair Display", Georgia, Cambria, "Times New Roman", serif',
+};
+
+const textWrapStyles = {
+  wordBreak: 'word-break',
+  whiteSpace: 'white-space-normal',
+  overflowWrap: 'break-word',
 };
 
 const heroStats = [
@@ -67,7 +74,7 @@ const phaseCards = [
   },
   {
     step: "03",
-    title: "Implementation",
+    title: "Implement",
     duration: "Deployment phase",
     icon: Rocket,
     accent: "from-indigo-500 to-cyan-400",
@@ -81,7 +88,7 @@ const phaseCards = [
   },
   {
     step: "04",
-    title: "Optimization",
+    title: "Optimize",
     duration: "Sustainment phase",
     icon: BarChart3,
     accent: "from-cyan-400 to-emerald-400",
@@ -227,7 +234,7 @@ function SectionHeader({ eyebrow, title, description, light = false, align = "le
       >
         {title}
       </h2>
-      <p className={`mt-3 ${align === "center" ? "mx-auto" : ""} text-sm leading-relaxed md:text-lg whitespace-normal ${light ? "text-blue-100/85" : "text-slate-600"}`}>
+      <p className={`mt-3 ${align === "center" ? "mx-auto" : ""} text-sm leading-relaxed md:text-lg whitespace-normal ${light ? "text-blue-100/85" : "text-slate-600"}`} style={textWrapStyles}>
         {description}
       </p>
     </div>
@@ -263,24 +270,14 @@ function Hero() {
               <span className="mt-2 block text-cyan-200">a proven 4-phase framework</span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/90 md:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-blue-100/90 md:text-lg" style={textWrapStyles}>
               Breakthrough results rarely come from isolated tools or one-off workshops. They come from a disciplined implementation architecture that moves from discovery to design, deployment, and optimization with clear control at every stage.
             </p>
-
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a href="#roadmap" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                View the 4-phase roadmap <ArrowRight className="h-4 w-4" />
-              </a>
-              <a href="#signals" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                See optimization signals
-              </a>
-            </div>
-
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {heroStats.map((item) => (
                 <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 backdrop-blur">
                   <div className="text-2xl font-semibold text-white md:text-3xl">{item.value}</div>
-                  <div className="mt-1 text-sm leading-relaxed text-blue-100/80">{item.label}</div>
+                  <div className="mt-1 text-sm leading-relaxed text-blue-100/80" style={textWrapStyles}>{item.label}</div>
                 </div>
               ))}
             </div>
@@ -327,8 +324,8 @@ function Hero() {
                           <div className="mt-4 rounded-xl border border-white/10 bg-slate-950/30 px-3 py-2 text-xs text-blue-100/80">
                             {item.title === "Discovery" && "Assess"}
                             {item.title === "Solution Design" && "Architect"}
-                            {item.title === "Implementation" && "Deploy"}
-                            {item.title === "Optimization" && "Sustain"}
+                            {item.title === "Implement" && "Deploy"}
+                            {item.title === "Optimize" && "Sustain"}
                           </div>
                         </div>
                       );
@@ -587,7 +584,7 @@ function ImplementationSection() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="absolute bottom-0 right-0 w-[88%] rounded-[32px] border border-slate-200 bg-[#071857] p-6 text-white shadow-xl md:p-7">
+            <div className="absolute bottom-0 right-0 w-[75%] rounded-[32px] border border-slate-200 bg-[#071857] p-6 text-white shadow-xl md:p-7">
               {/* <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100">
                 <Workflow className="h-3.5 w-3.5" />
                 Deployment governance
@@ -701,7 +698,7 @@ function ClosingSection() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
-              <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+              <Link to="/our-process/change-management" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                   Mastering Change Management in Process Improvement
@@ -709,7 +706,7 @@ function ClosingSection() {
                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
                   View Page <ArrowRight className="h-4 w-4" />
                 </div>
-              </a>
+              </Link>
               <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">

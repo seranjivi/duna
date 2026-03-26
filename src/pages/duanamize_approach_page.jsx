@@ -333,6 +333,28 @@ export default function ApproachPage({ showHeader = true }) {
       <ExploreSection />
       <FlowSection />
       <FeaturedInsightsSection />
+      <section className="relative overflow-hidden bg-[#061650]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.18),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+          <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div>
+                <h3 style={serif} className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
+                  Ready to Accelerate Your Digital Journey?
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-blue-100/85">
+                  Partner with experts to unlock faster, smarter transformation through proven methodologies and advanced technology—delivering measurable results from day one.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50" onClick={() => window.scrollTo(0, 0)}>
+                  Get Started Today <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

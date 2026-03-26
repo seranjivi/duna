@@ -35,8 +35,7 @@ const childPages = [
       "A people-centered guide focused on resistance, stakeholder engagement, communication, training, and long-term adoption.",
     bullets: [
       "Understand resistance and human impact",
-      "Engage leadership, managers, and frontline teams",
-      "Build adoption through communication and training",
+      "Engage leadership, managers, and frontline teams"
     ],
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80",
@@ -52,8 +51,7 @@ const childPages = [
       "A structured implementation view covering discovery, solution design, deployment, and optimization for scalable transformation.",
     bullets: [
       "Build the evidence base in discovery",
-      "Translate insight into executable solution design",
-      "Deploy, stabilize, and continuously optimize",
+      "Translate insight into executable solution design"
     ],
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
@@ -189,7 +187,7 @@ function HeroEcosystemVisual() {
             <div className="text-base font-semibold text-white">Change Management</div>
           </div>
         </div>
-        <p className="mt-3 text-sm leading-relaxed text-blue-100/78">
+        <p className="mt-3 text-sm leading-relaxed text-white">
           Adoption, communication, stakeholder alignment, and capability building.
         </p>
       </motion.div>
@@ -209,7 +207,7 @@ function HeroEcosystemVisual() {
             <div className="text-base font-semibold text-white">4-Phase Framework</div>
           </div>
         </div>
-        <p className="mt-3 text-sm leading-relaxed text-blue-100/78">
+        <p className="mt-3 text-sm leading-relaxed text-white">
           Structured implementation from discovery through optimization.
         </p>
       </motion.div>
@@ -218,7 +216,7 @@ function HeroEcosystemVisual() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.16 }}
-        className="absolute bottom-10 left-1/2 w-[78%] -translate-x-1/2 rounded-[28px] border border-white/12 bg-slate-950/35 p-5 backdrop-blur-xl"
+        className="absolute bottom-10 left-1/2 w-[72%] -translate-x-1/2 rounded-[28px] border border-white/12 bg-slate-950/35 p-5 backdrop-blur-xl"
       >
         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200/85">
           <Network className="h-3.5 w-3.5" /> Process ecosystem at a glance
@@ -273,7 +271,8 @@ function ChildCard({ item, index }) {
           <p className="text-sm leading-relaxed text-slate-600 md:text-base">{item.summary}</p>
           <Link
             to={item.href}
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0A2463] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0b2d7e]"
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             Learn More <ArrowRight className="h-4 w-4" />
           </Link>
@@ -311,7 +310,7 @@ export default function DuanamizeOurProcessLandingPage() {
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
-                <span>Approach</span>
+                <Link to="/approach" className="hover:text-white transition-colors">Approach</Link>
                 <span>•</span>
                 <span className="text-white">Our Process</span>
               </div>
@@ -332,21 +331,6 @@ export default function DuanamizeOurProcessLandingPage() {
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/90 md:text-lg">
                 This page is designed as an overview hub. It gives leaders a clear entry point into how Duanamize approaches process improvement through both disciplined implementation and human-centered change enablement.
               </p>
-
-              <div className="mt-7 flex flex-wrap gap-3">
-                <a
-                  href="#pages"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5"
-                >
-                  Explore child pages <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="#ecosystem"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-                >
-                  View process ecosystem <PlayCircle className="h-4 w-4" />
-                </a>
-              </div>
 
               <div className="mt-8 grid gap-3">
                 {trustPoints.map((point) => (
@@ -490,6 +474,7 @@ export default function DuanamizeOurProcessLandingPage() {
                     key={item.title}
                     to={item.href}
                     className="group rounded-[28px] border border-white/10 bg-white/10 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.14]"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   >
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100/80">
                       {item.label}
@@ -497,7 +482,7 @@ export default function DuanamizeOurProcessLandingPage() {
                     <div className="mt-3 text-lg font-semibold leading-snug text-white">
                       {item.title}
                     </div>
-                    <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white">
+                    <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition">
                       View Page
                       <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                     </div>
