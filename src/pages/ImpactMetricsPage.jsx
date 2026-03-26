@@ -131,11 +131,8 @@ export default function ImpactMetricsPage() {
           </div>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-5">
-                <Sparkles className="h-3.5 w-3.5" /> Quantifiable Results That Drive Business Success
-              </div>
-              <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-                Impact metrics —{" "}
+              <h1 style={serif} className="text-4xl mt-4 font-semibold leading-tight tracking-tight text-white md:text-6xl">
+                Impact metrics {" "}
                 <span className="text-[#A5F3FC]">real improvements, real numbers.</span>
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
@@ -143,14 +140,6 @@ export default function ImpactMetricsPage() {
                 real improvements in efficiency, quality, cost, and customer experience — helping organisations
                 achieve sustainable growth with numbers you can report to the board.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#efficiency" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Explore metrics <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#framework" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                  Our framework
-                </a>
-              </div>
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 {[
                   { value: "30–50%", label: "Cycle time reduction" },
@@ -186,24 +175,22 @@ export default function ImpactMetricsPage() {
       </section>
 
       {/* EFFICIENCY METRICS */}
-      <section id="efficiency" className="relative">
-        <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
+      <section id="efficiency" className="relative bg-white text-slate-900">
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Efficiency gains and cost savings</div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Three dimensions of operational efficiency improvement.</h2>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {efficiencyMetrics.map((m) => (
-              <div key={m.label} className="rounded-[22px] border border-white/8 p-6" style={{ background: "rgba(255,255,255,0.03)" }}>
+              <div key={m.label} className="rounded-[22px] border border-slate-200 bg-slate-50 p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-base font-semibold text-white">{m.label}</h3>
-                  <span className="rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-sm font-bold text-cyan-400">{m.range}</span>
+                  <h3 className="text-base font-semibold text-slate-900">{m.label}</h3>
+                  <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-bold text-blue-600">{m.range}</span>
                 </div>
                 <ul className="space-y-2">
                   {m.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-blue-200/60">
-                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-400/70" />{item}
+                    <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
+                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-blue-500" />{item}
                     </li>
                   ))}
                 </ul>
@@ -214,20 +201,19 @@ export default function ImpactMetricsPage() {
       </section>
 
       {/* QUALITY METRICS */}
-      <section className="relative">
+      <section className="relative bg-white text-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Quality and compliance improvements</div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Quality metrics that define excellence.</h2>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {qualityMetrics.map((m) => (
-              <div key={m.label} className="rounded-[22px] border border-white/8 p-6 transition hover:-translate-y-1 hover:border-cyan-400/20" style={{ background: "rgba(255,255,255,0.03)" }}>
+              <div key={m.label} className="rounded-[22px] border border-slate-200 bg-slate-50 p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-base font-semibold text-white">{m.label}</h3>
-                  <span className="rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-sm font-bold text-cyan-400">{m.range}</span>
+                  <h3 className="text-base font-semibold text-slate-900">{m.label}</h3>
+                  <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-bold text-blue-600">{m.range}</span>
                 </div>
-                <p className="text-sm leading-relaxed text-blue-200/60">{m.desc}</p>
+                <p className="text-sm leading-relaxed text-slate-600">{m.desc}</p>
               </div>
             ))}
           </div>
@@ -238,8 +224,7 @@ export default function ImpactMetricsPage() {
       <section className="relative">
         <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Industry-specific success stories</div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Metrics from real engagements across four sectors.</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -247,8 +232,10 @@ export default function ImpactMetricsPage() {
               const Icon = ind.icon;
               return (
                 <div key={ind.title} className="rounded-[22px] border border-white/8 p-6" style={{ background: "rgba(255,255,255,0.03)" }}>
-                  <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${ind.color} text-white shadow-lg mb-4`}><Icon className="h-6 w-6" /></div>
-                  <h3 className="text-base font-semibold text-white mb-3">{ind.title}</h3>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${ind.color} text-white shadow-lg`}><Icon className="h-6 w-6" /></div>
+                    <h3 className="text-base font-semibold text-white">{ind.title}</h3>
+                  </div>
                   <ul className="space-y-2">
                     {ind.results.map((r) => (
                       <li key={r} className="flex items-start gap-2 text-sm text-blue-200/60">
@@ -268,7 +255,6 @@ export default function ImpactMetricsPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4"><Sparkles className="h-3.5 w-3.5" /> Customer and employee satisfaction</div>
               <h2 style={serif} className="text-3xl font-semibold md:text-4xl mb-6">The human side of the metrics.</h2>
               <div className="grid gap-4">
                 {satisfactionMetrics.map((m) => (
@@ -289,7 +275,6 @@ export default function ImpactMetricsPage() {
               </div>
             </div>
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4"><Sparkles className="h-3.5 w-3.5" /> Technology and automation impact</div>
               <h2 style={serif} className="text-3xl font-semibold md:text-4xl mb-6">Digital performance benchmarks.</h2>
               <div className="grid gap-4">
                 {[
@@ -314,25 +299,25 @@ export default function ImpactMetricsPage() {
       </section>
 
       {/* MEASUREMENT FRAMEWORK */}
-      <section id="framework" className="relative">
-        <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
+      <section id="framework" className="relative bg-white text-slate-900">
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Our measurement framework</div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Four pillars of transparent ROI delivery.</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-blue-200/60">Strategy aligned with clear KPIs and real-time tracking — ensuring ROI delivery and continuous improvement for lasting impact.</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 whitespace-normal">Strategy aligned with clear KPIs and real-time tracking — ensuring ROI delivery and continuous improvement for lasting impact.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {measurementFramework.map((item, i) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="rounded-[22px] border border-white/8 p-6" style={{ background: "rgba(255,255,255,0.03)" }}>
+                <div key={item.title} className="rounded-[22px] border border-slate-200 bg-slate-50 p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><Icon className="h-6 w-6" /></div>
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-300/40">{String(i + 1).padStart(2, "0")}</span>
+                    <div className="flex items-center gap-3">
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><Icon className="h-6 w-6" /></div>
+                      <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
+                    </div>
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                  <h3 className="text-base font-semibold text-white mb-2">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-blue-200/55">{item.desc}</p>
+                  <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
                 </div>
               );
             })}
@@ -340,25 +325,40 @@ export default function ImpactMetricsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative pb-16 md:pb-20">
+      {/* ── CONTINUE EXPLORING ── */}
+      <section className="bg-slate-50 pt-8 pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[24px] border border-cyan-400/12 p-8 md:p-10" style={{ background: "linear-gradient(135deg,rgba(13,32,64,0.9) 0%,rgba(15,37,80,0.9) 50%,rgba(10,30,69,0.9) 100%)", boxShadow: "0 0 60px rgba(56,189,248,0.05),0 25px 50px rgba(0,0,0,0.4)" }}>
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
+            <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Define your metrics</div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">What metrics would define success for your organisation?</h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-blue-200/60 md:text-lg">Start with a discovery conversation to define the KPIs that matter most to your transformation objectives.</p>
+                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
+                  Continue exploring transformation results
+                </h2>
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+                  This Impact Metrics page is part of our comprehensive Results section showcasing quantifiable outcomes from LSS+AI transformations across industries.
+                </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Start conversation <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Email Duanamize</a>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Impact Metrics: Real Improvements, Real Numbers
+                  </h3>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Client Stories: Transformation in Their Own Words
+                  </h3>
+                  <a href="/client-stories" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>    </div>
+      </section>
+    </div>
   );
 }

@@ -83,9 +83,6 @@ export default function ResultsMainPage() {
           </div>
           <div className="mt-8 grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> Proven Transformation Outcomes
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Results that speak louder than{" "}
                 <span className="text-[#A5F3FC]">promises.</span>
@@ -95,14 +92,6 @@ export default function ResultsMainPage() {
                 industries. Every case study, metric, and client story reflects the measurable, lasting impact
                 of our LSS+AI methodology — driving breakthrough results and sustainable competitive advantage.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#sub-menus" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Explore results <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#highlights" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                  Our approach
-                </a>
-              </div>
               <div className="mt-10 grid gap-3 sm:grid-cols-4">
                 {overallStats.map((s) => (
                   <div key={s.value} className="rounded-[22px] border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
@@ -145,18 +134,15 @@ export default function ResultsMainPage() {
       </section>
 
       {/* ── 4 SUB-MENU CARDS ── */}
-      <section id="sub-menus" id="case-studies" id="metrics" id="stories" className="bg-white">
+      <section id="sub-menus" className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
-              <Sparkles className="h-3.5 w-3.5" /> Four results perspectives
-            </div>
-            <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
+          <div className="mb-10 text-left">
+            <h2 style={serif} className="mt-1 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Explore our transformation track record.
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-lg">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg whitespace-normal">
               From detailed industry case studies to quantified impact metrics, client testimonials, and
-              multi-year journey narratives — four lenses into the Duanamize results story.
+              multi-year journey narratives four lenses into the Duanamize results story.
             </p>
           </div>
 
@@ -192,7 +178,7 @@ export default function ResultsMainPage() {
       </section>
 
       {/* ── WHY OUR RESULTS MATTER ── */}
-      <section id="highlights" id="journeys" className="bg-slate-100">
+      <section id="highlights" className="bg-slate-100">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="relative overflow-hidden rounded-[24px] border border-slate-200 shadow-xl">
@@ -226,9 +212,6 @@ export default function ResultsMainPage() {
             </div>
 
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> Why our results stand out
-              </div>
               <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-4xl mb-8">
                 Transformation evidence built on transparency and measurable proof.
               </h2>
@@ -237,11 +220,13 @@ export default function ResultsMainPage() {
                   const Icon = item.icon;
                   return (
                     <div key={item.title} className="rounded-[20px] border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-200 hover:shadow-lg">
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 text-white shadow-lg">
-                        <Icon className="h-5 w-5" />
+                      <div className="flex items-center gap-3">
+                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 text-white shadow-lg">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div className="text-base font-semibold text-slate-900">{item.title}</div>
                       </div>
-                      <div className="mt-3 text-base font-semibold text-slate-900">{item.title}</div>
-                      <p className="mt-1 text-sm leading-relaxed text-slate-600">{item.text}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.text}</p>
                     </div>
                   );
                 })}
@@ -254,11 +239,8 @@ export default function ResultsMainPage() {
       {/* ── QUICK STATS BANNER ── */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463]">
-              <Sparkles className="h-3.5 w-3.5" /> Headline impact numbers
-            </div>
-            <h2 style={serif} className="mt-4 text-3xl font-semibold text-slate-950 md:text-4xl">
+          <div className="mb-10 text-left mt-1">
+            <h2 style={serif} className="mt-1 text-3xl font-semibold text-slate-950 md:text-4xl">
               The numbers behind the transformation.
             </h2>
           </div>
@@ -285,9 +267,6 @@ export default function ResultsMainPage() {
           <div className="overflow-hidden rounded-[24px] border border-blue-200 bg-white p-8 md:p-10 shadow-lg">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-600">
-                  <Sparkles className="h-3.5 w-3.5" /> Ready to add your story?
-                </div>
                 <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
                   Join the organisations achieving breakthrough results with Duanamize.
                 </h2>

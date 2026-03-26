@@ -146,19 +146,35 @@ export default function ClientStoriesMainPage() {
             <span className="text-white">•</span>
             <span className="text-white">Client Stories</span>
           </div>
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-5">
-              <Sparkles className="h-3.5 w-3.5" /> Real Stories, Real Results
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="max-w-4xl">
+              <h1 style={serif} className="text-4xl mt-2 font-semibold leading-tight tracking-tight text-white md:text-6xl">
+                Client stories {" "}
+                <span className="text-[#A5F3FC]">in their own words.</span>
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-white md:text-lg">
+                Hear directly from our clients about their experiences partnering with Duanamize and the
+                breakthrough results achieved through our LSS+AI methodology — challenges faced, the journey
+                taken, and the measurable outcomes delivered.
+              </p>
             </div>
-            <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-              Client stories —{" "}
-              <span className="text-[#A5F3FC]">in their own words.</span>
-            </h1>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-white md:text-lg">
-              Hear directly from our clients about their experiences partnering with Duanamize and the
-              breakthrough results achieved through our LSS+AI methodology — challenges faced, the journey
-              taken, and the measurable outcomes delivered.
-            </p>
+            <div className="relative mx-auto w-full max-w-[520px]">
+              <div className="overflow-hidden rounded-[24px] border border-white/10 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Client testimonials" className="h-72 w-full object-cover opacity-65" />
+                <div className="absolute inset-0 h-72 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/15 to-transparent" />
+                <div className="absolute left-5 top-5 rounded-[14px] border border-cyan-400/20 bg-[#0a1628]/70 px-4 py-3 backdrop-blur-xl">
+                  <div className="flex items-center gap-2"><div className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" /><span className="text-xs font-semibold text-white">Verified client testimonials</span></div>
+                </div>
+                <div className="p-5 border-t border-white/8" style={{ background: "rgba(10,22,40,0.6)" }}>
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-400/65 mb-3">Client industries</div>
+                  <div className="flex flex-wrap gap-2">
+                    {["Healthcare","Financial Services","Manufacturing","Technology"].map((tag) => (
+                      <span key={tag} className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs font-semibold text-blue-100/75">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -167,13 +183,12 @@ export default function ClientStoriesMainPage() {
       <section className="relative">
         <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-8 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Featured success stories</div>
+          <div className="mb-8 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Select a client story to read.</h2>
           </div>
 
           {/* Story tabs */}
-          <div className="mb-8 flex flex-wrap justify-center gap-3">
+          <div className="mb-8 flex flex-wrap gap-3">
             {clientStories.map((s, i) => {
               const SIcon = s.icon;
               return (
@@ -255,16 +270,17 @@ export default function ClientStoriesMainPage() {
               </div>
             </div>
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4"><Sparkles className="h-3.5 w-3.5" /> Why clients choose Duanamize</div>
               <h2 style={serif} className="text-3xl font-semibold leading-tight md:text-4xl mb-8">Four reasons clients keep coming back.</h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {whyClients.map((item) => {
                   const WIcon = item.icon;
                   return (
                     <div key={item.title} className="rounded-[20px] border border-white/8 p-5 transition hover:border-cyan-400/25" style={{ background: "rgba(255,255,255,0.03)" }}>
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><WIcon className="h-5 w-5" /></div>
-                      <div className="mt-3 text-base font-semibold text-white">{item.title}</div>
-                      <p className="mt-1 text-sm leading-relaxed text-blue-200/55">{item.text}</p>
+                      <div className="flex items-center gap-3">
+                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><WIcon className="h-5 w-5" /></div>
+                        <div className="text-base font-semibold text-white">{item.title}</div>
+                      </div>
+                      <p className="mt-3 text-sm leading-relaxed text-blue-200/55">{item.text}</p>
                     </div>
                   );
                 })}
@@ -275,23 +291,22 @@ export default function ClientStoriesMainPage() {
       </section>
 
       {/* STAR RATINGS ROW */}
-      <section className="relative">
-        <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
+      <section className="relative bg-white text-slate-900">
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-5 md:grid-cols-3">
             {clientStories.map((s) => {
               const SIcon = s.icon;
               return (
-                <div key={s.org} className="rounded-[22px] border border-white/8 p-6" style={{ background: "rgba(255,255,255,0.03)" }}>
+                <div key={s.org} className="rounded-[22px] border border-slate-200 bg-slate-50 p-6">
                   <div className="flex items-center gap-1 mb-4">
                     {[1,2,3,4,5].map((n) => <Star key={n} className="h-4 w-4 text-amber-400 fill-amber-400" />)}
                   </div>
-                  <blockquote className="text-sm leading-relaxed text-blue-100/80 italic mb-4">"{s.quote}"</blockquote>
-                  <div className="flex items-center gap-3 pt-4 border-t border-white/8">
+                  <blockquote className="text-sm leading-relaxed text-slate-600 italic mb-4">"{s.quote}"</blockquote>
+                  <div className="flex items-center gap-3 pt-4 border-t border-slate-200">
                     <div className={`inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${s.color} text-white`}><SIcon className="h-5 w-5" /></div>
                     <div>
-                      <div className="text-sm font-semibold text-white">{s.role}</div>
-                      <div className="text-xs text-blue-200/55">{s.title}</div>
+                      <div className="text-sm font-semibold text-slate-900">{s.role}</div>
+                      <div className="text-xs text-slate-500">{s.title}</div>
                     </div>
                   </div>
                 </div>
@@ -301,25 +316,40 @@ export default function ClientStoriesMainPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative pb-16 md:pb-20">
+      {/* ── CONTINUE EXPLORING ── */}
+      <section className="bg-slate-50 pt-8 pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[24px] border border-cyan-400/12 p-8 md:p-10" style={{ background: "linear-gradient(135deg,rgba(13,32,64,0.9) 0%,rgba(15,37,80,0.9) 50%,rgba(10,30,69,0.9) 100%)", boxShadow: "0 0 60px rgba(56,189,248,0.05),0 25px 50px rgba(0,0,0,0.4)" }}>
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
+            <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Write your story with us</div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">Ready to experience the Duanamize difference?</h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-blue-200/60 md:text-lg">Join the COOs, VPs, and operations leaders who have transformed their organisations with our LSS+AI methodology.</p>
+                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
+                  Continue exploring transformation results
+                </h2>
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+                  This Client Stories page is part of our comprehensive Results section showcasing real client experiences and testimonials from LSS+AI transformations across industries.
+                </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Start your journey <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Email Duanamize</a>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Client Stories: In Their Own Words
+                  </h3>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Transformation Journeys: Multi-Year Transformation Narratives
+                  </h3>
+                  <a href="/transformation-journeys" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>    </div>
+      </section>
+    </div>
   );
 }

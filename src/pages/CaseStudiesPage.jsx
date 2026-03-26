@@ -154,29 +154,32 @@ export default function CaseStudiesMainPage() {
     <div className="min-h-screen text-white" style={{ background: "linear-gradient(135deg,#0a1628 0%,#0d1f3c 40%,#0f2550 70%,#0a1e45 100%)" }}>
       <div className="pointer-events-none fixed inset-0 opacity-[0.025]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#071857]">
+      <section className="relative overflow-hidden bg-[#071857] pb-24">
         <div className="absolute inset-0 opacity-90 bg-[radial-gradient(circle_at_14%_18%,rgba(45,212,191,0.18),transparent_30%),radial-gradient(circle_at_84%_18%,rgba(59,130,246,0.18),transparent_28%),radial-gradient(circle_at_52%_82%,rgba(255,255,255,0.06),transparent_40%)]" />
         <div className="absolute -left-16 top-12 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl" />
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-24 pt-8 md:px-8">
-          <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/70">
-            <a href="/results" className="text-white hover:text-blue-200 transition-colors">Results</a>
-            <span className="text-white">•</span>
-            <span className="text-white">Case Studies</span>
-          </div>
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-5">
-              <Sparkles className="h-3.5 w-3.5" /> Driving Transformation Across Industries
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pt-8 md:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="max-w-4xl">
+              <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/70">
+                <a href="/results" className="text-white hover:text-blue-200 transition-colors">Results</a>
+                <span className="text-white">•</span>
+                <span className="text-white">Case Studies</span>
+              </div>
+              <h1 style={serif} className="text-4xl mt-5 font-semibold leading-tight tracking-tight text-white md:text-6xl">
+                Case studies {" "}
+                <span className="text-[#A5F3FC]">LSS+AI in action.</span>
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-white md:text-lg">
+                Our case studies showcase the tangible value and lasting impact of our LSS+AI methodology,
+                demonstrating how we help organisations achieve breakthrough results and sustainable competitive
+                advantage across healthcare, FinTech, automotive, retail, manufacturing, and energy.
+              </p>
             </div>
-            <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-              Case studies —{" "}
-              <span className="text-[#A5F3FC]">LSS+AI in action.</span>
-            </h1>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-white md:text-lg">
-              Our case studies showcase the tangible value and lasting impact of our LSS+AI methodology,
-              demonstrating how we help organisations achieve breakthrough results and sustainable competitive
-              advantage across healthcare, FinTech, automotive, retail, manufacturing, and energy.
-            </p>
+            <div className="relative h-full min-h-[300px] w-full">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80" alt="Case Study Analysis" className="absolute inset-0 h-full w-full object-cover rounded-xl shadow-lg opacity-80" />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-[#071857]/80 via-[#071857]/20 to-transparent" />
+            </div>
           </div>
         </div>
       </section>
@@ -185,13 +188,12 @@ export default function CaseStudiesMainPage() {
       <section className="relative">
         <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-8 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Featured case studies</div>
+          <div className="mb-8 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Select an industry to explore.</h2>
           </div>
 
           {/* Industry tab selector */}
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
+          <div className="mb-8 flex flex-wrap gap-2">
             {industryTabs.map((tab, i) => {
               const Icon = tab.icon;
               return (
@@ -239,20 +241,19 @@ export default function CaseStudiesMainPage() {
       </section>
 
       {/* CASE STUDY CATEGORIES */}
-      <section className="relative">
+      <section className="relative bg-white text-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Case study categories</div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Explore by business impact.</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-blue-200/60">From clinical optimisation to financial excellence — our LSS+AI approach delivers measurable gains in efficiency, cost, quality, and experience.</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 whitespace-normal">From clinical optimisation to financial excellence our LSS+AI approach delivers measurable gains in efficiency, cost, quality, and experience.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((cat, i) => (
-              <div key={cat.title} className="group rounded-[22px] border border-white/8 p-6 transition hover:-translate-y-1 hover:border-cyan-400/20 cursor-pointer" style={{ background: "rgba(255,255,255,0.03)" }}>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-300/40 mb-3">Category {String(i + 1).padStart(2, "0")}</div>
-                <h3 className="text-base font-semibold text-white mb-2">{cat.title}</h3>
-                <p className="text-sm leading-relaxed text-blue-200/55">{cat.desc}</p>
-                <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cyan-400 transition group-hover:gap-2">
+              <div key={cat.title} className="group rounded-[22px] border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-blue-200 cursor-pointer">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400 mb-3">Category {String(i + 1).padStart(2, "0")}</div>
+                <h3 className="text-base font-semibold text-slate-900 mb-2">{cat.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-600">{cat.desc}</p>
+                <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 transition group-hover:gap-2">
                   Explore <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </div>
@@ -267,7 +268,6 @@ export default function CaseStudiesMainPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4"><Sparkles className="h-3.5 w-3.5" /> What makes our case studies unique</div>
               <h2 style={serif} className="text-3xl font-semibold leading-tight md:text-4xl mb-6">Transparency, measurability, and lasting impact — built in.</h2>
               <div className="grid gap-4">
                 {[
@@ -312,25 +312,40 @@ export default function CaseStudiesMainPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative pb-16 md:pb-20">
+      {/* ── CONTINUE EXPLORING ── */}
+      <section className="bg-slate-50 pt-8 pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[24px] border border-cyan-400/12 p-8 md:p-10" style={{ background: "linear-gradient(135deg,rgba(13,32,64,0.9) 0%,rgba(15,37,80,0.9) 50%,rgba(10,30,69,0.9) 100%)", boxShadow: "0 0 60px rgba(56,189,248,0.05),0 25px 50px rgba(0,0,0,0.4)" }}>
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
+            <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Add your success story</div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">Ready to become Duanamize's next case study?</h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-blue-200/60 md:text-lg">Start a conversation about the transformation outcomes your organisation could achieve with our LSS+AI methodology.</p>
+                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
+                  Continue exploring transformation results
+                </h2>
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+                  This Case Studies page is part of our comprehensive Results section showcasing detailed implementation examples and measurable outcomes from LSS+AI transformations.
+                </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Start the conversation <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Email Duanamize</a>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Case Studies: Detailed Implementation Examples
+                  </h3>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Impact Metrics: Real Improvements, Real Numbers
+                  </h3>
+                  <a href="/impact-metrics" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>    </div>
+      </section>
+    </div>
   );
 }

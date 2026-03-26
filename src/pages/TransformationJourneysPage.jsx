@@ -104,10 +104,10 @@ function Header() {
 function Footer() {
   return (
     <footer className="border-t border-white/5" style={{ background: "linear-gradient(180deg,#060d1f 0%,#04091a 100%)" }}>
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-[1.1fr_0.7fr_0.7fr_0.9fr_1fr] md:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 mt-4 py-12 md:grid-cols-[1.1fr_0.7fr_0.7fr_0.9fr_1fr] md:px-8">
         <div>
           <LogoMark />
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-blue-200/55">Multi-year, multi-phase transformation journeys — capability maturity progression, technology adoption roadmaps, and structured methodology for lasting change.</p>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-blue-200/55">Multi-year, multi-phase transformation journeys capability maturity progression, technology adoption roadmaps, and structured methodology for lasting change.</p>
           <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300">
             <Layers3 className="h-3.5 w-3.5" /> End-to-end transformation
           </div>
@@ -157,9 +157,6 @@ export default function TransformationJourneysMainPage() {
           </div>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-5">
-                <Sparkles className="h-3.5 w-3.5" /> Multi-Year Transformation Framework
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Transformation journeys —{" "}
                 <span className="text-[#A5F3FC]">from current state to industry-leading.</span>
@@ -169,14 +166,6 @@ export default function TransformationJourneysMainPage() {
                 knowledge to drive transformational results. Experience end-to-end transformation through
                 carefully structured phases that build cumulative value over time.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#phases" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Explore the journey <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#maturity" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                  Capability maturity
-                </a>
-              </div>
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 {[
                   { value: "2–5 yrs", label: "Programme duration range" },
@@ -215,14 +204,13 @@ export default function TransformationJourneysMainPage() {
       <section id="phases" className="relative">
         <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Proven delivery methodology</div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">A battle-tested 4-phase approach.</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-blue-200/60">Clear timelines, measurable outcomes, and transparent communication at every step — from discovery to self-sustaining solution.</p>
+            <p className="mt-3 text-sm leading-relaxed text-blue-200/60 whitespace-normal">Clear timelines, measurable outcomes, and transparent communication at every step — from discovery to self-sustaining solution.</p>
           </div>
 
           {/* Phase tabs */}
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
+          <div className="mb-8 flex flex-wrap gap-2">
             {journeyPhases.map((phase, i) => {
               const PIcon = phase.icon;
               return (
@@ -238,9 +226,9 @@ export default function TransformationJourneysMainPage() {
             if (i !== activePhase) return null;
             const PIcon = phase.icon;
             return (
-              <div key={phase.step} className="mx-auto max-w-4xl rounded-[24px] border border-white/8 overflow-hidden" style={{ background: "rgba(255,255,255,0.03)" }}>
+              <div key={phase.step} className="max-w-4xl rounded-[24px] border border-white/8 overflow-hidden" style={{ background: "rgba(255,255,255,0.03)" }}>
                 <div className="grid lg:grid-cols-[1fr_1fr]">
-                  <div className="p-8 border-b border-white/8 lg:border-b-0 lg:border-r">
+                  <div className="p-8 border-b border-white/8 lg:border-b-0 lg:border-r text-left">
                     <div className="flex items-center gap-4 mb-5">
                       <div className="inline-flex h-14 w-14 items-center justify-center rounded-[18px] bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><PIcon className="h-7 w-7" /></div>
                       <div>
@@ -257,7 +245,7 @@ export default function TransformationJourneysMainPage() {
                       <p className="text-sm font-medium text-white">{phase.outcome}</p>
                     </div>
                   </div>
-                  <div className="p-8">
+                  <div className="p-8 text-left">
                     <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-blue-300/50 mb-4">Deliverables</div>
                     <div className="grid gap-3">
                       {phase.deliverables.map((d) => (
@@ -278,17 +266,18 @@ export default function TransformationJourneysMainPage() {
       {/* MATURITY PILLARS */}
       <section id="maturity" className="relative">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Journey framework pillars</div>
+          <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Three dimensions of transformation journey depth.</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {maturityPillars.map((pillar) => {
               const PIcon = pillar.icon;
               return (
-                <div key={pillar.title} className="rounded-[22px] border border-white/8 p-6 transition hover:-translate-y-1 hover:border-cyan-400/20" style={{ background: "rgba(255,255,255,0.03)" }}>
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg mb-4"><PIcon className="h-6 w-6" /></div>
-                  <h3 className="text-base font-semibold text-white mb-3">{pillar.title}</h3>
+                <div key={pillar.title} className="rounded-[22px] border border-white/8 p-6 transition hover:-translate-y-1 hover:border-cyan-400/20 text-left" style={{ background: "rgba(255,255,255,0.03)" }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><PIcon className="h-6 w-6" /></div>
+                    <h3 className="text-base font-semibold text-white">{pillar.title}</h3>
+                  </div>
                   <p className="text-sm leading-relaxed text-blue-200/55 mb-4">{pillar.desc}</p>
                   <ul className="space-y-2">
                     {pillar.items.map((item) => (
@@ -305,21 +294,21 @@ export default function TransformationJourneysMainPage() {
       </section>
 
       {/* WHY CHOOSE + SUCCESS STORIES */}
-      <section className="relative">
-        <div className="absolute inset-0" style={{ background: "rgba(6,13,31,0.5)" }} />
+      <section className="relative bg-white text-slate-900">
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4"><Sparkles className="h-3.5 w-3.5" /> Why choose Duanamize</div>
               <h2 style={serif} className="text-3xl font-semibold leading-tight md:text-4xl mb-8">Four reasons our transformation journeys deliver lasting results.</h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {whyChoose.map((item) => {
                   const WIcon = item.icon;
                   return (
-                    <div key={item.title} className="rounded-[20px] border border-white/8 p-5 transition hover:border-cyan-400/25" style={{ background: "rgba(255,255,255,0.03)" }}>
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><WIcon className="h-5 w-5" /></div>
-                      <div className="mt-3 text-base font-semibold text-white">{item.title}</div>
-                      <p className="mt-1 text-sm leading-relaxed text-blue-200/55">{item.desc}</p>
+                    <div key={item.title} className="rounded-[20px] border border-slate-200 bg-slate-50 p-5 transition hover:border-cyan-400/25">
+                      <div className="flex items-center gap-3">
+                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg"><WIcon className="h-5 w-5" /></div>
+                        <div className="text-base font-semibold text-slate-900">{item.title}</div>
+                      </div>
+                      <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.desc}</p>
                     </div>
                   );
                 })}
@@ -327,18 +316,17 @@ export default function TransformationJourneysMainPage() {
             </div>
 
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-xs font-semibold text-cyan-300 mb-4"><Sparkles className="h-3.5 w-3.5" /> Success stories & lessons</div>
-              <h2 style={serif} className="text-3xl font-semibold leading-tight md:text-4xl mb-6">Transformations that exceeded expectations.</h2>
+              <h2 style={serif} className="text-3xl font-semibold leading-tight md:text-4xl mb-6 text-left">Transformations that exceeded expectations.</h2>
               <div className="grid gap-4">
                 {successStories.map((s) => {
                   const SIcon = s.icon;
                   return (
-                    <div key={s.title} className="rounded-[20px] border border-white/8 p-5" style={{ background: "rgba(255,255,255,0.03)" }}>
+                    <div key={s.title} className="rounded-[20px] border border-slate-200 bg-slate-50 p-5">
                       <div className="flex items-start gap-3">
                         <div className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${s.color} text-white shadow-lg`}><SIcon className="h-5 w-5" /></div>
                         <div>
-                          <div className="text-base font-semibold text-white">{s.title}</div>
-                          <p className="mt-1 text-sm leading-relaxed text-blue-200/55">{s.desc}</p>
+                          <div className="text-base font-semibold text-slate-900">{s.title}</div>
+                          <p className="mt-1 text-sm leading-relaxed text-slate-600">{s.desc}</p>
                         </div>
                       </div>
                     </div>
@@ -350,25 +338,40 @@ export default function TransformationJourneysMainPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative pb-16 md:pb-20">
+      {/* ── CONTINUE EXPLORING ── */}
+      <section className="bg-slate-50 pt-8 pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[24px] border border-cyan-400/12 p-8 md:p-10" style={{ background: "linear-gradient(135deg,rgba(13,32,64,0.9) 0%,rgba(15,37,80,0.9) 50%,rgba(10,30,69,0.9) 100%)", boxShadow: "0 0 60px rgba(56,189,248,0.05),0 25px 50px rgba(0,0,0,0.4)" }}>
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
+            <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-300"><Sparkles className="h-3.5 w-3.5" /> Begin your transformation journey</div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">Ready to start your transformation journey with Duanamize?</h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-blue-200/60 md:text-lg">From discovery to self-sustaining excellence — our 4-phase methodology ensures your transformation delivers lasting value at every stage of the journey.</p>
+                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
+                  Continue exploring transformation results
+                </h2>
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
+                  This Transformation Journeys page is part of our comprehensive Results section showcasing multi-year transformation programmes and capability maturity progression.
+                </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Start your journey <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Email Duanamize</a>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Transformation Journeys: Multi-Year Transformation Narratives
+                  </h3>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Case Studies: Detailed Implementation Examples
+                  </h3>
+                  <a href="/case-studies" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>    </div>
+      </section>
+    </div>
   );
 }
