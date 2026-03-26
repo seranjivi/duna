@@ -41,35 +41,31 @@ const heroStats = [
 const readinessDimensions = [
   {
     title: "Data Foundation",
-    score: 86,
+    // score: 86,
     accent: "from-cyan-400 to-sky-500",
     note: "Quality, governance, accessibility, integration readiness",
     icon: Database,
   },
   {
     title: "Technical Capability",
-    score: 74,
     accent: "from-sky-500 to-indigo-500",
     note: "Infrastructure, cloud, model support, internal skills",
     icon: CloudCog,
   },
   {
     title: "Business Value",
-    score: 81,
     accent: "from-indigo-500 to-blue-500",
     note: "Use case clarity, ROI logic, measurable success criteria",
     icon: BarChart3,
   },
   {
     title: "Operating Readiness",
-    score: 68,
     accent: "from-blue-500 to-cyan-400",
     note: "Leadership commitment, change readiness, adoption model",
     icon: Users,
   },
   {
     title: "Governance & Risk",
-    score: 79,
     accent: "from-cyan-400 to-emerald-400",
     note: "Security, privacy, bias control, explainability, compliance",
     icon: ShieldCheck,
@@ -114,12 +110,7 @@ const maturityLevels = [
     level: "04",
     name: "Scaled",
     text: "Standards, platforms, and governance support broader rollout across functions and processes.",
-  },
-  {
-    level: "05",
-    name: "Intelligent enterprise",
-    text: "AI becomes a governed operating capability with continuous optimization and measurable business impact.",
-  },
+  }
 ];
 
 const useCaseCriteria = [
@@ -242,16 +233,18 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false, align = "left" }) {
   return (
     <div className={`mb-8 md:mb-10 ${align === "center" ? "text-center" : ""}`}>
-      <div
-        className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
-          light
-            ? "border-white/20 bg-white/10 text-blue-100"
-            : "border-blue-200 bg-white text-[#0A2463]"
-        }`}
-      >
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div
+          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
+            light
+              ? "border-white/20 bg-white/10 text-blue-100"
+              : "border-blue-200 bg-white text-[#0A2463]"
+          }`}
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${
@@ -261,7 +254,7 @@ function SectionHeader({ eyebrow, title, description, light = false, align = "le
         {title}
       </h2>
       <p
-        className={`mt-3 max-w-3xl text-sm leading-relaxed md:text-lg ${
+        className={`mt-3 max-w-none text-sm leading-relaxed whitespace-normal md:text-lg ${
           align === "center" ? "mx-auto" : ""
         } ${light ? "text-blue-100/85" : "text-slate-600"}`}
       >
@@ -279,7 +272,7 @@ function Hero() {
       <div className="absolute -left-20 top-14 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl" />
       <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-4 md:px-8 md:pb-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-1 pb-16 pt-0 md:px-2 md:pb-20">
         <div className="grid gap-12 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
           <div>
             <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
@@ -288,11 +281,6 @@ function Hero() {
               <span>Process Intelligence</span>
               <span>•</span>
               <span className="text-white">AI Readiness Assessment</span>
-            </div>
-
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-              <Radar className="h-3.5 w-3.5 text-cyan-300" />
-              Process Intelligence capability
             </div>
 
             <h1
@@ -307,20 +295,6 @@ function Hero() {
               Successful AI programs begin long before model selection. They start with a clear view of organizational maturity, data readiness, technical capability, governance discipline, and adoption potential.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href="#framework"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5"
-              >
-                Explore the readiness framework <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#roadmap"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-              >
-                View the implementation roadmap
-              </a>
-            </div>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {heroStats.map((item) => (
@@ -364,7 +338,7 @@ function Hero() {
                       ].map(([title, text]) => (
                         <div key={title} className="rounded-2xl border border-white/10 bg-slate-950/25 p-4">
                           <div className="text-sm font-semibold text-white">{title}</div>
-                          <div className="mt-1 text-sm leading-relaxed text-blue-100/78">{text}</div>
+                          <div className="mt-1 text-sm leading-relaxed text-white">{text}</div>
                         </div>
                       ))}
                     </div>
@@ -373,32 +347,22 @@ function Hero() {
                   <div className="rounded-[30px] border border-white/10 bg-[#06123f]/90 p-5">
                     <div className="mb-4 flex items-center justify-between gap-3">
                       <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/70">Dimension analysis</div>
-                      <div className="inline-flex items-center gap-2 text-xs text-cyan-100/75">
-                        <Bot className="h-3.5 w-3.5" /> AI assessment lens
-                      </div>
+                     
                     </div>
                     <div className="space-y-4">
                       {readinessDimensions.map((item) => {
                         const Icon = item.icon;
                         return (
                           <div key={item.title} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                            <div className="flex items-start justify-between gap-4">
-                              <div className="flex items-start gap-3">
+                            <div className="flex items-start gap-4">
+                              <div className="flex items-center gap-1">
+                                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/70 mb-2">Dimension</div>
                                 <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br ${item.accent} text-white shadow-lg shadow-blue-950/25`}>
                                   <Icon className="h-5 w-5" />
                                 </div>
-                                <div>
-                                  <div className="text-sm font-semibold text-white">{item.title}</div>
-                                  <div className="mt-1 text-xs leading-relaxed text-blue-100/72">{item.note}</div>
-                                </div>
+                                <div className="text-[8px] font-semibold text-white">{item.title}</div>
                               </div>
-                              <div className="text-sm font-semibold text-cyan-100">{item.score}%</div>
-                            </div>
-                            <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-white/10">
-                              <div
-                                className={`h-full rounded-full bg-gradient-to-r ${item.accent}`}
-                                style={{ width: `${item.score}%` }}
-                              />
+                              <div className="mt-1 text-xs leading-relaxed text-white">{item.note}</div>
                             </div>
                           </div>
                         );
@@ -422,7 +386,6 @@ function FailureSection() {
         <div className="grid gap-8 xl:grid-cols-[0.92fr_1.08fr] xl:items-start">
           <div>
             <SectionHeader
-              eyebrow="Why AI initiatives stall"
               title="Most failures begin before implementation starts"
               description="AI programs do not fail only because of technology choices. They fail when data foundations are weak, value logic is unclear, and the organization is not prepared to adopt a new operating model."
             />
@@ -490,9 +453,9 @@ function FrameworkSection() {
     <section id="framework" className="bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Organizational maturity framework"
           title="Five dimensions define whether AI can move from pilot to performance"
           description="A credible readiness assessment looks beyond technical enthusiasm. It evaluates the operating conditions that determine whether AI can be adopted safely, scaled efficiently, and measured rigorously."
+          align="left"
         />
 
         <div className="grid gap-6 xl:grid-cols-[0.94fr_1.06fr] xl:items-start">
@@ -535,21 +498,15 @@ function FrameworkSection() {
               const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-3">
                     <div className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${item.accent} text-white shadow-lg shadow-blue-900/20`}>
                       <Icon className="h-5 w-5" />
                     </div>
-                    <div className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-semibold text-slate-600">
-                      {item.score}% readiness
-                    </div>
+                    <h3 style={serif} className="text-xl font-semibold leading-tight text-slate-950">
+                      {item.title}
+                    </h3>
                   </div>
-                  <h3 style={serif} className="mt-5 text-2xl font-semibold leading-tight text-slate-950 md:text-3xl">
-                    {item.title}
-                  </h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">{item.note}</p>
-                  <div className="mt-5 h-2.5 overflow-hidden rounded-full bg-slate-200">
-                    <div className={`h-full rounded-full bg-gradient-to-r ${item.accent}`} style={{ width: `${item.score}%` }} />
-                  </div>
                 </div>
               );
             })}
@@ -567,7 +524,6 @@ function BusinessCaseSection() {
         <div className="grid gap-8 xl:grid-cols-[1.02fr_0.98fr] xl:items-start">
           <div>
             <SectionHeader
-              eyebrow="Business case and ROI planning"
               title="Readiness includes knowing where AI should start and why"
               description="Not every process needs AI first. Strong programs begin with use cases that combine meaningful business value, clean enough data, realistic implementation effort, and a high chance of adoption."
             />
@@ -577,13 +533,15 @@ function BusinessCaseSection() {
                 const Icon = item.icon;
                 return (
                   <div key={item.title} className="rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm">
-                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-blue-200 bg-white text-[#0A2463]">
-                      <Icon className="h-5 w-5" />
+                    <div className="flex items-center gap-3">
+                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-blue-200 bg-white text-[#0A2463]">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 style={serif} className="text-xl font-semibold leading-tight text-slate-950">
+                        {item.title}
+                      </h3>
                     </div>
-                    <h3 style={serif} className="mt-4 text-2xl font-semibold leading-tight text-slate-950">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.text}</p>
                   </div>
                 );
               })}
@@ -650,10 +608,9 @@ function RoadmapSection() {
     <section id="roadmap" className="border-y border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Implementation roadmap"
           title="A readiness-first path from assessment to scale"
           description="The objective is not to spend months evaluating without action. It is to sequence action intelligently so the organization learns, proves value, and expands with control."
-          align="center"
+          align="left"
         />
 
         <div className="grid gap-5 lg:grid-cols-4">
@@ -696,7 +653,6 @@ function ArchitectureSection() {
         <div className="grid gap-8 xl:grid-cols-[0.9fr_1.1fr] xl:items-start">
           <div>
             <SectionHeader
-              eyebrow="Technology selection and architecture"
               title="The right platform is the one your organization can govern, integrate, and scale"
               description="AI platform decisions should follow readiness findings. Scalability, integration depth, support quality, security posture, and long-term operating fit matter as much as raw model capability."
             />
@@ -724,12 +680,14 @@ function ArchitectureSection() {
               const Icon = card.icon;
               return (
                 <div key={card.title} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-[#0A2463]">
-                    <Icon className="h-5 w-5" />
+                  <div className="flex items-center gap-3">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-[#0A2463]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 style={serif} className="text-xl font-semibold leading-tight text-slate-950">
+                      {card.title}
+                    </h3>
                   </div>
-                  <h3 style={serif} className="mt-5 text-2xl font-semibold leading-tight text-slate-950 md:text-3xl">
-                    {card.title}
-                  </h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">{card.text}</p>
                 </div>
               );
@@ -747,7 +705,6 @@ function GovernanceSection() {
       <div className="absolute inset-0 opacity-90 bg-[radial-gradient(circle_at_15%_20%,rgba(45,212,191,0.14),transparent_24%),radial-gradient(circle_at_82%_14%,rgba(59,130,246,0.18),transparent_24%),radial-gradient(circle_at_60%_70%,rgba(255,255,255,0.06),transparent_34%)]" />
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
-          eyebrow="Governance and risk management"
           title="AI readiness is incomplete without trust, control, and accountability"
           description="As AI begins to influence decisions, operations, and customer outcomes, governance becomes a core capability rather than a final compliance step."
           light
@@ -758,12 +715,14 @@ function GovernanceSection() {
             const Icon = card.icon;
             return (
               <div key={card.title} className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-white">
-                  <Icon className="h-5 w-5 text-cyan-300" />
+                <div className="flex items-center gap-3">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-white">
+                    <Icon className="h-5 w-5 text-cyan-300" />
+                  </div>
+                  <h3 style={serif} className="text-xl font-semibold leading-tight text-white">
+                    {card.title}
+                  </h3>
                 </div>
-                <h3 style={serif} className="mt-5 text-2xl font-semibold leading-tight text-white">
-                  {card.title}
-                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-blue-100/80">{card.text}</p>
               </div>
             );
@@ -781,7 +740,6 @@ function ProofSection() {
         <div className="grid gap-8 xl:grid-cols-[0.96fr_1.04fr] xl:items-start">
           <div>
             <SectionHeader
-              eyebrow="What successful organizations do differently"
               title="They treat AI readiness as an executive discipline, not a technical checklist"
               description="The organizations that convert AI into measurable business impact are deliberate about readiness, prioritization, governance, and the operating model required for adoption."
             />
@@ -815,51 +773,33 @@ function CTASection() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
-        <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-[linear-gradient(135deg,#071857_0%,#0b2d7e_55%,#0f4c81_100%)] shadow-2xl shadow-blue-900/10">
-          <div className="grid gap-8 px-6 py-8 md:px-8 md:py-10 xl:grid-cols-[1.1fr_0.9fr] xl:items-center">
+        <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Sparkles className="h-3.5 w-3.5 text-cyan-300" /> Next step with Duanamize
-              </div>
-              <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
-                Build your AI roadmap on readiness, not assumptions
-              </h2>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-blue-100/85 md:text-lg">
-                Duanamize helps organizations assess maturity, prioritize high-value use cases, design the right architecture, and establish the governance needed for confident AI implementation.
+              <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                Process Intelligence provides the assessment foundation needed before implementing AI solutions at scale
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                Organizations that conduct comprehensive readiness assessments, evaluate use case criteria, and establish proper governance are far more likely to succeed in AI implementation, achieve measurable business impact, and scale AI capabilities across the enterprise.
               </p>
             </div>
 
-            <div className="grid gap-4">
-              <div className="rounded-[28px] border border-white/12 bg-white/10 p-5 backdrop-blur-xl">
-                <div className="text-sm font-semibold text-white">What this engagement can clarify</div>
-                <div className="mt-3 grid gap-3">
-                  {[
-                    "Where your largest AI readiness gaps actually are",
-                    "Which use cases should start first and why",
-                    "What architecture, governance, and skills are required to scale",
-                  ].map((item) => (
-                    <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/25 px-4 py-3 text-sm text-blue-50">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-cyan-300" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+            <div className="grid gap-4 md:grid-cols-2">
+              <a href="/solutions" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
+                <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                  Process Intelligence
                 </div>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5"
-                >
-                  Talk to our team <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-                >
-                  Explore Process Intelligence
-                </a>
-              </div>
+              </a>
+              <a href="/solutions-agentic-automation" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
+                <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                  Agentic Automation
+                </div>
+                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                  View Page <ArrowRight className="h-4 w-4" />
+                </div>
+              </a>
             </div>
           </div>
         </div>

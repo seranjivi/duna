@@ -210,7 +210,7 @@ export default function EnterpriseAIStackPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
           <div className="flex flex-wrap items-center gap-2 text-sm">
-            <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
+            <a href="/approach" className="text-white hover:text-blue-200 transition-colors">Approach</a>
             <span className="text-white/40">•</span>
             <a href="/technology-stack" className="text-white hover:text-blue-200 transition-colors">Technology Stack</a>
             <span className="text-white/40">•</span>

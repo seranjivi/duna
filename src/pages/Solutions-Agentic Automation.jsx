@@ -228,7 +228,7 @@ function SectionHeader({ eyebrow, title, description, light = false, align = "le
         {title}
       </h2>
       <p
-        className={`mt-3 max-w-3xl text-sm leading-relaxed md:text-lg ${
+        className={`mt-3 max-w-none text-sm leading-relaxed whitespace-normal md:text-lg ${
           align === "center" ? "mx-auto" : ""
         } ${light ? "text-blue-100/85" : "text-slate-600"}`}
       >
@@ -257,10 +257,6 @@ function Hero() {
               <span className="text-white">AI Implementation Best Practices</span>
             </div>
 
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-              <Bot className="h-3.5 w-3.5 text-cyan-300" />
-              Enterprise implementation playbook
-            </div>
 
             <h1
               style={serif}
@@ -273,21 +269,6 @@ function Hero() {
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/90 md:text-lg">
               Enterprise AI succeeds when strategy, pilots, scaling discipline, monitoring, and governance work together as one operating model. This page turns that implementation logic into an executive-ready visual blueprint.
             </p>
-
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href="#strategy"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5"
-              >
-                Explore the implementation framework <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#governance"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-              >
-                Review governance essentials
-              </a>
-            </div>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {heroStats.map((item) => (
@@ -354,7 +335,7 @@ function Hero() {
                           </div>
                           <div>
                             <div className="text-sm font-semibold text-white">{title}</div>
-                            <div className="mt-1 text-sm leading-relaxed text-blue-100/78">{text}</div>
+                            <div className="mt-1 text-sm leading-relaxed text-white">{text}</div>
                           </div>
                         </div>
                       </div>
@@ -404,12 +385,14 @@ function StrategySection() {
               const Icon = card.icon;
               return (
                 <div key={card.title} className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-200 bg-white text-[#0A2463]">
-                    <Icon className="h-5 w-5" />
+                  <div className="flex items-center gap-3">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-200 bg-white text-[#0A2463]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 style={serif} className="text-xl font-semibold leading-tight text-slate-950">
+                      {card.title}
+                    </h3>
                   </div>
-                  <h3 style={serif} className="mt-5 text-2xl font-semibold leading-tight text-slate-950 md:text-3xl">
-                    {card.title}
-                  </h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">{card.text}</p>
                 </div>
               );
@@ -445,56 +428,15 @@ function PilotSection() {
               </div>
             </div>
 
-            <div className="mt-6 overflow-hidden rounded-[26px] border border-slate-200 bg-[linear-gradient(135deg,#f8fbff_0%,#eef7ff_55%,#ffffff_100%)] p-5">
-              <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-                <div className="rounded-[24px] border border-slate-200 bg-white p-4">
-                  <div className="grid grid-cols-[48px_1fr] gap-4">
-                    <div className="relative">
-                      <div className="absolute inset-y-1 left-1/2 w-px -translate-x-1/2 bg-slate-200" />
-                      <div className="absolute bottom-0 left-0 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                        Business impact
-                      </div>
-                    </div>
-                    <div className="grid h-[270px] grid-cols-2 grid-rows-2 gap-3">
-                      <div className="rounded-2xl border border-slate-200 bg-slate-100 p-4">
-                        <div className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Low impact / low complexity</div>
-                        <div className="mt-3 text-sm text-slate-600">Use selectively for fast learning, but do not over-invest.</div>
-                      </div>
-                      <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-4 shadow-sm">
-                        <div className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">High impact / low complexity</div>
-                        <div className="mt-3 text-sm text-slate-700">Best pilot zone for early enterprise momentum and business confidence.</div>
-                      </div>
-                      <div className="rounded-2xl border border-slate-200 bg-slate-100 p-4">
-                        <div className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Low impact / high complexity</div>
-                        <div className="mt-3 text-sm text-slate-600">Usually defer until stronger value logic or platform maturity exists.</div>
-                      </div>
-                      <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4 shadow-sm">
-                        <div className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">High impact / high complexity</div>
-                        <div className="mt-3 text-sm text-slate-700">Pursue after pilot learning stabilizes the operating model.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-4 pl-12 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                    Complexity →
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <div className="text-sm font-semibold text-slate-950">Success metrics must be explicit</div>
-                    <div className="mt-1 text-sm leading-relaxed text-slate-600">Define what success means across adoption, quality, speed, cost, or risk before implementation begins.</div>
-                  </div>
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <div className="text-sm font-semibold text-slate-950">Data work is the hidden effort</div>
-                    <div className="mt-1 text-sm leading-relaxed text-slate-600">Preparation, cleansing, and validation often absorb the majority of pilot effort and must be planned realistically.</div>
-                  </div>
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <div className="text-sm font-semibold text-slate-950">Stakeholder champions accelerate scale</div>
-                    <div className="mt-1 text-sm leading-relaxed text-slate-600">The right sponsors and pilot advocates help translate local wins into enterprise-wide confidence.</div>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-6 rounded-2xl overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center"
+                alt="AI Pilot Implementation"
+                className="w-full h-64 object-cover"
+              />
             </div>
+
+            
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-1">
@@ -590,12 +532,14 @@ function ScaleSection() {
                 const Icon = card.icon;
                 return (
                   <div key={card.title} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-[#0A2463]">
-                      <Icon className="h-5 w-5" />
+                    <div className="flex items-center gap-3">
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-[#0A2463]">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 style={serif} className="text-xl font-semibold leading-tight text-slate-950">
+                        {card.title}
+                      </h3>
                     </div>
-                    <h3 style={serif} className="mt-5 text-2xl font-semibold leading-tight text-slate-950">
-                      {card.title}
-                    </h3>
                     <p className="mt-3 text-sm leading-relaxed text-slate-600">{card.text}</p>
                   </div>
                 );
@@ -727,12 +671,14 @@ function GovernanceSection() {
               <div key={card.title} className="relative overflow-hidden rounded-[30px] border border-slate-200 bg-slate-50 p-6 shadow-sm">
                 <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-cyan-100/50 blur-2xl" />
                 <div className="relative">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0A2463] to-[#0f4c81] text-white shadow-lg shadow-blue-900/15">
-                    <Icon className="h-5 w-5" />
+                  <div className="flex items-center gap-3">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0A2463] to-[#0f4c81] text-white shadow-lg shadow-blue-900/15">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 style={serif} className="text-xl font-semibold leading-tight text-slate-950">
+                      {card.title}
+                    </h3>
                   </div>
-                  <h3 style={serif} className="mt-5 text-2xl font-semibold leading-tight text-slate-950">
-                    {card.title}
-                  </h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">{card.text}</p>
                 </div>
               </div>
@@ -743,9 +689,6 @@ function GovernanceSection() {
         <div className="mt-8 overflow-hidden rounded-[34px] border border-slate-200 bg-[linear-gradient(135deg,#071857_0%,#0b2d7e_55%,#0f4c81_100%)] shadow-2xl shadow-blue-900/10">
           <div className="grid gap-8 px-6 py-8 md:px-8 md:py-10 xl:grid-cols-[0.92fr_1.08fr] xl:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Scale className="h-3.5 w-3.5 text-cyan-300" /> Governance signal
-              </div>
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
                 The organizations that scale AI well govern it like enterprise infrastructure—not like experimental software.
               </h3>
@@ -769,50 +712,38 @@ function GovernanceSection() {
 
 function CTASection() {
   return (
-    <section className="bg-slate-50">
+    <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
-        <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-white shadow-sm">
-          <div className="grid gap-8 px-6 py-8 md:px-8 md:py-10 xl:grid-cols-[1.06fr_0.94fr] xl:items-center">
+        <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
-                Turn AI ambition into a scalable implementation roadmap
-              </h2>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-lg">
-                Duanamize helps enterprises align AI with business priorities, design the right pilot strategy, build implementation capability, and establish governance that supports confident scale.
+              <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                Agentic Automation builds on the readiness foundation established through Process Intelligence assessment
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                Organizations that implement structured readiness assessments before deploying AI agents are far more likely to succeed in automation initiatives, achieve measurable productivity gains, and scale autonomous capabilities across the enterprise.
               </p>
             </div>
 
-            <div className="grid gap-4">
-              <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-5">
-                <div className="text-sm font-semibold text-slate-950">What this engagement can unlock</div>
-                <div className="mt-3 grid gap-3">
-                  {[
-                    "A structured AI implementation roadmap grounded in business value",
-                    "Pilot opportunities prioritized by impact, feasibility, and stakeholder readiness",
-                    "Governance, monitoring, and capability-building plans designed for enterprise scale",
-                  ].map((item) => (
-                    <div key={item} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-cyan-600" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+            <div className="grid gap-4 md:grid-cols-2">
+              <a href="/solutions-process-intelligence" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
+                <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                  Process Intelligence
                 </div>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#0A2463] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
-                >
-                  Talk to our team <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
-                >
-                  Explore Agentic Automation
-                </a>
-              </div>
+                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                  View Page <ArrowRight className="h-4 w-4" />
+                </div>
+              </a>
+              <a href="/solutions-capability" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
+                <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                  Capability Building
+                </div>
+                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                  View Page <ArrowRight className="h-4 w-4" />
+                </div>
+              </a>
             </div>
           </div>
         </div>

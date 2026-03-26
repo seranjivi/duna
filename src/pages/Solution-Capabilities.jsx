@@ -204,14 +204,6 @@ export default function AIReadinessPage() {
                 governance before a single model is trained.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#framework" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Explore the framework <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#roadmap" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  View roadmap
-                </a>
-              </div>
 
               {/* Stats */}
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
@@ -459,11 +451,13 @@ export default function AIReadinessPage() {
                   const Icon = item.icon;
                   return (
                     <div key={item.title} className="rounded-[26px] border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/40">
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0A2463] text-white">
-                        <Icon className="h-5 w-5" />
+                      <div className="flex items-center gap-3">
+                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0A2463] text-white">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div className="text-base font-semibold text-slate-950">{item.title}</div>
                       </div>
-                      <div className="mt-4 text-base font-semibold text-slate-950">{item.title}</div>
-                      <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.text}</p>
                     </div>
                   );
                 })}
@@ -473,32 +467,42 @@ export default function AIReadinessPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="bg-slate-50 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] border border-[#0A2463]/10 bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      {/* ── NAVIGATION ── */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
+          <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Know your readiness before you invest. Avoid the 60% failure trap.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-lg">
-                  Organizations following Duanamize's comprehensive AI readiness assessment achieve 90% implementation
-                  success rates. Let's evaluate your starting point together.
+                <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                  Capability Building completes the solutions trilogy by establishing the organizational and individual competencies needed for sustained AI success
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                  Organizations that invest in comprehensive capability building programs are far more likely to achieve AI adoption at scale, maintain competitive advantage, and realize the full potential of their technology investments.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request assessment <ArrowRight className="h-4 w-4" />
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <a href="/solutions-agentic-automation" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Agentic Automation
+                  </div>
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                    View Page <ArrowRight className="h-4 w-4" />
+                  </div>
                 </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+                <a href="/solutions-capability" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Capability Building
+                  </div>
                 </a>
               </div>
             </div>
           </div>
         </div>
       </section>
+   
 
     </div>
   );
