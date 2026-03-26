@@ -57,7 +57,7 @@ const featureCards = [
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
   },
   {
-    title: "How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 2025",
+    title: "How AI-Enhanced Lean Six Sigma ",
     // label: "Thought leadership page",
     description:
       "A modern executive narrative on how AI is changing speed, accuracy, and the future of operational excellence.",
@@ -105,7 +105,7 @@ function LogoMark() {
   );
 }
 
-function SectionHeader({ eyebrow, title, description, light = false }) {
+function SectionHeader({ eyebrow, title, description, light = false, descriptionClassName = "" }) {
   return (
     <div className="mb-8 md:mb-10">
       {/* <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"}`}>
@@ -118,7 +118,7 @@ function SectionHeader({ eyebrow, title, description, light = false }) {
       >
         {title}
       </h2>
-      <p className={`mt-3 max-w-3xl text-sm leading-relaxed md:text-lg ${light ? "text-blue-100/85" : "text-slate-600"}`}>
+      <p className={`mt-3 text-sm leading-relaxed md:text-lg ${light ? "text-blue-100/85" : "text-slate-600"} ${descriptionClassName}`}>
         {description}
       </p>
     </div>
@@ -136,7 +136,9 @@ function Hero() {
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-4 md:px-8 md:pb-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
         <div>
           <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
-            <span>Approach</span>
+            <Link to="/approach" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>
+              Approach
+            </Link>
             <span>•</span>
             <span className="text-white">LSS+AI Methodology</span>
           </div>
@@ -310,6 +312,7 @@ function FeaturePages() {
           eyebrow="Explore this methodology"
           title="Explore This Methodology"
           description="This overview keeps things intentionally brief, with detailed insights covered in the focused pages below. Dive deeper to understand the approach, intelligence, and business impact behind the model."
+          descriptionClassName="max-w-none leading-relaxed"
         />
 
         <div className="grid gap-6 xl:grid-cols-2">
@@ -330,6 +333,7 @@ function FeaturePages() {
                 <Link
                   to={item.href}
                   className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   Learn more <ArrowRight className="h-4 w-4" />
                 </Link>

@@ -531,32 +531,32 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
                   </h3>
                   {post.category === "Industries" && post.sub === "Manufacturing" && (
                     <Link to="/industries-manufacturing-smart" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
-                      Read More <ArrowRight className="h-4 w-4" />
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </Link>
                   )}
                   {post.category === "Industries" && post.sub === "Financial Services" && (
                     <Link to="/industries-financial-banking" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
-                      Read More <ArrowRight className="h-4 w-4" />
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </Link>
                   )}
                   {post.category === "Industries" && post.sub === "Healthcare" && (
                     <Link to="/industries-healthcare-ai" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
-                      Read More <ArrowRight className="h-4 w-4" />
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </Link>
                   )}
                   {post.category === "Industries" && post.sub === "Energy & Utilities" && (
                     <Link to="/industries-energy" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
-                      Read More <ArrowRight className="h-4 w-4" />
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </Link>
                   )}
                   {post.category === "Industries" && post.sub === "Financial Compliance" && (
                     <Link to="/industries-financial-compliance" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
-                      Read More <ArrowRight className="h-4 w-4" />
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </Link>
                   )}
                   {post.category === "Approach" && post.sub === "Technology Stack" && (
                     <Link to="/technology-stack" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
-                      Read More <ArrowRight className="h-4 w-4" />
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </Link>
                   )}
                 </div>

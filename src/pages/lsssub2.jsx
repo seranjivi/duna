@@ -28,6 +28,12 @@ const serif = {
   fontFamily: '"Playfair Display", Georgia, Cambria, "Times New Roman", serif',
 };
 
+const textWrapStyles = {
+  wordBreak: 'word-break',
+  whiteSpace: 'white-space-normal',
+  overflowWrap: 'break-word',
+};
+
 const headlineStats = [
   { label: "Faster improvement cycles", value: "40%" },
   { label: "More accurate root-cause identification", value: "60%" },
@@ -215,7 +221,7 @@ function SectionHeader({ eyebrow, title, description, light = false }) {
       >
         {title}
       </h2>
-      <p className={`mt-3 max-w-3xl text-sm leading-relaxed md:text-lg ${light ? "text-blue-100/85" : "text-slate-600"}`}>
+      <p className={`mt-3 text-sm leading-relaxed md:text-lg ${light ? "text-blue-100/85" : "text-slate-600"}`} style={textWrapStyles}>
         {description}
       </p>
     </div>
@@ -236,7 +242,6 @@ function Hero() {
             <span>Approach</span>
             <span>•</span>
             <span>LSS+AI Methodology</span>
-            <span>•</span>
             {/* <span className="text-white">How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 20254444</span> */}
           </div>
 
@@ -250,7 +255,7 @@ function Hero() {
             <span className="mt-2 block text-cyan-200">is revolutionizing<br />process improvement in 2025</span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/90 md:text-lg">
+          <p className="mt-5 text-base leading-relaxed text-blue-100/90 md:text-lg" style={textWrapStyles}>
             Lean Six Sigma remains a proven improvement framework. In 2025, its next leap comes from AI—bringing faster analysis, stronger diagnosis, predictive control, and a more scalable path to operational excellence.
           </p>
 
@@ -362,7 +367,7 @@ function CoreComponentsSection() {
                   <h3 style={serif} className="mt-5 text-3xl font-semibold leading-tight text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-blue-100/85">{item.description}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-blue-100/85" style={textWrapStyles}>{item.description}</p>
                 </div>
                 <div className="p-6">
                   <div className="space-y-3">
@@ -439,7 +444,7 @@ function ResultsVisualSection() {
               <h3 style={serif} className="mt-4 text-4xl font-semibold leading-tight text-white text-left w-full">
                 Traditional vs LSS+AI
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-blue-100/85 text-left w-full">
+              <p className="mt-3 text-sm leading-relaxed text-blue-100/85 text-left w-full" style={textWrapStyles}>
                 Relative scoring across areas leaders care about most: speed, analytical depth, proactive control, and sustainability.
               </p>
             </div>
@@ -515,7 +520,7 @@ function CaseStudiesSection() {
                 </div>
                 <div className="p-6">
                   <h3 style={serif} className="text-3xl font-semibold leading-tight text-slate-950">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">{item.text}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base" style={textWrapStyles}>{item.text}</p>
                 </div>
               </article>
             );
@@ -545,7 +550,7 @@ function FrameworkSection() {
               <h3 style={serif} className="mt-3 text-3xl font-semibold leading-tight text-white">
                 {step.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-white">{step.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-white" style={textWrapStyles}>{step.text}</p>
             </div>
           ))}
         </div>
@@ -592,7 +597,7 @@ function ClosingSection() {
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                 The future of process improvement belongs to hybrid intelligence
               </h3>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
                 Organizations that combine Lean Six Sigma discipline with AI-driven analysis are better positioned to improve faster, diagnose deeper, and sustain gains more effectively. LSS+AI is not a departure from operational excellence. It is the next stage of it.
               </p>
             </div>

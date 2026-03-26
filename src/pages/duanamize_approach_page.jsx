@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const serif = {
   fontFamily: 'Georgia, "Times New Roman", serif',
@@ -29,7 +31,7 @@ const approachSections = [
     description:
       "A practical implementation path covering change management, rollout planning, and execution structure.",
     image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80",
     path: "/our-process",
     links: [
       "Mastering Change Management in Process Improvement",
@@ -43,7 +45,7 @@ const approachSections = [
       "See how system integration, enterprise platforms, and AI-enabled tooling support process improvement at scale.",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
-    path: "/solutions",
+    path: "/technology-stack",
     links: [
       "System Integration Best Practices for Process Improvement Technology Success",
       "Building Your Enterprise Technology Stack for AI-Powered Process Improvement",
@@ -53,10 +55,10 @@ const approachSections = [
   {
     title: "Outcomes Framework",
     description:
-      "Connect transformation work to measurable value through performance measurement and ROI realization.",
+      "Connect transformation work to measurable business value through performance measurement and ROI realization.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
-    path: "/results",
+    path: "/outcomes-framework",
     links: [
       "Performance Measurement Best Practices for Operational Excellence Programs",
       "ROI Measurement Framework for Process Improvement",
@@ -71,24 +73,28 @@ const featuredInsights = [
     image:
       "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=1200&q=80",
     tag: "Methodology",
+    path: "/lsssub1",
   },
   {
-    title: "Mastering Change Management in Process Improvement",
+    title: "Mastering Change in Process Improvement",
     image:
       "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80",
     tag: "Process",
+    path: "/our-process/change-management",
   },
   {
     title: "System Integration Best Practices",
     image:
       "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
     tag: "Technology",
+    path: "/process-technology-integration",
   },
   {
     title: "Performance Measurement Best Practices",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
     tag: "Outcomes",
+    path: "/performance-measurement",
   },
 ];
 
@@ -144,19 +150,25 @@ function SectionTitle({ eyebrow, title, description, light = false }) {
 
 function Hero({ showHeader = true }) {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f7fbff_0%,#eef6fd_55%,#ffffff_100%)]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.14),transparent_32%)]" />
-      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-cyan-200/30 blur-3xl" />
-      <div className="absolute right-0 top-10 h-80 w-80 rounded-full bg-sky-200/30 blur-3xl" />
+    <section className="relative overflow-hidden bg-[#071857]">
+      <div className="absolute inset-0 opacity-90 bg-[radial-gradient(circle_at_18%_20%,rgba(45,212,191,0.18),transparent_34%),radial-gradient(circle_at_80%_18%,rgba(59,130,246,0.20),transparent_32%),radial-gradient(circle_at_45%_75%,rgba(255,255,255,0.06),transparent_42%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0)_35%,rgba(255,255,255,0.05)_60%,rgba(255,255,255,0)_100%)]" />
+      <div className="absolute -left-16 top-12 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl" />
+      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pb-32 pt-2 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-36">
         <div className="pt-4 lg:pt-10">
           <Badge>Approach</Badge>
-          <div className="mt-5 text-sm text-slate-500">Home / Approach</div>
-          <h1 style={serif} className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-[#12304A] md:text-6xl">
+          <div className="mt-5 text-sm text-blue-100/80">
+    <Link to="/" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>
+      Home
+    </Link>
+    {" / Approach"}
+  </div>
+          <h1 style={serif} className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-white md:text-6xl">
             A clearer view of how Duanamize approaches transformation
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-8 text-blue-100/90 md:text-lg">
             This page brings together the core building blocks of the Duanamize approach methodology, implementation process, technology enablement, and measurable outcomes in one simpler and more visual structure.
           </p>
 
@@ -206,18 +218,18 @@ function ExploreSection() {
         description="The page is structured around the actual Approach information architecture, so visitors can clearly understand what each section covers and where to go next."
       />
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 items-stretch">
         {approachSections.map((item) => {
           const sectionId = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
           return (
             <div
               key={item.title}
               id={sectionId}
-              className={`overflow-hidden rounded-[32px] border ${item.comingSoon ? "border-dashed border-sky-200 bg-sky-50/60" : "border-slate-200 bg-white"} shadow-sm`}
+              className={`overflow-hidden rounded-[32px] border ${item.comingSoon ? "border-dashed border-sky-200 bg-sky-50/60" : "border-slate-200 bg-white"} shadow-sm flex flex-col h-full`}
             >
-            <div className="grid gap-0 md:grid-cols-[0.94fr_1.06fr]">
-              <div className="relative h-full min-h-[260px] overflow-hidden">
-                <img src={item.image} alt={item.title} className="h-full w-full object-cover object-center" />
+            <div className="grid gap-0 md:grid-cols-[0.94fr_1.06fr] flex-1">
+              <div className="relative overflow-hidden">
+                <img src={item.image} alt={item.title} className="h-80 w-full object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#12304A]/70 via-[#12304A]/10 to-transparent" />
                 <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-white backdrop-blur">
                   {item.status}
@@ -240,9 +252,9 @@ function ExploreSection() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   {!item.comingSoon && (
-                    <a href={item.path || "#"} className="rounded-full border border-sky-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A4D8C] hover:bg-sky-50 transition-colors">
-                      View page
-                    </a>
+                    <Link to={item.path || "#"} className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] transition-all duration-200 hover:border-[#0A2463] hover:bg-blue-50 hover:shadow-md hover:scale-105 group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60" onClick={() => window.scrollTo(0, 0)}>
+                      View page <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
                   )}
                 </div>
               </div>
@@ -301,9 +313,9 @@ function FeaturedInsightsSection() {
             </div>
             <div className="p-5">
               <h3 className="text-lg font-semibold leading-7 text-[#12304A]">{item.title}</h3>
-              <button className="mt-5 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-[#0A4D8C] transition hover:bg-sky-100">
-                View Page
-              </button>
+              <Link to={item.path} className="mt-5 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition" onClick={() => window.scrollTo(0, 0)}>
+                View page <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </article>
         ))}

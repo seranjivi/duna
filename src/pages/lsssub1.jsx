@@ -40,28 +40,26 @@ const comparisonCards = [
     title: "Traditional Lean Six Sigma",
     tone: "traditional",
     icon: Target,
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80",
     intro:
       "A proven model built on DMAIC discipline, statistical rigor, and structured improvement governance.",
     points: [
       "Strong in stable environments with clear process definitions",
-      "Works well where teams can dedicate time to detailed manual analysis",
       "Delivers measurable results through a disciplined methodology",
       "Often slowed by manual data collection and periodic review cycles",
-      "Can struggle with high data volume, complex interdependencies, and delayed insight",
     ],
   },
   {
     title: "LSS+AI Methodology",
     tone: "modern",
     icon: BrainCircuit,
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
     intro:
       "A hybrid model that preserves Lean Six Sigma rigor while adding AI-enabled speed, intelligence, and predictive control.",
     points: [
       "Retains structured problem solving and statistical foundations",
       "Automates data collection, monitoring, and routine analysis",
-      "Detects patterns across many variables beyond human analytical limits",
       "Supports real-time insight, faster action, and proactive risk prevention",
-      "Allows experts to focus on decisions, strategy, and implementation",
     ],
   },
 ];
@@ -202,7 +200,7 @@ function SectionHeader({ eyebrow, title, description, light = false }) {
       >
         {title}
       </h2>
-      <p className={`mt-3 max-w-3xl text-sm leading-relaxed md:text-lg ${light ? "text-blue-100/85" : "text-slate-600"}`}>
+      <p className={`mt-3 w-full text-sm leading-relaxed md:text-lg ${light ? "text-blue-100/85" : "text-slate-600"}`}>
         {description}
       </p>
     </div>
@@ -220,9 +218,13 @@ function Hero() {
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-4 md:px-8 md:pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
           <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
-            <span>Approach</span>
+            <Link to="/approach" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>
+              Approach
+            </Link>
             <span>•</span>
-            <span>LSS+AI Methodology</span>
+            <Link to="/lss" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>
+              LSS+AI Methodology
+            </Link>
             <span>•</span>
             <span className="text-white">Comparison</span>
           </div>
@@ -375,29 +377,33 @@ function ComparisonOverview() {
                 key={card.title}
                 className={`overflow-hidden rounded-[30px] border shadow-sm ${modern ? "border-cyan-200 bg-[linear-gradient(180deg,#f8fdff_0%,#eef9ff_100%)]" : "border-slate-200 bg-white"}`}
               >
-                <div className={`p-6 md:p-7 ${modern ? "bg-[linear-gradient(135deg,#0A2463_0%,#10317a_55%,#0f4c81_100%)] text-white" : "bg-slate-50"}`}>
+                <div className="relative h-48 overflow-hidden">
+                  <img src={card.image} alt={card.title} className="h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                </div>
+                <div className={`p-6 md:p-7 bg-[linear-gradient(135deg,#0A2463_0%,#10317a_55%,#0f4c81_100%)] text-white`}>
                   <div className="flex items-center justify-between gap-4">
                     <div>
-                      <div className={`text-xs font-semibold uppercase tracking-[0.18em] ${modern ? "text-cyan-100/85" : "text-slate-500"}`}>
+                      <div className={`text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100/85`}>
                         {modern ? "AI-enhanced model" : "Established model"}
                       </div>
-                      <h3 style={serif} className={`mt-2 text-3xl font-semibold leading-tight ${modern ? "text-white" : "text-slate-950"}`}>
+                      <h3 style={serif} className={`mt-2 text-3xl font-semibold leading-tight text-white`}>
                         {card.title}
                       </h3>
                     </div>
-                    <div className={`grid h-12 w-12 place-items-center rounded-2xl border ${modern ? "border-white/15 bg-white/10 text-white" : "border-slate-200 bg-white text-[#0A2463]"}`}>
+                    <div className={`grid h-12 w-12 place-items-center rounded-2xl border border-white/15 bg-white/10 text-white`}>
                       <Icon className="h-5 w-5" />
                     </div>
                   </div>
-                  <p className={`mt-4 max-w-2xl text-sm leading-relaxed ${modern ? "text-blue-100/85" : "text-slate-600"}`}>
+                  <p className={`mt-4 max-w-2xl text-sm leading-relaxed text-blue-100/85`}>
                     {card.intro}
                   </p>
                 </div>
-                <div className="p-6 md:p-7">
+                <div className="p-6 md:p-7 bg-slate-50">
                   <div className="space-y-3">
                     {card.points.map((point) => (
-                      <div key={point} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm leading-relaxed text-slate-700">
-                        <div className={`mt-1 h-2.5 w-2.5 rounded-full ${modern ? "bg-cyan-500" : "bg-[#0A2463]"}`} />
+                      <div key={point} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-3 text-sm leading-relaxed text-slate-700">
+                        <div className={`mt-1 h-2.5 w-2.5 rounded-full bg-cyan-500`} />
                         <div>{point}</div>
                       </div>
                     ))}
@@ -464,7 +470,7 @@ function AdvantagePillars() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
           eyebrow="Why LSS+AI is different"
-          title="Three reasons the hybrid model outperforms traditional approaches"
+          title="Three reasons the hybrid model outperforms traditional approaches."
           description="The superiority of LSS+AI comes from combining process discipline with intelligence at scale rather than choosing one over the other."
         />
 
@@ -609,7 +615,7 @@ function RelatedNavigation() {
                   LSS+AI vs Traditional Lean Six Sigma: The Ultimate Comparison for Modern Organizations
                 </div>
               </a>
-              <Link to="/lsssub2" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+              <Link to="/lsssub2" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md" onClick={() => window.scrollTo(0, 0)}>
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                   How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 2025
