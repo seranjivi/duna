@@ -219,9 +219,6 @@ export default function EnterpriseAIStackPage() {
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> AI · Process Mining · RPA · Analytics
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Enterprise AI Stack{" "}
                 <span className="text-[#A5F3FC]">Building the technology infrastructure for AI-powered process improvement.</span>
@@ -293,11 +290,13 @@ export default function EnterpriseAIStackPage() {
                 const Icon = ch.icon;
                 return (
                   <div key={ch.category} className={`rounded-[28px] border ${ch.border} ${ch.bg} p-5 transition hover:-translate-y-1 hover:shadow-lg`}>
-                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${ch.color} text-white shadow-lg`}>
-                      <Icon className="h-6 w-6" />
+                    <div className="flex items-center gap-3">
+                      <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${ch.color} text-white shadow-lg`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-base font-semibold text-slate-950">{ch.category}</h3>
                     </div>
-                    <h3 className="mt-4 text-base font-semibold text-slate-950">{ch.category}</h3>
-                    <ul className="mt-3 space-y-2">
+                    <ul className="mt-4 space-y-2">
                       {ch.items.map((item) => (
                         <li key={item} className="flex items-start gap-2 text-sm leading-relaxed text-slate-600">
                           <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
@@ -377,7 +376,7 @@ export default function EnterpriseAIStackPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               A three-phase journey from assessment to enterprise-wide AI improvement.
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
               Our architecture methodology ensures the right platforms are selected, properly integrated,
               and governed — delivering a compounding improvement capability that scales across the enterprise.
             </p>
@@ -385,11 +384,9 @@ export default function EnterpriseAIStackPage() {
           <div className="grid gap-4 md:grid-cols-3">
             {architecturePhases.map((phase, i) => {
               const Icon = phase.icon;
-              const active = activeStep === i;
               return (
-                <button
+                <div
                   key={phase.step}
-                  onClick={() => setActiveStep(i)}
                   className="text-left rounded-[28px] bg-[#0A2463] p-6 shadow-lg shadow-blue-900/20 transition hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="flex items-center gap-3">
@@ -401,17 +398,15 @@ export default function EnterpriseAIStackPage() {
                       <div className="mt-1 text-xl font-semibold text-white">{phase.title}</div>
                     </div>
                   </div>
-                  {active && (
-                    <ul className="mt-4 space-y-2">
-                      {phase.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
-                          <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </button>
+                  <ul className="mt-4 space-y-2">
+                    {phase.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               );
             })}
           </div>
@@ -452,27 +447,35 @@ export default function EnterpriseAIStackPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="bg-white pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      {/* ── NAVIGATION ── */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
+          <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div>
-                <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Build the AI-powered stack that makes breakthrough improvement inevitable.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-base">
-                  Duanamize designs and deploys enterprise AI technology stacks that integrate every
-                  component — from process mining to production automation — into a coherent, governed,
-                  and scalable improvement engine.
+                <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                  A comprehensive AI technology stack gives process improvement the intelligence required for enterprise-scale transformation
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                  Organizations that integrate process mining, AI, automation, and analytics into a unified stack are far more likely to achieve breakthrough operational results, scalable automation, and sustainable competitive advantage.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request an architecture review <ArrowRight className="h-4 w-4" />
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <a href="/process-technology-integration" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Process Improvement Technology Integration
+                  </div>
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                    View Page <ArrowRight className="h-4 w-4" />
+                  </div>
                 </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+                <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Enterprise AI-Powered Technology Stack
+                  </div>
                 </a>
               </div>
             </div>

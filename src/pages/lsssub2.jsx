@@ -545,7 +545,7 @@ function FrameworkSection() {
               <h3 style={serif} className="mt-3 text-3xl font-semibold leading-tight text-white">
                 {step.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-blue-100/82">{step.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-white">{step.text}</p>
             </div>
           ))}
         </div>

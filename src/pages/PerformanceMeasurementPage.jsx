@@ -217,9 +217,6 @@ export default function PerformanceMeasurementPage() {
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> KPIs · Dashboards · Benchmarking
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Performance Measurement{" "}
                 <span className="text-[#A5F3FC]">Best practices for operational excellence programmes.</span>
@@ -292,11 +289,13 @@ export default function PerformanceMeasurementPage() {
                 const Icon = ch.icon;
                 return (
                   <div key={ch.category} className={`rounded-[28px] border ${ch.border} ${ch.bg} p-5 transition hover:-translate-y-1 hover:shadow-lg`}>
-                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${ch.color} text-white shadow-lg`}>
-                      <Icon className="h-6 w-6" />
+                    <div className="flex items-center gap-3">
+                      <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${ch.color} text-white shadow-lg`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-base font-semibold text-slate-950">{ch.category}</h3>
                     </div>
-                    <h3 className="mt-4 text-base font-semibold text-slate-950">{ch.category}</h3>
-                    <ul className="mt-3 space-y-2">
+                    <ul className="mt-4 space-y-2">
                       {ch.items.map((item) => (
                         <li key={item} className="flex items-start gap-2 text-sm leading-relaxed text-slate-600">
                           <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
@@ -319,9 +318,9 @@ export default function PerformanceMeasurementPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Four measurement capabilities that power operational excellence.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
               From designing the right metrics to predicting future performance and benchmarking
-              against the best — our framework covers the complete measurement lifecycle.
+              against the best our framework covers the complete measurement lifecycle.
             </p>
           </div>
 
@@ -329,49 +328,45 @@ export default function PerformanceMeasurementPage() {
             {measurementTabs.map((tab, i) => {
               const Icon = tab.icon;
               return (
-                <button
+                <div
                   key={tab.label}
-                  onClick={() => setActiveTab(i)}
-                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
-                    activeTab === i
-                      ? "bg-[#0A2463] text-white shadow-lg"
-                      : "border border-slate-200 bg-white text-slate-600 hover:text-slate-900"
-                  }`}
+                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold bg-[#0A2463] text-white shadow-lg`}
                 >
                   <Icon className="h-4 w-4" />
                   {tab.label}
-                </button>
+                </div>
               );
             })}
           </div>
 
-          {measurementTabs.map((tab, i) => {
-            if (i !== activeTab) return null;
-            const Icon = tab.icon;
-            return (
-              <div key={tab.label} className="rounded-[34px] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
-                <div className="flex items-center gap-4">
-                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-[22px] bg-[#0A2463] text-white">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
-                      Capability {String(i + 1).padStart(2, "0")}
+          <div className="grid gap-6">
+            {measurementTabs.map((tab, i) => {
+              const Icon = tab.icon;
+              return (
+                <div key={tab.label} className="rounded-[34px] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
+                  <div className="flex items-center gap-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-[22px] bg-[#0A2463] text-white">
+                      <Icon className="h-7 w-7" />
                     </div>
-                    <h3 style={serif} className="text-2xl font-semibold text-slate-950">{tab.title}</h3>
+                    <div>
+                      <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                        Capability {String(i + 1).padStart(2, "0")}
+                      </div>
+                      <h3 style={serif} className="text-2xl font-semibold text-slate-950">{tab.title}</h3>
+                    </div>
+                  </div>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    {tab.items.map((item) => (
+                      <div key={item} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0A2463]" />
+                        <div className="text-sm leading-relaxed text-slate-700">{item}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {tab.items.map((item) => (
-                    <div key={item} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0A2463]" />
-                      <div className="text-sm leading-relaxed text-slate-700">{item}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -382,19 +377,17 @@ export default function PerformanceMeasurementPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               A three-phase path to world-class performance measurement.
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-base">
-              From framework design through dashboard deployment to continuous improvement integration —
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
+              From framework design through dashboard deployment to continuous improvement integration
               each phase builds on the last to create a measurement system that compounds in value.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {implementationPhases.map((phase, i) => {
               const Icon = phase.icon;
-              const active = activeStep === i;
               return (
-                <button
+                <div
                   key={phase.step}
-                  onClick={() => setActiveStep(i)}
                   className="text-left rounded-[28px] bg-[#0A2463] p-6 shadow-lg shadow-blue-900/20 transition hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="flex items-center gap-3">
@@ -406,17 +399,15 @@ export default function PerformanceMeasurementPage() {
                       <div className="mt-1 text-xl font-semibold text-white">{phase.title}</div>
                     </div>
                   </div>
-                  {active && (
-                    <ul className="mt-4 space-y-2">
-                      {phase.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
-                          <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </button>
+                  <ul className="mt-4 space-y-2">
+                    {phase.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               );
             })}
           </div>
@@ -430,8 +421,8 @@ export default function PerformanceMeasurementPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               The return on building the right measurement system.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-              A well-designed measurement system pays for itself quickly — by surfacing improvement
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
+              A well-designed measurement system pays for itself quickly by surfacing improvement
               opportunities faster, reducing reporting overhead, and sustaining excellence long-term.
             </p>
           </div>
@@ -461,26 +452,38 @@ export default function PerformanceMeasurementPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="bg-white pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      {/* ── NAVIGATION ── */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
+          <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div>
-                <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Build measurement that makes improvement impossible to ignore.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-base">
-                  Duanamize's performance measurement framework gives your leadership team the real-time
-                  visibility and predictive insight to lead operational excellence with confidence.
+                <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                  A comprehensive performance measurement system gives operational excellence the visibility required for sustained success
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                  Organizations that implement systematic KPI tracking, real-time monitoring, and predictive analytics are far more likely to achieve breakthrough operational results, continuous improvement, and competitive advantage.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request an assessment <ArrowRight className="h-4 w-4" />
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <a href="/outcomes-roi-framework" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Process Improvement ROI Framework
+                  </div>
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                    View Page <ArrowRight className="h-4 w-4" />
+                  </div>
                 </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+                <a href="/enterprise-ai-stack" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Enterprise AI Stack
+                  </div>
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                    View Page <ArrowRight className="h-4 w-4" />
+                  </div>
                 </a>
               </div>
             </div>

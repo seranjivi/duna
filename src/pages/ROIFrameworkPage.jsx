@@ -216,9 +216,6 @@ export default function ROIFrameworkPage() {
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> ROI · Value Realization · Financial Analysis
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 ROI Framework{" "}
                 <span className="text-[#A5F3FC]">Your complete guide to process improvement value realisation.</span>
@@ -291,10 +288,12 @@ export default function ROIFrameworkPage() {
                 const Icon = ch.icon;
                 return (
                   <div key={ch.category} className={`rounded-[28px] border ${ch.border} ${ch.bg} p-5 transition hover:-translate-y-1 hover:shadow-lg`}>
-                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${ch.color} text-white shadow-lg`}>
-                      <Icon className="h-6 w-6" />
+                    <div className="flex items-center gap-3">
+                      <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${ch.color} text-white shadow-lg`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-base font-semibold text-slate-950">{ch.category}</h3>
                     </div>
-                    <h3 className="mt-4 text-base font-semibold text-slate-950">{ch.category}</h3>
                     <ul className="mt-3 space-y-2">
                       {ch.items.map((item) => (
                         <li key={item} className="flex items-start gap-2 text-sm leading-relaxed text-slate-600">
@@ -405,16 +404,14 @@ export default function ROIFrameworkPage() {
                       <div className="mt-1 text-xl font-semibold text-white">{phase.title}</div>
                     </div>
                   </div>
-                  {active && (
-                    <ul className="mt-4 space-y-2">
-                      {phase.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
-                          <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className="mt-4 space-y-2">
+                    {phase.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </button>
               );
             })}
@@ -427,11 +424,10 @@ export default function ROIFrameworkPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-10">
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
-              The complete value spectrum — financial, operational, and human.
+              The complete value spectrum financial, operational, and human.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Process improvement delivers value far beyond cost reduction. Our framework
-              systematically captures every component so your business case tells the full story.
+            <p className="mt-3 w-full text-sm leading-6 text-slate-600 md:text-base whitespace-normal break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}>
+              Process improvement delivers value far beyond cost reduction. Our framework systematically captures every component so your business case tells the full story.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
@@ -460,32 +456,44 @@ export default function ROIFrameworkPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="bg-white pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      {/* ── NAVIGATION ── */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
+          <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div>
-                <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Build business cases that withstand scrutiny and sustain investment.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-base">
-                  Duanamize's ROI Framework gives your programme the financial rigour, measurement
-                  discipline, and reporting cadence to keep leadership confident and funding secured.
+                <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                  A structured ROI framework provides the financial rigor and measurement discipline needed for sustained improvement investment
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                  Organizations that implement comprehensive ROI measurement, value quantification, and continuous tracking are far more likely to secure executive sponsorship, demonstrate business impact, and achieve breakthrough operational excellence results.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request a framework review <ArrowRight className="h-4 w-4" />
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <a href="/outcomes-framework" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Performance Measurement
+                  </div>
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                    View Page <ArrowRight className="h-4 w-4" />
+                  </div>
                 </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+                <a href="/performance-measurement" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Process Improvement ROI Framework
+                  </div>
                 </a>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ── CTA ── */}
+    
     </div>
   );
 }

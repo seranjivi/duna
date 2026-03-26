@@ -163,9 +163,6 @@ export default function TechnologyStackPage() {
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> Integration · AI · Automation · Analytics
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Technology Stack{" "}
                 <span className="text-[#A5F3FC]">The infrastructure behind breakthrough process improvement.</span>
@@ -252,11 +249,13 @@ export default function TechnologyStackPage() {
                 const Icon = p.icon;
                 return (
                   <div key={p.title} className="rounded-[26px] border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:shadow-lg">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#0A2463] text-white">
-                      <Icon className="h-5 w-5" />
+                    <div className="flex items-center gap-3">
+                      <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#0A2463] text-white">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 className="text-sm font-semibold text-slate-950">{p.title}</h3>
                     </div>
-                    <h3 className="mt-3 text-sm font-semibold text-slate-950">{p.title}</h3>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-500">{p.desc}</p>
+                    <p className="mt-3 text-xs leading-relaxed text-slate-500">{p.desc}</p>
                   </div>
                 );
               })}

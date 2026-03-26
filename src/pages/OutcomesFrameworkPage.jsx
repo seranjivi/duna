@@ -163,9 +163,6 @@ export default function OutcomesFrameworkPage() {
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> Performance · ROI · Continuous Improvement
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Outcomes Framework{" "}
                 <span className="text-[#A5F3FC]">Measure what matters. Prove what works.</span>
@@ -226,7 +223,7 @@ export default function OutcomesFrameworkPage() {
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div>
               <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
-                What gets measured gets managed — and improved.
+                What gets measured gets managed and improved.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">
                 Most improvement programmes stall because they lack the measurement infrastructure
@@ -252,11 +249,13 @@ export default function OutcomesFrameworkPage() {
                 const Icon = p.icon;
                 return (
                   <div key={p.title} className="rounded-[26px] border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:shadow-lg">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#0A2463] text-white">
-                      <Icon className="h-5 w-5" />
+                    <div className="flex items-center gap-3">
+                      <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#0A2463] text-white">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 className="text-sm font-semibold text-slate-950">{p.title}</h3>
                     </div>
-                    <h3 className="mt-3 text-sm font-semibold text-slate-950">{p.title}</h3>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-500">{p.desc}</p>
+                    <p className="mt-3 text-xs leading-relaxed text-slate-500">{p.desc}</p>
                   </div>
                 );
               })}
@@ -277,7 +276,7 @@ export default function OutcomesFrameworkPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Two frameworks. Complete coverage of outcomes and value.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
               Together, our Performance Measurement and ROI frameworks provide end-to-end visibility
               from operational metrics to financial returns.
             </p>
@@ -345,9 +344,9 @@ export default function OutcomesFrameworkPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-10">
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
-              Value captured across three dimensions — financial, operational, and human.
+              Value captured across three dimensions financial, operational, and human.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base whitespace-normal">
               True outcomes measurement goes beyond spreadsheets. Our framework captures the complete
               picture of improvement value across every stakeholder group.
             </p>
