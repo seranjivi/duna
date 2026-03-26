@@ -597,7 +597,7 @@ function ClosingSection() {
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                 The future of process improvement belongs to hybrid intelligence
               </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base" style={textWrapStyles}>
                 Organizations that combine Lean Six Sigma discipline with AI-driven analysis are better positioned to improve faster, diagnose deeper, and sustain gains more effectively. LSS+AI is not a departure from operational excellence. It is the next stage of it.
               </p>
             </div>
