@@ -32,16 +32,18 @@ const menuData = [
       },
       {
         label: "Technology Stack",
+        path: "/technology-stack",
         items: [
-          { name: "Process Improvement Technology Integration", path: "/approach#technology" },
-          { name: "Enterprise AI-Powered Technology Stack", path: "/approach#enterprise" },
+          { name: "Process Improvement Technology Integration", path: "/process-technology-integration" },
+          { name: "Enterprise AI-Powered Technology Stack", path: "/enterprise-ai-stack" },
         ],
       },
       {
         label: "Outcomes Framework",
+        path: "/outcomes-framework",
         items: [
-          { name: "Operational Excellence Performance Measurement", path: "/approach#outcomes" },
-          { name: "Process Improvement ROI Framework", path: "/approach#roi" },
+          { name: "Operational Excellence Performance Measurement", path: "/performance-measurement" },
+          { name: "Process Improvement ROI Framework", path: "/outcomes-roi-framework" },
         ],
       },
     ],

@@ -43,6 +43,12 @@ import FAQPage from './src/pages/FAQPage.jsx';
 import ResultsPage from './src/pages/ResultsPage.jsx';
 import AboutPage from './src/pages/AboutPage.jsx';
 import ContactPage from './src/pages/contact.jsx';
+import TechnologyStackPage from './src/pages/TechnologyStackPage.jsx';
+import ProcessTechnologyIntegrationPage from './src/pages/ProcessTechnologyIntegrationPage.jsx';
+import EnterpriseAIStackPage from './src/pages/EnterpriseAIStackPage.jsx';
+import OutcomesFrameworkPage from './src/pages/OutcomesFrameworkPage.jsx';
+import PerformanceMeasurementPage from './src/pages/PerformanceMeasurementPage.jsx';
+import ROIFrameworkPage from './src/pages/ROIFrameworkPage.jsx';
 
 // Import Tailwind CSS
 import './src/styles.css';
@@ -92,6 +98,12 @@ root.render(
         <Route path="partners" element={<PartnerPage />} />
         <Route path="careers" element={<CareersPage />} />
         <Route path="faq" element={<FAQPage />} />
+        <Route path="technology-stack" element={<TechnologyStackPage />} />
+        <Route path="process-technology-integration" element={<ProcessTechnologyIntegrationPage />} />
+        <Route path="enterprise-ai-stack" element={<EnterpriseAIStackPage />} />
+        <Route path="outcomes-framework" element={<OutcomesFrameworkPage />} />
+        <Route path="performance-measurement" element={<PerformanceMeasurementPage />} />
+        <Route path="outcomes-roi-framework" element={<ROIFrameworkPage />} />
         <Route path="results" element={<ResultsPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="contact" element={<ContactPage />} />
