@@ -338,29 +338,8 @@ export default function HealthcareMainPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section id="contact" className="bg-slate-50 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Ready to transform how your health system uses technology?
-                </h2>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white md:text-lg">
-                  Whether you are optimizing an existing EHR, exploring AI automation, or building a full
-                  digital transformation roadmap — Duanamize is the right partner to start with.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Get started today <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
+      
 
     </div>
   );

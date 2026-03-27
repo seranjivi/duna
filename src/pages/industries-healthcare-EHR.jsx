@@ -577,7 +577,7 @@ export default function EHROptimizationPage() {
                   Continue exploring the Healthcare Solutions section
                 </h3>
                 <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-                  This EHR Optimization page is part of the broader Healthcare Solutions stream under the Industries section.
+                  This page is part of the broader Healthcare industry under the Industries section, focusing on improving healthcare operations, patient care, and digital transformation in healthcare.
                 </p>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
