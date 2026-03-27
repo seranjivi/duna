@@ -150,9 +150,9 @@ const menuData = [
     label: "MORE",
     path: "/more",
     children: [
-      { label: "Partner Inquiries", items: [{ name: "Partner Inquiries", path: "/partners" }] },
-      { label: "Careers", items: [{ name: "Careers", path: "/careers" }] },
-      { label: "FAQ", items: [{ name: "FAQ", path: "/faq" }] },
+      { label: "Partner Inquiries", path: "/partners"  },
+      { label: "Careers",path: "/careers"  },
+      { label: "FAQ",  path: "/faq"  },
     ],
   },
   {

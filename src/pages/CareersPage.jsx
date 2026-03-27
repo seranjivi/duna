@@ -124,34 +124,24 @@ export default function CareersPage({ onNavigate }) {
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
-          <div className="flex flex-wrap items-center gap-2 text-sm">
-            <button onClick={() => onNavigate && onNavigate("MorePage")} className="text-white hover:text-blue-200 transition-colors">Home</button>
-            <span className="text-white/40">•</span>
-            <button onClick={() => onNavigate && onNavigate("MorePage")} className="text-white hover:text-blue-200 transition-colors">More</button>
+          <div className="flex flex-wrap items-center gap-2 mt-5 text-sm">
+          
+            <a href="/more" className="text-white hover:text-blue-200 transition-colors">More</a>
             <span className="text-white/40">•</span>
             <span className="text-white">Careers</span>
           </div>
 
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> Join the Team · Build Your Future
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-                Build Your{" "}
-                <span className="text-[#A5F3FC]">Future with Us.</span>
+                Build Your Future with Us and be part of a journey that{" "}
+                <span className="text-[#A5F3FC]"> transforms ideas into powerful, future-ready solutions.</span>
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
                 Shape the future of business transformation while building a rewarding career
                 with the pioneers of LSS+AI methodology. Make an impact that matters.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#open-roles" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  View Open Roles <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Send Your CV
-                </a>
               </div>
             </div>
 
@@ -295,15 +285,7 @@ export default function CareersPage({ onNavigate }) {
             ))}
           </div>
 
-          <div className="mt-10 overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20">
-            <h3 style={serif} className="text-2xl font-semibold text-white">Don't see the right role?</h3>
-            <p className="mt-2 text-sm text-white/80 max-w-xl">
-              We're always looking for exceptional talent. Send us your CV and let's start a conversation.
-            </p>
-            <a href="mailto:selvan@duanamize.org" className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-              Send Speculative Application <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
+       
         </div>
       </section>
     </div>

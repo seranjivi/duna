@@ -130,7 +130,7 @@ export default function FAQPage({ onNavigate }) {
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
-          <div className="flex flex-wrap items-center gap-2 text-sm">
+          <div className="flex flex-wrap items-center gap-2 mt-5 text-sm">
             <button onClick={() => onNavigate && onNavigate("MorePage")} className="text-white hover:text-blue-200 transition-colors">Home</button>
             <span className="text-white/40">•</span>
             <button onClick={() => onNavigate && onNavigate("MorePage")} className="text-white hover:text-blue-200 transition-colors">More</button>
@@ -138,29 +138,37 @@ export default function FAQPage({ onNavigate }) {
             <span className="text-white">FAQ</span>
           </div>
 
-          <div className="mt-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-              <HelpCircle className="h-3.5 w-3.5" /> Frequently Asked Questions
-            </div>
-            <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-              Everything you need{" "}
-              <span className="text-[#A5F3FC]">to know.</span>
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-              Find answers to the most common questions about LSS+AI methodology, implementation,
-              data security, pricing, and how to get started with Duanamize.
-            </p>
+          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+            <div className="max-w-3xl">
+              <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
+                Everything you need to know{" "}
+                <span className="text-[#A5F3FC]">for a seamless and informed experience.</span>
+              </h1>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+                Find answers to the most common questions about LSS+AI methodology, implementation,
+                data security, pricing, and how to get started with Duanamize.
+              </p>
 
-            {/* Search */}
-            <div className="mt-8 relative max-w-xl">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search questions..."
-                className="w-full rounded-2xl border border-white/10 bg-white/10 pl-10 pr-4 py-3 text-sm text-white placeholder-white/50 backdrop-blur-xl focus:border-cyan-300/50 focus:outline-none focus:ring-2 focus:ring-cyan-300/20 transition"
-              />
+              {/* Search */}
+              <div className="mt-8 relative max-w-xl">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search questions..."
+                  className="w-full rounded-2xl border border-white/10 bg-white/10 pl-10 pr-4 py-3 text-sm text-white placeholder-white/50 backdrop-blur-xl focus:border-cyan-300/50 focus:outline-none focus:ring-2 focus:ring-cyan-300/20 transition"
+                />
+              </div>
+            </div>
+            <div className="relative hidden lg:block">
+              <div className="relative rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
+                <img
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                  alt="FAQ support"
+                  className="rounded-2xl w-full h-[320px] object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -262,9 +270,7 @@ export default function FAQPage({ onNavigate }) {
                 <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
                   Email Our Team <ArrowRight className="h-4 w-4" />
                 </a>
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Book a Discovery Call
-                </a>
+               
               </div>
             </div>
           </div>

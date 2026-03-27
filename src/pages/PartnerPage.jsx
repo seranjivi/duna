@@ -111,26 +111,34 @@ export default function PartnerPage({ onNavigate }) {
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
-          <div className="flex flex-wrap items-center gap-2 text-sm">
-            <button onClick={() => onNavigate && onNavigate("MorePage")} className="text-white hover:text-blue-200 transition-colors">Home</button>
-            <span className="text-white/40">•</span>
-            <button onClick={() => onNavigate && onNavigate("MorePage")} className="text-white hover:text-blue-200 transition-colors">More</button>
+          <div className="flex flex-wrap items-center gap-2 mt-5 text-sm">
+            {/* <button onClick={() => onNavigate && onNavigate("MorePage")} className="text-white hover:text-blue-200 transition-colors">Home</button>
+            <span className="text-white/40">•</span> */}
+            <a href="/more" className="text-white hover:text-blue-200 transition-colors">More</a>
             <span className="text-white/40">•</span>
             <span className="text-white">Partner with Duanamize</span>
           </div>
 
-          <div className="mt-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-              <HeartHandshake className="h-3.5 w-3.5" /> Partner Ecosystem
+          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+            <div className="max-w-3xl">
+              <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
+                Partner with Duanamize to accelerate growth through cutting-edge{" "}
+                <span className="text-[#A5F3FC]"> AI, automation, and operational excellence.</span>
+              </h1>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+                Join our partner ecosystem and deliver AI-powered operational excellence to your clients.
+                Grow your business with proven methodologies, global reach, and expert support.
+              </p>
             </div>
-            <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-              Partner with{" "}
-              <span className="text-[#A5F3FC]">Duanamize.</span>
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-              Join our partner ecosystem and deliver AI-powered operational excellence to your clients.
-              Grow your business with proven methodologies, global reach, and expert support.
-            </p>
+            <div className="relative hidden lg:block">
+              <div className="relative rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
+                <img
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80"
+                  alt="Partnership collaboration"
+                  className="rounded-2xl w-full h-[320px] object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

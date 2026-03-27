@@ -63,7 +63,7 @@ const moreLinks = [
     desc: "Join our global partner ecosystem and deliver AI-powered operational excellence to your clients. Technology, implementation, and channel partnerships available.",
             cta: "Learn more",
     accent: "from-cyan-400 to-sky-500",
-    page: "PartnerPage",
+    path: "/partners",
   },
   {
     id: "careers",
@@ -73,7 +73,7 @@ const moreLinks = [
     desc: "Shape the future of business transformation. Work with cutting-edge LSS+AI technology and deliver breakthrough results for Fortune 500 clients across 15+ countries.",
             cta: "Learn more",
     accent: "from-sky-500 to-indigo-500",
-    page: "CareersPage",
+    path: "/careers",
   },
   {
     id: "faq",
@@ -83,7 +83,7 @@ const moreLinks = [
     desc: "Everything you need to know about our LSS+AI methodology, implementation timelines, data security, pricing, and how to get started with Duanamize.",
             cta: "Learn more",
     accent: "from-indigo-500 to-blue-600",
-    page: "FAQPage",
+    path: "/faq",
   },
 ];
 
@@ -214,9 +214,9 @@ export default function MorePage({ onNavigate }) {
             {moreLinks.map((link) => {
               const Icon = link.icon;
               return (
-                <button
+                <a
                   key={link.id}
-                  onClick={() => onNavigate && onNavigate(link.page)}
+                  href={link.path}
                   className="group text-left rounded-[32px] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1.5 hover:shadow-xl"
                 >
                   <div className={`inline-flex h-14 w-14 items-center justify-center rounded-[22px] bg-gradient-to-br ${link.accent} text-white shadow-lg mb-5`}>
@@ -230,7 +230,7 @@ export default function MorePage({ onNavigate }) {
                   <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463] group-hover:gap-3 transition-all">
                     {link.cta} <ArrowRight className="h-4 w-4" />
                   </div>
-                </button>
+                </a>
               );
             })}
           </div>
@@ -238,28 +238,22 @@ export default function MorePage({ onNavigate }) {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-white pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              
+      <section className="relative overflow-hidden bg-[#061650]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.18),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+          <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
-              
-                
-                <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Ready to transform your manufacturing operations?
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/80 md:text-base">
-                  Speak with a Duanamize manufacturing expert today and discover how LSS+AI methodology
-                  can deliver measurable results across your production environment.
+                <h3 style={serif} className="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
+                  Ready to Accelerate Your Digital Journey?
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-blue-100/85">
+                  Partner with experts to unlock faster, smarter transformation through proven methodologies and advanced technology—delivering measurable results from day one.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request a consultation <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
+                <a href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50 transition">
+                  Get Started Today <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
