@@ -190,9 +190,7 @@ export default function AutomationAIPage({ onNavigate }) {
         <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-cyan-300/8 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-6 md:px-8">
-          <button onClick={() => onNavigate && onNavigate("CatalogMain")} className="inline-flex items-center gap-2 text-sm text-white/55 hover:text-white transition mb-8">
-            <ArrowLeft className="h-4 w-4" /> Back to Catalog
-          </button>
+         
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold text-blue-100 mb-5">
