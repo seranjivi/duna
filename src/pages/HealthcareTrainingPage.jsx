@@ -93,6 +93,7 @@ const programmeTabs = [
       "Navigation, order entry, and documentation workflows",
       "Advanced features: smart phrases, templates, and shortcuts",
       "Specialist workflows for physicians, nurses, and allied health",
+      "Mobile EHR access and point-of-care documentation training",
     ],
   },
   {
@@ -140,6 +141,8 @@ const learningPhases = [
       "Current EHR usage and adoption benchmarking",
       "Compliance audit to identify training priorities",
       "Learning objectives and success metric definition",
+      "Stakeholder interviews to understand workflow challenges",
+      "Training schedule alignment with clinical operations",
     ],
   },
   {
@@ -162,6 +165,8 @@ const learningPhases = [
       "Pre/post assessment and competency tracking",
       "Manager dashboards and completion reporting",
       "Post-programme review and optimisation cycle",
+      "Ongoing support desk and refresher training access",
+      "ROI measurement and outcome reporting to leadership",
     ],
   },
 ];
@@ -209,8 +214,6 @@ const moduleHighlights = [
   { icon: Lock, label: "HIPAA Essentials" },
   { icon: ClipboardList, label: "Clinical Audit Prep" },
   { icon: Users, label: "Team-Based Care Workflows" },
-  { icon: Brain, label: "Clinical Decision Support" },
-  { icon: Award, label: "Compliance Certification" },
 ];
 
 // ─── PAGE ────────────────────────────────────────────────────────────────────
@@ -230,8 +233,8 @@ export default function HealthcareTrainingPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
           {/* Breadcrumb */}
-          <div className="flex flex-wrap items-center gap-2 text-sm">
-            <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
+          <div className="flex flex-wrap items-center gap-2 mt-4 text-sm">
+            <a href="/industries" className="text-white hover:text-blue-200 transition-colors">Industries</a>
             <span className="text-white/40">•</span>
             <a href="/training" className="text-white hover:text-blue-200 transition-colors">Training Services</a>
             <span className="text-white/40">•</span>
@@ -240,9 +243,6 @@ export default function HealthcareTrainingPage() {
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> EHR · Clinical Workflows · Compliance
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Healthcare Training{" "}
                 <span className="text-[#A5F3FC]">Empowering clinical teams to work smarter with technology.</span>
@@ -275,7 +275,7 @@ export default function HealthcareTrainingPage() {
                   <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-blue-100/70">
                     Programme highlights
                   </div>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-4 grid grid-cols-2 gap-2">
                     {moduleHighlights.map((m) => {
                       const Icon = m.icon;
                       return (
@@ -290,8 +290,7 @@ export default function HealthcareTrainingPage() {
                     <div className="flex items-start gap-3">
                       <GraduationCap className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
                       <p className="text-sm leading-relaxed text-white">
-                        Designed for CIOs, CMIOs, L&amp;D managers, and clinical informatics leads
-                        seeking measurable improvements in EHR adoption and compliance.
+                        Designed for healthcare leaders seeking measurable EHR adoption and compliance improvements.
                       </p>
                     </div>
                   </div>
@@ -347,9 +346,8 @@ export default function HealthcareTrainingPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Four programme tracks for every healthcare role.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Each track is designed to address a distinct dimension of healthcare technology capability —
-              from hands-on system usage to strategic digital leadership.
+            <p className="mt-3 text-base leading-relaxed text-slate-600">
+              Each track is designed to address a distinct dimension of healthcare technology capability — from hands-on system usage to strategic digital leadership.
             </p>
           </div>
 
@@ -410,21 +408,18 @@ export default function HealthcareTrainingPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               A three-phase approach from assessment to measurable outcomes.
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Our structured methodology ensures training is grounded in your specific system,
-              your workflows, and your compliance obligations — with results you can report on.
+            <p className="mt-3 text-base leading-relaxed text-slate-600">
+              Our structured methodology ensures training is grounded in your specific system, your workflows, and your compliance obligations — with results you can report on.
             </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-3 items-stretch">
             {learningPhases.map((phase, i) => {
               const Icon = phase.icon;
-              const active = activeStep === i;
               return (
                 <button
                   key={phase.step}
-                  onClick={() => setActiveStep(i)}
-                  className="text-left rounded-[28px] bg-[#0A2463] p-6 shadow-lg shadow-blue-900/20 transition hover:-translate-y-1 hover:shadow-xl"
+                  className="text-left rounded-[28px] bg-[#0A2463] p-6 shadow-lg shadow-blue-900/20 transition hover:-translate-y-1 hover:shadow-xl h-full"
                 >
                   <div className="flex items-center gap-3">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 text-white shadow-lg">
@@ -437,16 +432,14 @@ export default function HealthcareTrainingPage() {
                       <div className="mt-1 text-xl font-semibold text-white">{phase.title}</div>
                     </div>
                   </div>
-                  {active && (
-                    <ul className="mt-4 space-y-2">
-                      {phase.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
-                          <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className="mt-4 space-y-2">
+                    {phase.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </button>
               );
             })}
@@ -461,9 +454,8 @@ export default function HealthcareTrainingPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               The measurable return on healthcare training investment.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Well-trained clinical and administrative teams drive efficiency gains, reduce compliance risk,
-              and improve the working environment — all directly measurable post-programme.
+            <p className="mt-3 text-base leading-relaxed text-slate-600">
+              Well-trained clinical and administrative teams drive efficiency gains, reduce compliance risk, and improve the working environment — all directly measurable post-programme.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
@@ -495,23 +487,24 @@ export default function HealthcareTrainingPage() {
       {/* ── CTA ── */}
       <section className="bg-white pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div>
-                <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Give your clinical teams the confidence to lead digital healthcare.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-base">
-                  Duanamize's healthcare training framework turns system users into system champions —
-                  improving adoption, compliance, and care quality in a structured, measurable engagement.
+                <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                  Healthcare training completes the capability building trilogy by empowering clinical teams with the digital skills needed for modern care delivery
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                  Organizations that invest in comprehensive healthcare technology training achieve higher EHR adoption rates, improved compliance scores, and better patient outcomes through more confident and capable clinical staff.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request a training plan <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+
+              <div className="grid gap-4 md:grid-cols-1 max-w-sm mx-auto">
+                <a href="/industries-healthcare-training" className="rounded-[24px] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Current Page</div>
+                  <div className="mt-2 text-lg font-semibold leading-snug text-slate-950">
+                    Healthcare Training Services
+                  </div>
+                  <div className="mt-1 text-sm text-slate-500">Part of Industries Training Solutions</div>
                 </a>
               </div>
             </div>

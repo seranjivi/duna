@@ -25,8 +25,9 @@ const stats = [
 
 const industries = [
   {
-    href: "/energy-utilities",
+    href: "/industries-energy",
     icon: Zap,
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
     accent: "from-cyan-400 to-sky-500",
     bg: "bg-cyan-50",
     border: "border-cyan-100",
@@ -43,8 +44,9 @@ const industries = [
     ],
   },
   {
-    href: "/retail-digital-transformation",
+    href: "/industries-retail",
     icon: ShoppingBag,
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
     accent: "from-sky-500 to-indigo-500",
     bg: "bg-sky-50",
     border: "border-sky-100",
@@ -82,7 +84,7 @@ export default function AdditionalIndustriesPage() {
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
-          <div className="flex flex-wrap items-center gap-2 text-sm">
+          <div className="flex flex-wrap items-center gap-2 mt-4 text-sm">
             <a href="/industries" className="text-white hover:text-blue-200 transition-colors">Industries</a>
             <span className="text-white/40">•</span>
             <span className="text-white/70">Additional Industries</span>
@@ -90,9 +92,7 @@ export default function AdditionalIndustriesPage() {
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> Additional Industries
-              </div>
+
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Industry-specific technology{" "}
                 <span className="text-[#A5F3FC]">built for real operational complexity.</span>
@@ -150,16 +150,12 @@ export default function AdditionalIndustriesPage() {
       {/* ── ADDITIONAL INDUSTRIES CARDS ── */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463] shadow-sm">
-            <Sparkles className="h-3.5 w-3.5" /> Additional Industries
-          </div>
           <div className="mb-10">
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Two industries. Two transformation stories.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Select an industry below to explore the full technology practice — including challenges,
-              strategies, platform solutions, and measurable ROI.
+            <p className="mt-3 text-base leading-relaxed text-slate-600">
+              Select an industry below to explore the full technology practice — including challenges, strategies, platform solutions, and measurable ROI.
             </p>
           </div>
 
@@ -183,7 +179,10 @@ export default function AdditionalIndustriesPage() {
                         <h3 style={serif} className="text-xl font-semibold text-slate-950">{ind.label}</h3>
                       </div>
                     </div>
-                    <p className="text-base font-semibold text-slate-900 leading-snug mb-3">{ind.heading}</p>
+                    <div className="mt-5 overflow-hidden rounded-[20px] border border-slate-200">
+                      <img src={ind.image} alt={ind.label} className="h-48 w-full object-cover" />
+                    </div>
+                    <p className="text-base font-semibold text-slate-900 leading-snug mb-3 mt-5">{ind.heading}</p>
                     <p className="text-sm leading-relaxed text-slate-600">{ind.body}</p>
                     <ul className="mt-5 space-y-2">
                       {ind.bullets.map((b) => (
@@ -194,30 +193,15 @@ export default function AdditionalIndustriesPage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="mt-8 inline-flex items-center gap-2 self-start rounded-full bg-[#0A2463] px-5 py-2.5 text-sm font-semibold text-white transition group-hover:-translate-y-0.5 group-hover:bg-[#0d2e7a]">
-                    Explore {ind.label} <ArrowRight className="h-4 w-4" />
+                  <div className="mt-8 inline-flex items-center gap-2 self-start rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] transition group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60">
+                    Learn More <ArrowRight className="h-4 w-4" />
                   </div>
                 </a>
               );
             })}
           </div>
 
-          {/* Compact list — matches the screenshot style exactly */}
-          <div className="mt-8">
-            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">Additional Industries</div>
-            <div className="grid gap-3 md:grid-cols-2">
-              {industries.map((ind) => (
-                <a
-                  key={ind.label + "-row"}
-                  href={ind.href}
-                  className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 hover:shadow-md group"
-                >
-                  <span>{ind.label}</span>
-                  <ArrowRight className="h-4 w-4 text-cyan-500 group-hover:translate-x-1 transition-transform" />
-                </a>
-              ))}
-            </div>
-          </div>
+     
         </div>
       </section>
 
@@ -261,25 +245,22 @@ export default function AdditionalIndustriesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-white pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative overflow-hidden bg-[#061650]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.18),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+          <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
-                <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Ready to transform your industry with precision technology?
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-base">
-                  Whether energy, retail, or manufacturing — Duanamize builds technology foundations
-                  that deliver measurable, lasting operational change.
+                <h3 style={serif} className="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
+                  Ready to Build Your Industry Capabilities?
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-blue-100/85">
+                  Partner with Duanamize to deliver industry-specific solutions that transform your operations—equipping your organization with the technology and expertise to drive excellence from day one.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request assessment <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
+                <a href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50 transition">
+                  Get Started Today <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>

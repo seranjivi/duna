@@ -775,15 +775,13 @@ function CTASection() {
               </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
-              <a href="/solutions-process-intelligence" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+              <a href="/solutions-process-intelligence" className="rounded-[24px] border border-slate-200 bg-white p-5 max-w-sm mx-auto block">
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                   AI Readiness Assessment
                 </div>
                 <div className="mt-1 text-sm text-slate-500">Part of Process Intelligence solutions</div>
               </a>
-            </div>
           </div>
         </div>
       </div>

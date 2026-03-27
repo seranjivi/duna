@@ -201,39 +201,11 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Industry Process Flow */}
-      <section className="mx-auto max-w-7xl px-6 pt-20 pb-10 lg:px-8">
-        <div className="mb-16">
-          <div className="inline-flex items-center rounded-full border border-sky-200 bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#0A4D8C] shadow-sm">
-            Our Process
-          </div>
-          <h2 style={serif} className="mt-6 text-3xl font-semibold text-[#12304A] md:text-5xl">
-            From Discovery to Lasting Impact
-          </h2>
-          <p className="mt-4 text-lg text-slate-600 whitespace-normal">
-            A structured, industry-aware delivery methodology that ensures every engagement starts
-            with deep sector understanding and ends with measurable, sustained business improvement
-            — not just a technology deployment.
-          </p>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {industryFlow.map((item) => (
-            <div key={item.step} className="rounded-[28px] border border-white bg-white/90 p-6 shadow-sm backdrop-blur">
-              <div className="text-sm font-semibold text-[#0A4D8C]">{item.step}</div>
-              <h3 style={serif} className="mt-3 text-3xl font-semibold leading-tight text-[#12304A]">
-                {item.title}
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Industries Grid */}
       <section className="mx-auto max-w-7xl px-6 pt-10 pb-20 lg:px-8">
         <div className="mb-16">
-          <div className="inline-flex items-center rounded-full border border-sky-200 bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#0A4D8C] shadow-sm">
+          <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0A4D8C]">
             Core Industries
           </div>
           <h2 style={serif} className="mt-6 text-3xl font-semibold text-[#12304A] md:text-5xl">
@@ -302,10 +274,42 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      
+      {/* Industry Process Flow */}
+      <section className="bg-[linear-gradient(180deg,#f5fbff_0%,#eef7ff_100%)]">
+        <div className="mx-auto max-w-7xl px-6 pt-20 pb-10 lg:px-8">
+        <div className="mb-16">
+          <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0A4D8C]">
+            Our Process
+          </div>
+          <h2 style={serif} className="mt-6 text-3xl font-semibold text-[#12304A] md:text-5xl">
+            From Discovery to Lasting Impact
+          </h2>
+          <p className="mt-4 text-lg text-slate-600 whitespace-normal">
+            A structured, industry-aware delivery methodology that ensures every engagement starts
+            with deep sector understanding and ends with measurable, sustained business improvement
+            — not just a technology deployment.
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {industryFlow.map((item) => (
+            <div key={item.step} className="rounded-[28px] border border-white bg-white/90 p-6 shadow-sm backdrop-blur">
+              <div className="text-sm font-semibold text-[#0A4D8C]">{item.step}</div>
+              <h3 style={serif} className="mt-3 text-3xl font-semibold leading-tight text-[#12304A]">
+                {item.title}
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
+            </div>
+          ))}
+        </div>
+        </div>
+      </section>
+
       {/* Featured Insights Section */}
       <section className="mx-auto max-w-7xl px-6 pt-10 pb-20 lg:px-8">
         <div className="mb-16">
-          <div className="inline-flex items-center rounded-full border border-sky-200 bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#0A4D8C] shadow-sm">
+          <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0A4D8C]">
             Featured Resources
           </div>
           <h2 style={serif} className="mt-5 text-3xl font-semibold text-[#12304A] md:text-5xl">

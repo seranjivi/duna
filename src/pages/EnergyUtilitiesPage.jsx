@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import {
-  Activity,
   AlertCircle,
   ArrowRight,
   BarChart3,
   Battery,
+  Brain,
   CheckCircle2,
   Cpu,
   Database,
   Globe2,
-  Layers3,
-  LayoutDashboard,
+  Lightbulb,
+  Monitor,
   Network,
   RefreshCw,
   Shield,
   ShieldCheck,
   Sparkles,
   Sun,
+  Target,
   TrendingUp,
   Users,
   Wifi,
@@ -79,7 +80,7 @@ const challenges = [
   },
 ];
 
-const smartGridTabs = [
+const programmeTabs = [
   {
     label: "AMI",
     icon: Wifi,
@@ -113,40 +114,55 @@ const smartGridTabs = [
       "Security analysis, contingency planning, and state estimation",
     ],
   },
+  {
+    label: "Leadership",
+    icon: TrendingUp,
+    title: "Digital Transformation for Utility Leaders",
+    items: [
+      "Grid modernisation strategy and roadmap development",
+      "Change management for digital utility transitions",
+      "Regulatory compliance and stakeholder engagement",
+      "Building a culture of innovation and continuous improvement",
+    ],
+  },
 ];
 
-const transformationPhases = [
+const learningPhases = [
   {
     step: "01",
-    title: "Infrastructure Modernisation",
-    icon: Cpu,
+    title: "Infrastructure Assessment",
+    icon: Target,
     items: [
-      "Legacy SCADA and DMS system replacement and upgrades",
-      "IoT sensor deployment across generation and distribution",
-      "Cloud computing and edge processing architecture",
-      "Cybersecurity hardening and OT/IT network segmentation",
+      "Current grid infrastructure and capability analysis",
+      "Smart grid readiness and gap assessment",
+      "Asset health evaluation and criticality ranking",
+      "Renewable integration potential and constraints analysis",
+      "Stakeholder interviews with operations and engineering teams",
+      "Training needs assessment for technical and field staff",
     ],
   },
   {
     step: "02",
-    title: "Operational Excellence",
-    icon: Workflow,
+    title: "Solution Design",
+    icon: Brain,
     items: [
-      "Process automation and real-time operational optimisation",
-      "Predictive maintenance and asset lifecycle management",
-      "Workforce management, safety systems, and training",
-      "Supply chain and resource procurement optimisation",
+      "Custom smart grid architecture and technology selection",
+      "AMI deployment strategy and phased rollout planning",
+      "Predictive maintenance model design and data integration",
+      "Renewable integration roadmap and storage planning",
     ],
   },
   {
     step: "03",
-    title: "Customer & Market",
-    icon: Users,
+    title: "Implementation & Support",
+    icon: BarChart3,
     items: [
-      "Digital customer portals and self-service energy management",
-      "Time-of-use pricing, flexible billing, and demand response",
-      "EV charging infrastructure and grid-to-vehicle (V2G) integration",
-      "Renewable energy certificate tracking and market operations",
+      "Phased deployment with pilot programs and scaling",
+      "System integration and data migration management",
+      "Staff training and change management programs",
+      "Performance monitoring and optimization cycles",
+      "Ongoing support desk and technical assistance",
+      "ROI measurement and outcome reporting to leadership",
     ],
   },
 ];
@@ -175,7 +191,7 @@ const roiAreas = [
     ],
   },
   {
-    icon: BarChart3,
+    icon: Lightbulb,
     title: "Operational Savings",
     accent: "from-indigo-500 to-blue-500",
     items: [
@@ -187,27 +203,13 @@ const roiAreas = [
   },
 ];
 
-const techSolutions = [
-  {
-    icon: Database,
-    title: "Energy Management Systems (EMS)",
-    items: [
-      "Real-time system monitoring and state estimation",
-      "Economic dispatch and unit commitment optimisation",
-      "Transmission planning and ancillary services management",
-      "Asset condition monitoring and lifecycle management",
-    ],
-  },
-  {
-    icon: Globe2,
-    title: "Utility IoT Solutions",
-    items: [
-      "Smart meter and sensor network deployment at scale",
-      "Transformer, cable, and line condition monitoring",
-      "Distributed energy resource and smart inverter control",
-      "EV charging management and grid-edge device connectivity",
-    ],
-  },
+const moduleHighlights = [
+  { icon: Wifi, label: "Smart Grid" },
+  { icon: Battery, label: "AMI & Meters" },
+  { icon: Network, label: "Distribution" },
+  { icon: Sun, label: "Renewables" },
+  { icon: BarChart3, label: "Analytics" },
+  { icon: ShieldCheck, label: "Security" },
 ];
 
 // ─── PAGE ────────────────────────────────────────────────────────────────────

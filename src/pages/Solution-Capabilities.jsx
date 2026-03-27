@@ -483,15 +483,13 @@ export default function AICapabilityPage() {
                 </p>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-2">
-                <a href="/solutions-capability" className="rounded-[24px] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md">
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Current Page</div>
-                  <div className="mt-2 text-lg font-semibold leading-snug text-slate-950">
-                    AI Capability Development
-                  </div>
-                  <div className="mt-1 text-sm text-slate-500">Part of Capability Building solutions</div>
-                </a>
-              </div>
+              <a href="/solutions-capability" className="rounded-[24px] border border-slate-200 bg-white p-6 max-w-sm mx-auto block">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Current Page</div>
+                <div className="mt-2 text-lg font-semibold leading-snug text-slate-950">
+                  AI Capability Development
+                </div>
+                <div className="mt-1 text-sm text-slate-500">Part of Capability Building solutions</div>
+              </a>
             </div>
           </div>
         </div>

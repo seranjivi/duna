@@ -707,15 +707,13 @@ function CTASection() {
                 Organizations that conduct comprehensive readiness assessments, evaluate use case criteria, and establish proper governance are far more likely to succeed in AI implementation, achieve measurable business impact, and scale AI capabilities across the enterprise.
               </p>
             </div>
-            <div className="rounded-[24px] border border-slate-200 bg-white p-5">
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
-              <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                AI Readiness Assessment
-              </div>
-              <div className="mt-1 text-sm text-slate-500">
-                Part of Process Intelligence solutions
-              </div>
-            </div>
+              <a href="/solutions-agentic-automation" className="rounded-[24px] border border-slate-200 bg-white p-5 max-w-sm mx-auto block">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
+                <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                  AI Implementation Best Practices
+                </div>
+                <div className="mt-1 text-sm text-slate-500">Part of Process Intelligence solutions</div>
+              </a>
           </div>
         </div>
       </div>
