@@ -275,18 +275,28 @@ export default function DuanamizeAboutUsPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-4 md:px-8 md:pb-20">
           <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <div>
-              <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
-                <a href="/" className="hover:text-blue-200 transition-colors">Home</a>
-                <span>•</span>
-                <span className="text-white">About Us</span>
-              </div>
+                  <div className="inline-flex items-center gap-2 mt-4 rounded-full border border-white/20 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#071857] mb-4">
+            About Us
+          </div>
+          <div className="text-sm text-blue-100/70">
+            <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
+            <span className="mx-2 text-white">/</span>
+            <span className="text-white">About US</span>
+          </div>
 
               <h1
                 style={{ ...serif }}
-                className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl"
-              >
-                Pioneers of AI-Powered Operational Excellence
-              </h1>
+               
+
+  className="mt-5 text-4xl font-semibold leading-tight tracking-tight md:text-6xl"
+>
+  <span className="text-white">
+    Pioneers of AI-Powered{" "}
+  </span>
+  <span className="text-[#A5F3FC]">
+    Operational Excellence
+  </span>
+</h1>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/90 md:text-lg">
                 For over 3 years, Duanamize has been at the forefront of operational excellence, pioneering the integration of Lean Six Sigma with artificial intelligence to deliver breakthrough results for organizations worldwide.

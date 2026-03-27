@@ -61,7 +61,7 @@ const moreLinks = [
     tag: "Partnership",
     title: "Partner with Duanamize",
     desc: "Join our global partner ecosystem and deliver AI-powered operational excellence to your clients. Technology, implementation, and channel partnerships available.",
-    cta: "Explore Partnership",
+            cta: "Learn more",
     accent: "from-cyan-400 to-sky-500",
     page: "PartnerPage",
   },
@@ -71,7 +71,7 @@ const moreLinks = [
     tag: "Careers",
     title: "Build Your Future with Us",
     desc: "Shape the future of business transformation. Work with cutting-edge LSS+AI technology and deliver breakthrough results for Fortune 500 clients across 15+ countries.",
-    cta: "View Open Roles",
+            cta: "Learn more",
     accent: "from-sky-500 to-indigo-500",
     page: "CareersPage",
   },
@@ -81,7 +81,7 @@ const moreLinks = [
     tag: "Support",
     title: "Frequently Asked Questions",
     desc: "Everything you need to know about our LSS+AI methodology, implementation timelines, data security, pricing, and how to get started with Duanamize.",
-    cta: "Browse FAQs",
+            cta: "Learn more",
     accent: "from-indigo-500 to-blue-600",
     page: "FAQPage",
   },
@@ -204,7 +204,7 @@ export default function MorePage({ onNavigate }) {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Explore more from Duanamize.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
               Whether you're looking to partner with us, build your career, or find answers —
               explore what Duanamize has to offer.
             </p>
