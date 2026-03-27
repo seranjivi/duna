@@ -178,18 +178,18 @@ function Hero({ showHeader = true }) {
 
         <div className="relative lg:pt-4">
           <div className="grid gap-4 sm:grid-cols-2 sm:grid-rows-2">
-            <div className="sm:row-span-2 overflow-hidden rounded-[32px] border border-white/70 bg-white p-3 shadow-[0_20px_60px_rgba(14,93,164,0.12)]">
+            <div className="sm:row-span-2 overflow-hidden rounded-[32px] shadow-[0_20px_60px_rgba(14,93,164,0.12)] border-0">
               <img src={heroImages[0]} alt="Team using AI-enabled analytics" className="h-full min-h-[420px] w-full rounded-[24px] object-cover" />
             </div>
-            <div className="overflow-hidden rounded-[28px] border border-white/70 bg-white p-3 shadow-[0_20px_40px_rgba(14,93,164,0.10)]">
+            <div className="overflow-hidden rounded-[28px]  shadow-[0_20px_40px_rgba(14,93,164,0.10)] border-0">
               <img src={heroImages[1]} alt="Workshop collaboration" className="h-[200px] w-full rounded-[20px] object-cover" />
             </div>
-            <div className="overflow-hidden rounded-[28px] border border-white/70 bg-white p-3 shadow-[0_20px_40px_rgba(14,93,164,0.10)]">
+            <div className="overflow-hidden rounded-[28px]  shadow-[0_20px_40px_rgba(14,93,164,0.10)] border-0">
               <img src={heroImages[2]} alt="Business planning session" className="h-[200px] w-full rounded-[20px] object-cover" />
             </div>
           </div>
 
-          <div className="absolute -bottom-24 left-2 right-2 rounded-[28px] border border-white/80 bg-white/90 p-5 shadow-[0_20px_50px_rgba(14,93,164,0.14)] backdrop-blur">
+          <div className="absolute -bottom-24 left-2 right-2 rounded-[28px] bg-white/90 p-5 shadow-[0_20px_50px_rgba(14,93,164,0.14)] backdrop-blur border-0">
             <div className="grid gap-4 grid-cols-3">
               {[
                 ["Methodology", "LSS + AI"],
