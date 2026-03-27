@@ -80,32 +80,25 @@ const solutionFlow = [
 
 const featuredInsights = [
   {
-    title: 'AI Integration Strategy',
-    description: 'Comprehensive framework for integrating AI into your existing business processes.',
+    title: 'AI Readiness Assessment',
+    description: 'Evaluate your organization\'s maturity across data, technology, culture, and governance before implementing AI solutions.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-    tag: 'Strategy',
-    path: '/solutions-ai-strategy'
+    tag: 'Process Intelligence',
+    path: '/solutions-process-intelligence'
   },
   {
-    title: 'Digital Transformation Roadmap',
-    description: 'Step-by-step guide to your organization\'s digital evolution journey.',
+    title: 'AI implementation best practices',
+    description: 'Deploy intelligent AI agents that autonomously handle complex tasks, make decisions, and adapt to changing business environments in real-time.',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
-    tag: 'Transformation',
-    path: '/solutions-transformation'
-  },
-  {
-    title: 'Process Automation Excellence',
-    description: 'Best practices for implementing intelligent automation across your enterprise.',
-    image: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=800&q=80',
     tag: 'Automation',
-    path: '/solutions-automation'
+    path: '/solutions-agentic-automation'
   },
   {
-    title: 'Data Analytics Platform',
-    description: 'Advanced analytics solutions for data-driven decision making and business insights.',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
-    tag: 'Analytics',
-    path: '/solutions-analytics'
+    title: 'AI capability development',
+    description: 'Develop organizational and individual capabilities through targeted training, knowledge transfer, and continuous learning programs for AI readiness.',
+    image: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=800&q=80',
+    tag: 'Training',
+    path: '/solutions-capability'
   },
 ];
 
@@ -175,7 +168,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Solutions Benefits Section */}
-      <section className="bg-[linear-gradient(180deg,#f5fbff_0%,#eef7ff_100%)]">
+      {/* <section className="bg-[linear-gradient(180deg,#f5fbff_0%,#eef7ff_100%)]">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="mb-16">
             <div className="inline-flex items-center rounded-full border border-sky-200 bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#0A4D8C] shadow-sm">
@@ -208,7 +201,7 @@ export default function SolutionsPage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Solution Process Flow */}
       <section className="mx-auto max-w-7xl px-6 pt-20 pb-10 lg:px-8">
@@ -237,40 +230,7 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* Featured Insights Section */}
-      <section className="mx-auto max-w-7xl px-6 pt-10 pb-20 lg:px-8">
-        <div className="mb-16">
-          <div className="inline-flex items-center rounded-full border border-sky-200 bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#0A4D8C] shadow-sm">
-            Featured Resources
-          </div>
-          <h2 style={serif} className="mt-5 text-3xl font-semibold text-[#12304A] md:text-5xl">
-            Deep Dive Into Our Solutions
-          </h2>
-          <p className="mt-4 text-lg text-slate-600 whitespace-normal">
-            Explore detailed insights, case studies, and implementation guides for our comprehensive solution portfolio, leveraging our expertise to accelerate your transformation journey with confidence and clarity.
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {featuredInsights.map((item) => (
-            <article key={item.title} className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative overflow-hidden">
-                <img src={item.image} alt={item.title} className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" />
-                <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-white backdrop-blur">
-                  {item.tag}
-                </div>
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold leading-7 text-[#12304A]">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{item.description}</p>
-                {/* <a href={item.path} className="mt-5 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition">
-                  Learn More <ArrowRight className="h-4 w-4" />
-                </a> */}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+ 
       {/* Solutions Grid */}
       <section className="mx-auto max-w-7xl px-6 pt-10 pb-20 lg:px-8">
         <div className="mb-16">
@@ -278,7 +238,7 @@ export default function SolutionsPage() {
             Core Solutions
           </div>
           <h2 style={serif} className="mt-6 text-3xl font-semibold text-[#12304A] md:text-5xl">
-            Our Solution Portfolio
+            The main sections of the Solutions Menu
           </h2>
           <p className="mt-4 text-lg text-slate-600 whitespace-normal">
             From strategy to implementation, we offer end-to-end solutions that drive operational excellence and business growth, empowering your teams with the tools and insights needed to stay ahead in an evolving digital landscape.
@@ -338,6 +298,41 @@ export default function SolutionsPage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+           {/* Featured Insights Section */}
+      <section className="mx-auto max-w-7xl px-6 pt-10 pb-20 lg:px-8">
+        <div className="mb-16">
+          <div className="inline-flex items-center rounded-full border border-sky-200 bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#0A4D8C] shadow-sm">
+            Featured Resources
+          </div>
+          <h2 style={serif} className="mt-5 text-3xl font-semibold text-[#12304A] md:text-5xl">
+            Deep Dive Into Our Solutions
+          </h2>
+          <p className="mt-4 text-lg text-slate-600 whitespace-normal">
+            Explore detailed insights, case studies, and implementation guides for our comprehensive solution portfolio, leveraging our expertise to accelerate your transformation journey with confidence and clarity.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featuredInsights.map((item) => (
+            <article key={item.title} className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative overflow-hidden">
+                <img src={item.image} alt={item.title} className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" />
+                <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-white backdrop-blur">
+                  {item.tag}
+                </div>
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold leading-7 text-[#12304A]">{item.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{item.description}</p>
+                <a href={item.path} className="mt-5 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition">
+                  Learn More <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

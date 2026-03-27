@@ -112,8 +112,7 @@ const leadership = {
   srikanth: {
     name: "Srikanth Shastri",
     role: "Board Advisor · Program Management & Leadership Mentor",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80",
+    image: "/srikanth.png",
     intro:
       "Srikanth Shastri is a seasoned IT professional with more than three decades of experience in program management, business excellence, and organizational transformation.",
     body:
@@ -131,7 +130,7 @@ const leadership = {
     name: "Kalpana",
     role: "Director · 15+ years optimizing performance in Lean Six Sigma",
     image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80",
+      "/woman.png",
     intro:
       "Accomplished executive with a proven track record in healthcare and diverse industries, specializing in Lean Six Sigma implementation and operational transformation as Director of Duanamize Global Services.",
     bullets: [
@@ -147,7 +146,7 @@ const leadership = {
     name: "Dr. Narayanan Srinivasan",
     role: "Advisor / Strategic Consultant · 34+ years in human resource management",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
+      "/narayan.png",
     intro:
       "Narayanan holds a bachelor’s degree in economics, a PGDM in HRM from IIM Kolkata, and a PhD in behavior science.",
     bullets: [
