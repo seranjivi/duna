@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, ArrowRight, Target, Zap, Shield, TrendingUp, Factory, Heart, Building2, Landmark, Cpu, ShoppingBag } from 'lucide-react';
+import { Brain, ArrowRight, Target, Zap, Shield, TrendingUp, Factory, Heart, Building2, Landmark, Cpu, ShoppingBag, Globe, GraduationCap } from 'lucide-react';
 
 const serif = {
   fontFamily: '"Playfair Display", Georgia, Cambria, "Times New Roman", serif',
@@ -7,12 +7,12 @@ const serif = {
 
 const industries = [
   {
-    title: 'Manufacturing & Industry 4.0',
-    description: 'Smart manufacturing solutions integrating cyber-physical systems, IoT, AI, and advanced analytics into production operations — driving efficiency, quality, and sustainability across the entire value chain.',
-    icon: Factory,
-    image: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=800&q=80',
-    features: ['Smart Factory Enablement', 'Predictive Maintenance', 'DevOps Automation', 'Cloud Migration'],
-    href: '/industries-manufacturing',
+    title: 'Healthcare',
+    description: 'EHR optimisation and clinical workflow automation that helps healthcare providers maximise their technology investment, reduce administrative burden, and deliver better patient outcomes.',
+    icon: Heart,
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+    features: ['EHR Optimisation', 'Clinical Workflow Automation', 'Patient Analytics', 'Healthcare Training'],
+    href: '/industries-healthcare',
   },
   {
     title: 'Financial Services',
@@ -23,28 +23,12 @@ const industries = [
     href: '/industries-financial',
   },
   {
-    title: 'Healthcare',
-    description: 'EHR optimisation and clinical workflow automation that helps healthcare providers maximise their technology investment, reduce administrative burden, and deliver better patient outcomes.',
-    icon: Heart,
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
-    features: ['EHR Optimisation', 'Clinical Workflow Automation', 'Patient Analytics', 'Healthcare Training'],
-    href: '/industries-healthcare',
-  },
-  {
-    title: 'Energy & Utilities',
-    description: 'Smart grid technology and utility automation that integrates AI and IoT to create intelligent, efficient, and sustainable energy systems — improving grid reliability and renewable energy integration.',
-    icon: Zap,
-    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
-    features: ['Smart Grid Technology', 'Distribution Automation', 'Energy Management Systems', 'Utility IoT Solutions'],
-    href: '/industries-energy',
-  },
-  {
-    title: 'Retail & E-commerce',
-    description: 'Retail digital transformation that reshapes how businesses engage customers, manage inventory, and compete — delivering personalised, seamless, and value-driven shopping experiences across all channels.',
-    icon: ShoppingBag,
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80',
-    features: ['E-commerce Automation', 'Omnichannel Strategy', 'Customer Analytics', 'Supply Chain Optimisation'],
-    href: '/industries-retail',
+    title: 'Manufacturing',
+    description: 'Smart manufacturing solutions integrating cyber-physical systems, IoT, AI, and advanced analytics into production operations — driving efficiency, quality, and sustainability across the entire value chain.',
+    icon: Factory,
+    image: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=800&q=80',
+    features: ['Smart Factory Enablement', 'Predictive Maintenance', 'DevOps Automation', 'Cloud Migration'],
+    href: '/industries-manufacturing',
   },
   {
     title: 'Technology',
@@ -53,6 +37,22 @@ const industries = [
     image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&w=800&q=80',
     features: ['CI/CD Pipeline Optimisation', 'Cloud Migration', 'Infrastructure as Code', 'DevOps Transformation'],
     href: '/technology',
+  },
+  {
+    title: 'Additional Industries',
+    description: 'Comprehensive digital transformation solutions across energy, utilities, retail, and other sectors — driving innovation and operational excellence through technology integration.',
+    icon: Globe,
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
+    features: ['Energy & Utilities', 'Retail & E-commerce', 'Supply Chain', 'Logistics'],
+    href: '/additional-industries',
+  },
+  {
+    title: 'Training Services',
+    description: 'Professional training and certification programs that build organizational capability in digital transformation, process improvement, and technology adoption.',
+    icon: GraduationCap,
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80',
+    features: ['Digital Transformation Training', 'Process Improvement', 'Technology Adoption', 'Leadership Development'],
+    href: '/training',
   },
 ];
 
@@ -108,28 +108,28 @@ const featuredInsights = [
     description: 'How cyber-physical systems and AI are transforming production efficiency and quality across industrial operations.',
     image: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=800&q=80',
     tag: 'Manufacturing',
-    path: '/industries-manufacturing'
+    path: '/industries-manufacturing-smart'
   },
   {
     title: 'Banking Digital Transformation',
     description: 'Navigating fintech disruption, open banking mandates, and customer experience expectations in modern financial services.',
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80',
     tag: 'Financial Services',
-    path: '/industries-financial'
+    path: '/industries-financial-banking'
   },
   {
     title: 'EHR Optimisation & Clinical Workflows',
     description: 'Maximising healthcare technology investment through workflow automation, compliance training, and system optimisation.',
     image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
     tag: 'Healthcare',
-    path: '/industries-healthcare'
+    path: '/industries-healthcare-ehr'
   },
   {
     title: 'Smart Grid & Energy Automation',
     description: 'Building intelligent, resilient energy infrastructure through grid automation, IoT, and renewable energy integration.',
     image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
     tag: 'Energy & Utilities',
-    path: '/industries-energy'
+    path: '/industries-manufacturing-smart'
   },
 ];
 
