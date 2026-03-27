@@ -55,14 +55,17 @@ const menuData = [
     children: [
       {
         label: "Process Intelligence",
-        items: [{ name: "AI Readiness", path: "/solutions-process-intelligence" }],
+        path: "/process-intelligence",
+        items: [{ name: "AI Readiness Assessment", path: "/solutions-process-intelligence" }],
       },
       {
         label: "Agentic Automation",
+        path: "/agentic-automation",
         items: [{ name: "AI Implementation Best Practices", path: "/solutions-agentic-automation" }],
       },
       {
         label: "Capability Building",
+        path: "/capability-building",
         items: [{ name: "AI Capability Development", path: "/solutions-capability" }],
       },
     ],

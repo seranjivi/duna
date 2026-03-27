@@ -13,6 +13,9 @@ import LSSSub2Page from './src/pages/lsssub2.jsx';
 import SolutionsProcessIntelligencePage from './src/pages/Solutions-Process Intelligence.jsx';
 import SolutionsAgenticAutomationPage from './src/pages/Solutions-Agentic Automation.jsx';
 import SolutionsCapabilityPage from './src/pages/Solution-Capabilities.jsx';
+import ProcessIntelligenceMainPage from './src/pages/ProcessIntelligenceMainPage.jsx';
+import AgenticAutomationMainPage from './src/pages/AgenticAutomationMainPage.jsx';
+import CapabilityBuildingMainPage from './src/pages/CapabilityBuildingMainPage.jsx';
 import SolutionsPage from './src/pages/SolutionsPage.jsx';
 import IndustriesPage from './src/pages/IndustriesPage.jsx';
 import IndustriesHealthcareAIPage from './src/pages/industries-healthcare-AI.jsx';
@@ -74,6 +77,9 @@ root.render(
         <Route path="solutions-process-intelligence" element={<SolutionsProcessIntelligencePage />} />
         <Route path="solutions-agentic-automation" element={<SolutionsAgenticAutomationPage />} />
         <Route path="solutions-capability" element={<SolutionsCapabilityPage />} />
+        <Route path="process-intelligence" element={<ProcessIntelligenceMainPage />} />
+        <Route path="agentic-automation" element={<AgenticAutomationMainPage />} />
+        <Route path="capability-building" element={<CapabilityBuildingMainPage />} />
         <Route path="solutions" element={<SolutionsPage />} />
         <Route path="industries" element={<IndustriesPage />} />
         <Route path="industries-healthcare" element={<IndustriesHealthcarePage />} />

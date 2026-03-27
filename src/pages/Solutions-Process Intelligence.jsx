@@ -275,10 +275,10 @@ function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-1 pb-16 pt-0 md:px-2 md:pb-20">
         <div className="grid gap-12 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
           <div>
-            <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
-              <span>Solutions</span>
+            <div className="flex flex-wrap items-center gap-2 mt-7 text-sm text-blue-100/75">
+              <a href="/solutions" className="hover:text-white transition-colors">Solutions</a>
               <span>•</span>
-              <span>Process Intelligence</span>
+              <a href="/process-intelligence" className="hover:text-white transition-colors">Process Intelligence</a>
               <span>•</span>
               <span className="text-white">AI Readiness Assessment</span>
             </div>
@@ -320,7 +320,7 @@ function Hero() {
                   </div>
                 </div>
 
-                <div className="mt-5 grid gap-4 xl:grid-cols-[0.9fr_1.1fr]">
+                <div className="mt-5">
                   <div className="rounded-[30px] border border-cyan-300/20 bg-cyan-300/10 p-5">
                     <div className="text-[10px] uppercase tracking-[0.18em] text-cyan-100/85">Readiness score</div>
                     <div className="mt-3 flex items-end gap-3">
@@ -331,7 +331,7 @@ function Hero() {
                       Strong strategic potential, with the biggest uplift opportunity in operating readiness and internal capability development.
                     </p>
 
-                    <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+                    <div className="mt-5 grid gap-3 sm:grid-cols-2">
                       {[
                         ["Fastest path to value", "Pilot-ready use cases with high impact and manageable complexity"],
                         ["Critical dependency", "Data governance and integration discipline before scale"],
@@ -344,26 +344,17 @@ function Hero() {
                     </div>
                   </div>
 
-                  <div className="rounded-[30px] border border-white/10 bg-[#06123f]/90 p-5">
-                    <div className="mb-4 flex items-center justify-between gap-3">
-                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/70">Dimension analysis</div>
-                     
-                    </div>
-                    <div className="space-y-4">
+                  <div className="mt-4 rounded-[24px] border border-white/10 bg-white/5 p-4">
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/70 mb-3">5 Key Dimensions</div>
+                    <div className="grid grid-cols-3 gap-2">
                       {readinessDimensions.map((item) => {
                         const Icon = item.icon;
                         return (
-                          <div key={item.title} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                            <div className="flex items-start gap-4">
-                              <div className="flex items-center gap-1">
-                                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/70 mb-2">Dimension</div>
-                                <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br ${item.accent} text-white shadow-lg shadow-blue-950/25`}>
-                                  <Icon className="h-5 w-5" />
-                                </div>
-                                <div className="text-[8px] font-semibold text-white">{item.title}</div>
-                              </div>
-                              <div className="mt-1 text-xs leading-relaxed text-white">{item.note}</div>
+                          <div key={item.title} className="flex items-center gap-2 rounded-xl border border-white/10 bg-slate-950/25 px-3 py-2">
+                            <div className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gradient-to-br ${item.accent} text-white`}>
+                              <Icon className="h-3.5 w-3.5" />
                             </div>
+                            <span className="text-xs font-medium text-white">{item.title}</span>
                           </div>
                         );
                       })}
@@ -785,20 +776,12 @@ function CTASection() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
-              <a href="/solutions" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+              <a href="/solutions-process-intelligence" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
                 <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                  Process Intelligence
+                  AI Readiness Assessment
                 </div>
-              </a>
-              <a href="/solutions-agentic-automation" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
-                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
-                <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                  Agentic Automation
-                </div>
-                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
-                  View Page <ArrowRight className="h-4 w-4" />
-                </div>
+                <div className="mt-1 text-sm text-slate-500">Part of Process Intelligence solutions</div>
               </a>
             </div>
           </div>
