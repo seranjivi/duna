@@ -290,7 +290,7 @@ export default function DuanamizeContactUsPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-20 md:px-8 md:pb-20">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#071857] mb-4">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#071857]">
             Contact US
           </div>
           <div className="text-sm text-blue-100/70">
