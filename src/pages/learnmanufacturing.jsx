@@ -153,14 +153,7 @@ export default function LeanManufacturingPage() {
                 methodologies provide manufacturers with systematic frameworks for eliminating waste, reducing
                 variation, and achieving sustainable competitive advantage through continuous improvement.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#lean" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Lean principles <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#dmaic" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                  Six Sigma DMAIC
-                </a>
-              </div>
+              
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 {stats.map((s) => (
                   <div key={s.value} className="rounded-[18px] border border-white/8 bg-white/4 p-4">

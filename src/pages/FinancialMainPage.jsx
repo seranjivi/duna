@@ -65,8 +65,9 @@ export default function FinancialMainPage() {
                 <a href="/industries" className="text-white hover:text-blue-200 transition-colors">Industries</a><span className="text-white">•</span>
                 <span className="text-white">Finance Services</span>
               </div>
-              <h1 style={serif} className="mt-6 text-4xl font-semibold leading-tight text-[#A5F3FC] md:text-6xl">
-                The future of finance runs on smarter technology.
+              <h1 style={serif} className="mt-6 text-4xl font-semibold leading-tight md:text-6xl">
+                <span className="text-white">The future of finance</span>{" "}
+                <span className="text-[#A5F3FC]">runs on smarter technology.</span>
               </h1>
               <p className="mt-5 text-base leading-relaxed text-white md:text-lg max-w-xl">
                 Duanamize helps banks and financial institutions navigate digital transformation, automate compliance,
@@ -305,29 +306,7 @@ export default function FinancialMainPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="contact" className="bg-slate-50 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Ready to transform how your financial institution competes?
-                </h2>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white md:text-lg">
-                  Whether you are modernizing digital banking, automating compliance, or building fintech capabilities
-                  from scratch — Duanamize is the right transformation partner to start with.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Get Started Today <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    
     </div>
   );
 }
