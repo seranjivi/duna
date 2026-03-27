@@ -452,26 +452,34 @@ export default function AIHealthcareAutomationPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="bg-slate-50 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#130838] via-[#1a0a4a] to-[#2d1060] p-8 shadow-2xl md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      {/* ── RELATED NAVIGATION ── */}
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
+          <div className="rounded-[30px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
               <div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Ready to automate the routine and elevate the clinical?
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-lg">
-                  Duanamize partners with healthcare leaders to design, implement, and scale AI-powered automation
-                  that delivers measurable improvements in patient outcomes, clinical efficiency, and revenue integrity.
+                <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                  Continue exploring the Healthcare Solutions section
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                  This AI-Powered Healthcare page is part of the broader Healthcare Solutions stream under the Industries section.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#1a0a4a] transition hover:-translate-y-0.5">
-                  Request a demo <ArrowRight className="h-4 w-4" />
+              <div className="grid gap-4 md:grid-cols-2">
+                <a href="/industries-healthcare-ehr" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    EHR Optimization
+                  </div>
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </div>
                 </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+                <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    AI-Powered Healthcare: Automation from clinical decision to patient outcome
+                  </div>
                 </a>
               </div>
             </div>

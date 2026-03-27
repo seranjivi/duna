@@ -515,16 +515,14 @@ export default function EHROptimizationPage() {
                       <div className="mt-1 text-xl font-semibold text-white">{step.title}</div>
                     </div>
                   </div>
-                  {active && (
-                    <ul className="mt-4 space-y-2">
-                      {step.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
-                          <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className="mt-4 space-y-2">
+                    {step.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-300" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </button>
               );
             })}
@@ -569,27 +567,34 @@ export default function EHROptimizationPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="bg-slate-50 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      {/* ── RELATED NAVIGATION ── */}
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
+          <div className="rounded-[30px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
               <div>
-                
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Transform your EHR from a burden into a clinical performance engine.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-lg">
-                  Duanamize's EHR optimization framework addresses usability, workflow, data quality, and ROI in a
-                  structured, clinician-centred engagement model.
+                <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                  Continue exploring the Healthcare Solutions section
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                  This EHR Optimization page is part of the broader Healthcare Solutions stream under the Industries section.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request assessment <ArrowRight className="h-4 w-4" />
+              <div className="grid gap-4 md:grid-cols-2">
+                <a href="#" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    EHR Optimization: Unlock the full value of your electronic health records
+                  </div>
                 </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+                <a href="/industries-healthcare-ai" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
+                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    AI-Powered Automation
+                  </div>
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </div>
                 </a>
               </div>
             </div>

@@ -108,9 +108,14 @@ export default function HealthcareMainPage() {
 
             {/* Left — text */}
             <div>
+              <div className="mt-2 text-sm text-blue-100/80">
+                
+                <a href="/industries" className="hover:text-white transition-colors">Industries</a>
+                {" • Healthcare"}
+              </div>
 
-              <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-[#A5F3FC] md:text-6xl">
-                Smarter healthcare starts with smarter technology.
+              <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+                <span className="text-white">Smarter healthcare</span>{" "}<span className="text-[#A5F3FC]">starts with smarter technology.</span>
               </h1>
 
               <p className="mt-5 text-base leading-relaxed text-white md:text-lg max-w-xl">
@@ -297,7 +302,7 @@ export default function HealthcareMainPage() {
                   Template optimization, workflow automation, clinical decision support, and ROI enhancement
                   strategies for your EHR investment.
                 </p>
-                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-slate-900 transition group-hover:gap-2">
+                <a href="/industries-healthcare-ehr" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-slate-900 transition group-hover:gap-2">
                   Learn more <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -324,7 +329,7 @@ export default function HealthcareMainPage() {
                   Machine learning, NLP, and predictive analytics transforming clinical workflows, diagnostics,
                   and administrative operations across the care continuum.
                 </p>
-                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-slate-900 transition group-hover:gap-2">
+                <a href="/industries-healthcare-ai" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-slate-900 transition group-hover:gap-2">
                   Learn more <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -348,7 +353,7 @@ export default function HealthcareMainPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
+                <a href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
                   Get started today <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
