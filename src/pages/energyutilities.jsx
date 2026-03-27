@@ -493,7 +493,7 @@ export default function EnergyUtilitiesPage() {
                   </div>
                   <div className="mt-1 text-sm text-slate-500">Omnichannel commerce and analytics</div>
                   <div className="mt-3 text-sm font-semibold text-[#0A2463] flex items-center gap-1">
-                    View More <span className="text-lg">→</span>
+                    View Page <span className="text-lg">→</span>
                   </div>
                 </a>
               </div>

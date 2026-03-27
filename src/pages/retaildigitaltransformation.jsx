@@ -470,10 +470,10 @@ export default function RetailDigitalTransformationPage() {
             <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div>
                 <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
-                  Retail digital transformation completes the customer experience trilogy by empowering retailers with the digital capabilities needed for modern commerce.
+                  Energy & Utilities Automation delivers smart grid technology for sustainable power management and grid modernization.
                 </h3>
                 <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-                  Organizations that invest in comprehensive retail digital solutions achieve higher online conversion rates, improved customer satisfaction scores, and better operational efficiency through more connected and intelligent systems.
+                  Transform traditional utility operations with intelligent grid technology, renewable energy integration, and predictive maintenance systems that enhance reliability, efficiency, and sustainability across your energy infrastructure.
                 </p>
               </div>
 
@@ -485,7 +485,7 @@ export default function RetailDigitalTransformationPage() {
                   </div>
                   <div className="mt-1 text-sm text-slate-500">Smart grid technology</div>
                   <div className="mt-3 text-sm font-semibold text-[#0A2463] flex items-center gap-1">
-                    View More <span className="text-lg">→</span>
+                    View Page <span className="text-lg">→</span>
                   </div>
                 </a>
                 <a href="/industries-retail" className="rounded-[24px] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md">

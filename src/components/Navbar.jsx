@@ -129,10 +129,10 @@ const menuData = [
     label: "RESULTS",
     path: "/results",
     children: [
-      { label: "Case Studies", items: [{ name: "Case Studies", path: "/case-studies" }] },
-      { label: "Impact Metrics", items: [{ name: "Impact Metrics", path: "/impact-metrics" }] },
-      { label: "Client Stories", items: [{ name: "Client Stories", path: "/client-stories" }] },
-      { label: "Transformation Journeys", items: [{ name: "Transformation Journeys", path: "/transformation-journeys" }] },
+      { label: "Case Studies", path: "/case-studies" },
+      { label: "Impact Metrics", path: "/impact-metrics" },
+      {label:"Client Stories", path: "/client-stories"},
+      { label: "Transformation Journeys", path: "/transformation-journeys" },
     ],
   },
    {
@@ -140,9 +140,9 @@ const menuData = [
     label: "CATALOG",
     path: "/catalog",
     children: [
-      { label: "Database Skills", items: [{ name: "Database Skills", path: "/databaseskills" }] },
-      { label: "Automation & AI", items: [{ name: "Automation & AI", path: "/automation" }] },
-      { label: "Engagement & Profile", items: [{ name: "Engagement & Profile", path: "/engagement" }] },
+      { label: "Database Skills", path: "/databaseskills" },
+      { label: "Automation & AI", path: "/automation" },
+      { label: "Engagement & Profile", path: "/engagement" },
     ],
   },
   {
@@ -470,23 +470,25 @@ export default function DuanamizeButterflyNavigation() {
                       </div>
                     </div>
 
-                    <div className="p-5">
-                      <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300">
-                        {selectedSub?.label}
+                    {selectedSub?.items?.length > 0 && (
+                      <div className="p-5">
+                        <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                          {selectedSub?.label}
+                        </div>
+                        <div className="grid gap-2 sm:grid-cols-2">
+                          {selectedSub?.items?.map((item) => (
+                            <Link
+                              key={item.name}
+                              to={item.path}
+                              className="flex items-center justify-between rounded-2xl border border-white/20 px-4 py-3 text-sm text-blue-100/90 transition-all duration-200 hover:border-cyan-400/40 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 hover:text-white"
+                            >
+                              <span className="pr-4 leading-6">{item.name}</span>
+                              <ChevronRight className="h-4 w-4 shrink-0 text-cyan-300" />
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                      <div className="grid gap-2 sm:grid-cols-2">
-                        {selectedSub?.items?.map((item) => (
-                          <Link
-                            key={item.name}
-                            to={item.path}
-                            className="flex items-center justify-between rounded-2xl border border-white/20 px-4 py-3 text-sm text-blue-100/90 transition-all duration-200 hover:border-cyan-400/40 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 hover:text-white"
-                          >
-                            <span className="pr-4 leading-6">{item.name}</span>
-                            <ChevronRight className="h-4 w-4 shrink-0 text-cyan-300" />
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </motion.div>

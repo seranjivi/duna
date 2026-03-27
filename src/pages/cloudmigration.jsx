@@ -475,7 +475,7 @@ export default function CloudMigrationPage() {
                   </div>
                   <div className="mt-1 text-sm text-slate-500">CI/CD pipelines and automation</div>
                   <div className="mt-3 text-sm font-semibold text-[#0A2463] flex items-center gap-1">
-                    View More <span>→</span>
+                    View Page <span>→</span>
                   </div>
                 </a>
                 <a href="/cloud-migration" className="rounded-[24px] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">

@@ -480,7 +480,7 @@ export default function DevOpsAutomationPage() {
                   </div>
                   <div className="mt-1 text-sm text-slate-500">Infrastructure and cloud services</div>
                   <div className="mt-3 text-sm font-semibold text-[#0A2463] flex items-center gap-1">
-                    View more <span>→</span>
+                    View Page <span>→</span>
                   </div>
                 </a>
               </div>
