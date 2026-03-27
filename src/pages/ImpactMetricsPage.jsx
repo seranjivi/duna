@@ -331,29 +331,31 @@ export default function ImpactMetricsPage() {
           <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
             <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
-                  Continue exploring transformation results
+                <h2 style={serif} className="mt-4 text-4xl font-semibold leading-tight text-slate-950 md:text-3xl">
+                  Client Stories capture authentic voices from leaders who have experienced transformation success firsthand.
                 </h2>
                 <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
-                  This Impact Metrics page is part of our comprehensive Results section showcasing quantifiable outcomes from LSS+AI transformations across industries.
+                  Organizations that share their transformation journeys build trust, inspire confidence, and demonstrate real-world proof of concept through compelling narratives from COOs, VPs, and operations leaders.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                <a href="/impact-metrics" className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Impact Metrics: Real Improvements, Real Numbers
                   </h3>
-                </div>
-                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="mt-1 text-sm text-slate-500">Measurable ROI and performance data</p>
+                </a>
+                <a href="/client-stories" className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Client Stories: Transformation in Their Own Words
                   </h3>
-                  <a href="/client-stories" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
-                    View page <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
+                  <p className="mt-1 text-sm text-slate-500">Authentic testimonials and experiences</p>
+                  <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A2463] transition hover:border-slate-400 hover:shadow-md">
+                    View Page <span>→</span>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
