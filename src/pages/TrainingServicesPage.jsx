@@ -360,28 +360,7 @@ export default function TrainingServicesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden bg-[#061650]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.18),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
-        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-          <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-10">
-            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-              <div>
-                <h3 style={serif} className="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
-                  Ready to Build Your Workforce Capabilities?
-                </h3>
-                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-blue-100/85">
-                  Partner with Duanamize to deliver industry-specific training that transforms your teams—equipping them with the skills and confidence to drive operational excellence from day one.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
-                <a href="/about" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50 transition">
-                  Get Started Today <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 }

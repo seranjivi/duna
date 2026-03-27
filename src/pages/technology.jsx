@@ -67,8 +67,9 @@ const pillars = [
 
 const services = [
   {
-    href: "/devops-automation",
+    href: "/industries-devops",
     icon: GitMerge,
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&w=800&q=80",
     accent: "from-cyan-400 to-sky-500",
     bg: "bg-cyan-50",
     border: "border-cyan-100",
@@ -85,8 +86,9 @@ const services = [
     ],
   },
   {
-    href: "/cloud-migration",
+    href: "/industries-cloud",
     icon: CloudCog,
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
     accent: "from-sky-500 to-indigo-500",
     bg: "bg-sky-50",
     border: "border-sky-100",
@@ -118,17 +120,14 @@ export default function ManufacturingPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
           {/* Breadcrumb */}
-          <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/70">
+          <div className="flex flex-wrap items-center gap-2 mt-4 text-sm text-blue-100/70">
             <a href="/industries" className="text-white hover:text-blue-200 transition-colors">Industries</a>
             <span className="text-white">•</span>
-            <span className="text-white">Manufacturing</span>
+            <span className="text-white">Technology</span>
           </div>
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Factory className="h-3.5 w-3.5" /> Manufacturing &amp; Industrial
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Technology built for{" "}
                 <span className="text-[#A5F3FC]">modern manufacturing.</span>
@@ -232,9 +231,8 @@ export default function ManufacturingPage() {
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Our manufacturing technology services.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-              Two focused practice areas that together deliver the automation and infrastructure backbone
-              every modern manufacturer needs.
+            <p className="mt-3 text-base leading-7 text-slate-600">
+              Two focused practice areas that together deliver the automation and infrastructure backbone every modern manufacturer needs.
             </p>
           </div>
 
@@ -247,6 +245,11 @@ export default function ManufacturingPage() {
                   className={`rounded-[32px] border ${svc.border} ${svc.bg} p-8 flex flex-col justify-between transition hover:-translate-y-1 hover:shadow-xl`}
                 >
                   <div>
+                    <img
+                      src={svc.image}
+                      alt={svc.label}
+                      className="w-full h-48 object-cover rounded-[16px] mb-5"
+                    />
                     <div className="flex items-center gap-3 mb-5">
                       <div className={`inline-flex h-14 w-14 items-center justify-center rounded-[22px] bg-gradient-to-br ${svc.accent} text-white shadow-lg`}>
                         <Icon className="h-7 w-7" />
@@ -269,9 +272,9 @@ export default function ManufacturingPage() {
                   </div>
                   <a
                     href={svc.href}
-                    className="mt-8 inline-flex items-center gap-2 self-start rounded-full bg-[#0A2463] px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0d2e7a]"
+                    className="mt-8 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5 hover:shadow-md self-start"
                   >
-                    Explore {svc.label} <ArrowRight className="h-4 w-4" />
+                    Learn more <span>→</span>
                   </a>
                 </div>
               );
@@ -281,31 +284,7 @@ export default function ManufacturingPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-white pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Ready to modernise your manufacturing technology stack?
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-base">
-                  Whether you're starting with CI/CD pipelines or planning a full cloud migration,
-                  Duanamize helps you move with confidence and precision.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request assessment <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  
     </div>
   );
 }

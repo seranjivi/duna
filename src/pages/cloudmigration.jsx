@@ -205,16 +205,13 @@ export default function CloudMigrationPage() {
           <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/70">
             <a href="/industries" className="text-white hover:text-blue-200 transition-colors">Industries</a>
             <span className="text-white">•</span>
-            <a href="/industries-manufacturing" className="text-white hover:text-blue-200 transition-colors">Manufacturing</a>
+            <a href="/technology" className="text-white hover:text-blue-200 transition-colors">Technology</a>
             <span className="text-white">•</span>
             <span className="text-white">Cloud Migration</span>
           </div>
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> AWS · Azure · Infrastructure Automation
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Cloud Migration{" "}
                 <span className="text-[#A5F3FC]">The complete guide to digital infrastructure transformation.</span>
@@ -404,7 +401,6 @@ export default function CloudMigrationPage() {
                       <div className="mt-1 text-xl font-semibold text-white">{phase.title}</div>
                     </div>
                   </div>
-                  {active && (
                     <ul className="mt-4 space-y-2">
                       {phase.items.map((item) => (
                         <li key={item} className="flex items-start gap-2 text-sm text-blue-100/85">
@@ -413,7 +409,6 @@ export default function CloudMigrationPage() {
                         </li>
                       ))}
                     </ul>
-                  )}
                 </button>
               );
             })}
@@ -460,26 +455,35 @@ export default function CloudMigrationPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-white pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+          <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
+            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div>
-                <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Move your manufacturing infrastructure to the cloud with confidence.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white md:text-base">
-                  Duanamize's cloud migration framework addresses legacy complexity, migration risk, and
-                  post-migration optimisation — so you realise the full value of cloud infrastructure
-                  without disrupting the plant floor.
+                <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                  Manufacturing technology services that bridge industrial operations and modern software delivery.
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                  Organizations that invest in DevOps automation and cloud migration achieve faster deployment cycles, reduced infrastructure costs, and improved operational reliability across their manufacturing technology stack.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                  Request assessment <ArrowRight className="h-4 w-4" />
+              <div className="grid gap-4 md:grid-cols-2 max-w-2xl mx-auto">
+                <a href="/industries-devops" className="rounded-[24px] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Previous Page</div>
+                  <div className="mt-2 text-lg font-semibold leading-snug text-slate-950">
+                    DevOps Automation
+                  </div>
+                  <div className="mt-1 text-sm text-slate-500">CI/CD pipelines and automation</div>
+                  <div className="mt-3 text-sm font-semibold text-[#0A2463] flex items-center gap-1">
+                    View More <span>→</span>
+                  </div>
                 </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  Email Duanamize
+                <a href="/cloud-migration" className="rounded-[24px] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Current Page</div>
+                  <div className="mt-2 text-lg font-semibold leading-snug text-slate-950">
+                    Cloud Migration
+                  </div>
+                  <div className="mt-1 text-sm text-slate-500">Infrastructure and cloud services</div>
                 </a>
               </div>
             </div>
