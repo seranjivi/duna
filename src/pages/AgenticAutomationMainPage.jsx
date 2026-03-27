@@ -6,7 +6,8 @@ import {
   Workflow,
   Zap,
   Target,
-  Shield,
+  ShieldCheck,
+  Network,
   Cpu,
   CheckCircle2,
 } from "lucide-react";
@@ -25,17 +26,32 @@ const methodologyPillars = [
   {
     icon: Bot,
     title: "AI Agents",
-    text: "Autonomous agents that handle complex tasks and adapt to changing environments",
+    text: "Intelligent autonomous agents that handle complex multi-step tasks, adapt to changing environments, learn from interactions, and coordinate with other agents to achieve enterprise objectives",
   },
   {
     icon: Workflow,
     title: "Autonomous Workflows",
-    text: "Self-running workflows that execute tasks end-to-end without human intervention",
+    text: "Self-running end-to-end workflows that autonomously execute tasks across systems, handle exceptions intelligently, optimize paths in real-time, and require minimal human oversight",
   },
   {
     icon: BrainCircuit,
     title: "Decision Intelligence",
-    text: "AI-driven decision making based on real-time data and predictive analytics",
+    text: "Advanced AI-driven decision making based on real-time data streams, predictive analytics, prescriptive recommendations, risk assessment, and autonomous action selection with explainable outcomes",
+  },
+  {
+    icon: Zap,
+    title: "Continuous Learning",
+    text: "Self-improving systems that learn from every interaction, adapt to new patterns, optimize performance over time, and automatically update knowledge models without manual retraining",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Enterprise Security",
+    text: "Robust security frameworks with role-based access control, audit trails, data encryption, compliance monitoring, and governance controls designed for mission-critical enterprise deployments",
+  },
+  {
+    icon: Network,
+    title: "System Integration",
+    text: "Seamless connectivity with existing enterprise systems, APIs, databases, cloud services, and legacy applications through pre-built connectors and flexible integration architectures",
   },
 ];
 
@@ -47,15 +63,7 @@ const featureCards = [
     href: "/solutions-agentic-automation",
     image:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    title: "Agentic Automation Excellence",
-    description:
-      "Transform operations with intelligent agents that work 24/7, adapt, and continuously improve performance.",
-    href: "/solutions",
-    image:
-      "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=1400&q=80",
-  },
+  }
 ];
 
 const flowSteps = [
@@ -106,7 +114,7 @@ function Hero() {
 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-4 md:px-8 md:pb-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
         <div>
-          <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
+          <div className="flex flex-wrap items-center gap-2 mt-4 text-sm text-blue-100/75">
             <a href="/solutions" className="hover:text-white transition-colors">Solutions</a>
             <span>•</span>
             <span className="text-white">Agentic Automation</span>
@@ -186,7 +194,7 @@ function MethodologySection() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeader
           title="Intelligent Automation Platform"
-          description="Build, deploy, and manage AI agents that transform how work gets done"
+          description="Design, build, deploy, and manage intelligent AI agents that transform business operations. Enable autonomous decision-making, streamline complex workflows, and unlock unprecedented efficiency gains across your enterprise"
         />
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -195,8 +203,11 @@ function MethodologySection() {
             return (
               <div
                 key={pillar.title}
-                className="rounded-3xl border border-blue-100 bg-white p-6 shadow-sm transition hover:shadow-md"
+                className="relative rounded-3xl border border-blue-100 bg-white p-6 shadow-sm transition hover:shadow-md"
               >
+                <div className="absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600">
+                  <Icon className="h-4 w-4" />
+                </div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 text-white">
                     <Icon className="h-5 w-5" />
@@ -221,7 +232,7 @@ function FeatureCardsSection() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeader
           title="Deep Dive Resources"
-          description="Implementation guides and best practices for agentic automation"
+          description="Strategic resources, implementation playbooks, architectural blueprints, and operational guidelines designed to accelerate your agentic automation journey and ensure successful enterprise deployment"
         />
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -286,33 +297,6 @@ function ProcessFlowSection() {
 }
 
 function CTASection() {
-  return (
-    <section className="relative overflow-hidden bg-[#061650]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.18),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
-      <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
-        <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-10">
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div>
-              <h3 style={serif} className="text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
-                Ready to Deploy AI Agents?
-              </h3>
-              <p className="mt-3 max-w-2xl text-base leading-relaxed text-blue-100/85">
-                Explore our implementation best practices to successfully deploy autonomous AI in your organization.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
-              <a 
-                href="/solutions-agentic-automation" 
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50 transition"
-              >
-                View Implementation Guide <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
 }
 
 export default function AgenticAutomationMainPage() {

@@ -173,7 +173,7 @@ function SectionHeader({ eyebrow, title, description, light = false, center = fa
 
 // ─── MAIN PAGE ────────────────────────────────────────────────────────────────
 
-export default function AIReadinessPage() {
+export default function AICapabilityPage() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -188,14 +188,16 @@ export default function AIReadinessPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
-                <span>Solutions</span>
+              <div className="flex flex-wrap items-center gap-2 mt-4 text-sm text-blue-100/75">
+                <a href="/solutions" className="hover:text-white transition-colors">Solutions</a>
                 <span>•</span>
-                <span className="text-white">AI Readiness Assessment</span>
+                <a href="/capability-building" className="hover:text-white transition-colors">Capability Building</a>
+                <span>•</span>
+                <span className="text-white">AI Capability Development</span>
               </div>
 
               <h1 style={serif} className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-                AI Readiness Assessment — before you build, know if you are ready.
+                AI Capability Development <span className="text-[#A5F3FC]">build the skills that power transformation.</span>
               </h1>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">
@@ -482,20 +484,12 @@ export default function AIReadinessPage() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                <a href="/solutions-agentic-automation" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
-                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Agentic Automation
+                <a href="/solutions-capability" className="rounded-[24px] border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md">
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Current Page</div>
+                  <div className="mt-2 text-lg font-semibold leading-snug text-slate-950">
+                    AI Capability Development
                   </div>
-                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
-                    View Page <ArrowRight className="h-4 w-4" />
-                  </div>
-                </a>
-                <a href="/solutions-capability" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
-                  <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Capability Building
-                  </div>
+                  <div className="mt-1 text-sm text-slate-500">Part of Capability Building solutions</div>
                 </a>
               </div>
             </div>

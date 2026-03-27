@@ -26,16 +26,37 @@ const methodologyPillars = [
     icon: GraduationCap,
     title: "Skill Development",
     text: "Practical training in AI, automation, and digital transformation",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80",
+    details: [
+      "Hands-on workshops with real-world AI projects",
+      "Role-specific training paths for technical and business teams",
+      "Certification programs for AI practitioners and leaders",
+      "Interactive labs with industry-standard tools and platforms"
+    ]
   },
   {
     icon: Users,
     title: "Knowledge Transfer",
     text: "Systematic expertise transfer for sustainable capability growth",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=80",
+    details: [
+      "Mentorship programs with AI experts and practitioners",
+      "Documentation frameworks for AI best practices and lessons learned",
+      "Cross-functional knowledge sharing sessions",
+      "Internal communities of practice for continuous collaboration"
+    ]
   },
   {
     icon: TrendingUp,
     title: "Continuous Learning",
     text: "Ongoing development to stay current with evolving technologies",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80",
+    details: [
+      "Regular updates on emerging AI trends and technologies",
+      "Advanced modules for specialized AI domains",
+      "Learning analytics to track progress and identify gaps",
+      "Access to curated resources and industry insights"
+    ]
   },
 ];
 
@@ -46,16 +67,8 @@ const featureCards = [
       "Comprehensive program to assess and build your organization's AI readiness through structured training.",
     href: "/solutions-capability",
     image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    title: "Enterprise Learning Excellence",
-    description:
-      "Transform your workforce with customized learning journeys for different roles and skill levels.",
-    href: "/solutions",
-    image:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=80",
-  },
+      "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?auto=format&fit=crop&w=1400&q=80",
+  }
 ];
 
 const flowSteps = [
@@ -186,7 +199,7 @@ function MethodologySection() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeader
           title="Comprehensive Learning Solutions"
-          description="Build lasting capabilities through structured training and knowledge transfer"
+          description="Build lasting capabilities through structured training and knowledge transfer. Our proven methodology combines hands-on learning, expert mentorship, and continuous development to transform your teams into AI-ready professionals who can drive innovation and deliver measurable business results."
         />
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -195,17 +208,37 @@ function MethodologySection() {
             return (
               <div
                 key={pillar.title}
-                className="rounded-3xl border border-blue-100 bg-white p-6 shadow-sm transition hover:shadow-md"
+                className="rounded-3xl border border-blue-100 bg-white shadow-sm transition hover:shadow-md overflow-hidden"
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 text-white">
-                    <Icon className="h-5 w-5" />
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={pillar.image}
+                    alt={pillar.title}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex items-center gap-2">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/90 backdrop-blur-sm">
+                        <Icon className="h-4 w-4 text-[#0A2463]" />
+                      </div>
+                      <h3 style={serif} className="text-lg font-semibold text-white">
+                        {pillar.title}
+                      </h3>
+                    </div>
                   </div>
-                  <h3 style={serif} className="text-lg font-semibold text-slate-900">
-                    {pillar.title}
-                  </h3>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">{pillar.text}</p>
+                <div className="p-6">
+                  <p className="text-sm leading-relaxed text-slate-600">{pillar.text}</p>
+                  <ul className="mt-4 space-y-2">
+                    {pillar.details.map((detail, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm leading-relaxed text-slate-600">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             );
           })}
@@ -221,7 +254,7 @@ function FeatureCardsSection() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <SectionHeader
           title="Deep Dive Resources"
-          description="Programs and guides for building AI capabilities"
+          description="Explore our comprehensive collection of programs, guides, and practical resources designed to help your organization build robust AI capabilities. From foundational training modules to advanced implementation frameworks, discover everything you need to accelerate your team's journey toward AI excellence and sustainable digital transformation."
         />
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -302,10 +335,10 @@ function CTASection() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
               <a 
-                href="/solutions-capability" 
+                href="/contact" 
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50 transition"
               >
-                Start Development <ArrowRight className="h-4 w-4" />
+                Get Started Today <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </div>

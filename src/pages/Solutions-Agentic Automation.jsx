@@ -249,10 +249,10 @@ function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-4 md:px-8 md:pb-20">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
-              <span>Solutions</span>
+            <div className="flex flex-wrap items-center gap-2 mt-5 text-sm text-blue-100/75">
+              <a href="/solutions" className="hover:text-white transition-colors">Solutions</a>
               <span>•</span>
-              <span>Agentic Automation</span>
+              <a href="/agentic-automation" className="hover:text-white transition-colors">Agentic Automation</a>
               <span>•</span>
               <span className="text-white">AI Implementation Best Practices</span>
             </div>
@@ -281,66 +281,49 @@ function Hero() {
           </div>
 
           <div className="relative">
-            <div className="grid gap-4 md:grid-cols-[1.02fr_0.98fr]">
-              <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-white/5 shadow-2xl shadow-blue-950/35 backdrop-blur-xl">
+            <div className="grid gap-4">
+              <div className="overflow-hidden rounded-[30px] border border-white/10 bg-white/5 shadow-lg shadow-blue-950/25 backdrop-blur-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
-                  alt="AI implementation team planning session"
-                  className="h-full min-h-[410px] w-full object-cover"
+                  src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
+                  alt="Enterprise digital control room"
+                  className="h-56 w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5 rounded-[26px] border border-white/15 bg-slate-950/40 p-5 backdrop-blur-xl">
-                  <div className="text-[10px] uppercase tracking-[0.18em] text-cyan-200/85">Implementation principle</div>
-                  <div className="mt-2 text-xl font-semibold text-white md:text-2xl">
-                    AI is not a single deployment. It is a managed sequence of aligned decisions, operating change, and controlled scale.
-                  </div>
+                <div className="p-5">
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/70">Command view</div>
+                  <div className="mt-2 text-lg font-semibold text-white">From pilot signal to enterprise operating model</div>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-4">
-                <div className="overflow-hidden rounded-[30px] border border-white/10 bg-white/5 shadow-lg shadow-blue-950/25 backdrop-blur-xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
-                    alt="Enterprise digital control room"
-                    className="h-48 w-full object-cover"
-                  />
-                  <div className="p-5">
-                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/70">Command view</div>
-                    <div className="mt-2 text-lg font-semibold text-white">From pilot signal to enterprise operating model</div>
+              <div className="rounded-[30px] border border-white/10 bg-slate-950/35 p-5 shadow-lg shadow-blue-950/25 backdrop-blur-xl">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200/80">Blueprint layers</div>
+                    <div className="mt-1 text-lg font-semibold text-white">Execution stack</div>
+                  </div>
+                  <div className="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/10 text-cyan-300">
+                    <Cloud className="h-5 w-5" />
                   </div>
                 </div>
 
-                <div className="rounded-[30px] border border-white/10 bg-slate-950/35 p-5 shadow-lg shadow-blue-950/25 backdrop-blur-xl">
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200/80">Blueprint layers</div>
-                      <div className="mt-1 text-lg font-semibold text-white">Execution stack</div>
-                    </div>
-                    <div className="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/10 text-cyan-300">
-                      <Cloud className="h-5 w-5" />
-                    </div>
-                  </div>
-
-                  <div className="mt-5 space-y-3">
-                    {[
-                      ["01", "Align strategy", "Link AI to business priorities, success metrics, and architecture direction."],
-                      ["02", "Pilot with intent", "Prove value in controlled use cases with strong validation and stakeholder support."],
-                      ["03", "Scale deliberately", "Standardize platforms, build capabilities, and expand through phased rollout."],
-                      ["04", "Govern continuously", "Monitor performance, manage risk, and optimize AI as a living enterprise capability."],
-                    ].map(([n, title, text]) => (
-                      <div key={title} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <div className="flex gap-4">
-                          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 text-sm font-semibold text-white">
-                            {n}
-                          </div>
-                          <div>
-                            <div className="text-sm font-semibold text-white">{title}</div>
-                            <div className="mt-1 text-sm leading-relaxed text-white">{text}</div>
-                          </div>
+                <div className="mt-5 space-y-3">
+                  {[
+                    ["01", "Align strategy", "Link AI to business priorities, success metrics, and architecture direction."],
+                    ["02", "Pilot with intent", "Prove value in controlled use cases with strong validation and stakeholder support."],
+                    // ["03", "Scale deliberately", "Standardize platforms, build capabilities, and expand through phased rollout."],
+                    // ["04", "Govern continuously", "Monitor performance, manage risk, and optimize AI as a living enterprise capability."],
+                  ].map(([n, title, text]) => (
+                    <div key={title} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <div className="flex gap-4">
+                        <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 text-sm font-semibold text-white">
+                          {n}
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-white">{title}</div>
+                          <div className="mt-1 text-sm leading-relaxed text-white">{text}</div>
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -715,35 +698,23 @@ function CTASection() {
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <div className="rounded-[34px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-8">
-          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
-                Agentic Automation builds on the readiness foundation established through Process Intelligence assessment
+                Process Intelligence provides the assessment foundation needed before implementing AI solutions at scale
               </h3>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-                Organizations that implement structured readiness assessments before deploying AI agents are far more likely to succeed in automation initiatives, achieve measurable productivity gains, and scale autonomous capabilities across the enterprise.
+                Organizations that conduct comprehensive readiness assessments, evaluate use case criteria, and establish proper governance are far more likely to succeed in AI implementation, achieve measurable business impact, and scale AI capabilities across the enterprise.
               </p>
             </div>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              <a href="/solutions-process-intelligence" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
-                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Previous page</div>
-                <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                  Process Intelligence
-                </div>
-                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
-                  View Page <ArrowRight className="h-4 w-4" />
-                </div>
-              </a>
-              <a href="/solutions-capability" className="rounded-[24px] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-md">
-                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Next page</div>
-                <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                  Capability Building
-                </div>
-                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0A2463]">
-                  View Page <ArrowRight className="h-4 w-4" />
-                </div>
-              </a>
+            <div className="rounded-[24px] border border-slate-200 bg-white p-5">
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Current page</div>
+              <div className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                AI Readiness Assessment
+              </div>
+              <div className="mt-1 text-sm text-slate-500">
+                Part of Process Intelligence solutions
+              </div>
             </div>
           </div>
         </div>

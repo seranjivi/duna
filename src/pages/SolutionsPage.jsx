@@ -12,7 +12,7 @@ const solutions = [
     icon: Brain,
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     features: ['Process Mining', 'Performance Analytics', 'Bottleneck Detection', 'Optimization Insights'],
-    href: '/solutions-process-intelligence',
+    href: '/process-intelligence',
   },
   {
     title: 'Agentic Automation',
@@ -20,7 +20,7 @@ const solutions = [
     icon: Bot,
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80',
     features: ['AI Agents', 'Autonomous Workflows', 'Decision Intelligence', 'Adaptive Learning'],
-    href: '/solutions-agentic-automation',
+    href: '/agentic-automation',
   },
   {
     title: 'Capability Building',
@@ -28,7 +28,7 @@ const solutions = [
     icon: Rocket,
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
     features: ['Skill Development', 'Knowledge Transfer', 'Training Programs', 'Continuous Learning'],
-    href: '/solutions-capability',
+    href: '/capability-building',
   },
 ];
 
