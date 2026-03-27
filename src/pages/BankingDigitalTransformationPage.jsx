@@ -295,8 +295,8 @@ export default function BankingDigitalTransformationPage() {
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Financial Compliance Automation: AI-Powered Risk Management
                   </h3>
-                  <a href="/industries-financial-compliance" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
-                    View page <ArrowRight className="h-4 w-4" />
+                  <a href="/industries-financial-compliance" className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A2463] transition hover:border-slate-400 hover:shadow-md">
+                    Learn more <span>→</span>
                   </a>
                 </div>
               </div>

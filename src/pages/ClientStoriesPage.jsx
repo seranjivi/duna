@@ -141,14 +141,14 @@ export default function ClientStoriesMainPage() {
         <div className="absolute -left-16 top-12 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl" />
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-24 pt-8 md:px-8">
-          <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/70">
+          <div className="flex flex-wrap items-center gap-2 mt-5 text-sm text-blue-100/70">
             <a href="/results" className="text-white hover:text-blue-200 transition-colors">Results</a>
             <span className="text-white">•</span>
             <span className="text-white">Client Stories</span>
           </div>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="max-w-4xl">
-              <h1 style={serif} className="text-4xl mt-2 font-semibold leading-tight tracking-tight text-white md:text-6xl">
+              <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Client stories {" "}
                 <span className="text-[#A5F3FC]">in their own words.</span>
               </h1>
@@ -322,29 +322,31 @@ export default function ClientStoriesMainPage() {
           <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
             <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
-                  Continue exploring transformation results
+                <h2 style={serif} className="mt-4 text-4xl font-semibold leading-tight text-slate-950 md:text-3xl">
+                  Transformation Journeys document multi-year transformation programmes with detailed roadmaps and capability progression.
                 </h2>
                 <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
-                  This Client Stories page is part of our comprehensive Results section showcasing real client experiences and testimonials from LSS+AI transformations across industries.
+                  Organizations that map their transformation journeys achieve clearer milestones, better stakeholder alignment, and sustained capability development through structured multi-phase programmes.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                <a href="/client-stories" className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Client Stories: In Their Own Words
                   </h3>
-                </div>
-                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="mt-1 text-sm text-slate-500">Authentic testimonials and experiences</p>
+                </a>
+                <a href="/transformation-journeys" className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Transformation Journeys: Multi-Year Transformation Narratives
                   </h3>
-                  <a href="/transformation-journeys" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
-                    View page <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
+                  <p className="mt-1 text-sm text-slate-500">Structured roadmaps and progressions</p>
+                  <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A2463] transition hover:border-slate-400 hover:shadow-md">
+                    View Page <span>→</span>
+                  </span>
+                </a>
               </div>
             </div>
           </div>

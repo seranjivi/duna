@@ -13,7 +13,7 @@ const subMenus = [
     icon: BookOpen,
     title: "Case Studies",
     desc: "Deep-dive case studies showcasing LSS+AI in action across healthcare, FinTech, automotive, retail, manufacturing, and energy — with real challenges, solutions, and outcomes.",
-    link: "#case-studies",
+    link: "/case-studies",
     color: "from-cyan-400 to-blue-500",
     tag: "6 Industries",
   },
@@ -21,7 +21,7 @@ const subMenus = [
     icon: BarChart3,
     title: "Impact Metrics",
     desc: "Quantifiable results and ROI data from our transformation engagements — efficiency gains, cost savings, quality improvements, and customer satisfaction benchmarks.",
-    link: "#impact-metrics",
+    link: "/impact-metrics",
     color: "from-blue-400 to-indigo-500",
     tag: "Measurable ROI",
   },
@@ -29,7 +29,7 @@ const subMenus = [
     icon: Star,
     title: "Client Stories",
     desc: "Direct testimonials from COOs, VPs, and operations leaders who have partnered with Duanamize — in their own words, about the challenges, journey, and results achieved.",
-    link: "#client-stories",
+    link: "/client-stories",
     color: "from-teal-400 to-cyan-500",
     tag: "Client Voice",
   },
@@ -37,7 +37,7 @@ const subMenus = [
     icon: Layers3,
     title: "Transformation Journeys",
     desc: "Multi-year, multi-phase transformation programmes — capability maturity progression, technology adoption roadmaps, and the structured methodology behind lasting change.",
-    link: "#transformation-journeys",
+    link: "/transformation-journeys",
     color: "from-indigo-400 to-violet-500",
     tag: "End-to-End",
   },
@@ -76,9 +76,12 @@ export default function ResultsMainPage() {
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-24 pt-8 md:px-8">
-          <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/70">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#071857] mb-4">
+            Results
+          </div>
+          <div className="text-sm text-blue-100/70">
             <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
-            <span className="text-white">•</span>
+            <span className="mx-2 text-white">/</span>
             <span className="text-white">Results</span>
           </div>
           <div className="mt-8 grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -167,8 +170,10 @@ export default function ResultsMainPage() {
                     </div>
                     <ChevronRight className="h-5 w-5 text-slate-400 shrink-0 mt-1 transition group-hover:text-blue-500 group-hover:translate-x-1" />
                   </div>
-                  <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3">
-                    Explore {item.title} <ArrowRight className="h-4 w-4" />
+                  <div className="mt-5">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A2463] transition hover:border-slate-400 hover:shadow-md">
+                      Learn more <span>→</span>
+                    </span>
                   </div>
                 </a>
               );
@@ -262,25 +267,22 @@ export default function ResultsMainPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-slate-100 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[24px] border border-blue-200 bg-white p-8 md:p-10 shadow-lg">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative overflow-hidden bg-[#061650]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.18),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+          <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
-                  Join the organisations achieving breakthrough results with Duanamize.
-                </h2>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-lg">
-                  Whether you are exploring transformation for the first time or looking to scale an existing
-                  programme — start with a conversation about what your results could look like.
+                <h3 style={serif} className="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
+                  Ready to Achieve Breakthrough Results?
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-blue-100/85">
+                  Whether you're exploring transformation for the first time or looking to scale an existing programme — start with a conversation about what your results could look like.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
-                  Start the conversation <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="mailto:selvan@duanamize.org" className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-blue-50">
-                  Email us
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
+                <a href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50 transition">
+                  Get Started Today <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>
