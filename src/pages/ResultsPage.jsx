@@ -15,7 +15,6 @@ const subMenus = [
     desc: "Deep-dive case studies showcasing LSS+AI in action across healthcare, FinTech, automotive, retail, manufacturing, and energy — with real challenges, solutions, and outcomes.",
     link: "/case-studies",
     color: "from-cyan-400 to-blue-500",
-    tag: "6 Industries",
   },
   {
     icon: BarChart3,
@@ -23,7 +22,6 @@ const subMenus = [
     desc: "Quantifiable results and ROI data from our transformation engagements — efficiency gains, cost savings, quality improvements, and customer satisfaction benchmarks.",
     link: "/impact-metrics",
     color: "from-blue-400 to-indigo-500",
-    tag: "Measurable ROI",
   },
   {
     icon: Star,
@@ -31,7 +29,6 @@ const subMenus = [
     desc: "Direct testimonials from COOs, VPs, and operations leaders who have partnered with Duanamize — in their own words, about the challenges, journey, and results achieved.",
     link: "/client-stories",
     color: "from-teal-400 to-cyan-500",
-    tag: "Client Voice",
   },
   {
     icon: Layers3,
@@ -39,7 +36,6 @@ const subMenus = [
     desc: "Multi-year, multi-phase transformation programmes — capability maturity progression, technology adoption roadmaps, and the structured methodology behind lasting change.",
     link: "/transformation-journeys",
     color: "from-indigo-400 to-violet-500",
-    tag: "End-to-End",
   },
 ];
 
@@ -161,14 +157,10 @@ export default function ResultsMainPage() {
                         <Icon className="h-7 w-7" />
                       </div>
                       <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                          <span className="rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-600">{item.tag}</span>
-                        </div>
+                        <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
                         <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
                       </div>
                     </div>
-                    <ChevronRight className="h-5 w-5 text-slate-400 shrink-0 mt-1 transition group-hover:text-blue-500 group-hover:translate-x-1" />
                   </div>
                   <div className="mt-5">
                     <span className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A2463] transition hover:border-slate-400 hover:shadow-md">

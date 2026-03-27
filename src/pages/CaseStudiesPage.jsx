@@ -231,9 +231,6 @@ export default function CaseStudiesMainPage() {
                     ))}
                   </div>
                 </div>
-                <a href="#" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition hover:gap-3">
-                  Read full case study <ArrowRight className="h-4 w-4" />
-                </a>
               </div>
             </div>
           </div>
@@ -311,41 +308,7 @@ export default function CaseStudiesMainPage() {
       </section>
 
       {/* ── CONTINUE EXPLORING ── */}
-      <section className="bg-slate-50 pt-8 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
-            <div className="grid gap-8 lg:grid-cols-2">
-              <div>
-                <h2 style={serif} className="mt-4 text-4xl font-semibold leading-tight text-slate-950 md:text-2xl">
-                  Impact Metrics deliver quantifiable proof of transformation success through measurable efficiency gains and ROI data.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
-                  Organizations that track and measure their transformation outcomes achieve higher success rates, better resource allocation, and clearer demonstrations of value to stakeholders through data-driven performance indicators.
-                </p>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <a href="/case-studies" className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
-                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Case Studies: Detailed Implementation Examples
-                  </h3>
-                  <p className="mt-1 text-sm text-slate-500">Real-world transformation examples</p>
-                </a>
-                <a href="/impact-metrics" className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
-                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Impact Metrics: Real Improvements, Real Numbers
-                  </h3>
-                  <p className="mt-1 text-sm text-slate-500">Measurable ROI and performance data</p>
-                  <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A2463] transition hover:border-slate-400 hover:shadow-md">
-                    View Page <span>→</span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }

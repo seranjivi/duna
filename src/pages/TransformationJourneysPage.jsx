@@ -339,42 +339,6 @@ export default function TransformationJourneysMainPage() {
       </section>
 
       {/* ── CONTINUE EXPLORING ── */}
-      <section className="bg-slate-50 pt-8 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
-            <div className="grid gap-8 lg:grid-cols-2">
-              <div>
-                <h2 style={serif} className="mt-4 text-4xl font-semibold leading-tight text-slate-950 md:text-3xl">
-                  Client Stories capture authentic voices from leaders who have experienced transformation success firsthand.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
-                  Organizations that share their transformation journeys build trust, inspire confidence, and demonstrate real-world proof of concept through compelling narratives from COOs, VPs, and operations leaders.
-                </p>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                
-                <a href="/client-stories" className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Previous Page</p>
-                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Client Stories: Transformation in Their Own Words
-                  </h3>
-                  <p className="mt-1 text-sm text-slate-500">Authentic testimonials and experiences</p>
-                  <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-[#0A2463] transition hover:border-slate-400 hover:shadow-md">
-                    View Page <span>→</span>
-                  </span>
-                </a>
-                <a href="/transformation-journeys" className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md block">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
-                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Transformation Journeys: Multi-Year Transformation Narratives
-                  </h3>
-                  <p className="mt-1 text-sm text-slate-500">Structured roadmaps and progressions</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

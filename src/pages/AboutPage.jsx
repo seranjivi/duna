@@ -218,7 +218,7 @@ function HeroPanel() {
             <div className="rounded-[28px] border border-cyan-300/20 bg-cyan-300/10 p-5">
               <div className="text-[10px] uppercase tracking-[0.18em] text-cyan-100/85">Founded on innovation</div>
               <div className="mt-2 text-2xl font-semibold text-white">Established in 2022</div>
-              <p className="mt-3 text-sm leading-relaxed text-blue-100/82">
+              <p className="mt-3 text-sm leading-relaxed text-white/90">
                 Built to redefine operational excellence by bringing together Lean Six Sigma rigor and AI-powered intelligence.
               </p>
             </div>
@@ -227,9 +227,9 @@ function HeroPanel() {
                 ["Pioneers of LSS+AI", "Systematically integrating machine learning and predictive analytics into modern transformation work."],
                 ["40% faster results", "A sharper methodology designed to move from insight to measurable improvement faster."],
               ].map(([title, text]) => (
-                <div key={title} className="rounded-[24px] border border-white/10 bg-slate-950/30 p-4">
+                <div key={title} className="rounded-[24px] border border-white/10 bg-white/5 p-4">
                   <div className="text-sm font-semibold text-white">{title}</div>
-                  <div className="mt-2 text-sm leading-relaxed text-blue-100/78">{text}</div>
+                  <div className="mt-2 text-sm leading-relaxed text-white/80">{text}</div>
                 </div>
               ))}
             </div>
@@ -242,11 +242,11 @@ function HeroPanel() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#071857] via-[#071857]/25 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 rounded-[26px] border border-white/12 bg-slate-950/35 p-5 backdrop-blur-xl">
-              <div className="text-[10px] uppercase tracking-[0.18em] text-blue-100/72">What Duanamize stands for</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-white/80">What Duanamize stands for</div>
               <h3 style={{ ...serif }} className="mt-2 text-3xl font-semibold leading-tight text-white">
                 Operational excellence designed for modern business complexity
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-blue-100/82">
+              <p className="mt-3 text-sm leading-relaxed text-white/90">
                 We help organizations simplify complexity, strengthen execution, and unlock higher-value work through disciplined transformation.
               </p>
             </div>
@@ -276,14 +276,9 @@ export default function DuanamizeAboutUsPage() {
           <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <div>
               <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
-                <span>Home</span>
+                <a href="/" className="hover:text-blue-200 transition-colors">Home</a>
                 <span>•</span>
                 <span className="text-white">About Us</span>
-              </div>
-
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Users className="h-3.5 w-3.5 text-cyan-300" />
-                About Duanamize
               </div>
 
               <h1
@@ -297,20 +292,7 @@ export default function DuanamizeAboutUsPage() {
                 For over 3 years, Duanamize has been at the forefront of operational excellence, pioneering the integration of Lean Six Sigma with artificial intelligence to deliver breakthrough results for organizations worldwide.
               </p>
 
-              <div className="mt-7 flex flex-wrap gap-3">
-                <a
-                  href="#story"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5"
-                >
-                  Explore our story <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="#leadership"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-                >
-                  Meet our leadership
-                </a>
-              </div>
+             
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {[
@@ -363,10 +345,7 @@ export default function DuanamizeAboutUsPage() {
 
             <div className="grid gap-5">
               <div className="rounded-[30px] border border-slate-200 bg-slate-50 p-6 shadow-sm md:p-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463]">
-                  <Building2 className="h-3.5 w-3.5" />
-                  Founded on innovation
-                </div>
+ 
                 <h3 style={{ ...serif }} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                   A modern consulting firm built for today's operational realities
                 </h3>
@@ -376,10 +355,6 @@ export default function DuanamizeAboutUsPage() {
               </div>
 
               <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
-                  <BrainCircuit className="h-3.5 w-3.5" />
-                  The LSS+AI methodology
-                </div>
                 <h3 style={{ ...serif }} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                   Traditional excellence, enhanced for the age of AI
                 </h3>
@@ -430,10 +405,12 @@ export default function DuanamizeAboutUsPage() {
                   />
                 </div>
                 <div className="p-6 md:p-8">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    {activeMission.label}
-                  </div>
+                  {activeMission.label && (
+                    <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      {activeMission.label}
+                    </div>
+                  )}
                   <h3 style={{ ...serif }} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                     {activeMission.title}
                   </h3>
@@ -450,10 +427,12 @@ export default function DuanamizeAboutUsPage() {
               const Icon = item.icon;
               return (
                 <div key={item.label} className="rounded-[26px] border border-slate-200 bg-white p-5 shadow-sm">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-[#0A2463]">
-                    <Icon className="h-5 w-5" />
+                  <div className="flex items-start gap-4">
+                    <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-[#0A2463]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="text-2xl font-semibold text-slate-950">{item.value}</div>
                   </div>
-                  <div className="mt-4 text-2xl font-semibold text-slate-950">{item.value}</div>
                   <div className="mt-2 text-sm leading-relaxed text-slate-600">{item.label}</div>
                 </div>
               );
@@ -474,12 +453,14 @@ export default function DuanamizeAboutUsPage() {
               const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-200 bg-white text-[#0A2463]">
-                    <Icon className="h-5 w-5" />
+                  <div className="flex items-start gap-4">
+                    <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-blue-200 bg-white text-[#0A2463]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 style={{ ...serif }} className="text-3xl font-semibold leading-tight text-slate-950">
+                      {item.title}
+                    </h3>
                   </div>
-                  <h3 style={{ ...serif }} className="mt-5 text-3xl font-semibold leading-tight text-slate-950">
-                    {item.title}
-                  </h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.text}</p>
                 </div>
               );
@@ -506,10 +487,6 @@ export default function DuanamizeAboutUsPage() {
               </div>
 
               <div className="p-6 md:p-8">
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
-                  <Briefcase className="h-3.5 w-3.5" />
-                  Board Advisor
-                </div>
                 <h3 style={{ ...serif }} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                   {leadership.srikanth.name}
                 </h3>
@@ -557,10 +534,6 @@ export default function DuanamizeAboutUsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
-                    <Users className="h-3.5 w-3.5" />
-                    Director
-                  </div>
                   <h3 style={{ ...serif }} className="mt-4 text-3xl font-semibold leading-tight text-slate-950">
                     {leadership.kalpana.name}
                   </h3>
@@ -591,10 +564,6 @@ export default function DuanamizeAboutUsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
-                    <HeartHandshake className="h-3.5 w-3.5" />
-                    Advisor / Strategic Consultant
-                  </div>
                   <h3 style={{ ...serif }} className="mt-4 text-3xl font-semibold leading-tight text-slate-950">
                     {leadership.narayanan.name}
                   </h3>
@@ -650,7 +619,7 @@ export default function DuanamizeAboutUsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#061650]">
+      {/* <section className="relative overflow-hidden bg-[#061650]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.16),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
         <div className="mx-auto max-w-7xl px-4 py-16 text-center md:px-8 md:py-20">
           <div className="mx-auto max-w-4xl">
@@ -670,7 +639,7 @@ export default function DuanamizeAboutUsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
