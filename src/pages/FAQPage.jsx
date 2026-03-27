@@ -133,7 +133,7 @@ export default function FAQPage({ onNavigate }) {
           <div className="flex flex-wrap items-center gap-2 mt-5 text-sm">
             <button onClick={() => onNavigate && onNavigate("MorePage")} className="text-white hover:text-blue-200 transition-colors">Home</button>
             <span className="text-white/40">•</span>
-            <button onClick={() => onNavigate && onNavigate("MorePage")} className="text-white hover:text-blue-200 transition-colors">More</button>
+            <a href="/more" className="text-white hover:text-blue-200 transition-colors">More</a>
             <span className="text-white/40">•</span>
             <span className="text-white">FAQ</span>
           </div>
