@@ -190,12 +190,15 @@ export default function AutomationAIPage({ onNavigate }) {
         <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-cyan-300/8 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-6 md:px-8">
-         
+            <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75 mb-4">
+                <a href="/" className="hover:text-blue-200 transition-colors">Home</a>
+                <span>•</span>
+                <a href="/catalog" className="hover:text-blue-200 transition-colors">Catalog</a>
+                <span>•</span>
+                <span className="text-white">Automation & AI</span>
+              </div>
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold text-blue-100 mb-5">
-                <Brain className="h-3.5 w-3.5 text-cyan-300" /> Section 02 — Automation & AI
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight text-white md:text-6xl">
                 Automation<br /><span className="text-[#A5F3FC]">& AI.</span>
               </h1>
@@ -261,15 +264,16 @@ export default function AutomationAIPage({ onNavigate }) {
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="overflow-hidden rounded-[32px] bg-gradient-to-br from-[#071857] to-[#0A2463] p-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+
               <div>
                 <p style={serif} className="text-xl font-semibold text-white">Continue Exploring</p>
                 <p className="text-sm text-white/50 mt-1">Database Skills and Engagement sections available.</p>
               </div>
               <div className="flex flex-wrap gap-3">
-                {[{ label: "Database Skills", page: "DatabasePage" }, { label: "Engagement & Profile", page: "EngagementPage" }].map((l) => (
-                  <button key={l.page} onClick={() => onNavigate && onNavigate(l.page)} className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition">
+                {[{ label: "Database Skills", path: "/databaseskills" }, { label: "Engagement & Profile", path: "/engagement" }].map((l) => (
+                  <a key={l.path} href={l.path} className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition">
                     {l.label} <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>

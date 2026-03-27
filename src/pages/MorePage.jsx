@@ -99,17 +99,17 @@ export default function MorePage({ onNavigate }) {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-4 md:px-8">
           {/* Breadcrumb */}
-          <div className="flex flex-wrap items-center gap-2 text-sm">
+
+             <div className="inline-flex items-center gap-2 mt-4 rounded-full border border-white/20 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#071857] mb-4">
+            More
+          </div>
+          <div className="text-sm text-blue-100/70">
             <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
-            <span className="text-white/40">•</span>
+            <span className="mx-2 text-white">/</span>
             <span className="text-white">More</span>
           </div>
-
           <div className="mt-10 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
-                <Factory className="h-3.5 w-3.5" /> Manufacturing Industry Solutions
-              </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Transforming Manufacturing{" "}
                 <span className="text-[#A5F3FC]">with Intelligence & Precision.</span>
@@ -201,9 +201,6 @@ export default function MorePage({ onNavigate }) {
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-12">
-            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-500 mb-4">
-              MORE
-            </div>
             <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">
               Explore more from Duanamize.
             </h2>
@@ -245,7 +242,10 @@ export default function MorePage({ onNavigate }) {
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="overflow-hidden rounded-[36px] bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+              
               <div>
+              
+                
                 <h2 style={serif} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
                   Ready to transform your manufacturing operations?
                 </h2>

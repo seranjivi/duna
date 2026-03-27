@@ -384,13 +384,14 @@ export default function DuanamizeAboutUsPage() {
                       key={item.key}
                       type="button"
                       onClick={() => setActiveTab(item.key)}
-                      className={`w-full rounded-2xl border px-4 py-4 text-left transition ${
+                      className={`flex w-full items-center justify-between rounded-2xl border px-4 py-4 text-left transition ${
                         activeTab === item.key
                           ? "border-cyan-300/30 bg-cyan-300/10 text-white"
                           : "border-white/10 bg-white/5 text-blue-100/80 hover:bg-white/10"
                       }`}
                     >
                       <div className="text-sm font-semibold">{item.label}</div>
+                      <ArrowRight className={`h-4 w-4 shrink-0 transition ${activeTab === item.key ? "text-white" : "text-blue-100/50"}`} />
                     </button>
                   ))}
                 </div>
@@ -405,13 +406,7 @@ export default function DuanamizeAboutUsPage() {
                   />
                 </div>
                 <div className="p-6 md:p-8">
-                  {activeMission.label && (
-                    <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-[#0A2463]">
-                      <Sparkles className="h-3.5 w-3.5" />
-                      {activeMission.label}
-                    </div>
-                  )}
-                  <h3 style={{ ...serif }} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+                  <h3 style={{ ...serif }} className="text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                     {activeMission.title}
                   </h3>
                   <p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">
@@ -619,27 +614,28 @@ export default function DuanamizeAboutUsPage() {
         </div>
       </section>
 
-      {/* <section className="relative overflow-hidden bg-[#061650]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.16),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
-        <div className="mx-auto max-w-7xl px-4 py-16 text-center md:px-8 md:py-20">
-          <div className="mx-auto max-w-4xl">
-            <h2 style={{ ...serif }} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-              Join industry leaders achieving breakthrough performance through LSS+AI
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-blue-100/85 md:text-lg">
-              Partner with Duanamize to transform operations, strengthen execution, and create sustainable competitive advantage through intelligent operational excellence.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <button className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5">
-                Get Started Today <ArrowRight className="h-4 w-4" />
-              </button>
-              <button className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                Speak to our team
-              </button>
+      <section className="relative overflow-hidden bg-[#061650]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(45,212,191,0.18),transparent_35%),radial-gradient(circle_at_80%_40%,rgba(99,102,241,0.18),transparent_35%)]" />
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+          <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div>
+                <h3 style={serif} className="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
+                  Ready to Accelerate Your Digital Journey?
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-blue-100/85">
+                  Partner with experts to unlock faster, smarter transformation through proven methodologies and advanced technology—delivering measurable results from day one.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
+                <a href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50 transition">
+                  Get Started Today <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 }

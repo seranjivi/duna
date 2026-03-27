@@ -72,21 +72,18 @@ const contactModes = [
     text: "For organizations evaluating LSS+AI, automation, operating-model redesign, or enterprise transformation initiatives.",
     icon: Briefcase,
     accent: "from-cyan-400 via-sky-400 to-blue-500",
-    tag: "Primary route",
   },
   {
     title: "Partnership discussions",
     text: "For technology partners, implementation partners, and channel alliances looking to create joint value with Duanamize.",
     icon: HeartHandshake,
     accent: "from-indigo-400 via-blue-500 to-cyan-400",
-    tag: "Ecosystem route",
   },
   {
     title: "Careers & capability",
     text: "For professionals, collaborators, and capability-building conversations aligned with the future of LSS+AI delivery.",
     icon: Users2,
     accent: "from-emerald-400 via-cyan-400 to-blue-500",
-    tag: "Talent route",
   },
 ];
 
@@ -94,14 +91,17 @@ const quickSignals = [
   {
     value: "Executive-led",
     label: "Discovery conversations grounded in business outcomes, not generic vendor talk.",
+    color: "text-white"
   },
   {
     value: "Structured",
     label: "Clear next-step flow from enquiry to qualification, advisory discussion, and proposal readiness.",
+    color: "text-white"
   },
   {
     value: "Enterprise-ready",
     label: "Built for transformation leaders, operations teams, technology heads, and strategic partners.",
+    color: "text-white"
   },
 ];
 
@@ -182,14 +182,16 @@ function LogoMark() {
 function SectionHeader({ eyebrow, title, description, light = false, center = false }) {
   return (
     <div className={`mb-8 md:mb-10 ${center ? "text-center" : ""}`}>
-      <div
-        className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
-          light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"
-        }`}
-      >
-        <Sparkles className="h-3.5 w-3.5" />
-        {eyebrow}
-      </div>
+      {eyebrow && (
+        <div
+          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-sm ${
+            light ? "border-white/20 bg-white/10 text-blue-100" : "border-blue-200 bg-white text-[#0A2463]"
+          }`}
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          {eyebrow}
+        </div>
+      )}
       <h2
         style={serif}
         className={`mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl ${
@@ -218,9 +220,11 @@ function ContactPathCard({ item }) {
       </div>
       <div className="mt-5 flex items-center justify-between gap-3">
         <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
-        <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
-          {item.tag}
-        </span>
+        {item.tag && (
+          <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+            {item.tag}
+          </span>
+        )}
       </div>
       <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.text}</p>
     </div>
@@ -287,44 +291,27 @@ export default function DuanamizeContactUsPage() {
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75">
-                <span>Contact Us</span>
+                <a href="/" className="hover:text-blue-200 transition-colors">Home</a>
                 <span>•</span>
-                <span className="text-white">Start the right conversation</span>
-              </div>
-
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                <Sparkles className="h-3.5 w-3.5" /> Executive enquiry experience
+                <span className="text-white">Contact Us</span>
               </div>
 
               <h1 style={serif} className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Contact Duanamize for transformation conversations that move from intent to action.
               </h1>
 
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/82 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/90 md:text-lg">
                 Whether you are exploring LSS+AI, process intelligence, automation, partner collaboration, or capability building,
                 this page is designed to help you reach the right discussion path quickly and professionally.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#enquiry-form"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5"
-                >
-                  Submit an enquiry <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="mailto:selvan@duanamize.org"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-                >
-                  Email Duanamize
-                </a>
-              </div>
+           
 
               <div className="mt-10 grid gap-3 md:grid-cols-3">
                 {quickSignals.map((item) => (
                   <div key={item.value} className="rounded-[22px] border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
                     <div className="text-lg font-semibold text-white">{item.value}</div>
-                    <p className="mt-2 text-sm leading-relaxed text-blue-100/76">{item.label}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-white">{item.label}</p>
                   </div>
                 ))}
               </div>
@@ -343,59 +330,9 @@ export default function DuanamizeContactUsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071857] via-[#071857]/35 to-transparent" />
 
-                  <div className="absolute inset-x-5 top-5 rounded-[24px] border border-white/12 bg-slate-950/40 p-4 backdrop-blur-xl">
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-100/80">Contact command center</div>
-                        <div className="mt-1 text-lg font-semibold text-white">A better first conversation</div>
-                      </div>
-                      <div className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-white">
-                        Premium enquiry
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute inset-x-5 bottom-5 rounded-[28px] border border-white/12 bg-slate-950/45 p-5 backdrop-blur-xl">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-100/85">
-                      <Headphones className="h-3.5 w-3.5" /> Direct access points
-                    </div>
-
-                    <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                      <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                        <Mail className="h-4 w-4 text-cyan-200" />
-                        <div className="mt-3 text-sm font-semibold text-white">Email</div>
-                        <div className="mt-1 text-xs leading-relaxed text-blue-100/75">selvan@duanamize.org</div>
-                      </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                        <Phone className="h-4 w-4 text-cyan-200" />
-                        <div className="mt-3 text-sm font-semibold text-white">Call</div>
-                        <div className="mt-1 text-xs leading-relaxed text-blue-100/75">+91 9884919972</div>
-                      </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                        <MapPin className="h-4 w-4 text-cyan-200" />
-                        <div className="mt-3 text-sm font-semibold text-white">Visit</div>
-                        <div className="mt-1 text-xs leading-relaxed text-blue-100/75">Sembakkam, Chennai</div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="grid gap-4">
-                  <div className="overflow-hidden rounded-[28px] border border-white/12 bg-white/10 shadow-xl shadow-blue-950/20 backdrop-blur-xl">
-                    <div className="relative h-52">
-                      <img
-                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
-                        alt="Consulting collaboration"
-                        className="h-full w-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#071857]/92 via-[#071857]/25 to-transparent" />
-                      <div className="absolute inset-x-4 bottom-4 rounded-[22px] border border-white/12 bg-slate-950/45 p-4 backdrop-blur-xl">
-                        <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-100/70">Aligned to Duanamize pathways</div>
-                        <div className="mt-2 text-base font-semibold text-white">Transformation, partnerships, and capability conversations</div>
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="rounded-[28px] border border-white/12 bg-white/10 p-5 shadow-xl shadow-blue-950/20 backdrop-blur-xl">
                     <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-100/70">Services often discussed</div>
                     <div className="mt-4 flex flex-wrap gap-2">
@@ -408,7 +345,7 @@ export default function DuanamizeContactUsPage() {
                     <div className="mt-5 rounded-[22px] border border-white/10 bg-slate-950/35 p-4">
                       <div className="flex items-start gap-3">
                         <Globe2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" />
-                        <p className="text-sm leading-relaxed text-blue-100/82">
+                        <p className="text-sm leading-relaxed text-white/90">
                           Ideal for enterprise leaders, operations teams, transformation sponsors, consulting partners, and decision-makers shaping the next phase of business performance.
                         </p>
                       </div>
@@ -426,7 +363,6 @@ export default function DuanamizeContactUsPage() {
           <div className="grid gap-8 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
             <div>
               <SectionHeader
-                eyebrow="Choose the right route"
                 title="Not every enquiry should enter through the same door."
                 description="This section gives the contact page a more strategic identity. Instead of a single generic form, it frames the three most relevant conversation paths users may be trying to reach."
               />
@@ -448,20 +384,12 @@ export default function DuanamizeContactUsPage() {
               <div className="border-b border-slate-200 bg-[linear-gradient(135deg,#f8fbff_0%,#edf6ff_100%)] p-6 md:p-7">
                 <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                   <div>
-                    <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-[#0A2463]">
-                      <Send className="h-3.5 w-3.5" /> Professional enquiry form
-                    </div>
                     <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
                       Tell us what you are trying to solve.
                     </h2>
                     <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
                       Share enough context for a more intelligent first conversation. This is designed to feel closer to a Big 4 enquiry experience than a generic website contact form.
                     </p>
-                  </div>
-
-                  <div className="rounded-[24px] border border-slate-200 bg-white px-4 py-3 shadow-sm shadow-slate-200/40">
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">Enquiry summary</div>
-                    <div className="mt-2 text-sm font-semibold text-slate-900">{inquirySummary || "Select your priorities"}</div>
                   </div>
                 </div>
               </div>
@@ -628,9 +556,6 @@ export default function DuanamizeContactUsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-transparent" />
                   <div className="absolute inset-x-5 bottom-5 rounded-[24px] border border-white/12 bg-slate-950/45 p-4 backdrop-blur-xl">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-50">
-                      <MapPin className="h-3.5 w-3.5" /> Chennai contact point
-                    </div>
                     <div className="mt-3 text-lg font-semibold text-white">Duanamize office contact details</div>
                   </div>
                 </div>
@@ -668,9 +593,7 @@ export default function DuanamizeContactUsPage() {
               </div>
 
               <div className="rounded-[32px] border border-[#0A2463]/10 bg-gradient-to-br from-[#071857] to-[#0E2F82] p-6 text-white shadow-xl shadow-blue-900/20">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-100">
-                  <WalletCards className="h-3.5 w-3.5" /> Engagement note
-                </div>
+
                 <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight">
                   Prefer a direct conversation first?
                 </h3>
@@ -696,7 +619,6 @@ export default function DuanamizeContactUsPage() {
           <div className="grid gap-8 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
             <div>
               <SectionHeader
-                eyebrow="After you reach out"
                 title="A contact page should also reduce uncertainty."
                 description="Instead of making the next step feel opaque, this page explains how Duanamize typically takes an enquiry forward—so the user understands what a high-quality first interaction looks like."
               />
@@ -720,66 +642,19 @@ export default function DuanamizeContactUsPage() {
                 alt="Consulting workshop"
                 className="h-full min-h-[520px] w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#071857]/88 via-[#071857]/65 to-[#071857]/92" />
-
-              <div className="absolute inset-0 p-6 md:p-8">
-                <div className="grid h-full gap-4 lg:grid-cols-[1.06fr_0.94fr]">
-                  <div className="flex flex-col justify-between rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-                    <div>
-                      <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-100/85">
-                        <Leaf className="h-3.5 w-3.5" /> Why this page works
-                      </div>
-                      <h3 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white">
-                        It is not only about being reachable. It is about being strategically approachable.
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-blue-100/82">
-                        The page blends premium presentation, qualification logic, clear contact paths, and next-step clarity so enterprise visitors feel guided rather than dumped into a basic form.
-                      </p>
-                    </div>
-
-                    <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-                      {quickSignals.map((item) => (
-                        <div key={item.value} className="rounded-2xl border border-white/10 bg-slate-950/35 p-4 backdrop-blur-xl">
-                          <div className="text-lg font-semibold text-white">{item.value}</div>
-                          <div className="mt-1 text-xs leading-relaxed text-blue-100/72">{item.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="grid gap-4">
-                    {proofCards.map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <div key={item.title} className="rounded-[26px] border border-white/10 bg-slate-950/35 p-5 backdrop-blur-xl">
-                          <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white">
-                            <Icon className="h-5 w-5" />
-                          </div>
-                          <div className="mt-4 text-lg font-semibold text-white">{item.title}</div>
-                          <p className="mt-2 text-sm leading-relaxed text-blue-100/78">{item.text}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
+             
             </div>
 
             <div>
               <SectionHeader
-                eyebrow="Why this contact design fits Duanamize"
                 title="Premium, informative, and still easy to scan."
                 description="The page intentionally avoids the flat, generic contact-template look. Instead, it acts as an executive entry point into the Duanamize ecosystem while keeping the design system aligned with the other pages already created."
               />
 
               <div className="grid gap-4 md:grid-cols-2">
                 {proofCards.map((item) => {
-                  const Icon = item.icon;
                   return (
                     <div key={item.title} className="rounded-[26px] border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/40">
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0A2463] text-white">
-                        <Icon className="h-5 w-5" />
-                      </div>
                       <div className="mt-4 text-lg font-semibold text-slate-950">{item.title}</div>
                       <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
                     </div>
@@ -791,40 +666,7 @@ export default function DuanamizeContactUsPage() {
         </div>
       </section>
 
-      <section className="bg-slate-50 pb-16 md:pb-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="overflow-hidden rounded-[36px] border border-[#0A2463]/10 bg-gradient-to-br from-[#071857] via-[#0A2463] to-[#10389A] p-8 shadow-2xl shadow-blue-900/20 md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-100">
-                  <Sparkles className="h-3.5 w-3.5" /> Ready when you are
-                </div>
-                <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
-                  Let’s make the first conversation relevant, focused, and commercially meaningful.
-                </h2>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-blue-100/82 md:text-lg">
-                  Reach Duanamize with a transformation enquiry, partnership discussion, or strategic question and we will route the conversation toward the right next step.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a
-                  href="#enquiry-form"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] transition hover:-translate-y-0.5"
-                >
-                  Start your enquiry <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="mailto:selvan@duanamize.org"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-                >
-                  Contact by email
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+   
     </div>
   );
 }

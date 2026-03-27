@@ -204,13 +204,17 @@ export default function DatabasePage({ onNavigate }) {
           
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold text-blue-100 mb-5">
-                <Database className="h-3.5 w-3.5 text-cyan-300" /> Section 01 — Database Skills
+              <div className="flex flex-wrap items-center gap-2 text-sm text-blue-100/75 mb-4">
+                <a href="/" className="hover:text-blue-200 transition-colors">Home</a>
+                <span>•</span>
+                <a href="/catalog" className="hover:text-blue-200 transition-colors">Catalog</a>
+                <span>•</span>
+                <span className="text-white">Database Skills</span>
               </div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight text-white md:text-6xl">
                 Database<br /><span className="text-[#A5F3FC]">Expertise.</span>
               </h1>
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-white/70 md:text-lg">
+              <p className="mt-5 text-base leading-relaxed text-white/70 md:text-lg">
                 Enterprise-grade and open-source database expertise spanning 6 platforms —
                 covering development, performance tuning, migration, and legacy modernization.
               </p>
@@ -269,10 +273,10 @@ export default function DatabasePage({ onNavigate }) {
                 <p className="text-sm text-white/50 mt-1">Automation & AI and Engagement sections available.</p>
               </div>
               <div className="flex flex-wrap gap-3">
-                {[{ label: "Automation & AI", page: "AutomationAIPage" }, { label: "Engagement & Profile", page: "EngagementPage" }].map((l) => (
-                  <button key={l.page} onClick={() => onNavigate && onNavigate(l.page)} className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition">
+                {[{ label: "Automation & AI", path: "/automation" }, { label: "Engagement & Profile", path: "/engagement" }].map((l) => (
+                  <a key={l.path} href={l.path} className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition">
                     {l.label} <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>

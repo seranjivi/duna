@@ -55,6 +55,7 @@ import ROIFrameworkPage from './src/pages/ROIFrameworkPage.jsx';
 import DatabasePage from './src/pages/DatabasePage.jsx';
 import AutomationAIPage from './src/pages/AutomationAIPage.jsx';
 import EngagementPage from './src/pages/EngagementPage.jsx';
+import CatalogPage from './src/pages/CatalogPage.jsx';
 
 // Import Tailwind CSS
 import './src/styles.css';
@@ -113,7 +114,10 @@ root.render(
         <Route path="outcomes-framework" element={<OutcomesFrameworkPage />} />
         <Route path="performance-measurement" element={<PerformanceMeasurementPage />} />
         <Route path="outcomes-roi-framework" element={<ROIFrameworkPage />} />
-        <Route path="catalog" element={<DatabasePage />} />
+        <Route path="catalog" element={<CatalogPage />} />
+        <Route path="catalog/database" element={<DatabasePage />} />
+        <Route path="catalog/automation-ai" element={<AutomationAIPage />} />
+        <Route path="catalog/engagement" element={<EngagementPage />} />
         <Route path="databaseskills" element={<DatabasePage />} />
         <Route path="automation" element={<AutomationAIPage />} />
         <Route path="engagement" element={<EngagementPage />} />
