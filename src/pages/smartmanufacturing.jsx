@@ -445,7 +445,7 @@ export default function SmartManufacturingPage() {
                   Continue exploring smart manufacturing solutions
                 </h2>
                 <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
-                  This smart manufacturing page is part of our comprehensive Industry 4.0 solutions offering under the Manufacturing section.
+                  Manufacturing transformation that goes beyond technology deployment.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">

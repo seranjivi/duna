@@ -280,7 +280,7 @@ export default function BankingDigitalTransformationPage() {
                   Continue exploring financial solutions
                 </h2>
                 <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
-                  This banking transformation page is part of our comprehensive financial services offering under the Industries section.
+                  This Finance Services page is part of the broader Financial Services industry under the Industries section, highlighting how technology and digital solutions help financial institutions modernize operations and deliver better financial services.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">

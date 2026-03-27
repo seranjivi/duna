@@ -344,7 +344,7 @@ export default function LeanManufacturingPage() {
                   Continue exploring manufacturing excellence
                 </h2>
                 <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-lg">
-                  This Lean & Six Sigma page is part of our comprehensive manufacturing solutions offering under the Industries section.
+                  Manufacturing transformation that goes beyond technology deployment.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">

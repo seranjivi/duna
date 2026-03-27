@@ -10,8 +10,8 @@ import {
 const serif = { fontFamily: '"Playfair Display", Georgia, Cambria, "Times New Roman", serif' };
 
 const solutions = [
-  { icon: Cpu, title: "Smart Manufacturing & Industry 4.0", desc: "Transform your production with cyber-physical systems, IoT connectivity, AI-driven analytics, and digital twin technology for intelligent, adaptive manufacturing.", link: "#", color: "from-cyan-400 to-blue-500" },
-  { icon: Target, title: "Lean Manufacturing & Six Sigma", desc: "Eliminate waste, reduce variation, and achieve near-perfect quality levels through proven lean principles, DMAIC methodology, and continuous improvement culture.", link: "#", color: "from-blue-400 to-indigo-500" },
+  { icon: Cpu, title: "Smart Manufacturing & Industry 4.0", desc: "Transform your production with cyber-physical systems, IoT connectivity, AI-driven analytics, and digital twin technology for intelligent, adaptive manufacturing.", link: "/industries-manufacturing-smart", color: "from-cyan-400 to-blue-500" },
+  { icon: Target, title: "Lean Manufacturing & Six Sigma", desc: "Eliminate waste, reduce variation, and achieve near-perfect quality levels through proven lean principles, DMAIC methodology, and continuous improvement culture.", link: "/industries-manufacturing-lean", color: "from-blue-400 to-indigo-500" },
   { icon: Bot, title: "Manufacturing Automation", desc: "Deploy industrial robots, cobots, AGVs, and intelligent control systems to automate assembly, quality inspection, and material handling operations.", link: "#", color: "from-teal-400 to-cyan-500" },
   { icon: Activity, title: "Industrial IoT Solutions", desc: "Connect machines, sensors, and systems across the production floor for real-time monitoring, predictive maintenance, and data-driven decision-making.", link: "#", color: "from-indigo-400 to-violet-500" },
   { icon: BarChart3, title: "Quality Management Systems", desc: "Implement SPC, poka-yoke, and TQM frameworks that prevent defects, ensure consistency, and drive continuous quality improvement across all production lines.", link: "#", color: "from-cyan-500 to-teal-500" },
@@ -42,7 +42,7 @@ const featuredPages = [
     desc: "Cyber-physical systems, Industrial IoT, AI-driven quality control, digital twins, and smart factory architectures transforming production excellence.",
     descColor: "text-slate-600",
     tag: "Industry 4.0",
-    link: "/manufacturing/smart-manufacturing",
+    link: "/industries-manufacturing-smart",
   },
   {
     img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80",
@@ -53,7 +53,7 @@ const featuredPages = [
     desc: "Waste elimination, DMAIC methodology, statistical process control, and quality management systems for sustainable competitive advantage.",
     descColor: "text-slate-600",
     tag: "Operational Excellence",
-    link: "/manufacturing/lean-six-sigma",
+    link: "/industries-manufacturing-lean",
   },
 ];
 
@@ -226,9 +226,9 @@ export default function ManufacturingMainPage() {
                     </div>
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-slate-600">{sol.desc}</p>
-                  <a href={sol.link} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0a1628] transition group-hover:gap-2">
+                  {/* <a href={sol.link} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0a1628] transition group-hover:gap-2">
                     Learn more <ArrowRight className="h-4 w-4" />
-                  </a>
+                  </a> */}
                 </div>
               );
             })}
@@ -326,8 +326,8 @@ ing-relaxed text-slate-600" style={{ width: "100%", maxWidth: "none", wordWrap: 
                 <div className="p-6">
                   <h3 style={serif} className={`text-xl font-semibold leading-snug ${card.titleColor || 'text-white'}`}>{card.title}</h3>
                   <p className={`mt-3 text-sm leading-relaxed ${card.descColor}`}>{card.desc}</p>
-                  <a href={card.link} className="mt-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/8 px-4 py-2 text-sm font-semibold text-cyan-300 transition group-hover:bg-cyan-400/15 group-hover:gap-3">
-                    Read more <ArrowRight className="h-4 w-4" />
+                  <a href={card.link} className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-[#0A2463] group-hover:border-[#0A2463]/30 group-hover:bg-blue-50/60 transition">
+                    Learn More <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
               </div>
