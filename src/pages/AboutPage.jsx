@@ -129,7 +129,7 @@ const leadership = {
   kalpana: {
     name: "Kalpana",
     role: "Director · 15+ years optimizing performance in Lean Six Sigma",
-    image: "https://i.ibb.co/Y7q32KYv/woman.png",
+    image: "https://i.postimg.cc/PrxwrgPQ/woman.png",
     intro:
       "Accomplished executive with a proven track record in healthcare and diverse industries, specializing in Lean Six Sigma implementation and operational transformation as Director of Duanamize Global Services.",
     bullets: [
