@@ -486,7 +486,7 @@ export default function DuanamizeAboutUsPage() {
                 <img
                   src={leadership.srikanth.image}
                   alt="Srikanth Shastri portrait"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ position: 'absolute', inset: 0, height: '100%', width: '100%', objectFit: 'cover' }}
                 />
               </div>
 
@@ -532,9 +532,9 @@ export default function DuanamizeAboutUsPage() {
               <div className="grid gap-0 lg:grid-cols-[0.82fr_1.18fr]">
                 <div className="relative min-h-[360px] bg-slate-100">
                   <img
-                    src={leadership.kalpana.image}
+                    src="/woman.png"
                     alt="Kalpana portrait"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    style={{ position: 'absolute', inset: 0, height: '100%', width: '100%', objectFit: 'cover' }}
                   />
                 </div>
                 <div className="p-6">
@@ -564,7 +564,7 @@ export default function DuanamizeAboutUsPage() {
                   <img
                     src={leadership.narayanan.image}
                     alt="Dr. Narayanan Srinivasan portrait"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    style={{ position: 'absolute', inset: 0, height: '100%', width: '100%', objectFit: 'cover' }}
                   />
                 </div>
                 <div className="p-6">
