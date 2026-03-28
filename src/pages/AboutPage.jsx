@@ -532,7 +532,7 @@ export default function DuanamizeAboutUsPage() {
               <div className="grid gap-0 lg:grid-cols-[0.82fr_1.18fr]">
                 <div className="relative min-h-[360px] bg-slate-100">
                   <img
-                    src="/woman.png"
+                    src={leadership.kalpana.image}
                     alt="Kalpana portrait"
                     style={{ position: 'absolute', inset: 0, height: '100%', width: '100%', objectFit: 'cover' }}
                   />
