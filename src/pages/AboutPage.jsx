@@ -129,7 +129,7 @@ const leadership = {
   kalpana: {
     name: "Kalpana",
     role: "Director · 15+ years optimizing performance in Lean Six Sigma",
-    image: <img src="/woman.png" alt="Kalpana portrait" className="absolute inset-0 h-full w-full object-cover" />,
+    image: "/woman.png",
     intro:
       "Accomplished executive with a proven track record in healthcare and diverse industries, specializing in Lean Six Sigma implementation and operational transformation as Director of Duanamize Global Services.",
     bullets: [
@@ -531,7 +531,11 @@ export default function DuanamizeAboutUsPage() {
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
               <div className="grid gap-0 lg:grid-cols-[0.82fr_1.18fr]">
                 <div className="relative min-h-[360px] bg-slate-100">
-                  {leadership.kalpana.image}
+                  <img
+                    src={leadership.kalpana.image}
+                    alt="Kalpana portrait"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 style={{ ...serif }} className="mt-4 text-3xl font-semibold leading-tight text-slate-950">
