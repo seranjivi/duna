@@ -75,10 +75,11 @@ export default function ResultsMainPage() {
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#071857] mb-4">
             Results
           </div>
-          <div className="text-sm text-blue-100/70">
-            <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
-            <span className="mx-2 text-white">/</span>
-            <span className="text-white">Results</span>
+          <div className="text-sm text-blue-100/80">
+            <a href="/" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>
+              Home
+            </a>
+            {" / Results"}
           </div>
           <div className="mt-8 grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>

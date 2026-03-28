@@ -287,16 +287,17 @@ export default function DuanamizeContactUsPage() {
         <div className="absolute -left-16 top-12 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl" />
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-20 md:px-8 md:pb-20">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-12 md:px-8 md:pb-20">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
         <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#071857]">
             Contact US
           </div>
-          <div className="text-sm text-blue-100/70">
-            <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
-            <span className="mx-2 text-white">/</span>
-            <span className="text-white">Contact US</span>
+          <div className="text-sm mt-4 text-blue-100/80">
+            <a href="/" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>
+              Home
+            </a>
+            {" / Contact US"}
           </div>
               <h1 style={serif} className="mt-6 max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Contact Duanamize for transformation conversations that move from intent to action.

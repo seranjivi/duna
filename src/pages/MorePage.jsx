@@ -103,10 +103,11 @@ export default function MorePage({ onNavigate }) {
              <div className="inline-flex items-center gap-2 mt-4 rounded-full border border-white/20 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#071857] mb-4">
             More
           </div>
-          <div className="text-sm text-blue-100/70">
-            <a href="/" className="text-white hover:text-blue-200 transition-colors">Home</a>
-            <span className="mx-2 text-white">/</span>
-            <span className="text-white">More</span>
+          <div className="text-sm text-blue-100/80">
+            <a href="/" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>
+              Home
+            </a>
+            {" / More"}
           </div>
           <div className="mt-10 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
