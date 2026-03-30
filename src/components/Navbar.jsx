@@ -328,6 +328,13 @@ export default function DuanamizeButterflyNavigation() {
   useEffect(() => {
     const currentPath = location.pathname;
     
+    // Handle contact page separately since it's not in menuData
+    if (currentPath === '/contact') {
+      setActiveMain(null); // Clear active main so no menu item shows active
+      setPreviewMain(null);
+      return;
+    }
+    
     const activeMenuItem = menuData.find(item => {
       if (item.path === currentPath) return true;
       if (item.children) {
@@ -354,13 +361,13 @@ export default function DuanamizeButterflyNavigation() {
   return (
     <div className="bg-[#071857] text-slate-900">
       <section className="sticky top-0 z-40 bg-[#071857] backdrop-blur-lg border-b border-white/10">
-        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-          <header className="flex h-20 items-center justify-between gap-6">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-6">
+          <header className="flex h-20 items-center justify-between gap-4">
             <Link to="/" className="flex items-center">
               <Logo />
             </Link>
 
-            <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation" onMouseLeave={() => setPreviewMain(activeMain)}>
+            <nav className="hidden items-center gap-1 overflow-visible xl:flex" aria-label="Primary navigation" onMouseLeave={() => setPreviewMain(activeMain)}>
               {menuData.map((item) => {
                 const hasChildren = Boolean(item.children?.length);
                 const active = !hasChildren ? activeMain === item.key : activeMain === item.key;
@@ -371,7 +378,7 @@ export default function DuanamizeButterflyNavigation() {
                       key={item.key}
                       to={item.path || "#"}
                       className={cn(
-                        "rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] transition hover:text-white whitespace-nowrap",
+                        "rounded-full px-3 py-2 text-[12px] font-medium tracking-[0.06em] transition hover:text-white whitespace-nowrap",
                         active ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
                       )}
                     >
@@ -398,7 +405,7 @@ export default function DuanamizeButterflyNavigation() {
                         setMenuOpen(true);
                       }}
                       className={cn(
-                        "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium tracking-[0.08em] transition whitespace-nowrap",
+                        "inline-flex items-center gap-1 rounded-full px-3 py-2 text-[12px] font-medium tracking-[0.06em] transition whitespace-nowrap",
                         active ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
                       )}
                     >
@@ -410,10 +417,13 @@ export default function DuanamizeButterflyNavigation() {
               })}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 overflow-visible">
               <Link
                 to="/contact"
-                className="hidden rounded-full border border-white/25 bg-transparent px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition md:inline-flex whitespace-nowrap"
+                className={cn(
+                  "hidden text-[12px] font-medium tracking-[0.06em] transition md:inline-flex whitespace-nowrap rounded-full px-3 py-2",
+                  location.pathname === '/contact' ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
+                )}
               >
                 CONTACT US
               </Link>
