@@ -483,13 +483,13 @@ export default function AICapabilityPage() {
                 </p>
               </div>
 
-              <a href="/solutions-capability" className="rounded-[24px] border border-slate-200 bg-white p-6 max-w-sm mx-auto block">
-                <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Current Page</div>
-                <div className="mt-2 text-lg font-semibold leading-snug text-slate-950">
-                  AI Capability Development
-                </div>
-                <div className="mt-1 text-sm text-slate-500">Part of Capability Building solutions</div>
-              </a>
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  alt="AI Capability Development"
+                  className="rounded-[24px] w-full h-[280px] object-cover shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
