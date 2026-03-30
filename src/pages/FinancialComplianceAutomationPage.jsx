@@ -367,22 +367,24 @@ export default function FinancialComplianceAutomationPage() {
                   This Finance Services page is part of the broader Financial Services industry under the Industries section, highlighting how technology and digital solutions help financial institutions modernize operations and deliver better financial services.
                 </p>
               </div>
+              
               <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Previous Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Banking Digital Transformation: From Legacy to Leadership
+                  </h3>
+                  <a href="/industries-financial-banking" className="mt-3 text-sm font-semibold text-[#0A2463] flex items-center gap-1">
+                    View page <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
                 <div className="rounded-2xl border border-slate-200 bg-white p-6">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Financial Compliance Automation: AI-Powered Risk Management
                   </h3>
                 </div>
-                <div className="rounded-2xl border border-slate-200 bg-white p-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
-                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Banking Digital Transformation: From Legacy to Leadership
-                  </h3>
-                  <a href="/industries-financial-banking" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
-                    View page <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
+                
               </div>
             </div>
           </div>

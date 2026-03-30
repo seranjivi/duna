@@ -460,7 +460,7 @@ export default function SmartManufacturingPage() {
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Manufacturing Excellence: Smart Factory & Lean Transformation
                   </h3>
-                  <a href="/industries-manufacturing-lean" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+                  <a href="/industries-manufacturing-lean" className="mt-3 text-sm font-semibold text-[#0A2463] flex items-center gap-1">
                     View page <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>

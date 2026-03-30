@@ -353,20 +353,21 @@ export default function LeanManufacturingPage() {
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Previous Page</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
+                    Smart Manufacturing Revolution: Industry 4.0 Digital Transformation
+                  </h3>
+                  <Link to="/industries-manufacturing-smart" className="mt-3 text-sm font-semibold text-[#0A2463] flex items-center gap-1">
+                    View Page <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Current Page</p>
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Lean Manufacturing & Six Sigma: Eliminate Waste, Achieve Excellence
                   </h3>
                 </div>
-                <div className="rounded-2xl border border-slate-200 bg-white p-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Next Page</p>
-                  <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
-                    Smart Manufacturing Revolution: Industry 4.0 Digital Transformation
-                  </h3>
-                  <Link to="/industries-manufacturing-smart" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
-                    View Page <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
+                
               </div>
             </div>
           </div>
