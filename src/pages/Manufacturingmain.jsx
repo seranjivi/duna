@@ -337,7 +337,7 @@ ing-relaxed text-slate-600" style={{ width: "100%", maxWidth: "none", wordWrap: 
       </section>
 
       {/* Continue Exploring */}
-      <section className="bg-slate-50 pt-0 pb-16 md:pb-20">
+      {/* <section className="bg-slate-50 pt-0 pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="overflow-hidden rounded-[36px] bg-white p-8 shadow-2xl md:p-10">
             <div className="grid gap-8 lg:grid-cols-2">
@@ -369,7 +369,7 @@ ing-relaxed text-slate-600" style={{ width: "100%", maxWidth: "none", wordWrap: 
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </div>
   );

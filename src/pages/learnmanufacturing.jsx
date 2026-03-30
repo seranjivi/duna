@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight, BarChart3, CheckCircle2, ChevronDown, Clock3,
   Factory, Gauge, Mail, MapPin, Menu, Network, Phone,
   Shield, ShieldCheck, Sparkles, TrendingUp, Zap, Activity,
   Target, RefreshCw, AlertTriangle, Users, Layers3, GitMerge,
+  Truck, Package, PersonStanding, Clock, Layers, XCircle, Brain,
 } from "lucide-react";
 
 const serif = { fontFamily: '"Playfair Display", Georgia, Cambria, "Times New Roman", serif' };
@@ -30,14 +32,14 @@ const dmiacPhases = [
 ];
 
 const wasteTypes = [
-  { icon: "🚛", title: "Transportation", desc: "Unnecessary movement of materials and products — inefficient layout, multiple handling requirements." },
-  { icon: "📦", title: "Inventory", desc: "Excess raw materials and work-in-process — overproduction, storage costs, cash flow impact." },
-  { icon: "🏃", title: "Motion", desc: "Unnecessary operator movements — poor workplace organisation, inefficient tool placement." },
-  { icon: "⏳", title: "Waiting", desc: "Equipment downtime and delays — material shortages, process bottlenecks, resource constraints." },
-  { icon: "⚡", title: "Overproduction", desc: "Production beyond customer demand — batch size issues, inventory accumulation, obsolescence." },
-  { icon: "🔄", title: "Overprocessing", desc: "Unnecessary process steps — excessive quality checks, redundant activities, duplication." },
-  { icon: "❌", title: "Defects", desc: "Quality issues and rework — scrap, warranty costs, customer satisfaction and brand impact." },
-  { icon: "💡", title: "Skills Waste", desc: "Underutilised employee capabilities — limited empowerment, inadequate training, innovation loss." },
+  { icon: Truck, title: "Transportation", desc: "Unnecessary movement of materials and products — inefficient layout, multiple handling requirements." },
+  { icon: Package, title: "Inventory", desc: "Excess raw materials and work-in-process — overproduction, storage costs, cash flow impact." },
+  { icon: PersonStanding, title: "Motion", desc: "Unnecessary operator movements — poor workplace organisation, inefficient tool placement." },
+  { icon: Clock, title: "Waiting", desc: "Equipment downtime and delays — material shortages, process bottlenecks, resource constraints." },
+  { icon: Layers, title: "Overproduction", desc: "Production beyond customer demand — batch size issues, inventory accumulation, obsolescence." },
+  { icon: RefreshCw, title: "Overprocessing", desc: "Unnecessary process steps — excessive quality checks, redundant activities, duplication." },
+  { icon: XCircle, title: "Defects", desc: "Quality issues and rework — scrap, warranty costs, customer satisfaction and brand impact." },
+  { icon: Brain, title: "Skills Waste", desc: "Underutilised employee capabilities — limited empowerment, inadequate training, innovation loss." },
 ];
 
 const qualityStrategies = [
@@ -271,9 +273,11 @@ export default function LeanManufacturingPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {wasteTypes.map((waste, i) => (
               <div key={waste.title} className="rounded-[20px] border border-slate-200 p-5 transition hover:-translate-y-1 hover:border-cyan-400/25 bg-white shadow-sm">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-2xl">{waste.icon}</span>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">{String(i + 1).padStart(2, "0")}</span>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white shadow-lg">
+                    <waste.icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">Layer {String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <h3 className="text-base font-semibold text-slate-950 mb-2">{waste.title}</h3>
                 <p className="text-xs leading-relaxed text-slate-600">{waste.desc}</p>
@@ -359,9 +363,9 @@ export default function LeanManufacturingPage() {
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950">
                     Smart Manufacturing Revolution: Industry 4.0 Digital Transformation
                   </h3>
-                  <a href="/manufacturing-smart" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
-                    View page <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <Link to="/industries-manufacturing-smart" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+                    View Page <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </div>
