@@ -160,11 +160,11 @@ const menuData = [
     label: "ABOUT US",
     path: "/about",
   },
-  // {
-  //   key: "contact",
-  //   label: "Contact US",
-  //   path: "/contact",
-  // },
+  {
+    key: "contact",
+    label: "CONTACT US",
+    path: "/contact",
+  },
 ];
 
 const fade = {
@@ -417,7 +417,7 @@ export default function DuanamizeButterflyNavigation() {
               })}
             </nav>
 
-            <div className="flex items-center gap-3 overflow-visible">
+            {/* <div className="flex items-center gap-3 overflow-visible">
               <Link
                 to="/contact"
                 className={cn(
@@ -435,7 +435,7 @@ export default function DuanamizeButterflyNavigation() {
               >
                 <Menu className="h-5 w-5" />
               </button>
-            </div>
+            </div> */}
           </header>
         </div>
       </section>
