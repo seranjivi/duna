@@ -451,7 +451,7 @@ export default function DuanamizeButterflyNavigation() {
                 onMouseLeave={() => setMenuOpen(false)}
                 className="relative z-20 hidden xl:block"
               >
-                <div className="overflow-hidden rounded-3xl border-4 border-white bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-6 shadow-2xl shadow-black/40 backdrop-blur-xl inline-block">
+                <div className="overflow-hidden rounded-3xl border border-white/50 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-6 shadow-2xl shadow-black/40 backdrop-blur-xl inline-block">
                   <div className={cn(
                     "grid",
                     currentMain.children.some(child => child.items?.length > 0) ? "grid-cols-[320px_1fr]" : "grid-cols-[350px]"
