@@ -187,7 +187,7 @@ function Logo() {
       </div>
       <div>
         <div className="text-white font-semibold tracking-wide leading-tight">DUANAMIZE</div>
-        <div className="text-[11px] text-blue-100/80 tracking-[0.18em]">GLOBAL SERVICES</div>
+        <div className="text-[11px] text-blue-100/80 tracking-[0.18em] whitespace-nowrap">GLOBAL SERVICES</div>
       </div>
     </div>
   );
@@ -358,12 +358,12 @@ export default function DuanamizeButterflyNavigation() {
     <div className="bg-[#071857] text-slate-900">
       <section className="sticky top-0 z-40 bg-[#071857] backdrop-blur-lg border-b border-white/10">
         <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-6">
-          <header className="flex h-20 items-center justify-between gap-3">
-            <Link to="/" className="flex items-center">
+          <header className="flex h-20 items-center justify-start gap-8">
+            <Link to="/" className="flex items-center mr-6">
               <Logo />
             </Link>
 
-            <nav className="hidden items-center gap-0.5 overflow-visible xl:flex" aria-label="Primary navigation" onMouseLeave={() => setPreviewMain(activeMain)}>
+            <nav className="hidden items-center gap-3 overflow-visible xl:flex" aria-label="Primary navigation" onMouseLeave={() => setPreviewMain(activeMain)}>
               {menuData.map((item) => {
                 const hasChildren = Boolean(item.children?.length);
                 const active = !hasChildren ? activeMain === item.key : activeMain === item.key;
@@ -374,7 +374,7 @@ export default function DuanamizeButterflyNavigation() {
                       key={item.key}
                       to={item.path || "#"}
                       className={cn(
-                        "rounded-full px-2.5 py-1.5 text-[11px] font-medium tracking-[0.05em] transition hover:text-white whitespace-nowrap",
+                        "rounded-full px-3 py-2 text-[13px] font-medium tracking-[0.05em] transition hover:text-white whitespace-nowrap",
                         active ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
                       )}
                     >
@@ -401,7 +401,7 @@ export default function DuanamizeButterflyNavigation() {
                         setMenuOpen(true);
                       }}
                       className={cn(
-                        "inline-flex items-center gap-0.5 rounded-full px-2.5 py-1.5 text-[11px] font-medium tracking-[0.05em] transition whitespace-nowrap",
+                        "inline-flex items-center gap-0.5 rounded-full px-3 py-2 text-[13px] font-medium tracking-[0.05em] transition whitespace-nowrap",
                         active ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
                       )}
                     >
