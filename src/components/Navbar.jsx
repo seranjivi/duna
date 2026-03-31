@@ -331,13 +331,6 @@ export default function DuanamizeButterflyNavigation() {
     // Always close menu when route changes
     setMenuOpen(false);
     
-    // Handle contact page separately since it's not in menuData
-    if (currentPath === '/contact') {
-      setActiveMain(null); // Clear active main so no menu item shows active
-      setPreviewMain(null);
-      return;
-    }
-    
     const activeMenuItem = menuData.find(item => {
       if (item.path === currentPath) return true;
       if (item.children) {
@@ -421,15 +414,6 @@ export default function DuanamizeButterflyNavigation() {
             </nav>
 
             <div className="flex items-center gap-3 overflow-visible">
-              <Link
-                to="/contact"
-                className={cn(
-                  "hidden text-[11px] font-medium tracking-[0.05em] transition md:inline-flex whitespace-nowrap rounded-full px-2.5 py-1.5",
-                  location.pathname === '/contact' ? "bg-white/10 text-white border border-white/20" : "text-blue-50/90 hover:text-white"
-                )}
-              >
-                CONTACT US
-              </Link>
               <button
                 type="button"
                 onClick={() => setMobileOpen(true)}
