@@ -100,7 +100,7 @@ const programmeTabs = [
       "Automated switching, feeder control, and self-healing grid capabilities",
       "Fault detection, isolation, and service restoration (FDIR)",
       "Capacitor bank and transformer load management",
-      "Real-time grid monitoring and optimisation algorithms",
+      "Real-time grid monitoring and optimization algorithms",
     ],
   },
   {
@@ -110,7 +110,7 @@ const programmeTabs = [
     items: [
       "Predictive analytics for equipment health and maintenance scheduling",
       "Load forecasting and demand prediction models",
-      "Real-time decision support and economic dispatch optimisation",
+      "Real-time decision support and economic dispatch optimization",
       "Security analysis, contingency planning, and state estimation",
     ],
   },
@@ -184,7 +184,7 @@ const roiAreas = [
     title: "Renewable Enablement",
     accent: "from-sky-500 to-indigo-500",
     items: [
-      "MPPT and curtailment optimisation maximises renewable yield",
+      "MPPT and curtailment optimization maximizes renewable yield",
       "Virtual power plant coordination across distributed assets",
       "Energy storage dispatch reduces curtailment losses",
       "Dynamic line rating increases renewable hosting capacity",
@@ -197,7 +197,7 @@ const roiAreas = [
     items: [
       "Automated meter reading eliminates manual field visits",
       "Condition-based maintenance reduces repair costs",
-      "Energy efficiency optimisation lowers losses across network",
+      "Energy efficiency optimization lowers losses across network",
       "Remote operations reduce field crew deployment frequency",
     ],
   },
@@ -416,11 +416,11 @@ export default function EnergyUtilitiesPage() {
                     Managing variability across solar, wind, and storage at grid scale.
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-white">
-                    Renewable automation optimises the integration and dispatch of variable generation
+                    Renewable automation optimizes the integration and dispatch of variable generation
                     while maintaining frequency, voltage, and grid stability across all operating conditions.
                   </p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                    {["MPPT Optimisation", "Virtual Power Plants", "Islanding Protection", "V2G & Storage Dispatch"].map((item) => (
+                    {["MPPT Optimization", "Virtual Power Plants", "Islanding Protection", "V2G & Storage Dispatch"].map((item) => (
                       <div key={item} className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-white backdrop-blur-xl">
                         <CheckCircle2 className="h-4 w-4 text-cyan-300" />
                         {item}

@@ -180,7 +180,7 @@ const roiAreas = [
     accent: "from-indigo-500 to-blue-500",
     items: [
       "Real-time dashboards across all pipeline stages",
-      "Metrics-driven optimisation and bottleneck alerts",
+      "Metrics-driven optimization and bottleneck alerts",
       "Team-wide transparency on build and release health",
       "DORA metric tracking for continuous improvement",
     ],
@@ -215,7 +215,7 @@ export default function DevOpsAutomationPage() {
             <div>
               <h1 style={serif} className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 DevOps Automation{" "}
-                <span className="text-[#A5F3FC]">Mastering CI/CD pipeline optimisation for software excellence.</span>
+                <span className="text-[#A5F3FC]">Mastering CI/CD pipeline optimization for software excellence.</span>
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
                 DevOps automation bridges the gap between development and operations by implementing
@@ -423,7 +423,7 @@ export default function DevOpsAutomationPage() {
               The measurable return on DevOps automation investment.
             </h2>
             <p className="mt-3 text-base leading-7 text-slate-600">
-              Automation delivers compounding returns across speed, reliability, and engineering visibility — from the first pipeline to organisation-wide adoption.
+              Automation delivers compounding returns across speed, reliability, and engineering visibility — from the first pipeline to organization-wide adoption.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">

@@ -139,10 +139,10 @@ const migrationPhases = [
   },
   {
     step: "03",
-    title: "Optimisation & Governance",
+    title: "Optimization & Governance",
     icon: TrendingUp,
     items: [
-      "Cloud cost optimisation and right-sizing",
+      "Cloud cost optimization and right-sizing",
       "Auto-scaling policies and resource governance",
       "Security posture hardening and compliance mapping",
       "Ongoing monitoring, alerting, and performance tuning",
@@ -244,7 +244,7 @@ export default function CloudMigrationPage() {
                     Migration focus areas
                   </div>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {["AWS Migration", "Azure Services", "IaC Provisioning", "Hybrid Cloud", "Cost Optimisation", "Security & Compliance"].map((tag) => (
+                    {["AWS Migration", "Azure Services", "IaC Provisioning", "Hybrid Cloud", "Cost Optimization", "Security & Compliance"].map((tag) => (
                       <span key={tag} className="rounded-full border border-white/12 bg-slate-950/35 px-3 py-1.5 text-xs font-semibold text-white/95">
                         {tag}
                       </span>
@@ -375,7 +375,7 @@ export default function CloudMigrationPage() {
               A structured three-phase migration methodology.
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-base">
-              From initial discovery through to post-migration optimisation, our phased approach
+              From initial discovery through to post-migration optimization, our phased approach
               minimises risk and ensures your manufacturing operations never miss a beat.
             </p>
           </div>

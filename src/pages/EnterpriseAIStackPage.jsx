@@ -58,7 +58,7 @@ const challenges = [
       "AI models performing well in pilot but failing at production scale",
       "RPA bots without governance becoming unmanageable at volume",
       "Analytics infrastructure not built for real-time streaming data",
-      "Cloud costs spiralling without proper governance and optimisation",
+      "Cloud costs spiralling without proper governance and optimization",
     ],
   },
   {
@@ -96,7 +96,7 @@ const stackTabs = [
       "Azure AI, AWS Machine Learning, and Google Cloud AI platform deployment",
       "MLflow, TensorFlow, and PyTorch for custom model development and training",
       "Model versioning, A/B testing, and production deployment lifecycle management",
-      "Predictive and prescriptive analytics for proactive process optimisation",
+      "Predictive and prescriptive analytics for proactive process optimization",
     ],
   },
   {
@@ -148,7 +148,7 @@ const architecturePhases = [
   },
   {
     step: "03",
-    title: "Scale & Continuous Optimisation",
+    title: "Scale & Continuous Optimization",
     icon: TrendingUp,
     items: [
       "Enterprise-wide rollout with change management support",
@@ -225,7 +225,7 @@ export default function EnterpriseAIStackPage() {
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
                 Modern process improvement requires sophisticated technology infrastructure integrating
-                process mining, artificial intelligence, automation, and analytics. Organisations
+                process mining, artificial intelligence, automation, and analytics. Organizations
                 achieving breakthrough results leverage comprehensive technology stacks that provide
                 scalability, reliability, and advanced intelligence capabilities.
               </p>

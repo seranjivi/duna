@@ -133,7 +133,7 @@ export default function ManufacturingPage() {
                 <span className="text-[#A5F3FC]">modern manufacturing.</span>
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
-                Manufacturing organisations face unprecedented pressure to digitise operations, reduce downtime,
+                Manufacturing organizations face unprecedented pressure to digitise operations, reduce downtime,
                 and ship software faster than ever. Duanamize partners with industrial teams to deploy DevOps
                 automation and cloud infrastructure that drives measurable results on the factory floor and beyond.
               </p>

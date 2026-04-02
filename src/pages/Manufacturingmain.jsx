@@ -187,7 +187,7 @@ export default function ManufacturingMainPage() {
                     ensuring our solutions integrate with your existing systems, culture, and workforce capabilities.
                   </p>
                   <div className="mt-5 grid grid-cols-2 gap-3">
-                    {["OEE Improvement", "Defect Reduction", "Cost Optimisation", "Digital Upskilling"].map((item) => (
+                    {["OEE Improvement", "Defect Reduction", "Cost Optimization", "Digital Upskilling"].map((item) => (
                       <div key={item} className="flex items-center gap-2 rounded-xl border border-white/8 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
                         <CheckCircle2 className="h-3.5 w-3.5 text-cyan-400 shrink-0" />{item}
                       </div>
@@ -208,7 +208,7 @@ export default function ManufacturingMainPage() {
               End-to-end manufacturing transformation services.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>
-              From smart factory design to lean process optimisation — every solution is built around production
+              From smart factory design to lean process optimization — every solution is built around production
               outcomes, quality targets, and operational efficiency.
             </p>
           </div>
@@ -306,7 +306,7 @@ export default function ManufacturingMainPage() {
 
 ing-relaxed text-slate-600" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>
               Two complementary pillars — smart digital transformation and lean operational excellence — working
-              together to build manufacturing organisations that lead rather than follow.
+              together to build manufacturing organizations that lead rather than follow.
             </p>
           </div>
 

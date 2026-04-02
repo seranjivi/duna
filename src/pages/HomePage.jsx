@@ -273,8 +273,8 @@ export default function DuanamizeHomepage() {
               style={serif}
               className="mt-2 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl"
             >
-              Transform Your Business with
-              <span className="block mt-1 text-cyan-200">AI-Powered</span>
+              Where Lean Discipline Meets
+              <span className="block mt-1 text-cyan-200">AI Intelligence</span>
               <span className="relative inline-flex h-[1.1em] overflow-hidden align-top">
                 <AnimatePresence mode="wait">
                   <motion.span
@@ -325,7 +325,7 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
               
             />
              {/* <button className="inline-flex items-center gap-2 rounded-xl bg-[#0A2463] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b2d7e] transition">
-              Get Started Today <ArrowRight className="h-4 w-4" />
+              Schedule a Consultation  <ArrowRight className="h-4 w-4" />
             </button> */}
            
           </div>
@@ -493,7 +493,8 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
           <SectionHeader
             eyebrow="Insights & Articles"
             title="Modern Content Hub for Your Insights"
-            desc="Leverage your existing categories and articles with an enhanced layout featuring rich visuals, reading time indicators, and a more structured content experience."
+            desc="Explore our thinking on AI, process transformation, and operational excellence 
+— practical perspectives for leaders navigating complex change."
           />
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -525,7 +526,8 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
                 </div>
 
                 <div className="p-4">
-                  <div className="text-xs text-slate-500">admin • {post.date}</div>
+                  <div className="text-xs text-slate-500">'Duanamize Editorial 
+Team • {post.date}</div>
                   <h3 className="mt-2 min-h-[64px] text-base font-semibold leading-snug tracking-tight text-slate-900">
                     {post.title}
                   </h3>
@@ -588,7 +590,7 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
                 <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50" onClick={() => window.scrollTo(0, 0)}>
-                  Get Started Today <ArrowRight className="h-4 w-4" />
+                  Schedule a Consultation  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>

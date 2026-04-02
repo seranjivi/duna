@@ -39,24 +39,24 @@ const journeyPhases = [
   {
     step: "Step 4",
     icon: RefreshCw,
-    title: "Optimisation & Transfer",
+    title: "Optimization & Transfer",
     duration: "4–8 weeks",
-    desc: "Performance monitoring, optimisation, and knowledge transfer to your internal team.",
-    deliverables: ["Performance optimisation", "Knowledge transfer", "Handover documentation", "Ongoing support plan"],
+    desc: "Performance monitoring, optimization, and knowledge transfer to your internal team.",
+    deliverables: ["Performance optimization", "Knowledge transfer", "Handover documentation", "Ongoing support plan"],
     outcome: "Self-sustaining solution with internal team ownership",
   },
 ];
 
 const maturityPillars = [
-  { icon: Target, title: "Multi-Year, Multi-Phase Programs", desc: "Experience end-to-end transformation through carefully structured phases that build cumulative value over time. Detailed programme narratives spanning 2–5 years with structured phase sequencing for maximum impact.", items: ["Detailed program narratives spanning 2–5 years", "Structured phase sequencing for maximum impact", "Expert navigation of organisational dynamics", "Continuous stakeholder engagement and support"] },
-  { icon: TrendingUp, title: "Capability Maturity Progression", desc: "Watch your organisation evolve from current state to industry-leading performance. We benchmark capabilities against industry frameworks and track progression throughout the entire journey.", items: ["Baseline assessment against industry standards", "Progressive capability maturation tracking", "Transformation from lagging to leading performance", "Enhanced operational and technological sophistication"] },
+  { icon: Target, title: "Multi-Year, Multi-Phase Programs", desc: "Experience end-to-end transformation through carefully structured phases that build cumulative value over time. Detailed programme narratives spanning 2–5 years with structured phase sequencing for maximum impact.", items: ["Detailed program narratives spanning 2–5 years", "Structured phase sequencing for maximum impact", "Expert navigation of organizational dynamics", "Continuous stakeholder engagement and support"] },
+  { icon: TrendingUp, title: "Capability Maturity Progression", desc: "Watch your organization evolve from current state to industry-leading performance. We benchmark capabilities against industry frameworks and track progression throughout the entire journey.", items: ["Baseline assessment against industry standards", "Progressive capability maturation tracking", "Transformation from lagging to leading performance", "Enhanced operational and technological sophistication"] },
   { icon: Layers3, title: "Technology Adoption Roadmaps", desc: "Follow a pragmatic path from current technology landscape to future-state architecture aligned with your business objectives.", items: ["Comprehensive current state assessment", "Future-state architecture design", "Iterative deployment of AI and automation solutions", "Seamless integration with existing enterprise systems"] },
 ];
 
 const whyChoose = [
   { icon: Globe2, title: "Deep Industry Expertise", desc: "Specialised knowledge across healthcare, financial services, manufacturing, and technology sectors." },
   { icon: Shield, title: "Sustainable Results", desc: "Build internal capabilities that ensure transformation benefits continue long after engagement completion." },
-  { icon: Users, title: "End-to-End Support", desc: "Complete guidance from initial assessment through full implementation and ongoing optimisation." },
+  { icon: Users, title: "End-to-End Support", desc: "Complete guidance from initial assessment through full implementation and ongoing optimization." },
   { icon: BarChart3, title: "Measurable ROI", desc: "Clear metrics and KPIs demonstrate tangible value and return on investment throughout your journey." },
 ];
 
@@ -189,7 +189,7 @@ export default function TransformationJourneysMainPage() {
                 <div className="p-5 border-t border-white/8" style={{ background: "rgba(10,22,40,0.6)" }}>
                   <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-400/65 mb-3">Journey components</div>
                   <div className="flex flex-wrap gap-2">
-                    {["Discovery","Solution Design","Implementation","Optimisation","Capability Transfer","Ongoing Support"].map((tag) => (
+                    {["Discovery","Solution Design","Implementation","Optimization","Capability Transfer","Ongoing Support"].map((tag) => (
                       <span key={tag} className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs font-semibold text-blue-100/75">{tag}</span>
                     ))}
                   </div>

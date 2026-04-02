@@ -86,7 +86,7 @@ const automationTabs = [
     title: "Order Management Automation",
     items: [
       "Automated order processing, allocation, and fulfilment routing",
-      "Real-time inventory allocation and cross-channel optimisation",
+      "Real-time inventory allocation and cross-channel optimization",
       "Shipping, tracking, and carrier management automation",
       "Returns, refunds, and exchange workflow automation",
     ],
@@ -129,13 +129,13 @@ const omniChannelPhases = [
   },
   {
     step: "02",
-    title: "Journey Optimisation",
+    title: "Journey Optimization",
     icon: Users,
     items: [
       "Customer touchpoint mapping and gap analysis",
       "Real-time interaction tracking across all channels",
       "Experience personalisation and contextual customisation",
-      "Journey analytics and conversion funnel optimisation",
+      "Journey analytics and conversion funnel optimization",
     ],
   },
   {
@@ -145,7 +145,7 @@ const omniChannelPhases = [
     items: [
       "Customer data platform (CDP) implementation",
       "API-based system integration and data synchronisation",
-      "Mobile and web platform performance optimisation",
+      "Mobile and web platform performance optimization",
       "Real-time data pipelines for personalisation at scale",
     ],
   },
@@ -169,7 +169,7 @@ const roiAreas = [
     accent: "from-sky-500 to-indigo-500",
     items: [
       "Automated fulfilment reduces processing time and cost",
-      "Inventory optimisation cuts overstock and stockouts",
+      "Inventory optimization cuts overstock and stockouts",
       "Supply chain agility improves margin and availability",
       "Reduced customer service labour through automation",
     ],
@@ -182,7 +182,7 @@ const roiAreas = [
       "Unified customer view enables precision targeting",
       "Demand forecasting improves buying and planning accuracy",
       "Real-time analytics surface opportunity and risk faster",
-      "A/B testing and experimentation accelerate optimisation",
+      "A/B testing and experimentation accelerate optimization",
     ],
   },
 ];

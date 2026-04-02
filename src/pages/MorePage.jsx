@@ -254,7 +254,7 @@ export default function MorePage({ onNavigate }) {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
                 <a href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50 transition">
-                  Get Started Today <ArrowRight className="h-4 w-4" />
+                  Schedule a Consultation  <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>

@@ -91,7 +91,7 @@ const faqs = [
     icon: Search,
     question: "How does AI assessment work?",
     answer:
-      "Our AI Readiness Assessment is a structured diagnostic that evaluates your organisation's current state across five dimensions: data maturity and availability; process documentation and standardisation; technology infrastructure and integration capability; workforce digital literacy and change readiness; and strategic alignment and leadership sponsorship. The assessment typically takes 2–3 weeks and combines structured interviews, process observation, data sampling, and system reviews. You receive a detailed report with an AI Readiness Score, prioritised opportunity areas, a recommended roadmap, and a business case framework. The assessment is available as a standalone engagement or as the first phase of a broader transformation programme.",
+      "Our AI Readiness Assessment is a structured diagnostic that evaluates your organization's current state across five dimensions: data maturity and availability; process documentation and standardisation; technology infrastructure and integration capability; workforce digital literacy and change readiness; and strategic alignment and leadership sponsorship. The assessment typically takes 2–3 weeks and combines structured interviews, process observation, data sampling, and system reviews. You receive a detailed report with an AI Readiness Score, prioritised opportunity areas, a recommended roadmap, and a business case framework. The assessment is available as a standalone engagement or as the first phase of a broader transformation programme.",
     category: "Technology",
   },
   {

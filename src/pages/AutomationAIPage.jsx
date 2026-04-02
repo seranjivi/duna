@@ -68,7 +68,7 @@ const skills = [
     group: "Generative AI",
     tag: "SQL & Database AI",
     title: "AI-Assisted SQL Generation",
-    subtitle: "Auto-Generate · Optimise · Explain · Refactor SQL",
+    subtitle: "Auto-Generate · Optimize · Explain · Refactor SQL",
     accent: "from-indigo-400 to-cyan-400",
     devValue: "Generative AI generates optimized SQL from natural language, suggests performance improvements for existing queries, explains complex SQL logic, and assists cross-platform dialect translation.",
     bizValue: "Faster query development, reduced debugging time, and consistent SQL standards across teams. Junior developers become productive faster with AI-guided best practices.",

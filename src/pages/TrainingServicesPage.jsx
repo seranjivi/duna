@@ -84,7 +84,7 @@ const trainingServices = [
     tag: "EHR · Clinical Workflows · Compliance",
     heading: "Empower clinical and administrative teams with technology-first training.",
     body:
-      "From EHR system adoption and clinical workflow optimisation to regulatory compliance and patient data governance — our healthcare training programmes are built for the complexity of modern care environments.",
+      "From EHR system adoption and clinical workflow optimization to regulatory compliance and patient data governance — our healthcare training programmes are built for the complexity of modern care environments.",
     bullets: [
       "EHR system onboarding and advanced user training",
       "Clinical documentation best practices",
@@ -129,7 +129,7 @@ export default function TrainingServicesPage() {
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
                 Duanamize delivers structured, outcome-focused training programmes across healthcare, manufacturing,
-                and energy sectors — helping organisations close the skills gap between technology investment
+                and energy sectors — helping organizations close the skills gap between technology investment
                 and workforce capability.
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
@@ -259,7 +259,7 @@ export default function TrainingServicesPage() {
                   </div>
                 </div>
                 <p className="text-sm font-semibold text-slate-900 leading-snug mb-2">Empower clinical and administrative teams with technology-first training.</p>
-                <p className="text-sm leading-relaxed text-slate-600">From EHR system adoption and clinical workflow optimisation to regulatory compliance and patient data governance — our healthcare training programmes are built for the complexity of modern care environments.</p>
+                <p className="text-sm leading-relaxed text-slate-600">From EHR system adoption and clinical workflow optimization to regulatory compliance and patient data governance — our healthcare training programmes are built for the complexity of modern care environments.</p>
                 <ul className="mt-4 space-y-2">
                   <li className="flex items-start gap-2 rounded-xl border border-white/80 bg-white/60 px-3 py-2 text-xs text-slate-700">
                     <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#0A2463]" />
@@ -315,7 +315,7 @@ export default function TrainingServicesPage() {
                     Training delivered the way your teams learn best.
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/80">
-                    Every organisation learns differently. We offer four delivery modalities
+                    Every organization learns differently. We offer four delivery modalities
                     that can be mixed and matched to suit your team's schedule, location, and learning preferences.
                   </p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -336,7 +336,7 @@ export default function TrainingServicesPage() {
               </h2>
               <p className="mt-3 text-slate-600 text-sm leading-relaxed md:text-base">
                 Whether your team is distributed across time zones or co-located on a single site,
-                we configure the right blend of formats to maximise engagement and knowledge retention.
+                we configure the right blend of formats to maximize engagement and knowledge retention.
               </p>
               <div className="mt-6 grid gap-4">
                 {deliveryFormats.map((fmt) => {

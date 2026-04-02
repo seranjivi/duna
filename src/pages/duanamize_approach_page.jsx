@@ -21,7 +21,7 @@ const approachSections = [
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
     path: "/lss",
     links: [
-      "LSS+AI vs Traditional Lean Six Sigma",
+      "LSS+AI vs Traditional Lean Six Sigma Works",
       "How AI-Enhanced Lean Six Sigma is Revolutionizing Process Improvement in 2025",
     ],
     status: "2 pages available",
@@ -348,7 +348,7 @@ export default function ApproachPage({ showHeader = true }) {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
                 <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0A2463] hover:bg-blue-50" onClick={() => window.scrollTo(0, 0)}>
-                  Get Started Today <ArrowRight className="h-4 w-4" />
+                  Schedule a Consultation  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>

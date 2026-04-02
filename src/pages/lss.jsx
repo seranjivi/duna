@@ -154,7 +154,8 @@ function Hero() {
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/90 md:text-lg">
-            Duanamize combines the proven discipline of Lean Six Sigma with AI-powered insight to help organizations improve faster, diagnose deeper, and sustain results with greater confidence.
+            Duanamize combines the proven discipline of Lean Six Sigma with AI-powered insight to help organisations improve faster, diagnose more deeply, and sustain results 
+with greater confidence.
           </p>
 
           <div className="mt-7 grid gap-3 sm:grid-cols-3">
@@ -219,7 +220,7 @@ function PillarsSection() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-18">
         <SectionHeader
           // eyebrow="Methodology foundation"
-          title="A short view of the model"
+          title="Model Overview"
           description="LSS+AI is not a replacement for Lean Six Sigma. It is an evolution that strengthens improvement programs with automation, intelligence, and predictive capability."
         />
 

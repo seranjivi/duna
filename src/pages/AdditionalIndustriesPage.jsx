@@ -35,7 +35,7 @@ const industries = [
     tag: "Smart Grid · IoT · Digital Transformation",
     heading: "Smart grid technology for sustainable power management.",
     body:
-      "Integrating advanced technologies, artificial intelligence, and IoT solutions to create intelligent, efficient, and sustainable energy systems. We help utilities optimise power generation, distribution, and consumption.",
+      "Integrating advanced technologies, artificial intelligence, and IoT solutions to create intelligent, efficient, and sustainable energy systems. We help utilities optimize power generation, distribution, and consumption.",
     bullets: [
       "Advanced Metering Infrastructure (AMI)",
       "Power grid & distribution automation",
@@ -54,7 +54,7 @@ const industries = [
     tag: "E-commerce · Omnichannel · Customer Experience",
     heading: "Revolutionising customer experience through e-commerce innovation.",
     body:
-      "Retail technology solutions that transform every aspect of operations — from customer acquisition and engagement to inventory management and supply chain optimisation for modern, competitive retailers.",
+      "Retail technology solutions that transform every aspect of operations — from customer acquisition and engagement to inventory management and supply chain optimization for modern, competitive retailers.",
     bullets: [
       "E-commerce automation & order management",
       "Omnichannel retail strategy",
@@ -69,7 +69,7 @@ const pillars = [
   { icon: BarChart3, title: "Data & Analytics", desc: "Real-time dashboards and predictive models driving operational decisions." },
   { icon: RefreshCw, title: "Process Automation", desc: "End-to-end workflow automation reducing manual effort and error rates." },
   { icon: Shield, title: "Security & Compliance", desc: "Embedded governance, cybersecurity, and regulatory compliance frameworks." },
-  { icon: TrendingUp, title: "Revenue Optimisation", desc: "Technology strategies that directly improve top-line and margin performance." },
+  { icon: TrendingUp, title: "Revenue Optimization", desc: "Technology strategies that directly improve top-line and margin performance." },
   { icon: Globe2, title: "Customer Experience", desc: "Seamless, personalised engagement across every digital and physical touchpoint." },
 ];
 
@@ -218,7 +218,7 @@ export default function AdditionalIndustriesPage() {
                 technology pillars underpin every Duanamize engagement.
               </p>
               <div className="mt-6 space-y-3">
-                {["Sector-specific domain expertise", "Outcome-based engagement model", "End-to-end from strategy to delivery", "Ongoing optimisation post-implementation"].map((item) => (
+                {["Sector-specific domain expertise", "Outcome-based engagement model", "End-to-end from strategy to delivery", "Ongoing optimization post-implementation"].map((item) => (
                   <div key={item} className="flex items-start gap-3 text-sm text-slate-700">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0A2463]" />
                     {item}

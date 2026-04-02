@@ -13,7 +13,7 @@ const serif = { fontFamily: '"Playfair Display", Georgia, Cambria, "Times New Ro
 
 const efficiencyMetrics = [
   { label: "Process Cycle Time Reduction", range: "30–50%", items: ["30–50% reduction in process cycle times and lead times", "Automated decision-making accelerates processes", "Enhanced flow reduces unnecessary delays"] },
-  { label: "Productivity Enhancement", range: "20–40%", items: ["Optimised resource allocation", "Maximised workforce effectiveness", "Reduced manual effort through automation"] },
+  { label: "Productivity Enhancement", range: "20–40%", items: ["Optimized resource allocation", "Maximized workforce effectiveness", "Reduced manual effort through automation"] },
   { label: "Cost Reduction", range: "15–30%", items: ["Waste elimination across processes", "Reduced operational overhead", "Lower cost of quality through prevention"] },
 ];
 
@@ -37,10 +37,10 @@ const satisfactionMetrics = [
 ];
 
 const measurementFramework = [
-  { icon: Target, title: "Value Alignment", desc: "Objective mapping and KPI-driven targets aligned with organisational priorities." },
+  { icon: Target, title: "Value Alignment", desc: "Objective mapping and KPI-driven targets aligned with organizational priorities." },
   { icon: BarChart3, title: "Performance Measurement", desc: "Automated insights, live dashboards, and precise progress tracking." },
   { icon: TrendingUp, title: "Value Realization", desc: "Measuring value through financial impact, benefits capture, and ROI tracking." },
-  { icon: RefreshCw, title: "Continuous Improvement", desc: "Ongoing optimisation and capability maturity through structured cycles." },
+  { icon: RefreshCw, title: "Continuous Improvement", desc: "Ongoing optimization and capability maturity through structured cycles." },
 ];
 
 function LogoMark() {
@@ -137,7 +137,7 @@ export default function ImpactMetricsPage() {
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
                 We measure transformation success with clear impact metrics. Our LSS+AI methodology delivers
-                real improvements in efficiency, quality, cost, and customer experience — helping organisations
+                real improvements in efficiency, quality, cost, and customer experience — helping organizations
                 achieve sustainable growth with numbers you can report to the board.
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-3">

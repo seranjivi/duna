@@ -18,7 +18,7 @@ const stats = [
 const coreTechTabs = [
   {
     label: "CPS", icon: Cpu, title: "Cyber-Physical Systems",
-    items: ["Integration of physical processes with digital monitoring", "Real-time data collection from production equipment", "Autonomous decision-making and adaptive control", "Predictive maintenance and performance optimisation"],
+    items: ["Integration of physical processes with digital monitoring", "Real-time data collection from production equipment", "Autonomous decision-making and adaptive control", "Predictive maintenance and performance optimization"],
   },
   {
     label: "IoT", icon: Wifi, title: "Internet of Things",
@@ -26,7 +26,7 @@ const coreTechTabs = [
   },
   {
     label: "AI/ML", icon: Brain, title: "Artificial Intelligence & ML",
-    items: ["Predictive analytics for equipment failure prevention", "Quality control through automated inspection systems", "Process optimisation through intelligent algorithms", "Demand forecasting and production planning"],
+    items: ["Predictive analytics for equipment failure prevention", "Quality control through automated inspection systems", "Process optimization through intelligent algorithms", "Demand forecasting and production planning"],
   },
 ];
 
@@ -37,7 +37,7 @@ const transformationFramework = [
   },
   {
     step: "02", icon: Settings, title: "Process Digitisation",
-    items: ["Workflow automation and optimisation", "Digital work instructions and procedures", "Real-time process monitoring and control", "Quality management system integration"],
+    items: ["Workflow automation and optimization", "Digital work instructions and procedures", "Real-time process monitoring and control", "Quality management system integration"],
   },
   {
     step: "03", icon: Network, title: "People & Culture",
@@ -52,11 +52,11 @@ const smartFactoryComponents = [
   },
   {
     icon: Shield, title: "Quality Management", color: "from-blue-400 to-indigo-500",
-    items: ["Automated inspection and testing systems", "Statistical process control and analytics", "Root cause analysis and corrective action", "Continuous improvement and optimisation"],
+    items: ["Automated inspection and testing systems", "Statistical process control and analytics", "Root cause analysis and corrective action", "Continuous improvement and optimization"],
   },
   {
     icon: Package, title: "Supply Chain Integration", color: "from-teal-400 to-cyan-500",
-    items: ["Supplier collaboration and communication", "Inventory optimisation and demand planning", "Logistics and distribution management", "Customer integration and feedback systems"],
+    items: ["Supplier collaboration and communication", "Inventory optimization and demand planning", "Logistics and distribution management", "Customer integration and feedback systems"],
   },
 ];
 
@@ -89,11 +89,11 @@ const automationTech = [
 const digitalMfg = [
   {
     icon: RefreshCw, title: "Digital Twin Technology",
-    items: ["Virtual representations of physical assets and processes", "Real-time simulation and optimisation", "Predictive modelling and scenario analysis", "Virtual commissioning and testing"],
+    items: ["Virtual representations of physical assets and processes", "Real-time simulation and optimization", "Predictive modelling and scenario analysis", "Virtual commissioning and testing"],
   },
   {
     icon: GitMerge, title: "Digital Product Development",
-    items: ["Computer-aided design (CAD) and engineering", "Virtual prototyping and testing", "Simulation and finite element analysis", "Design for manufacturability optimisation"],
+    items: ["Computer-aided design (CAD) and engineering", "Virtual prototyping and testing", "Simulation and finite element analysis", "Design for manufacturability optimization"],
   },
 ];
 
@@ -188,12 +188,12 @@ export default function SmartManufacturingPage() {
               </div>
               <h1 style={serif} className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
                 Smart manufacturing revolution{" "}
-                <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(to right, #A5F3FC, #A5F3FC)" }}>production excellence through digital intelligence.</span>
+                <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(to right, #A5F3FC, #A5F3FC)" }}>where production excellence meets digital intelligence.</span>
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">
                 Smart manufacturing converges traditional production processes with advanced digital technologies —
                 creating intelligent, connected, and adaptive systems. Duanamize helps manufacturers harness Industry 4.0
-                to optimise efficiency, quality, and sustainability across the entire value chain.
+                to optimize efficiency, quality, and sustainability across the entire value chain.
               </p>
               <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {stats.map((s) => (
@@ -233,7 +233,7 @@ export default function SmartManufacturingPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">Three pillars of smart manufacturing.</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>Industry 4.0 encompasses the fourth industrial revolution — characterised by the integration of cyber-physical systems, IoT, AI, and advanced analytics into manufacturing operations.</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>Industry 4.0 encompasses the fourth industrial revolution — characterized by the integration of cyber-physical systems, IoT, AI, and advanced analytics into manufacturing operations.</p>
           </div>
           <div className="mb-8 flex flex-wrap justify-start gap-2">
             {coreTechTabs.map((tab, i) => {
@@ -278,7 +278,7 @@ export default function SmartManufacturingPage() {
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">Manufacturing digital transformation strategy.</h2>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 md:text-lg">A comprehensive approach addressing technology, processes, people, and organisational culture to create competitive advantage through digital excellence.</p>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 md:text-lg">A comprehensive approach addressing technology, processes, people, and organizational culture to create competitive advantage through digital excellence.</p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {transformationFramework.map((item) => {
@@ -310,7 +310,7 @@ export default function SmartManufacturingPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold text-slate-950 md:text-5xl">Interconnected systems for intelligent manufacturing.</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>Smart factory solutions integrate multiple technologies to create connected, intelligent manufacturing environments that optimise performance across all operations.</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>Smart factory solutions integrate multiple technologies to create connected, intelligent manufacturing environments that optimize performance across all operations.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {smartFactoryComponents.map((comp) => {
@@ -390,7 +390,7 @@ export default function SmartManufacturingPage() {
       <section className="relative bg-white">
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-10 text-center">
-            <h2 style={serif} className="mt-4 text-3xl font-semibold text-slate-950 md:text-5xl">Automation and digital manufacturing optimisation.</h2>
+            <h2 style={serif} className="mt-4 text-3xl font-semibold text-slate-950 md:text-5xl">Automation and digital manufacturing optimization.</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 mb-8">
             {automationTech.map((tech) => {

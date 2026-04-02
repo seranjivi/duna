@@ -64,7 +64,7 @@ const pillars = [
   },
   {
     icon: RefreshCw,
-    title: "Continuous Optimisation",
+    title: "Continuous Optimization",
     desc: "Feedback loops and review cycles that keep measurement systems relevant and improvement-focused.",
   },
 ];
@@ -80,7 +80,7 @@ const outcomeServices = [
     tag: "KPIs · Dashboards · Benchmarking",
     heading: "Transform operational excellence from concept into concrete, measurable results.",
     body:
-      "Effective performance measurement tracks, analyses, and optimises key performance indicators across all business dimensions — ensuring every improvement initiative delivers validated, quantifiable value.",
+      "Effective performance measurement tracks, analyses, and optimizes key performance indicators across all business dimensions — ensuring every improvement initiative delivers validated, quantifiable value.",
     bullets: [
       "Hierarchical KPI design from enterprise to frontline",
       "Real-time dashboards and threshold-based alerting",
@@ -125,7 +125,7 @@ const valueAreas = [
     items: [
       "Cycle time reduction and throughput improvement",
       "Quality enhancement and defect rate reduction",
-      "Resource utilisation optimisation",
+      "Resource utilisation optimization",
       "Compliance risk reduction and audit readiness",
     ],
   },
@@ -166,7 +166,7 @@ export default function OutcomesFrameworkPage() {
                 <span className="text-[#A5F3FC]">Measure what matters. Prove what works.</span>
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
-                Duanamize's Outcomes Framework gives organisations the measurement infrastructure to
+                Duanamize's Outcomes Framework gives organizations the measurement infrastructure to
                 track operational excellence performance and quantify the ROI of every process
                 improvement initiative — from initial investment to sustained value realisation.
               </p>

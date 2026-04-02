@@ -63,11 +63,11 @@ export default function Footer() {
           <ul className="mt-3 space-y-3 text-sm text-slate-400">
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 text-slate-300" />
-              <span>+91 9884919972</span>
+              <span>+91 9884719972</span>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 text-slate-300" />
-              <span>selvan@duanamize.org</span>
+              <span>kalpana@duanamize.org</span>
             </li>
             <li className="flex items-start gap-3">
               <Building2 className="mt-0.5 h-4 w-4 text-slate-300" />
@@ -82,7 +82,7 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="text-blue-100/80 text-sm">
-              © 2025 Duanamize Global Services. All rights reserved.
+              © 2025-2026 Duanamize Global Services. All rights reserved.
             </div>
             
             {/* Legal Links */}

@@ -8,10 +8,10 @@ const serif = {
 const industries = [
   {
     title: 'Healthcare',
-    description: 'EHR optimisation and clinical workflow automation that helps healthcare providers maximise their technology investment, reduce administrative burden, and deliver better patient outcomes.',
+    description: 'EHR optimization and clinical workflow automation that helps healthcare providers maximize their technology investment, reduce administrative burden, and deliver better patient outcomes.',
     icon: Heart,
     image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
-    features: ['EHR Optimisation', 'Clinical Workflow Automation', 'Patient Analytics', 'Healthcare Training'],
+    features: ['EHR Optimization', 'Clinical Workflow Automation', 'Patient Analytics', 'Healthcare Training'],
     href: '/industries-healthcare',
   },
   {
@@ -35,7 +35,7 @@ const industries = [
     description: 'DevOps automation and cloud migration solutions that transform how technology teams build, test, deploy, and maintain software — enabling rapid, reliable delivery at enterprise scale.',
     icon: Cpu,
     image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&w=800&q=80',
-    features: ['CI/CD Pipeline Optimisation', 'Cloud Migration', 'Infrastructure as Code', 'DevOps Transformation'],
+    features: ['CI/CD Pipeline Optimization', 'Cloud Migration', 'Infrastructure as Code', 'DevOps Transformation'],
     href: '/technology',
   },
   {
@@ -97,8 +97,8 @@ const industryFlow = [
   },
   {
     step: '04',
-    title: 'Continuous Optimisation',
-    text: 'Ongoing performance monitoring, benchmarking against industry peers, and improvement cycles that compound value and keep your organisation ahead of the competitive curve.'
+    title: 'Continuous Optimization',
+    text: 'Ongoing performance monitoring, benchmarking against industry peers, and improvement cycles that compound value and keep your organization ahead of the competitive curve.'
   },
 ];
 
@@ -118,8 +118,8 @@ const featuredInsights = [
     path: '/industries-financial-banking'
   },
   {
-    title: 'EHR Optimisation & Clinical Workflows',
-    description: 'Maximising healthcare technology investment through workflow automation, compliance training, and system optimisation.',
+    title: 'EHR Optimization & Clinical Workflows',
+    description: 'Maximizing healthcare technology investment through workflow automation, compliance training, and system optimization.',
     image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
     tag: 'Healthcare',
     path: '/industries-healthcare-ehr'
@@ -159,12 +159,7 @@ export default function IndustriesPage() {
               <span className="block text-cyan-200">Real Operational Results</span>
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-blue-100/90 md:text-lg">
-              Deep domain expertise across manufacturing, financial services, healthcare, energy,
-              retail, and technology — delivering transformation that understands your industry's
-              unique challenges, compliance requirements, and operational workflows.
-              <br className="hidden md:block" />
-              Partner with us to unlock sector-specific value and drive measurable business impact.
-            </p>
+              Deep domain expertise across manufacturing, financial services, healthcare, energy, retail, and technology — delivering transformation that understands your industry's unique challenges, compliance requirements, and operational workflows. Partner with us to unlock sector-specific value and drive measurable business impact.</p>
           </div>
 
           <div className="relative lg:pt-4">
@@ -209,10 +204,10 @@ export default function IndustriesPage() {
             Core Industries
           </div>
           <h2 style={serif} className="mt-6 text-3xl font-semibold text-[#12304A] md:text-5xl">
-            The main sections of the Industries Menu
+            Our Core Industry Focus
           </h2>
           <p className="mt-4 text-lg text-slate-600 whitespace-normal">
-            From smart manufacturing and digital banking to healthcare EHR optimisation and smart grid
+            From smart manufacturing and digital banking to healthcare EHR optimization and smart grid
             automation — we deliver industry-specific transformation that combines domain knowledge
             with advanced AI, automation, and cloud capabilities.
           </p>

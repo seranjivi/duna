@@ -110,7 +110,7 @@ const roiTabs = [
   {
     label: "Continuous Value",
     icon: RefreshCw,
-    title: "Continuous Value Optimisation",
+    title: "Continuous Value Optimization",
     items: [
       "Real-time dashboards tracking improvement results vs. projected benefits",
       "Trend and variance analysis with early warning on deteriorating results",
@@ -223,7 +223,7 @@ export default function ROIFrameworkPage() {
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
                 Measuring return on investment for process improvement requires sophisticated frameworks
                 that capture financial and operational benefits while providing actionable insights for
-                ongoing optimisation and value enhancement.
+                ongoing optimization and value enhancement.
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 {stats.map((s) => (
@@ -280,7 +280,7 @@ export default function ROIFrameworkPage() {
               </h2>
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 md:text-base">
                 Incomplete ROI measurement doesn't just misrepresent value — it puts future investment
-                at risk. These are the most common gaps organisations leave in their measurement approach.
+                at risk. These are the most common gaps organizations leave in their measurement approach.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">

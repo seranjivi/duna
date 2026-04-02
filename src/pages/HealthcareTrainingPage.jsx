@@ -62,7 +62,7 @@ const challenges = [
     bg: "bg-sky-50",
     border: "border-sky-100",
     items: [
-      "Poor understanding of optimised clinical workflows",
+      "Poor understanding of optimized clinical workflows",
       "Inefficient documentation habits post go-live",
       "Lack of role-specific system customisation skills",
       "Disconnected training from real-world tasks",
@@ -99,9 +99,9 @@ const programmeTabs = [
   {
     label: "Clinical Workflows",
     icon: ClipboardList,
-    title: "Clinical Workflow Optimisation Training",
+    title: "Clinical Workflow Optimization Training",
     items: [
-      "Patient intake, triage, and discharge process optimisation",
+      "Patient intake, triage, and discharge process optimization",
       "Electronic prescribing and medication reconciliation",
       "Lab order management and result review workflows",
       "Handover documentation and care coordination practices",
@@ -164,7 +164,7 @@ const learningPhases = [
       "Phased rollout with go-live support integration",
       "Pre/post assessment and competency tracking",
       "Manager dashboards and completion reporting",
-      "Post-programme review and optimisation cycle",
+      "Post-programme review and optimization cycle",
       "Ongoing support desk and refresher training access",
       "ROI measurement and outcome reporting to leadership",
     ],
@@ -248,7 +248,7 @@ export default function HealthcareTrainingPage() {
                 <span className="text-[#A5F3FC]">Empowering clinical teams to work smarter with technology.</span>
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
-                From EHR onboarding and clinical workflow optimisation to HIPAA compliance and
+                From EHR onboarding and clinical workflow optimization to HIPAA compliance and
                 digital change management — our healthcare training programmes close the gap between
                 technology capability and real-world clinical performance.
               </p>

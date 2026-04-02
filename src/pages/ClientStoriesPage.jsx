@@ -17,7 +17,7 @@ const clientStories = [
     color: "from-cyan-400 to-blue-500",
     img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80",
     challenge: "Our 12-hospital network struggled with increasing patient wait times, declining satisfaction scores, and rising operational costs despite traditional improvement efforts.",
-    solution: "Comprehensive LSS+AI implementation across patient flow processes, emergency departments, and revenue cycle operations with AI-powered insights revealing hidden optimisation opportunities.",
+    solution: "Comprehensive LSS+AI implementation across patient flow processes, emergency departments, and revenue cycle operations with AI-powered insights revealing hidden optimization opportunities.",
     quote: "Duanamize transformed our entire approach to patient care and operational efficiency with their LSS+AI methodology.",
     results: ["35% reduction in average patient wait times", "25% decrease in readmission rates", "$1 million in annual cost savings", "22-point improvement in patient satisfaction scores"],
   },

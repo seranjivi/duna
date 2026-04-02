@@ -172,7 +172,7 @@ export default function TechnologyStackPage() {
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
                 Duanamize designs and implements enterprise technology stacks that integrate process
                 mining, AI, automation, and analytics into coherent, scalable architectures — giving
-                organisations the platform to achieve and sustain operational excellence.
+                organizations the platform to achieve and sustain operational excellence.
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 {stats.map((s) => (
@@ -228,7 +228,7 @@ export default function TechnologyStackPage() {
                 From fragmented tools to a unified technology architecture.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">
-                Organisations with well-integrated technology stacks achieve superior process improvement
+                Organizations with well-integrated technology stacks achieve superior process improvement
                 outcomes. Fragmented, siloed systems create data blind spots, manual handoffs, and
                 bottlenecks that limit what's possible. We close that gap.
               </p>

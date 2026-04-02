@@ -18,8 +18,8 @@ const stats = [
 
 const leanPrinciples = [
   { icon: Target, title: "Value Definition", color: "from-cyan-400 to-blue-500", items: ["Customer-centric value identification", "Value stream mapping and analysis", "Non-value-added activity elimination", "Continuous value enhancement"] },
-  { icon: Activity, title: "Flow Optimisation", color: "from-blue-400 to-indigo-500", items: ["Smooth production flow creation", "Bottleneck identification and resolution", "Lead time reduction strategies", "Cycle time optimisation"] },
-  { icon: RefreshCw, title: "Pull System Implementation", color: "from-teal-400 to-cyan-500", items: ["Customer demand-driven production", "Just-in-time manufacturing principles", "Kanban system deployment", "Inventory level optimisation"] },
+  { icon: Activity, title: "Flow Optimization", color: "from-blue-400 to-indigo-500", items: ["Smooth production flow creation", "Bottleneck identification and resolution", "Lead time reduction strategies", "Cycle time optimization"] },
+  { icon: RefreshCw, title: "Pull System Implementation", color: "from-teal-400 to-cyan-500", items: ["Customer demand-driven production", "Just-in-time manufacturing principles", "Kanban system deployment", "Inventory level optimization"] },
   { icon: TrendingUp, title: "Perfection Pursuit", color: "from-indigo-400 to-violet-500", items: ["Continuous improvement culture", "Problem-solving methodologies", "Employee empowerment and engagement", "Standardisation and best practice sharing"] },
 ];
 
@@ -27,14 +27,14 @@ const dmiacPhases = [
   { phase: "D", label: "Define", color: "bg-cyan-500", items: ["Problem statement and scope definition", "Customer requirements and expectations", "Project charter and team formation", "Success criteria and metrics establishment"] },
   { phase: "M", label: "Measure", color: "bg-blue-500", items: ["Current state process mapping", "Data collection and measurement systems", "Baseline performance establishment", "Capability analysis and assessment"] },
   { phase: "A", label: "Analyse", color: "bg-indigo-500", items: ["Root cause analysis and identification", "Statistical analysis and hypothesis testing", "Process variation sources identification", "Improvement opportunity prioritisation"] },
-  { phase: "I", label: "Improve", color: "bg-violet-500", items: ["Solution development and testing", "Pilot implementation and validation", "Process optimisation and standardisation", "Control plan development"] },
+  { phase: "I", label: "Improve", color: "bg-violet-500", items: ["Solution development and testing", "Pilot implementation and validation", "Process optimization and standardisation", "Control plan development"] },
   { phase: "C", label: "Control", color: "bg-purple-600", items: ["Performance monitoring systems", "Sustainable improvement maintenance", "Documentation and training", "Continuous monitoring and adjustment"] },
 ];
 
 const wasteTypes = [
   { icon: Truck, title: "Transportation", desc: "Unnecessary movement of materials and products — inefficient layout, multiple handling requirements." },
   { icon: Package, title: "Inventory", desc: "Excess raw materials and work-in-process — overproduction, storage costs, cash flow impact." },
-  { icon: PersonStanding, title: "Motion", desc: "Unnecessary operator movements — poor workplace organisation, inefficient tool placement." },
+  { icon: PersonStanding, title: "Motion", desc: "Unnecessary operator movements — poor workplace organization, inefficient tool placement." },
   { icon: Clock, title: "Waiting", desc: "Equipment downtime and delays — material shortages, process bottlenecks, resource constraints." },
   { icon: Layers, title: "Overproduction", desc: "Production beyond customer demand — batch size issues, inventory accumulation, obsolescence." },
   { icon: RefreshCw, title: "Overprocessing", desc: "Unnecessary process steps — excessive quality checks, redundant activities, duplication." },
@@ -53,7 +53,7 @@ const qualityStrategies = [
   },
   {
     icon: Users, title: "Total Quality Management (TQM)", color: "from-teal-400 to-cyan-500",
-    items: ["Organisation-wide quality commitment", "Customer focus and satisfaction", "Continuous improvement culture", "Employee involvement and empowerment"],
+    items: ["Organization-wide quality commitment", "Customer focus and satisfaction", "Continuous improvement culture", "Employee involvement and empowerment"],
   },
 ];
 
@@ -191,7 +191,7 @@ export default function LeanManufacturingPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold leading-tight text-slate-950 md:text-5xl">Four core lean principles for operational excellence.</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>Lean manufacturing maximises customer value while minimising waste through the systematic identification and elimination of non-value-added activities across all production processes.</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-lg" style={{ width: "100%", maxWidth: "none", wordWrap: "normal", whiteSpace: "normal", wordBreak: "normal" }}>Lean manufacturing maximizes customer value while minimising waste through the systematic identification and elimination of non-value-added activities across all production processes.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {leanPrinciples.map((p, i) => {

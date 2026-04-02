@@ -116,7 +116,7 @@ const menuData = [
         ],
       },
       {
-        label: "Training services",
+        label: "Training Services",
         path: "/training",
         items: [
           { name: "Healthcare Training Services", path: "/industries-healthcare-training" },

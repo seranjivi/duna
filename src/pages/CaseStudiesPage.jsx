@@ -62,14 +62,14 @@ const caseStudies = [
     industry: "Energy",
     img: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80",
     headline: "Making grids smart enough to handle modern renewable energy demands.",
-    summary: "The energy sector runs modern renewable power on infrastructure designed for coal. We use smart grid analytics to predict demand, optimise renewable integration, and design sustainable architectures that rethink energy flow.",
-    delivered: ["Smart grid analytics that predict and prevent outages", "Renewable energy optimisation in real-time", "Sustainable architecture design for modern grids", "Predictive load balancing across distributed systems"],
+    summary: "The energy sector runs modern renewable power on infrastructure designed for coal. We use smart grid analytics to predict demand, optimize renewable integration, and design sustainable architectures that rethink energy flow.",
+    delivered: ["Smart grid analytics that predict and prevent outages", "Renewable energy optimization in real-time", "Sustainable architecture design for modern grids", "Predictive load balancing across distributed systems"],
     color: "from-blue-500 to-cyan-400",
   },
 ];
 
 const categories = [
-  { title: "Clinical Optimisation", desc: "Reducing readmissions and stay duration while improving safety and minimising errors for better patient outcomes." },
+  { title: "Clinical Optimization", desc: "Reducing readmissions and stay duration while improving safety and minimising errors for better patient outcomes." },
   { title: "Operational Efficiency", desc: "Reducing discharge TAT, increasing bed availability, and streamlining workflows to enhance operational efficiency." },
   { title: "Financial Excellence", desc: "Cost reduction in consumables, floor space, and operations; establishing Cost of Quality; rationalising expenses." },
   { title: "Service & Experience", desc: "Improving patient satisfaction index, referenceability, customer journey mapping, and sentiment analysis." },
@@ -172,7 +172,7 @@ export default function CaseStudiesMainPage() {
               </h1>
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-white md:text-lg">
                 Our case studies showcase the tangible value and lasting impact of our LSS+AI methodology,
-                demonstrating how we help organisations achieve breakthrough results and sustainable competitive
+                demonstrating how we help organizations achieve breakthrough results and sustainable competitive
                 advantage across healthcare, FinTech, automotive, retail, manufacturing, and energy.
               </p>
             </div>
@@ -242,7 +242,7 @@ export default function CaseStudiesMainPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="mb-10 text-left">
             <h2 style={serif} className="mt-4 text-3xl font-semibold md:text-5xl">Explore by business impact.</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600 whitespace-normal">From clinical optimisation to financial excellence our LSS+AI approach delivers measurable gains in efficiency, cost, quality, and experience.</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 whitespace-normal">From clinical optimization to financial excellence our LSS+AI approach delivers measurable gains in efficiency, cost, quality, and experience.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((cat, i) => (

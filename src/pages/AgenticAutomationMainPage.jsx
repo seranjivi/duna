@@ -121,8 +121,8 @@ function Hero() {
           </div>
 
           <h1 style={serif} className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-            Agentic Automation
-            <span className="mt-2 block text-cyan-200">where AI agents work autonomously</span>
+            Agentic Automation - 
+            <span className="mt-2 block text-cyan-200">where complex decisions run without human intervention</span>
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/90 md:text-lg">

@@ -91,7 +91,7 @@ const integrationTabs = [
     title: "Data Integration Strategies & Patterns",
     items: [
       "Real-time event streaming with Apache Kafka and equivalents",
-      "Hybrid real-time and batch integration for cost-optimised performance",
+      "Hybrid real-time and batch integration for cost-optimized performance",
       "Event sourcing patterns providing full audit and reconstruction capability",
       "Microservices architecture reducing coupling and enabling independent scaling",
     ],
@@ -110,7 +110,7 @@ const integrationTabs = [
   {
     label: "Performance",
     icon: TrendingUp,
-    title: "Performance Optimisation & Monitoring",
+    title: "Performance Optimization & Monitoring",
     items: [
       "Real-time performance dashboards: throughput, latency, error rates",
       "Auto-scaling integration resources based on live demand signals",
@@ -145,7 +145,7 @@ const implementationPhases = [
   },
   {
     step: "03",
-    title: "Governance & Optimisation",
+    title: "Governance & Optimization",
     icon: RefreshCw,
     items: [
       "Integration performance monitoring and ongoing tuning",
@@ -222,7 +222,7 @@ export default function ProcessTechnologyIntegrationPage() {
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
                 Technology integration complexity often determines the success or failure of process
-                improvement initiatives. Organisations with well-integrated architectures deliver
+                improvement initiatives. Organizations with well-integrated architectures deliver
                 superior results — those with fragmented systems struggle to achieve comprehensive
                 process visibility.
               </p>

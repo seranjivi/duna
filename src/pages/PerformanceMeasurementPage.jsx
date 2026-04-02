@@ -223,7 +223,7 @@ export default function PerformanceMeasurementPage() {
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white md:text-lg">
                 Effective performance measurement transforms operational excellence from abstract concept
-                into concrete business results — through systematic tracking, analysis, and optimisation
+                into concrete business results — through systematic tracking, analysis, and optimization
                 of key performance indicators across every business dimension.
               </p>
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
@@ -280,7 +280,7 @@ export default function PerformanceMeasurementPage() {
                 Three measurement failures that stall operational excellence.
               </h2>
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 md:text-base">
-                Most organisations have data — but not measurement systems. The difference is
+                Most organizations have data — but not measurement systems. The difference is
                 whether that data drives decisions, surfaces issues early, and validates improvement value.
               </p>
             </div>
