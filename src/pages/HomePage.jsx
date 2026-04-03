@@ -19,6 +19,7 @@ import {
   ShieldCheck,
   ShoppingBag,
   Sparkles,
+  Users,
   Workflow,
   Zap,
 } from "lucide-react";
@@ -433,6 +434,168 @@ Simplifying complexity, accelerating growth, and delivering measurable results."
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories & Achievements */}
+      <section className="mt-16 border-y border-slate-200 bg-gradient-to-br from-[#0A2463] via-[#0d2d7a] to-[#123a8f]">
+        <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-16">
+          <div className="mb-12">
+            <h2 style={serif} className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
+              Real Results, Real Impact
+            </h2>
+            <p className="mt-3 text-sm md:text-base text-blue-100/80 whitespace-normal">
+              Discover how leading organizations achieved transformational outcomes with our LSS+AI methodology.
+            </p>
+          </div>
+
+          {/* Case Studies Grid */}
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Healthcare Case Study */}
+            <div className="group overflow-hidden rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm">
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
+                  alt="Regional Healthcare Network"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2463] via-[#0A2463]/60 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                    Healthcare
+                  </span>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-xl font-semibold text-white">Regional Healthcare Network</h3>
+                  <p className="text-sm text-blue-100/80">12-hospital network transformation</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-10 w-10 rounded-full bg-cyan-500/20 flex items-center justify-center">
+                    <Users className="h-5 w-5 text-cyan-300" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-white">Dr. Sarah Johnson</div>
+                    <div className="text-xs text-blue-100/70">Chief Operating Officer</div>
+                  </div>
+                </div>
+                <p className="text-sm text-blue-100/90 italic mb-4">
+                  "Duanamize transformed our entire approach to patient care and operational efficiency with their LSS+AI methodology."
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="text-xs text-cyan-200 uppercase tracking-wider font-semibold">The Challenge</div>
+                  <p className="text-sm text-blue-100/80">Our 12-hospital network struggled with increasing patient wait times, declining satisfaction scores, and rising operational costs despite traditional improvement efforts.</p>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="text-xs text-cyan-200 uppercase tracking-wider font-semibold">The Solution</div>
+                  <p className="text-sm text-blue-100/80">Comprehensive LSS+AI implementation across patient flow processes, emergency departments, and revenue cycle operations with AI-powered insights.</p>
+                </div>
+                <div className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 p-4">
+                  <div className="text-xs text-cyan-200 uppercase tracking-wider font-semibold mb-3">Results Achieved</div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-cyan-200">35%</div>
+                      <div className="text-[10px] text-blue-100/70">Wait time reduction</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-cyan-200">25%</div>
+                      <div className="text-[10px] text-blue-100/70">Readmission decrease</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-cyan-200">$1M</div>
+                      <div className="text-[10px] text-blue-100/70">Annual savings</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-cyan-200">22</div>
+                      <div className="text-[10px] text-blue-100/70">Point satisfaction gain</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Banking Case Study */}
+            <div className="group overflow-hidden rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm">
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
+                  alt="Community Bank"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2463] via-[#0A2463]/60 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                    Financial Services
+                  </span>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-xl font-semibold text-white">Community Bank</h3>
+                  <p className="text-sm text-blue-100/80">Regional banking transformation</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-10 w-10 rounded-full bg-cyan-500/20 flex items-center justify-center">
+                    <Users className="h-5 w-5 text-cyan-300" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-white">Michael Chen</div>
+                    <div className="text-xs text-blue-100/70">VP Operations</div>
+                  </div>
+                </div>
+                <p className="text-sm text-blue-100/90 italic mb-4">
+                  "We're now faster and more responsive than banks ten times our size thanks to Duanamize's digital transformation approach."
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="text-xs text-cyan-200 uppercase tracking-wider font-semibold">The Challenge</div>
+                  <p className="text-sm text-blue-100/80">Regional bank struggled to compete with larger institutions and fintech companies due to manual processes slowing loan approvals.</p>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="text-xs text-cyan-200 uppercase tracking-wider font-semibold">The Solution</div>
+                  <p className="text-sm text-blue-100/80">Automated loan origination, customer onboarding, and compliance processes using robotic and agentic automation with AI-powered decision support.</p>
+                </div>
+                <div className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 p-4">
+                  <div className="text-xs text-cyan-200 uppercase tracking-wider font-semibold mb-3">Results Achieved</div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-cyan-200">60%</div>
+                      <div className="text-[10px] text-blue-100/70">Faster loan processing</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-cyan-200">40%</div>
+                      <div className="text-[10px] text-blue-100/70">Cost reduction</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-cyan-200">95%</div>
+                      <div className="text-[10px] text-blue-100/70">Automation rate</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-cyan-200">20</div>
+                      <div className="text-[10px] text-blue-100/70">Point NPS gain</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Stats Row */}
+          <div className="mt-10 pt-8 border-t border-white/10">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { value: "Year on Year", label: "Excellence" },
+                { value: "Global", label: "Client Outreach" },
+                { value: "Multi Country", label: "Representation" },
+                { value: "Near Perfect", label: "Success Rate" },
+              ].map((stat, i) => (
+                <div key={i} className="text-center p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                  <div className="text-lg font-bold text-white">{stat.value}</div>
+                  <div className="text-xs text-cyan-200">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

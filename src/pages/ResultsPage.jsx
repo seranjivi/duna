@@ -234,6 +234,189 @@ export default function ResultsMainPage() {
         </div>
       </section>
 
+      {/* ── DETAILED CASE STUDIES ── */}
+      <section className="bg-slate-50 border-y border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+          <div className="mb-10 text-left">
+            <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+              Real transformations, measurable outcomes.
+            </h2>
+            <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-600 max-w-3xl">
+              Explore how we've helped organizations across industries achieve breakthrough results through our proven LSS+AI methodology.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              {
+                industry: "Manufacturing",
+                title: "Global Auto Parts Manufacturer",
+                challenge: "High defect rates and production delays impacting customer satisfaction",
+                solution: "Implemented Lean Six Sigma with AI-powered quality monitoring",
+                outcomes: [
+                  { metric: "45%", label: "Reduction in defects" },
+                  { metric: "60%", label: "Faster cycle time" },
+                  { metric: "$5M", label: "Annual savings" },
+                ],
+                image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=800&q=80",
+                duration: "6 months",
+                tags: ["Lean", "AI Quality", "Automation"],
+              },
+              {
+                industry: "Healthcare",
+                title: "Regional Hospital Network",
+                challenge: "Revenue cycle inefficiencies and high claim denial rates",
+                solution: "End-to-end RPA implementation with process intelligence",
+                outcomes: [
+                  { metric: "$12M", label: "Revenue improvement" },
+                  { metric: "30%", label: "Reduction in denials" },
+                  { metric: "50%", label: "Faster processing" },
+                ],
+                image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80",
+                duration: "9 months",
+                tags: ["RPA", "Revenue Cycle", "AI"],
+              },
+              {
+                industry: "Financial Services",
+                title: "National Banking Group",
+                challenge: "Manual loan processing causing delays and compliance risks",
+                solution: "Intelligent automation with regulatory compliance framework",
+                outcomes: [
+                  { metric: "70%", label: "Processing time reduction" },
+                  { metric: "95%", label: "Automation rate" },
+                  { metric: "300%", label: "ROI first year" },
+                ],
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+                duration: "8 months",
+                tags: ["RPA", "Compliance", "AI"],
+              },
+            ].map((study, i) => (
+              <div key={i} className="group overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-sm hover:shadow-xl transition">
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={study.image}
+                    alt={study.title}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                      {study.industry}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-lg font-semibold text-white">{study.title}</h3>
+                    <p className="text-xs text-white/80 mt-1">Duration: {study.duration}</p>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <div className="space-y-3">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Challenge</div>
+                      <p className="text-sm text-slate-700">{study.challenge}</p>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Solution</div>
+                      <p className="text-sm text-slate-700">{study.solution}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-slate-100">
+                    <div className="text-[10px] uppercase tracking-wider text-cyan-600 font-semibold mb-2">Key Outcomes</div>
+                    <div className="grid grid-cols-3 gap-2">
+                      {study.outcomes.map((outcome) => (
+                        <div key={outcome.label} className="text-center p-2 rounded-lg bg-cyan-50">
+                          <div className="text-lg font-bold text-cyan-700">{outcome.metric}</div>
+                          <div className="text-[10px] text-cyan-600 leading-tight">{outcome.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mt-3 flex flex-wrap gap-1">
+                    {study.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-slate-100 px-2 py-1 text-[10px] text-slate-600">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CLIENT TESTIMONIALS ── */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
+          <div className="mb-10">
+            <h2 style={serif} className="text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
+              Voices of transformation.
+            </h2>
+            <p className="mt-3 text-sm md:text-base leading-relaxed text-slate-600">
+              Hear directly from the leaders who have partnered with us to drive change.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                quote: "Duanamize didn't just improve our processes—they transformed how we think about operational excellence. The results exceeded our expectations.",
+                author: "Sarah Chen",
+                title: "Chief Operations Officer",
+                company: "Metro Healthcare Systems",
+                metric: "40% efficiency gain",
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+              },
+              {
+                quote: "The combination of Lean Six Sigma discipline with AI capabilities is exactly what modern manufacturing needs. They delivered on every promise.",
+                author: "Michael Torres",
+                title: "VP of Manufacturing",
+                company: "Global Automotive Inc",
+                metric: "$8M cost savings",
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
+              },
+              {
+                quote: "Within 90 days, we saw measurable ROI. Their structured approach and deep expertise made all the difference in our digital transformation.",
+                author: "Jennifer Park",
+                title: "Director of Process Excellence",
+                company: "Pacific Financial Group",
+                metric: "300% ROI achieved",
+                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
+              },
+            ].map((testimonial, i) => (
+              <div key={i} className="relative overflow-hidden rounded-[20px] border border-slate-200 bg-slate-50 p-6">
+                <div className="absolute -right-4 -top-4 h-20 w-20 rounded-full bg-gradient-to-br from-cyan-100/50 to-blue-100/50 blur-xl" />
+                <div className="relative">
+                  <div className="flex gap-1 mb-4">
+                    {[1,2,3,4,5].map((star) => (
+                      <svg key={star} className="h-4 w-4 text-amber-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed italic mb-4">"{testimonial.quote}"</p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-slate-200">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.author}
+                      className="h-10 w-10 rounded-full object-cover"
+                    />
+                    <div>
+                      <div className="text-sm font-semibold text-slate-900">{testimonial.author}</div>
+                      <div className="text-xs text-slate-500">{testimonial.title}, {testimonial.company}</div>
+                    </div>
+                  </div>
+                  <div className="mt-3 inline-flex items-center gap-1 rounded-full bg-cyan-50 px-2 py-1 text-[10px] font-semibold text-cyan-700">
+                    <Zap className="h-3 w-3" />
+                    {testimonial.metric}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── QUICK STATS BANNER ── */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
